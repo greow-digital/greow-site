@@ -46,8 +46,8 @@ function TestimonialCard({
   const isFront = position === 'front'
 
   const zIndex = position === 'front' ? 2 : position === 'middle' ? 1 : 0
-  const rotate = position === 'front' ? '-5deg' : position === 'middle' ? '0deg' : '5deg'
-  const x = position === 'front' ? '0%' : position === 'middle' ? '28%' : '56%'
+  const rotate = position === 'front' ? '-4deg' : position === 'middle' ? '0deg' : '4deg'
+  const x = position === 'front' ? 0 : position === 'middle' ? 14 : 28
 
   return (
     <motion.div

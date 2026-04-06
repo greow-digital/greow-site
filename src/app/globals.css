@@ -597,7 +597,7 @@ footer {
 .stat-card.wide .stat-company { color: var(--salmon-dark); background: rgba(255,135,115,0.12); }
 
 /* ── TESTIMONIALS ── */
-.testimonials { background: var(--jungle); }
+.testimonials { background: var(--jungle); overflow: hidden; }
 .testimonials .section-label { color: var(--turquoise); }
 .testimonials .section-label::before { background: var(--salmon); }
 .testimonials-inner {
@@ -699,7 +699,7 @@ footer {
   .hero h1 { letter-spacing: -0.01em; }
   .intro-grid { grid-template-columns: 1fr; gap: 40px; }
   .intro h2 { position: static; }
-  .how-steps, .forwhom-grid, .pricing-grid, .feat-grid, .proof-grid { grid-template-columns: 1fr; }
+  .how-steps, .forwhom-grid, .pricing-grid, .feat-grid, .proof-grid, .testimonials-inner { grid-template-columns: 1fr; }
   .stat-card.wide, .stat-card.tall { grid-column: span 1; grid-row: span 1; }
   .sprint-box { grid-template-columns: 1fr; padding: 44px 28px; gap: 40px; }
   .extras-grid { grid-template-columns: 1fr; }

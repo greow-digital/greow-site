@@ -1,5 +1,7 @@
 import type { Translations } from '@/lib/translations'
-import TestimonialCards from '@/components/TestimonialCards'
+import dynamic from 'next/dynamic'
+
+const TestimonialCards = dynamic(() => import('@/components/TestimonialCards'), { ssr: false })
 
 // Feature icons — order matches features.items in translations
 const featureIcons = [

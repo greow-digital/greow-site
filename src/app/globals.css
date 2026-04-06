@@ -328,10 +328,15 @@ nav {
 }
 .feat-item:hover { transform: translateY(-4px); background: rgba(255,255,255,0.12); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
 .feat-icon {
-  width: 52px; height: 52px;
+  width: 48px; height: 48px;
   display: flex; align-items: center; justify-content: center;
-  border-radius: var(--radius-sm); font-size: 1.3rem; margin-bottom: 20px;
-  background: rgba(255,255,255,0.1) !important;
+  border-radius: var(--radius-sm); margin-bottom: 20px;
+  background: rgba(165,219,194,0.15);
+  color: var(--turquoise);
+}
+.feat-item:nth-child(odd) .feat-icon {
+  background: rgba(255,135,115,0.18);
+  color: var(--salmon);
 }
 .feat-item h4 { font-family: var(--font-heading), Arial, sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
 .feat-item p { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.7; }

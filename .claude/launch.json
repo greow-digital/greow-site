@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "greow-site",
+      "runtimeExecutable": "/usr/local/bin/python3.13",
+      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "/Users/wherkligheten/Downloads/greow-site/.claude/worktrees/fervent-boyd"],
+      "port": 3000
+    }
+  ]
+}

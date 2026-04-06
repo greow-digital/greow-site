@@ -503,6 +503,57 @@ footer {
 .footer-links a { font-size: 0.84rem; color: var(--jet-muted); transition: color 0.25s; }
 .footer-links a:hover { color: var(--salmon); }
 
+/* ── PROOF ── */
+.proof { background: var(--white); }
+.proof-intro { max-width: 600px; margin-top: 12px; color: var(--jet-muted); font-size: 1rem; }
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.stat-card {
+  background: var(--alabaster);
+  border: 1px solid var(--alabaster-dark);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: all 0.35s;
+  display: flex;
+  flex-direction: column;
+}
+.stat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); background: var(--white); }
+.stat-card.wide { grid-column: span 2; }
+.stat-card.tall { grid-row: span 2; }
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 10px;
+  color: var(--salmon);
+}
+.stat-value.teal { color: var(--jungle); }
+.stat-label {
+  font-size: 0.88rem;
+  color: var(--jet-light);
+  line-height: 1.55;
+  flex: 1;
+}
+.stat-company {
+  margin-top: 20px;
+  font-family: var(--font-heading);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--jet-dim);
+  padding: 4px 10px;
+  background: var(--alabaster-dark);
+  border-radius: 20px;
+  display: inline-flex;
+  align-self: flex-start;
+}
+
 /* ── SCROLL REVEAL ── */
 .reveal { opacity: 0; transform: translateY(24px); transition: all 0.65s cubic-bezier(0.22, 1, 0.36, 1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -514,7 +565,8 @@ footer {
   .hero { padding: 120px 20px 60px; min-height: auto; }
   .intro-grid { grid-template-columns: 1fr; gap: 32px; }
   .intro h2 { position: static; }
-  .how-steps, .forwhom-grid, .pricing-grid, .feat-grid { grid-template-columns: 1fr; }
+  .how-steps, .forwhom-grid, .pricing-grid, .feat-grid, .proof-grid { grid-template-columns: 1fr; }
+  .stat-card.wide, .stat-card.tall { grid-column: span 1; grid-row: span 1; }
   .sprint-box { grid-template-columns: 1fr; padding: 32px 24px; gap: 32px; }
   .extras-grid { grid-template-columns: 1fr; }
 }
@@ -665,6 +717,60 @@ footer {
   </div>
 </section>
 
+<!-- PROOF -->
+<section class="proof section" id="proof">
+  <div class="container">
+    <p class="section-label reveal">Resultat</p>
+    <h2 class="reveal">Mätbara utfall, <em>inte löften.</em></h2>
+    <p class="proof-intro reveal">Nyckeltal från uppdrag inom B2B SaaS, e-handel och fintech.</p>
+    <div class="proof-grid">
+
+      <!-- 2x1: wide -->
+      <div class="stat-card wide reveal">
+        <div class="stat-value">2x</div>
+        <div class="stat-label">Revenue inom 6 månader – från stagnation till tillväxt</div>
+        <span class="stat-company">Happyvegan</span>
+      </div>
+
+      <!-- 1x1 -->
+      <div class="stat-card reveal">
+        <div class="stat-value">+100%</div>
+        <div class="stat-label">Conversion rate</div>
+        <span class="stat-company">Telia</span>
+      </div>
+
+      <!-- 1x2: tall -->
+      <div class="stat-card tall reveal">
+        <div class="stat-value teal">0 → 20%</div>
+        <div class="stat-label">av MRR via PLG – produktledd tillväxt byggt från grunden på under 2 år</div>
+        <span class="stat-company">Funnel</span>
+      </div>
+
+      <!-- 1x1 -->
+      <div class="stat-card reveal">
+        <div class="stat-value teal">−40%</div>
+        <div class="stat-label">CAC reduktion</div>
+        <span class="stat-company">RiksTV / Strim</span>
+      </div>
+
+      <!-- 1x1 -->
+      <div class="stat-card reveal">
+        <div class="stat-value">+100%</div>
+        <div class="stat-label">Uplift i nya konton via pricing transformation</div>
+        <span class="stat-company">Dealfront</span>
+      </div>
+
+      <!-- 1x1 -->
+      <div class="stat-card reveal">
+        <div class="stat-value teal">3x</div>
+        <div class="stat-label">Organisk trafik</div>
+        <span class="stat-company">Happyvegan</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- SPRINT -->
 <section class="sprint section">
   <div class="container">
@@ -796,9 +902,10 @@ footer {
   <div class="container">
     <h2 class="reveal">Redo att bygga din <em>growth-motor?</em></h2>
     <p class="reveal">Boka ett kort samtal så pratar vi igenom var du står idag och vad som skulle göra störst skillnad.</p>
-    <div class="hero-actions reveal">
-      <a href="/cdn-cgi/l/email-protection#3257405b5972574a535f425e571c515d5f" class="btn btn-primary" style="font-size: 1rem; padding: 16px 36px;">Boka ett samtal →</a>
-    </div>
+    <!-- Calendly inline widget begin -->
+    <div class="calendly-inline-widget reveal" data-url="https://calendly.com/erik-greow?background_color=a5dbc2&text_color=0a2424&primary_color=ff8773" style="min-width:320px;height:700px;margin-top:32px;border-radius:var(--radius);overflow:hidden;"></div>
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <!-- Calendly inline widget end -->
   </div>
 </section>
 

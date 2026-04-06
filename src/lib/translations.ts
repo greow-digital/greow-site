@@ -162,6 +162,12 @@ export const translations = {
         ],
       },
     },
+    testimonials: {
+      label: 'Client stories',
+      h2a: 'What clients',
+      h2em: 'say.',
+      sub: 'Real results from real engagements. Placeholder text — quotes and names will be updated.',
+    },
     cta: {
       h2a: 'Ready to build your',
       h2em: 'growth engine?',
@@ -340,6 +346,12 @@ export const translations = {
           { label: '20 sessioner', price: '42 000 SEK' },
         ],
       },
+    },
+    testimonials: {
+      label: 'Kunder berättar',
+      h2a: 'Vad kunder',
+      h2em: 'säger.',
+      sub: 'Verkliga resultat från verkliga uppdrag. Platshållartext — citat och namn uppdateras.',
     },
     cta: {
       h2a: 'Redo att bygga din',

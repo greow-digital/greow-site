@@ -1,4 +1,5 @@
 import type { Translations } from '@/lib/translations'
+import TestimonialCards from '@/components/TestimonialCards'
 
 // Feature icons — order matches features.items in translations
 const featureIcons = [
@@ -283,6 +284,20 @@ export default function HomePage({ t, lang }: HomePageProps) {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TESTIMONIALS */}
+      <section className="testimonials section">
+        <div className="container">
+          <div className="testimonials-inner">
+            <div className="testimonials-text reveal">
+              <p className="section-label">{t.testimonials.label}</p>
+              <h2>{t.testimonials.h2a} <em>{t.testimonials.h2em}</em></h2>
+              <p>{t.testimonials.sub}</p>
+            </div>
+            <TestimonialCards />
           </div>
         </div>
       </section>

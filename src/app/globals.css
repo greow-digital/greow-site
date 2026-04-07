@@ -214,7 +214,7 @@ nav {
 
 .hero-tags {
   display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
-  margin-top: 64px;
+  margin-top: 48px;
   animation: fadeUp 0.7s 0.32s ease both;
 }
 .hero-tag {
@@ -231,7 +231,7 @@ nav {
 
 .hero-founder {
   display: inline-flex; align-items: center; gap: 14px;
-  margin-top: 40px;
+  margin-top: 48px;
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 100px;

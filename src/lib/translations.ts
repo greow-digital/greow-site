@@ -19,8 +19,9 @@ export const translations = {
       cta1: 'Book a call →',
       cta2: 'See pricing',
       tags: ['Product-Led Growth', 'Demand Generation', 'Experimentation', 'Pricing & Packaging'],
-      founderName: 'Erik Werner',
-      founderRole: 'Growth Advisor · ex-Funnel, Telia, DNB · ICF-accredited coach',
+      founderName: 'Erik Oliva Werner',
+      founderRole: 'Founder of Greow Digital, Growth Advisor',
+      founderRole2: 'Ex Growth Leader at Funnel & Leadfeeder',
     },
     logos: {
       label: 'Experience from companies including',
@@ -200,8 +201,9 @@ export const translations = {
       cta1: 'Boka ett samtal →',
       cta2: 'Se priser',
       tags: ['Product-Led Growth', 'Demand Generation', 'Experimentation', 'Pricing & Packaging'],
-      founderName: 'Erik Werner',
-      founderRole: 'Growth Advisor · ex-Funnel, Telia, DNB · ICF-certifierad coach',
+      founderName: 'Erik Oliva Werner',
+      founderRole: 'Grundare av Greow Digital, Growth Advisor',
+      founderRole2: 'Ex Growth Leader på Funnel & Leadfeeder',
     },
     logos: {
       label: 'Erfarenhet från bland annat',

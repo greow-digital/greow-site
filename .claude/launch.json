@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "greow-site",
-      "runtimeExecutable": "/usr/local/bin/python3.13",
-      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "/Users/wherkligheten/Downloads/greow-site/.claude/worktrees/fervent-boyd"],
+      "runtimeExecutable": "/usr/local/bin/node",
+      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev"],
       "port": 3000
     }
   ]

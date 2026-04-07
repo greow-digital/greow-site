@@ -19,6 +19,8 @@ export const translations = {
       cta1: 'Book a call →',
       cta2: 'See pricing',
       tags: ['Product-Led Growth', 'Demand Generation', 'Experimentation', 'Pricing & Packaging'],
+      founderName: 'Erik Werner',
+      founderRole: 'Growth Advisor · ex-Funnel, Telia, DNB · ICF-accredited coach',
     },
     logos: {
       label: 'Experience from companies including',
@@ -198,6 +200,8 @@ export const translations = {
       cta1: 'Boka ett samtal →',
       cta2: 'Se priser',
       tags: ['Product-Led Growth', 'Demand Generation', 'Experimentation', 'Pricing & Packaging'],
+      founderName: 'Erik Werner',
+      founderRole: 'Growth Advisor · ex-Funnel, Telia, DNB · ICF-certifierad coach',
     },
     logos: {
       label: 'Erfarenhet från bland annat',

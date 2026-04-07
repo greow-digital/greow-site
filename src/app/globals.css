@@ -229,6 +229,35 @@ nav {
 
 @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
+.hero-founder {
+  display: inline-flex; align-items: center; gap: 14px;
+  margin-top: 56px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  padding: 8px 20px 8px 8px;
+  box-shadow: var(--shadow-md);
+}
+.hero-founder-img {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  flex-shrink: 0;
+}
+.hero-founder-name {
+  font-family: var(--font-heading), Arial, sans-serif;
+  font-size: 0.88rem; font-weight: 700;
+  color: var(--jet);
+  line-height: 1.3;
+}
+.hero-founder-role {
+  font-size: 0.78rem;
+  color: var(--jet-muted);
+  line-height: 1.4;
+  margin-top: 1px;
+}
+
 /* ── LOGO CAROUSEL ── */
 .logo-carousel {
   padding: 48px 0 60px;

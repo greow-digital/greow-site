@@ -205,7 +205,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
             <div className="sprint-price">
               <div className="price-box">
                 <div className="price">{t.sprint.price}</div>
-                <div className="price-sek">{t.sprint.priceSek}</div>
+                {t.sprint.priceSek && <div className="price-sek">{t.sprint.priceSek}</div>}
                 <div className="price-note">{t.sprint.priceNote}</div>
                 <a href="#book" className="btn btn-primary">{t.sprint.cta}</a>
               </div>
@@ -229,7 +229,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
                 <div className="price-tier">{plan.tier}</div>
                 <div className="price-name">{plan.name}</div>
                 <div className="price-amount">{plan.amount} <span>{plan.per}</span></div>
-                <div className="price-sek">{plan.sek}</div>
+                {plan.sek && <div className="price-sek">{plan.sek}</div>}
                 <ul className="price-features">
                   {plan.features.map((f) => <li key={f}>{f}</li>)}
                 </ul>

@@ -98,14 +98,6 @@ export default function HomePage({ t, lang }: HomePageProps) {
           <a href="#pricing" className="btn btn-secondary">{t.hero.cta2}</a>
         </div>
 
-        <div className="hero-founder" style={{ animation: 'fadeUp 0.7s 0.32s ease both' }}>
-          <img src="/assets/erik-werner.png" alt={t.hero.founderName} className="hero-founder-img" />
-          <div>
-            <p className="hero-founder-name">{t.hero.founderName}</p>
-            <p className="hero-founder-role">{t.hero.founderRole}<br />{t.hero.founderRole2}</p>
-          </div>
-        </div>
-
         <div className="hero-tags">
           {t.hero.tags.map((tag) => (
             <span key={tag} className="hero-tag">{tag}</span>
@@ -173,6 +165,13 @@ export default function HomePage({ t, lang }: HomePageProps) {
                 </ul>
               </div>
             ))}
+          </div>
+          <div className="hero-founder reveal">
+            <img src="/assets/erik-werner.png" alt={t.hero.founderName} className="hero-founder-img" />
+            <div>
+              <p className="hero-founder-name">{t.hero.founderName}</p>
+              <p className="hero-founder-role">{t.hero.founderRole}<br />{t.hero.founderRole2}</p>
+            </div>
           </div>
         </div>
       </section>

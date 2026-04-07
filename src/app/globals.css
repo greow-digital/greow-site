@@ -231,7 +231,7 @@ nav {
 
 .hero-founder {
   display: inline-flex; align-items: center; gap: 14px;
-  margin-top: 48px;
+  margin-top: 40px;
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 100px;

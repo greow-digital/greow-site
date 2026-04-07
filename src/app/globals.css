@@ -344,26 +344,30 @@ nav {
 /* ── FOR WHOM ── */
 .forwhom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
 .forwhom-card {
-  background: var(--white); border: 1.5px solid var(--border);
-  border-radius: var(--radius); padding: 40px 32px;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius); padding: 48px 40px;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
+.forwhom-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+.forwhom-card:nth-child(1) { background: var(--salmon); }
+.forwhom-card:nth-child(2) { background: var(--jungle); }
+.forwhom-card:nth-child(3) { background: var(--turquoise); }
 .forwhom-card h4 {
-  font-family: var(--font-heading), Arial, sans-serif; font-size: 0.8rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 24px;
+  font-family: var(--font-heading), Arial, sans-serif; font-size: 0.78rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 28px;
+  color: rgba(255,255,255,0.7);
 }
-.forwhom-card:nth-child(1) h4 { color: var(--salmon-dark); }
-.forwhom-card:nth-child(2) h4 { color: var(--jungle); }
-.forwhom-card:nth-child(3) h4 { color: var(--turquoise-dark); }
+.forwhom-card:nth-child(3) h4 { color: rgba(25,91,90,0.7); }
 .forwhom-card li {
-  list-style: none; font-size: 1rem; color: var(--jet-light);
-  padding: 11px 0; border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 12px;
+  list-style: none; font-size: 1.15rem; font-weight: 500;
+  color: var(--white);
+  padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.2);
+  display: flex; align-items: center; gap: 14px;
 }
+.forwhom-card:nth-child(3) li { color: var(--jungle-dark); border-bottom-color: rgba(25,91,90,0.2); }
 .forwhom-card li:last-child { border-bottom: none; }
-.forwhom-card:nth-child(1) li::before { content: '●'; color: var(--salmon); font-size: 0.45rem; }
-.forwhom-card:nth-child(2) li::before { content: '●'; color: var(--turquoise-dark); font-size: 0.45rem; }
-.forwhom-card:nth-child(3) li::before { content: '●'; color: var(--jungle); font-size: 0.45rem; }
+.forwhom-card li::before { content: '→'; font-size: 0.85rem; opacity: 0.6; }
+.forwhom-card:nth-child(3) li::before { color: var(--jungle-dark); }
 
 /* ── SPRINT ── */
 .sprint { background: var(--white); }

@@ -88,27 +88,37 @@ export default function HomePage({ t, lang }: HomePageProps) {
     <>
       {/* HERO */}
       <section className="hero">
-        <div className="hero-badge"><span className="dot"></span> {t.hero.badge}</div>
-        <h1>
-          {t.hero.h1a} <em>{t.hero.h1b}</em>
-        </h1>
-        <p className="hero-sub">{t.hero.sub}</p>
-        <div className="hero-actions">
-          <a href="#book" className="btn btn-primary">{t.hero.cta1}</a>
-          <a href="#pricing" className="btn btn-secondary">{t.hero.cta2}</a>
-        </div>
+        <div className="hero-inner">
+          <div className="hero-content">
+            <div className="hero-badge"><span className="dot"></span> {t.hero.badge}</div>
+            <h1>
+              {t.hero.h1a} <em>{t.hero.h1b}</em>
+            </h1>
+            <p className="hero-sub">{t.hero.sub}</p>
+            <div className="hero-actions">
+              <a href="#book" className="btn btn-primary">{t.hero.cta1}</a>
+              <a href="#pricing" className="btn btn-secondary">{t.hero.cta2}</a>
+            </div>
 
-        <div className="hero-tags">
-          {t.hero.tags.map((tag) => (
-            <span key={tag} className="hero-tag">{tag}</span>
-          ))}
-        </div>
+            <div className="hero-tags">
+              {t.hero.tags.map((tag) => (
+                <span key={tag} className="hero-tag">{tag}</span>
+              ))}
+            </div>
 
-        <div className="hero-founder" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>
-          <img src="/assets/erik-werner.png" alt={t.hero.founderName} className="hero-founder-img" />
-          <div>
-            <p className="hero-founder-name">{t.hero.founderName}</p>
-            <p className="hero-founder-role">{t.hero.founderRole}<br />{t.hero.founderRole2}</p>
+            <div className="hero-founder" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>
+              <img src="/assets/erik-werner.png" alt={t.hero.founderName} className="hero-founder-img" />
+              <div>
+                <p className="hero-founder-name">{t.hero.founderName}</p>
+                <p className="hero-founder-role">{t.hero.founderRole}<br />{t.hero.founderRole2}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="hero-visual">
+            <div className="hero-dashboard-wrap">
+              <img src="/assets/hero-dashboard.jpg" alt="Growth dashboard" className="hero-dashboard-img" />
+            </div>
           </div>
         </div>
       </section>

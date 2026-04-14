@@ -324,15 +324,15 @@ nav {
 }
 .logo-item:hover { opacity: 0.9; }
 .logo-item img {
-  height: 22px;
+  height: auto;
+  max-height: 36px;
   width: auto;
   object-fit: contain;
   filter: grayscale(100%);
-  opacity: 0.7;
+  opacity: 0.65;
   transition: all 0.3s;
 }
 .logo-item:hover img { filter: grayscale(0%); opacity: 1; }
-.logo-item svg { display: block; flex-shrink: 0; height: 22px !important; }
 @keyframes logoScroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }

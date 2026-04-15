@@ -240,12 +240,15 @@ nav {
   max-width: 100%;
   max-height: 480px;
   display: block;
-  transform: rotate(2deg);
-  transition: transform 0.4s ease;
+  animation: heroFloat 5s ease-in-out infinite;
   filter: drop-shadow(0 24px 48px rgba(25,91,90,0.15)) drop-shadow(0 8px 16px rgba(0,0,0,0.08));
 }
 .hero-visual:hover .hero-dashboard-img {
-  transform: rotate(0deg) translateY(-6px);
+  animation-play-state: paused;
+}
+@keyframes heroFloat {
+  0%, 100% { transform: rotate(2deg) translateY(0px); }
+  50% { transform: rotate(2deg) translateY(-18px); }
 }
 .hero-tag {
   font-family: var(--font-body), Arial, sans-serif; font-size: 0.82rem; font-weight: 500;

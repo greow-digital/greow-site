@@ -229,9 +229,8 @@ nav {
   animation: fadeUp 0.7s 0.32s ease both;
 }
 .hero-visual {
-  position: absolute;
-  top: 0; right: 0; bottom: 0;
-  width: 48%;
+  position: relative;
+  height: 620px;
   overflow: hidden;
   animation: fadeUp 0.9s 0.3s ease both;
   background: var(--white);
@@ -242,12 +241,11 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  animation: heroScrollV 20s linear infinite;
+  animation: heroScrollV 8s ease-in-out infinite alternate;
 }
 .hero-dashboard-img {
-  width: 36%;
+  width: 72%;
   display: block;
-  padding-bottom: 48px;
   filter: drop-shadow(0 32px 56px rgba(25,91,90,0.13)) drop-shadow(0 8px 20px rgba(0,0,0,0.07));
 }
 .hero-visual:hover .hero-scroll-track {
@@ -255,7 +253,7 @@ nav {
 }
 @keyframes heroScrollV {
   0%   { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  100% { transform: translateY(-55%); }
 }
 .hero-tag {
   font-family: var(--font-body), Arial, sans-serif; font-size: 0.82rem; font-weight: 500;

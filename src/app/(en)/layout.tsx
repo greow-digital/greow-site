@@ -8,6 +8,7 @@ const t = translations.en
 export const metadata: Metadata = {
   title: t.meta.title,
   description: t.meta.description,
+  icons: { icon: '/favicon.svg', shortcut: '/favicon.svg' },
   alternates: {
     canonical: 'https://greow.digital/',
     languages: {

@@ -30,11 +30,16 @@ const featureIcons = [
 
 const LogoSet = () => (
   <>
-    <span className="logo-item"><img src="/assets/logo-dnb.png" alt="DNB" /></span>
-    <span className="logo-item"><img src="/assets/logo-funnel.png" alt="Funnel" /></span>
-    <span className="logo-item"><img src="/assets/logo-leadfeeder.png" alt="Leadfeeder" /></span>
-    <span className="logo-item"><img src="/assets/logo-ice.png" alt="Ice" /></span>
-    <span className="logo-item"><img src="/assets/logo-linkmobility.png" alt="Link Mobility" /></span>
+    <span className="logo-item"><img src="/assets/logo-dnb.svg" alt="DNB" /></span>
+    <span className="logo-item"><img src="/assets/logo-funnel.svg" alt="Funnel" /></span>
+    <span className="logo-item"><img src="/assets/logo-leadfeeder.svg" alt="Leadfeeder" /></span>
+    <span className="logo-item"><img src="/assets/logo-happyvegan.svg" alt="Happy Vegan" /></span>
+    <span className="logo-item"><img src="/assets/logo-ice.svg" alt="Ice" /></span>
+    <span className="logo-item"><img src="/assets/logo-linkmobility.svg" alt="Link Mobility" /></span>
+    <span className="logo-item"><img src="/assets/logo-refapp.svg" alt="Refapp" /></span>
+    <span className="logo-item"><img src="/assets/logo-rikstv.svg" alt="RiksTV" /></span>
+    <span className="logo-item"><img src="/assets/logo-strim.svg" alt="Strim" /></span>
+    <span className="logo-item"><img src="/assets/logo-telia.svg" alt="Telia" /></span>
   </>
 )
 

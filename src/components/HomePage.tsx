@@ -83,7 +83,10 @@ export default function HomePage({ t, lang }: HomePageProps) {
           </div>
 
           <div className="hero-visual">
-            <img src="/assets/hero-dashboard.svg" alt="Growth dashboard" className="hero-dashboard-img" />
+            <div className="hero-scroll-track">
+              <img src="/assets/hero-dashboard.svg" alt="Growth dashboard" className="hero-dashboard-img" />
+              <img src="/assets/hero-dashboard.svg" aria-hidden="true" className="hero-dashboard-img" />
+            </div>
           </div>
         </div>
       </section>

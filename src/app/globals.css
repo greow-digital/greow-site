@@ -229,26 +229,31 @@ nav {
   animation: fadeUp 0.7s 0.32s ease both;
 }
 .hero-visual {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 48%;
+  overflow: hidden;
   animation: fadeUp 0.9s 0.3s ease both;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.hero-scroll-track {
+  display: flex;
+  flex-direction: column;
+  animation: heroScrollV 20s linear infinite;
 }
 .hero-dashboard-img {
-  width: auto;
-  max-width: 100%;
-  max-height: 480px;
+  width: 100%;
   display: block;
-  animation: heroFloat 5s ease-in-out infinite;
-  filter: drop-shadow(0 24px 48px rgba(25,91,90,0.15)) drop-shadow(0 8px 16px rgba(0,0,0,0.08));
+  padding-bottom: 48px;
+  filter: drop-shadow(0 32px 56px rgba(25,91,90,0.13)) drop-shadow(0 8px 20px rgba(0,0,0,0.07));
 }
-.hero-visual:hover .hero-dashboard-img {
+.hero-visual:hover .hero-scroll-track {
   animation-play-state: paused;
 }
-@keyframes heroFloat {
-  0%, 100% { transform: rotate(2deg) translateY(0px); }
-  50% { transform: rotate(2deg) translateY(-18px); }
+@keyframes heroScrollV {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
 }
 .hero-tag {
   font-family: var(--font-body), Arial, sans-serif; font-size: 0.82rem; font-weight: 500;

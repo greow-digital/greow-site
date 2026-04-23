@@ -1,4 +1,5 @@
 import type { Translations } from '@/lib/translations'
+import CalEmbed from './CalEmbed'
 
 // Feature icons — order matches features.items in translations
 const featureIcons = [
@@ -278,11 +279,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
         <div className="container">
           <h2 className="reveal">{t.cta.h2a} <em>{t.cta.h2em}</em></h2>
           <p className="reveal">{t.cta.sub}</p>
-          <div
-            className="calendly-inline-widget reveal"
-            data-url="https://calendly.com/erik-greow?background_color=a5dbc2&text_color=0a2424&primary_color=ff8773"
-            style={{ minWidth: '320px', height: '700px', marginTop: '32px', borderRadius: 'var(--radius)', overflow: 'hidden' }}
-          />
+          <CalEmbed />
         </div>
       </section>
 

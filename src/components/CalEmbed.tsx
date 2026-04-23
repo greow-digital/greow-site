@@ -1,7 +1,7 @@
 import Script from 'next/script'
 
 const NAMESPACE = '30min'
-const CAL_LINK = 'erik-werner-0um6bf'
+const CAL_LINK = 'erik-werner-0um6bf/30min'
 
 export default function CalEmbed() {
   return (

@@ -362,6 +362,69 @@ nav {
 .intro-text p { color: var(--jet-light); font-size: 1.08rem; margin-bottom: 24px; line-height: 1.8; }
 .intro-text p strong { color: var(--jet); font-weight: 600; }
 
+/* ── PERSONAL ── */
+.personal { background: var(--white); }
+.personal-header { text-align: center; margin-bottom: 56px; }
+.personal-header h2 {
+  font-family: var(--font-heading), Arial, sans-serif;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 700; line-height: 1.1; color: var(--jet);
+  letter-spacing: -0.02em; margin-top: 16px;
+}
+.personal-header h2 em { font-style: normal; color: var(--jungle); font-weight: 500; }
+.personal-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  align-items: stretch;
+}
+.personal-text {
+  background: var(--turquoise-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 56px 48px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.personal-lead {
+  font-family: var(--font-heading), Arial, sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700; line-height: 1.2; color: var(--jet);
+  letter-spacing: -0.01em; margin-bottom: 8px;
+}
+.personal-name { color: var(--salmon); }
+.personal-role {
+  color: var(--jet-muted); font-size: 0.98rem;
+  margin-bottom: 28px; letter-spacing: 0.01em;
+}
+.personal-body {
+  color: var(--jet-light); font-size: 1.05rem; line-height: 1.75;
+  margin-bottom: 20px;
+}
+.personal-body strong { color: var(--jet); font-weight: 700; }
+.personal-actions {
+  display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;
+}
+.personal-image {
+  position: relative;
+  border-radius: var(--radius);
+  min-height: 480px;
+  background-image: url('/images/erik.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: var(--salmon-soft);
+  overflow: hidden;
+  isolation: isolate;
+}
+.personal-image::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg,
+    rgba(255,135,115,0.55) 0%,
+    rgba(255,135,115,0.25) 45%,
+    rgba(230,112,94,0.45) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
 /* ── HOW ── */
 .how { background: var(--jungle); }
 .how .section-label { color: var(--turquoise); }
@@ -692,6 +755,10 @@ footer {
   .intro-grid { grid-template-columns: 1fr; gap: 40px; }
   .intro h2 { position: static; }
   .how-steps, .forwhom-grid, .pricing-grid, .feat-grid, .proof-grid { grid-template-columns: 1fr; }
+  .personal-grid { grid-template-columns: 1fr; gap: 20px; }
+  .personal-text { padding: 36px 28px; order: 2; }
+  .personal-image { min-height: 360px; order: 1; }
+  .personal-actions { justify-content: center; }
   .stat-card.wide, .stat-card.tall { grid-column: span 1; grid-row: span 1; }
   .sprint-box { grid-template-columns: 1fr; padding: 44px 28px; gap: 40px; }
   .extras-grid { grid-template-columns: 1fr; }

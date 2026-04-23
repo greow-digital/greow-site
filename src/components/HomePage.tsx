@@ -120,6 +120,37 @@ export default function HomePage({ t, lang }: HomePageProps) {
         </div>
       </section>
 
+      {/* PERSONAL */}
+      <section className="personal section" id="about-erik">
+        <div className="container">
+          <div className="personal-header reveal">
+            <p className="section-label" style={{ justifyContent: 'center' }}>{t.personal.label}</p>
+            <h2>{t.personal.h2a} <em>{t.personal.h2em}</em></h2>
+          </div>
+          <div className="personal-grid">
+            <div className="personal-text reveal">
+              <p className="personal-lead">
+                {t.personal.greeting} <span className="personal-name">{t.personal.name}</span>{t.personal.nameSuffix}
+              </p>
+              <p className="personal-role">{t.personal.role}</p>
+              <p className="personal-body">
+                <strong>{t.personal.highlight}</strong> {t.personal.body}
+              </p>
+              <p className="personal-body">{t.personal.closing}</p>
+              <div className="personal-actions">
+                <a href="#book" className="btn btn-primary">{t.hero.cta1}</a>
+                <a href="#proof" className="btn btn-secondary">{t.proof.label}</a>
+              </div>
+            </div>
+            <div
+              className="personal-image reveal"
+              role="img"
+              aria-label={t.hero.founderName}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* HOW */}
       <section className="how section" id="how">
         <div className="container">

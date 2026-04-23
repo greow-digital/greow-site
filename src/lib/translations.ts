@@ -33,6 +33,18 @@ export const translations = {
       p2: 'The team does a lot but gets little out. Initiatives run ad hoc without clear direction. Growth stagnates even though everyone works hard.',
       p3: 'I fix that – <strong>without you needing to hire or buy more production.</strong> As a growth partner, I provide direction, challenge decisions and create momentum. Every week.',
     },
+    personal: {
+      label: 'About',
+      h2a: 'Meet your',
+      h2em: 'growth partner',
+      greeting: "Hi, I'm",
+      name: 'Erik',
+      nameSuffix: ' — founder of Greow.',
+      role: 'Senior Growth Advisor · ex Funnel, Leadfeeder, Telia',
+      highlight: '10+ years driving growth',
+      body: 'across B2B SaaS, fintech and e-commerce — from early-stage traction to Series C scale. I spent 6+ years in senior growth roles at Funnel and Leadfeeder and have worked with teams like Telia, Dealfront, RiksTV and Dun & Bradstreet.',
+      closing: "I don't ship more output — I help teams make better decisions, faster. Direction, prioritization and momentum, every week.",
+    },
     how: {
       label: 'How it works',
       steps: [
@@ -214,6 +226,18 @@ export const translations = {
       p1: 'De flesta bolag har inte brist på idéer. De har brist på <strong>fokus, prioritering och tempo.</strong>',
       p2: 'Teamet gör mycket men får ut lite. Initiativ körs ad hoc utan tydlig riktning. Tillväxten stagnerar trots att alla jobbar hårt.',
       p3: 'Jag löser det – <strong>utan att du behöver anställa eller köpa mer produktion.</strong> Som growth-partner ger jag riktning, utmanar beslut och skapar momentum. Varje vecka.',
+    },
+    personal: {
+      label: 'Om mig',
+      h2a: 'Möt din',
+      h2em: 'growth-partner',
+      greeting: 'Hej, jag heter',
+      name: 'Erik',
+      nameSuffix: ' — grundare av Greow.',
+      role: 'Senior Growth Advisor · ex Funnel, Leadfeeder, Telia',
+      highlight: '10+ års erfarenhet av att driva tillväxt',
+      body: 'inom B2B SaaS, fintech och e-handel — från tidig traction till Series C-skala. Jag har spenderat 6+ år i seniora growth-roller på Funnel och Leadfeeder och jobbat med team som Telia, Dealfront, RiksTV och Dun & Bradstreet.',
+      closing: 'Jag levererar inte mer output — jag hjälper team att fatta bättre beslut, snabbare. Riktning, prioritering och momentum, varje vecka.',
     },
     how: {
       label: 'Så fungerar det',

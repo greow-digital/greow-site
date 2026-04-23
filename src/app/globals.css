@@ -684,8 +684,8 @@ footer {
   margin-top: 60px;
 }
 .stat-card {
-  background: var(--white);
-  border: 1.5px solid var(--border);
+  background: var(--turquoise-soft);
+  border: 1.5px solid rgba(139,201,171,0.25);
   border-radius: var(--radius);
   padding: 40px 32px;
   transition: all 0.35s;
@@ -693,7 +693,7 @@ footer {
   flex-direction: column;
   box-shadow: var(--shadow-sm);
 }
-.stat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--salmon); }
+.stat-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); border-color: var(--turquoise-dark); }
 .stat-card.teal { background: var(--jungle); border-color: var(--jungle); }
 .stat-card.teal:hover { border-color: var(--jungle-light); box-shadow: 0 16px 48px rgba(25,91,90,0.3); }
 .stat-card.wide { grid-column: span 2; background: var(--salmon-soft); border-color: rgba(255,135,115,0.25); }
@@ -704,11 +704,12 @@ footer {
   font-weight: 700;
   line-height: 1;
   margin-bottom: 14px;
-  color: var(--salmon);
+  color: var(--jungle);
   letter-spacing: -0.03em;
 }
 .stat-card.wide .stat-value { color: var(--salmon-dark); }
 .stat-card.teal .stat-value { color: var(--turquoise); }
+.stat-card .stat-label { color: var(--jet-light); }
 .stat-label {
   font-size: 0.95rem;
   color: var(--jet-light);
@@ -733,6 +734,29 @@ footer {
 }
 .stat-card.teal .stat-company { color: rgba(255,255,255,0.45); background: rgba(255,255,255,0.1); }
 .stat-card.wide .stat-company { color: var(--salmon-dark); background: rgba(255,135,115,0.12); }
+
+.stat-company.stat-company-logo {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  height: 28px;
+  align-items: center;
+}
+.stat-company.stat-company-logo img {
+  height: 100%;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  opacity: 0.85;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+.stat-card:hover .stat-company.stat-company-logo img { opacity: 1; filter: grayscale(0%); }
+.stat-card.teal .stat-company.stat-company-logo img {
+  filter: grayscale(100%) brightness(0) invert(1);
+  opacity: 0.85;
+}
+.stat-card.teal:hover .stat-company.stat-company-logo img { opacity: 1; }
 
 /* ── SCROLL REVEAL ── */
 .reveal { opacity: 0; transform: translateY(28px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }

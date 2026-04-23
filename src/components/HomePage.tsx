@@ -200,7 +200,9 @@ export default function HomePage({ t, lang }: HomePageProps) {
               >
                 <div className={`stat-value${stat.teal ? ' teal' : ''}`}>{stat.value}</div>
                 <div className="stat-label">{stat.label}</div>
-                <span className="stat-company">{stat.company}</span>
+                <span className="stat-company stat-company-logo">
+                  <img src={stat.logo} alt={stat.company} />
+                </span>
               </div>
             ))}
           </div>

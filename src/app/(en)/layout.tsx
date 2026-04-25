@@ -87,9 +87,6 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${ubuntu.variable} ${sourceSans.variable}`}>
       <head>
-        <link rel="alternate" hrefLang="en" href="https://greow.digital/" />
-        <link rel="alternate" hrefLang="sv" href="https://greow.digital/sv/" />
-        <link rel="alternate" hrefLang="x-default" href="https://greow.digital/" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

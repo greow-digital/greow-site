@@ -29,18 +29,32 @@ const featureIcons = [
   </svg>,
 ]
 
-const LogoSet = () => (
+const carouselLogos = [
+  { src: '/assets/logo-dnb.svg', alt: 'DNB' },
+  { src: '/assets/logo-funnel.svg', alt: 'Funnel' },
+  { src: '/assets/logo-leadfeeder.svg', alt: 'Leadfeeder' },
+  { src: '/assets/logo-happyvegan.svg', alt: 'Happy Vegan' },
+  { src: '/assets/logo-ice.svg', alt: 'Ice' },
+  { src: '/assets/logo-linkmobility.svg', alt: 'Link Mobility' },
+  { src: '/assets/logo-refapp.svg', alt: 'Refapp' },
+  { src: '/assets/logo-rikstv.svg', alt: 'RiksTV' },
+  { src: '/assets/logo-strim.svg', alt: 'Strim' },
+  { src: '/assets/logo-telia.svg', alt: 'Telia' },
+] as const
+
+const LogoSet = ({ ariaHidden = false }: { ariaHidden?: boolean }) => (
   <>
-    <span className="logo-item"><img src="/assets/logo-dnb.svg" alt="DNB" /></span>
-    <span className="logo-item"><img src="/assets/logo-funnel.svg" alt="Funnel" /></span>
-    <span className="logo-item"><img src="/assets/logo-leadfeeder.svg" alt="Leadfeeder" /></span>
-    <span className="logo-item"><img src="/assets/logo-happyvegan.svg" alt="Happy Vegan" /></span>
-    <span className="logo-item"><img src="/assets/logo-ice.svg" alt="Ice" /></span>
-    <span className="logo-item"><img src="/assets/logo-linkmobility.svg" alt="Link Mobility" /></span>
-    <span className="logo-item"><img src="/assets/logo-refapp.svg" alt="Refapp" /></span>
-    <span className="logo-item"><img src="/assets/logo-rikstv.svg" alt="RiksTV" /></span>
-    <span className="logo-item"><img src="/assets/logo-strim.svg" alt="Strim" /></span>
-    <span className="logo-item"><img src="/assets/logo-telia.svg" alt="Telia" /></span>
+    {carouselLogos.map((logo) => (
+      <span key={logo.alt} className="logo-item" aria-hidden={ariaHidden || undefined}>
+        <img
+          src={logo.src}
+          alt={ariaHidden ? '' : logo.alt}
+          loading="lazy"
+          decoding="async"
+          height={40}
+        />
+      </span>
+    ))}
   </>
 )
 
@@ -75,7 +89,15 @@ export default function HomePage({ t, lang }: HomePageProps) {
             </div>
 
             <div className="hero-founder" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>
-              <img src="/assets/erik-werner.png" alt={t.hero.founderName} className="hero-founder-img" />
+              <img
+                src="/assets/erik-werner.png"
+                alt={t.hero.founderName}
+                className="hero-founder-img"
+                width={56}
+                height={56}
+                loading="eager"
+                decoding="async"
+              />
               <div>
                 <p className="hero-founder-name">{t.hero.founderName}</p>
                 <p className="hero-founder-role">{t.hero.founderRole}<br />{t.hero.founderRole2}</p>
@@ -85,7 +107,16 @@ export default function HomePage({ t, lang }: HomePageProps) {
 
           <div className="hero-visual">
             <div className="hero-scroll-track">
-              <img src="/images/HERO_CAROUSEL_2.png" alt="Growth dashboard" className="hero-dashboard-img" />
+              <img
+                src="/images/HERO_CAROUSEL_2.png"
+                alt="Growth dashboard"
+                className="hero-dashboard-img"
+                width={1200}
+                height={800}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
           </div>
         </div>
@@ -95,9 +126,9 @@ export default function HomePage({ t, lang }: HomePageProps) {
       <div className="logo-carousel">
         <p className="logo-carousel-label">{t.logos.label}</p>
         <div className="logo-track-wrap">
-          <div className="logo-track">
+          <div className="logo-track" aria-label={t.logos.label}>
             <LogoSet />
-            <LogoSet />
+            <LogoSet ariaHidden />
           </div>
         </div>
       </div>
@@ -201,7 +232,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
                 <div className={`stat-value${stat.teal ? ' teal' : ''}`}>{stat.value}</div>
                 <div className="stat-label">{stat.label}</div>
                 <span className="stat-company stat-company-logo">
-                  <img src={stat.logo} alt={stat.company} />
+                  <img src={stat.logo} alt={stat.company} loading="lazy" decoding="async" height={28} />
                 </span>
               </div>
             ))}

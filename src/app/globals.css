@@ -758,6 +758,19 @@ footer {
 }
 .stat-card.teal:hover .stat-company.stat-company-logo img { opacity: 1; }
 
+/* ── CAL EMBED ── */
+.cal-inline-embed {
+  height: 700px;
+  width: 100%;
+}
+.cal-inline-embed iframe { height: 100% !important; width: 100% !important; }
+@media (max-width: 768px) {
+  .cal-inline-embed {
+    height: auto;
+    min-height: 1100px;
+  }
+}
+
 /* ── SCROLL REVEAL ── */
 .reveal { opacity: 0; transform: translateY(28px); transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
 .reveal.visible { opacity: 1; transform: translateY(0); }

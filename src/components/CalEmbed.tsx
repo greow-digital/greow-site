@@ -33,10 +33,9 @@ export default function CalEmbed() {
   return (
     <div
       id="cal-inline-embed"
-      className="reveal"
+      className="reveal cal-inline-embed"
       style={{
         minWidth: '320px',
-        height: '700px',
         marginTop: '32px',
         borderRadius: 'var(--radius)',
         overflow: 'hidden',

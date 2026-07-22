@@ -136,6 +136,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${SITE_URL}/work/telia-norway/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/telia-norway/`,
+          sv: `${SITE_URL}/sv/case/telia-norway/`,
+          'x-default': `${SITE_URL}/work/telia-norway/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/case/telia-norway/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/telia-norway/`,
+          sv: `${SITE_URL}/sv/case/telia-norway/`,
+          'x-default': `${SITE_URL}/work/telia-norway/`,
+        },
+      },
+    },
+    {
       url: `${SITE_URL}/work/bnbalyze/`,
       lastModified,
       changeFrequency: 'monthly',

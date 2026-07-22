@@ -110,13 +110,12 @@ export interface WorkIndexCopy {
 
 // Curated engagements reused from the homepage proof section — shown on the
 // Work index as a portfolio strip alongside the full case studies.
+// All former engagements have graduated to full case studies. New teaser-only
+// engagements can be added here; the Work index renders this strip only when
+// it's non-empty.
 export const engagements: Record<Lang, Engagement[]> = {
-  en: [
-    { client: 'Telia', logo: '/assets/logo-telia.svg', metric: '+100%', label: 'conversion rate after rebuilding the entire checkout.' },
-  ],
-  sv: [
-    { client: 'Telia', logo: '/assets/logo-telia.svg', metric: '+100%', label: 'konverteringsgrad efter en total ombyggnad av checkouten.' },
-  ],
+  en: [],
+  sv: [],
 }
 
 export const projects: Record<Lang, ProjectSummary[]> = {
@@ -168,6 +167,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['Growth leadership', 'Acquisition', 'Performance', 'Attribution', 'E-commerce'],
       metric: { value: '−40%', label: 'lower CAC' },
       year: '2018–20',
+    },
+    {
+      slug: 'telia-norway',
+      href: '/work/telia-norway/',
+      accent: 'turquoise',
+      client: 'Telia Norway',
+      logo: '/assets/logo-telia.svg',
+      title: 'E-commerce from a secondary channel to a scalable growth platform',
+      blurb: 'As E-Commerce Manager, I rebuilt Telia Norway’s webshop across B2C and B2B, stood up an agile product organisation, rebuilt performance marketing, and launched the company’s first omnichannel programme — doubling conversion.',
+      tags: ['E-commerce', 'Agile', 'CRO', 'Performance', 'Omnichannel'],
+      metric: { value: '2×', label: 'e-commerce conversion' },
+      year: '2014–17',
     },
     {
       slug: 'bnbalyze',
@@ -241,6 +252,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['Growth-ledarskap', 'Förvärv', 'Performance', 'Attribution', 'E-handel'],
       metric: { value: '−40%', label: 'lägre CAC' },
       year: '2018–20',
+    },
+    {
+      slug: 'telia-norway',
+      href: '/sv/case/telia-norway/',
+      accent: 'turquoise',
+      client: 'Telia Norway',
+      logo: '/assets/logo-telia.svg',
+      title: 'E-handel från en sekundär kanal till en skalbar tillväxtplattform',
+      blurb: 'Som E-Commerce Manager byggde jag om Telia Norges webbshop över B2C och B2B, satte upp en agil produktorganisation, byggde om performance marketing, och lanserade bolagets första omnikanalprogram — och fördubblade konverteringen.',
+      tags: ['E-handel', 'Agilt', 'CRO', 'Performance', 'Omnikanal'],
+      metric: { value: '2×', label: 'e-handelskonvertering' },
+      year: '2014–17',
     },
     {
       slug: 'bnbalyze',
@@ -3231,9 +3254,533 @@ const rikstvSv: CaseStudy = {
   },
 }
 
+// ── Telia Norway case study ──────────────────────────────────────────────────
+
+const teliaEn: CaseStudy = {
+  slug: 'telia-norway',
+  accent: 'turquoise',
+  kicker: 'Case study',
+  client: 'Telia Norway',
+  title: 'Turning e-commerce from a secondary channel into a scalable growth platform.',
+  intro:
+    'Doubling conversion and launching Telia Norway’s first omnichannel programme — a full platform rebuild across B2C and B2B, an agile product organisation built from scratch, and a rebuilt performance-marketing operation.',
+  meta: [
+    { label: 'Role', value: 'E-Commerce Manager' },
+    { label: 'Period', value: 'Aug 2014 – Jul 2017' },
+    { label: 'Scope', value: 'E-commerce · agile · performance · omnichannel' },
+    { label: 'Context', value: 'Norway — telecom, consumer & business' },
+  ],
+  metrics: [
+    { value: '2×', label: 'e-commerce conversion rate', note: 'A 100% increase from the rebuild and optimisation programme' },
+    { value: 'Rebuild', label: 'of the platform, B2C & B2B', note: 'From a static sales site to a managed product' },
+    { value: '1st', label: 'omnichannel programme for Telia Norway', note: 'Connecting digital commerce and physical retail' },
+  ],
+  overview: {
+    heading: 'From a supporting channel to a growth platform.',
+    body: [
+      'Telia Norway is one of Scandinavia’s largest telecommunications companies, serving both consumer and business customers. When I joined in 2014, the digital sales channel was underperforming: an inflexible, slow-to-develop platform, weak conversion, and no structured product-development or performance-marketing model. Digital commerce operated as a secondary channel rather than a central revenue driver.',
+      'My mandate was to change that. I took ownership of the e-commerce platform across B2C and B2B, rebuilt it from scratch, established an agile product organisation, and transformed the company’s approach to digital acquisition and measurement.',
+      'The new platform doubled e-commerce conversion and created the foundation for Telia Norway’s first omnichannel programme, connecting online and physical retail journeys.',
+    ],
+  },
+  startingPoint: {
+    label: 'The starting point',
+    heading: 'A complex category on an inflexible platform.',
+    lead:
+      'Telecoms is a complex e-commerce category — customers aren’t simply buying a product. A single journey might require them to:',
+    points: [
+      'Select a subscription and choose a device',
+      'Compare contract structures, data and service allowances',
+      'Verify eligibility, transfer a number, pass identity and credit checks',
+      'Decide between online and in-store fulfilment',
+      'Navigate different consumer and business requirements',
+    ],
+    goal:
+      'Telia’s existing platform made these journeys harder than necessary — slow to change, expensive to maintain, and poorly suited to continuous optimisation, with no shared operating model connecting e-commerce, technology, design, analytics, media and physical retail. The opportunity was to rebuild both the platform and the system around it.',
+  },
+  ownership: {
+    label: 'What I owned',
+    heading: 'Digital commerce performance, end-to-end.',
+    intro:
+      'I had end-to-end responsibility for Telia Norway’s digital commerce across B2C and B2B — leading a team of developers, designers, analysts and channel specialists while coordinating Marketing, Sales, Technology and Retail:',
+    items: [
+      'E-commerce strategy & digital sales',
+      'The webshop as a product',
+      'Platform rebuild',
+      'Conversion-rate optimisation',
+      'Product roadmap & prioritisation',
+      'Agile development',
+      'Performance marketing',
+      'Measurement & attribution',
+      'Agency selection & management',
+      'Paid search, display & affiliates',
+      'Omnichannel strategy',
+      'Cross-functional team leadership',
+    ],
+  },
+  acts: [
+    {
+      label: 'Act I',
+      title: 'Rebuilding the e-commerce platform',
+      subtitle: 'From a static sales website to a flexible, continuously optimisable product.',
+      blocks: [
+        {
+          title: 'A rebuild from the ground up',
+          body:
+            'The existing webshop was too inflexible for Telia’s digital ambitions — product changes, campaigns and experience improvements took too long to reach market. I led a complete rebuild, aimed not just at modernising the interface but at a foundation that could:',
+          items: [
+            'Simplify complex purchasing journeys',
+            'Support both B2C and B2B propositions',
+            'Improve conversion and make campaigns faster to launch',
+            'Allow continuous testing and reduce dependency on large releases',
+            'Support future omnichannel capabilities',
+          ],
+        },
+        {
+          title: 'E-commerce as a product',
+          body:
+            'The rebuild created a more flexible foundation for subscriptions, devices, offers, customer data and commercial campaigns — and changed the role of e-commerce inside Telia. It became a product with an actively managed roadmap rather than a static sales website.',
+        },
+      ],
+    },
+    {
+      label: 'Act II',
+      title: 'Establishing agile product development',
+      subtitle: 'A faster, more customer-focused way of building digital commerce.',
+      blocks: [
+        {
+          title: 'A cross-functional product team',
+          body:
+            'A new platform alone wouldn’t solve the delivery problem. I established an agile, cross-functional team combining development, UX and design, analytics, e-commerce, channel expertise and commercial stakeholders — with a structured process to define problems, prioritise the roadmap, break work into smaller releases, run cycles, measure and iterate on evidence.',
+        },
+        {
+          title: 'Incremental delivery, clearer ownership',
+          body:
+            'This sharply reduced the time to launch features, improvements and campaigns. Instead of waiting for large releases, the team delivered incrementally, learned from behaviour and continuously improved — and e-commerce performance became a shared cross-functional responsibility rather than disconnected requests passed between departments.',
+        },
+      ],
+    },
+    {
+      label: 'Act III',
+      title: 'Doubling conversion',
+      subtitle: 'Optimising the purchase journey with platform and commercial performance measured together.',
+      blocks: [
+        {
+          title: 'Reducing friction end-to-end',
+          body:
+            'With a flexible platform and faster delivery in place, I led continuous optimisation of the purchasing journey, reducing friction across:',
+          items: [
+            'Product discovery and offer / subscription comparison',
+            'Device selection and checkout',
+            'Forms and validation',
+            'B2B and B2C-specific journeys',
+            'Campaign landing pages and the mobile experience',
+          ],
+        },
+        {
+          title: 'Measured together — a 100% uplift',
+          body:
+            'Product development and commercial performance were measured together, so changes were prioritised by their effect on behaviour and sales rather than internal assumptions. The combined rebuild and optimisation programme produced a 100% increase in e-commerce conversion — moving digital sales closer to a primary growth channel rather than a supporting surface.',
+        },
+      ],
+    },
+    {
+      label: 'Act IV',
+      title: 'Rebuilding performance marketing',
+      subtitle: 'A measurable, commercially accountable acquisition operation.',
+      blocks: [
+        {
+          title: 'From activity metrics to revenue',
+          body:
+            'Telia’s paid-acquisition model needed to become measurable and accountable. I rebuilt the performance-marketing operation across paid search, display and affiliates:',
+          items: [
+            'Selecting and onboarding new agency partners',
+            'Establishing channel strategies and clearer campaign / creative briefs',
+            'Implementing performance reviews and structured optimisation routines',
+            'Improving measurement and attribution, connecting media to digital sales',
+          ],
+        },
+        {
+          title: 'Owning both sides of the click',
+          body:
+            'Because I owned both the e-commerce experience and the acquisition channels, media performance could be connected directly to landing pages, product journeys and conversion outcomes — moving beyond channel-level activity metrics to understand which investments actually contributed to acquisition and revenue.',
+        },
+      ],
+    },
+    {
+      label: 'Act V',
+      title: 'Launching Telia’s first omnichannel programme',
+      subtitle: 'Connecting digital commerce and physical retail into one path to purchase.',
+      blocks: [
+        {
+          title: 'Connecting online and offline',
+          body:
+            'Customers didn’t think of Telia as separate online and offline businesses — they expected to research in one channel, continue in another, and get a consistent experience. Internally, digital commerce and physical retail had operated as distinct journeys. I led the initiative to connect them, aligning digital acquisition, online discovery, e-commerce, physical stores, customer data and sales journeys across B2C and B2B.',
+        },
+        {
+          title: 'Omnichannel as a capability',
+          body:
+            'A customer might discover an offer through advertising, research it online and complete the purchase in a store — or start in-store and continue digitally. Connecting these journeys improved continuity and gave Telia a stronger foundation for understanding the complete path to purchase, establishing omnichannel as a strategic capability rather than a collection of isolated cross-channel campaigns.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Results',
+    heading: 'A platform, an operating model, and a new capability.',
+    intro: 'A rebuild that changed the commercial role of digital sales inside the organisation.',
+    items: [
+      {
+        value: '2×',
+        title: 'Conversion increased by 100%',
+        body:
+          'The new platform, simplified purchase journeys and continuous optimisation programme doubled e-commerce conversion.',
+      },
+      {
+        value: 'Rebuild',
+        title: 'E-commerce platform rebuilt',
+        body:
+          'A complete rebuild of Telia Norway’s webshop across consumer and business segments — more flexible, easier to optimise and significantly faster to develop, with releases shipping in smaller, faster cycles.',
+      },
+      {
+        value: '1st',
+        title: 'First omnichannel programme launched',
+        body:
+          'Telia Norway’s first initiative connecting digital commerce and physical retail across B2C and B2B — omnichannel established as a strategic capability, not a one-off campaign.',
+      },
+      {
+        value: 'Agile',
+        title: 'An agile product organisation, from scratch',
+        body:
+          'I created and led a cross-functional team of developers, designers, analysts and channel specialists — and rebuilt performance marketing with new agencies, measurement and attribution across paid search, display and affiliates.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What the transformation taught.',
+    items: [
+      {
+        title: 'Platform transformation requires operating-model transformation.',
+        body: 'Rebuilding the technology created potential; the agile team made continuous improvement possible.',
+      },
+      {
+        title: 'E-commerce should be managed as a product.',
+        body: 'A roadmap based on customer behaviour and commercial outcomes beats a queue of stakeholder requests.',
+      },
+      {
+        title: 'Conversion and acquisition must be optimised together.',
+        body: 'Media efficiency depends on what happens after the click; platform performance depends on the quality of acquired traffic.',
+      },
+      {
+        title: 'Complex products require simpler journeys.',
+        body: 'The digital experience should absorb telecom’s difficult choices and dependencies rather than pass them to the customer.',
+      },
+      {
+        title: 'Omnichannel is a customer journey, not a channel project.',
+        body: 'Customers move naturally between online and offline; the organisation and its data need to support that behaviour.',
+      },
+      {
+        title: 'Faster deployment creates commercial advantage.',
+        body: 'Shorter release cycles let Telia respond more quickly to campaigns, customer insight and market changes.',
+      },
+    ],
+  },
+  role: {
+    label: 'My role',
+    heading: 'E-commerce transformation across B2C and B2B.',
+    body:
+      'I led Telia Norway’s e-commerce transformation, coordinating across Digital, Marketing, Sales, Technology, Analytics and Retail:',
+    items: [
+      'E-commerce and digital-sales strategy',
+      'Complete platform rebuild',
+      'Product roadmap and prioritisation',
+      'Agile team design and leadership',
+      'UX and conversion-rate optimisation',
+      'Performance-marketing strategy',
+      'Measurement and attribution',
+      'Agency selection and management',
+      'Paid search, display and affiliates',
+      'Omnichannel strategy and implementation',
+    ],
+  },
+  quote: {
+    text:
+      'I rebuilt Telia Norway’s e-commerce platform and operating model, doubled conversion, transformed performance marketing, and launched the company’s first omnichannel programme across B2C and B2B.',
+    author: 'Erik Werner',
+    role: 'E-Commerce Manager, Telia Norway',
+  },
+  cta: {
+    heading: 'Turning e-commerce into a growth platform?',
+    body: 'Whether it’s a rebuild, an operating-model shift or connecting online and offline, let’s talk about the system that makes digital sales compound.',
+    button: 'Book a call →',
+  },
+}
+
+const teliaSv: CaseStudy = {
+  slug: 'telia-norway',
+  accent: 'turquoise',
+  kicker: 'Case study',
+  client: 'Telia Norway',
+  title: 'Förvandlade e-handel från en sekundär kanal till en skalbar tillväxtplattform.',
+  intro:
+    'Fördubblade konverteringen och lanserade Telia Norges första omnikanalprogram — en total plattformsombyggnad över B2C och B2B, en agil produktorganisation byggd från grunden, och en ombyggd performance-marketing-operation.',
+  meta: [
+    { label: 'Roll', value: 'E-Commerce Manager' },
+    { label: 'Period', value: 'Aug 2014 – Jul 2017' },
+    { label: 'Omfattning', value: 'E-handel · agilt · performance · omnikanal' },
+    { label: 'Kontext', value: 'Norge — telekom, konsument & företag' },
+  ],
+  metrics: [
+    { value: '2×', label: 'e-handelns konverteringsgrad', note: 'En 100-procentig ökning från ombyggnaden och optimeringsprogrammet' },
+    { value: 'Ombyggd', label: 'plattform, B2C & B2B', note: 'Från en statisk säljsajt till en styrd produkt' },
+    { value: '1:a', label: 'omnikanalprogrammet för Telia Norge', note: 'Kopplar ihop digital handel och fysisk butik' },
+  ],
+  overview: {
+    heading: 'Från en stödjande kanal till en tillväxtplattform.',
+    body: [
+      'Telia Norge är ett av Skandinaviens största telekombolag och betjänar både konsument- och företagskunder. När jag klev in 2014 underpresterade den digitala säljkanalen: en oflexibel plattform som var långsam att utveckla, svag konvertering och ingen strukturerad modell för produktutveckling eller performance marketing. Digital handel fungerade som en sekundär kanal snarare än en central intäktsdrivare.',
+      'Mitt uppdrag var att ändra på det. Jag tog ägarskap över e-handelsplattformen över B2C och B2B, byggde om den från grunden, etablerade en agil produktorganisation och transformerade bolagets sätt att arbeta med digitalt förvärv och mätning.',
+      'Den nya plattformen fördubblade e-handelns konvertering och skapade grunden för Telia Norges första omnikanalprogram, som kopplade ihop resor online och i fysisk butik.',
+    ],
+  },
+  startingPoint: {
+    label: 'Utgångsläget',
+    heading: 'En komplex kategori på en oflexibel plattform.',
+    lead:
+      'Telekom är en komplex e-handelskategori — kunder köper inte bara en produkt. En enda resa kan kräva att de:',
+    points: [
+      'Väljer ett abonnemang och en enhet',
+      'Jämför avtalsstrukturer, data- och tjänstepotter',
+      'Verifierar behörighet, flyttar ett nummer, klarar identitets- och kreditkontroller',
+      'Väljer mellan leverans online och i butik',
+      'Navigerar olika krav för konsument och företag',
+    ],
+    goal:
+      'Telias befintliga plattform gjorde dessa resor svårare än nödvändigt — långsam att ändra, dyr att underhålla och dåligt lämpad för löpande optimering, utan en gemensam operativ modell som kopplade ihop e-handel, teknik, design, analys, media och fysisk butik. Möjligheten var att bygga om både plattformen och systemet runt den.',
+  },
+  ownership: {
+    label: 'Vad jag ägde',
+    heading: 'Digital handelsprestanda, från start till mål.',
+    intro:
+      'Jag hade helhetsansvar för Telia Norges digitala handel över B2C och B2B — och ledde ett team av utvecklare, designers, analytiker och kanalspecialister samtidigt som jag samordnade Marknad, Sälj, Teknik och Retail:',
+    items: [
+      'E-handelsstrategi & digital försäljning',
+      'Webbshoppen som en produkt',
+      'Plattformsombyggnad',
+      'Konverteringsoptimering',
+      'Produkt-roadmap & prioritering',
+      'Agil utveckling',
+      'Performance marketing',
+      'Mätning & attribution',
+      'Byråval & byråstyrning',
+      'Betald sök, display & affiliates',
+      'Omnikanalstrategi',
+      'Tvärfunktionellt teamledarskap',
+    ],
+  },
+  acts: [
+    {
+      label: 'Akt I',
+      title: 'Bygga om e-handelsplattformen',
+      subtitle: 'Från en statisk säljsajt till en flexibel, löpande optimerbar produkt.',
+      blocks: [
+        {
+          title: 'En ombyggnad från grunden',
+          body:
+            'Den befintliga webbshoppen var för oflexibel för Telias digitala ambitioner — produktändringar, kampanjer och upplevelseförbättringar tog för lång tid att nå marknaden. Jag ledde en total ombyggnad, inriktad inte bara på att modernisera gränssnittet utan på en grund som kunde:',
+          items: [
+            'Förenkla komplexa köpresor',
+            'Stödja både B2C- och B2B-erbjudanden',
+            'Förbättra konvertering och göra kampanjer snabbare att lansera',
+            'Möjliggöra löpande testning och minska beroendet av stora releaser',
+            'Stödja framtida omnikanalförmågor',
+          ],
+        },
+        {
+          title: 'E-handel som en produkt',
+          body:
+            'Ombyggnaden skapade en mer flexibel grund för abonnemang, enheter, erbjudanden, kunddata och kommersiella kampanjer — och förändrade e-handelns roll inom Telia. Den blev en produkt med en aktivt styrd roadmap snarare än en statisk säljsajt.',
+        },
+      ],
+    },
+    {
+      label: 'Akt II',
+      title: 'Etablera agil produktutveckling',
+      subtitle: 'Ett snabbare, mer kundfokuserat sätt att bygga digital handel.',
+      blocks: [
+        {
+          title: 'Ett tvärfunktionellt produktteam',
+          body:
+            'En ny plattform ensam skulle inte lösa leveransproblemet. Jag etablerade ett agilt, tvärfunktionellt team som kombinerade utveckling, UX och design, analys, e-handel, kanalexpertis och kommersiella intressenter — med en strukturerad process för att definiera problem, prioritera roadmapen, bryta ner arbete i mindre releaser, köra cykler, mäta och iterera på evidens.',
+        },
+        {
+          title: 'Inkrementell leverans, tydligare ägarskap',
+          body:
+            'Detta minskade kraftigt tiden att lansera funktioner, förbättringar och kampanjer. Istället för att vänta på stora releaser levererade teamet inkrementellt, lärde av beteende och förbättrade löpande — och e-handelsprestanda blev ett gemensamt tvärfunktionellt ansvar snarare än frånkopplade förfrågningar som skickades mellan avdelningar.',
+        },
+      ],
+    },
+    {
+      label: 'Akt III',
+      title: 'Fördubbla konverteringen',
+      subtitle: 'Optimera köpresan med plattforms- och kommersiell prestanda mätta tillsammans.',
+      blocks: [
+        {
+          title: 'Minska friktion hela vägen',
+          body:
+            'Med en flexibel plattform och snabbare leverans på plats ledde jag löpande optimering av köpresan och minskade friktion över:',
+          items: [
+            'Produktupptäckt och jämförelse av erbjudanden / abonnemang',
+            'Enhetsval och checkout',
+            'Formulär och validering',
+            'B2B- och B2C-specifika resor',
+            'Kampanjlandningssidor och mobilupplevelsen',
+          ],
+        },
+        {
+          title: 'Mätt tillsammans — en 100-procentig uppgång',
+          body:
+            'Produktutveckling och kommersiell prestanda mättes tillsammans, så att förändringar prioriterades efter sin effekt på beteende och försäljning snarare än interna antaganden. Den kombinerade ombyggnaden och optimeringen gav en 100-procentig ökning av e-handelns konvertering — och flyttade digital försäljning närmare en primär tillväxtkanal snarare än en stödjande yta.',
+        },
+      ],
+    },
+    {
+      label: 'Akt IV',
+      title: 'Bygga om performance marketing',
+      subtitle: 'En mätbar, kommersiellt ansvarig förvärvsoperation.',
+      blocks: [
+        {
+          title: 'Från aktivitetsmått till intäkter',
+          body:
+            'Telias modell för betalt förvärv behövde bli mätbar och ansvarig. Jag byggde om performance-marketing-operationen över betald sök, display och affiliates:',
+          items: [
+            'Välja och onboarda nya byråpartners',
+            'Etablera kanalstrategier och tydligare kampanj- / kreativbriefs',
+            'Införa performance-genomgångar och strukturerade optimeringsrutiner',
+            'Förbättra mätning och attribution, koppla media till digital försäljning',
+          ],
+        },
+        {
+          title: 'Äga båda sidor av klicket',
+          body:
+            'Eftersom jag ägde både e-handelsupplevelsen och förvärvskanalerna kunde media-prestanda kopplas direkt till landningssidor, produktresor och konverteringsutfall — och gick bortom aktivitetsmått på kanalnivå för att förstå vilka investeringar som faktiskt bidrog till förvärv och intäkter.',
+        },
+      ],
+    },
+    {
+      label: 'Akt V',
+      title: 'Lansera Telias första omnikanalprogram',
+      subtitle: 'Koppla ihop digital handel och fysisk butik till en väg till köp.',
+      blocks: [
+        {
+          title: 'Koppla ihop online och offline',
+          body:
+            'Kunder tänkte inte på Telia som separata online- och offline-affärer — de förväntade sig att researcha i en kanal, fortsätta i en annan och få en konsekvent upplevelse. Internt hade digital handel och fysisk butik drivits som skilda resor. Jag ledde initiativet att koppla ihop dem, och samordnade digitalt förvärv, online-upptäckt, e-handel, fysiska butiker, kunddata och säljresor över B2C och B2B.',
+        },
+        {
+          title: 'Omnikanal som en förmåga',
+          body:
+            'En kund kunde upptäcka ett erbjudande genom annonsering, researcha det online och slutföra köpet i en butik — eller börja i butik och fortsätta digitalt. Att koppla ihop dessa resor förbättrade kontinuiteten och gav Telia en starkare grund för att förstå hela vägen till köp, och etablerade omnikanal som en strategisk förmåga snarare än en samling isolerade kampanjer mellan kanaler.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Resultat',
+    heading: 'En plattform, en operativ modell och en ny förmåga.',
+    intro: 'En ombyggnad som förändrade den digitala försäljningens kommersiella roll i organisationen.',
+    items: [
+      {
+        value: '2×',
+        title: 'Konvertering ökad med 100%',
+        body:
+          'Den nya plattformen, förenklade köpresor och det löpande optimeringsprogrammet fördubblade e-handelns konvertering.',
+      },
+      {
+        value: 'Ombyggd',
+        title: 'E-handelsplattformen ombyggd',
+        body:
+          'En total ombyggnad av Telia Norges webbshop över konsument- och företagssegment — mer flexibel, enklare att optimera och betydligt snabbare att utveckla, med releaser i mindre, snabbare cykler.',
+      },
+      {
+        value: '1:a',
+        title: 'Första omnikanalprogrammet lanserat',
+        body:
+          'Telia Norges första initiativ som kopplade ihop digital handel och fysisk butik över B2C och B2B — omnikanal etablerad som en strategisk förmåga, inte en engångskampanj.',
+      },
+      {
+        value: 'Agilt',
+        title: 'En agil produktorganisation, från grunden',
+        body:
+          'Jag skapade och ledde ett tvärfunktionellt team av utvecklare, designers, analytiker och kanalspecialister — och byggde om performance marketing med nya byråer, mätning och attribution över betald sök, display och affiliates.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad transformationen lärde mig.',
+    items: [
+      {
+        title: 'Plattformstransformation kräver transformation av den operativa modellen.',
+        body: 'Att bygga om tekniken skapade potential; det agila teamet gjorde löpande förbättring möjlig.',
+      },
+      {
+        title: 'E-handel bör drivas som en produkt.',
+        body: 'En roadmap baserad på kundbeteende och kommersiella utfall slår en kö av intressentförfrågningar.',
+      },
+      {
+        title: 'Konvertering och förvärv måste optimeras tillsammans.',
+        body: 'Media-effektivitet beror på vad som händer efter klicket; plattformsprestanda beror på kvaliteten på den förvärvade trafiken.',
+      },
+      {
+        title: 'Komplexa produkter kräver enklare resor.',
+        body: 'Den digitala upplevelsen bör absorbera telekomens svåra val och beroenden snarare än att skicka dem vidare till kunden.',
+      },
+      {
+        title: 'Omnikanal är en kundresa, inte ett kanalprojekt.',
+        body: 'Kunder rör sig naturligt mellan online och offline; organisationen och dess data behöver stödja det beteendet.',
+      },
+      {
+        title: 'Snabbare leverans skapar kommersiell fördel.',
+        body: 'Kortare releasecykler lät Telia svara snabbare på kampanjer, kundinsikt och marknadsförändringar.',
+      },
+    ],
+  },
+  role: {
+    label: 'Min roll',
+    heading: 'E-handelstransformation över B2C och B2B.',
+    body:
+      'Jag ledde Telia Norges e-handelstransformation och samordnade över Digital, Marknad, Sälj, Teknik, Analys och Retail:',
+    items: [
+      'E-handels- och digital försäljningsstrategi',
+      'Total plattformsombyggnad',
+      'Produkt-roadmap och prioritering',
+      'Design och ledning av agilt team',
+      'UX och konverteringsoptimering',
+      'Performance-marketing-strategi',
+      'Mätning och attribution',
+      'Byråval och byråstyrning',
+      'Betald sök, display och affiliates',
+      'Omnikanalstrategi och implementering',
+    ],
+  },
+  quote: {
+    text:
+      'Jag byggde om Telia Norges e-handelsplattform och operativa modell, fördubblade konverteringen, transformerade performance marketing, och lanserade bolagets första omnikanalprogram över B2C och B2B.',
+    author: 'Erik Werner',
+    role: 'E-Commerce Manager, Telia Norway',
+  },
+  cta: {
+    heading: 'Gör e-handel till en tillväxtplattform?',
+    body: 'Oavsett om det är en ombyggnad, ett skifte i operativ modell eller att koppla ihop online och offline — låt oss prata om systemet som får digital försäljning att växa med tiden.',
+    button: 'Boka ett samtal →',
+  },
+}
+
 export const caseStudies: Record<Lang, Record<string, CaseStudy>> = {
-  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'rikstv-strim': rikstvEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
-  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'rikstv-strim': rikstvSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
+  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'rikstv-strim': rikstvEn, 'telia-norway': teliaEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
+  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'rikstv-strim': rikstvSv, 'telia-norway': teliaSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
 }
 
 // ── SEO helpers ──────────────────────────────────────────────────────────────

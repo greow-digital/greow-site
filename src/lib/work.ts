@@ -136,6 +136,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       year: '2025–26',
     },
     {
+      slug: 'bnbalyze',
+      href: '/work/bnbalyze/',
+      accent: 'jungle',
+      client: 'Bnbalyze',
+      logo: '/assets/logo-bnbalyze.svg',
+      title: 'A vibe-coding experiment that became a full proptech SaaS — now AI-native',
+      blurb: 'A solo build: a short-term-rental calculator that grew into a complete SaaS platform, reached 100+ organic users and real-estate pilots — and is being rebuilt as an agentic property analyst that keeps verified facts and AI judgement strictly separate.',
+      tags: ['Founder', 'Full-stack', 'AI pipeline', 'Proptech', 'Vibe-coding'],
+      metric: { value: '100+', label: 'organic users' },
+      year: 'Ongoing',
+    },
+    {
       slug: 'happy-vegan',
       href: '/work/happy-vegan/',
       accent: 'turquoise',
@@ -172,6 +184,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['PLG', 'Onboarding', 'Pricing', 'Produkt-UX', 'GTM'],
       metric: { value: '100%', label: 'fler nya konton' },
       year: '2025–26',
+    },
+    {
+      slug: 'bnbalyze',
+      href: '/sv/case/bnbalyze/',
+      accent: 'jungle',
+      client: 'Bnbalyze',
+      logo: '/assets/logo-bnbalyze.svg',
+      title: 'Ett vibe-coding-experiment som blev en komplett proptech-SaaS — nu AI-native',
+      blurb: 'Ett solobygge: en kalkylator för korttidsuthyrning som växte till en komplett SaaS-plattform, nådde 100+ organiska användare och fastighetsmäklarpiloter — och byggs nu om till en agentisk fastighetsanalytiker som håller verifierade fakta och AI-omdöme strikt åtskilda.',
+      tags: ['Grundare', 'Full-stack', 'AI-pipeline', 'Proptech', 'Vibe-coding'],
+      metric: { value: '100+', label: 'organiska användare' },
+      year: 'Pågående',
     },
     {
       slug: 'happy-vegan',
@@ -266,8 +290,8 @@ const sandsEn: CaseStudy = {
     { label: 'Build', value: 'Agentically, in Claude Code' },
   ],
   metrics: [
-    { value: '17×', label: 'organic search visibility', note: '~90 → ~1,500 impressions/day (Search Console)' },
-    { value: '7×', label: 'more leads, quarter over quarter', note: '7 (Jan–Mar) → ~50 (mid-Apr–mid-Jul)' },
+    { value: '17×', label: 'organic search visibility', note: '~1,500% uplift in organic impressions (Search Console)' },
+    { value: '7×', label: 'more leads, quarter over quarter', note: 'Across two comparable quarters' },
     { value: 'Owned', label: 'channel, not rented', note: 'From renting leads on marketplaces → their own engine' },
   ],
   overview: {
@@ -381,13 +405,13 @@ const sandsEn: CaseStudy = {
         value: '17×',
         title: 'SEO impact — 17× organic visibility',
         body:
-          'Organic search impressions grew from ~90/day to ~1,500/day (Search Console) — a ~1,500% uplift — as the 80-page architecture, programmatic area pages, internal-linking structure and 301 consolidation matured. Organic went from a non-factor to a genuine channel, producing leads on its own for the first time.',
+          'Organic search impressions grew roughly 1,500% (Search Console) — a 17× uplift — as the 80-page architecture, programmatic area pages, internal-linking structure and 301 consolidation matured. Organic went from a non-factor to a genuine channel, producing leads on its own for the first time.',
       },
       {
         value: '7×',
         title: 'Business impact — 7× more leads',
         body:
-          'Across two comparable quarters, inbound leads rose from 7 (Jan–Mar) to ~50 (mid-Apr–mid-Jul) — roughly 7× — driven by the new platform, the multi-path funnel (roof test, chat widget, calculator, quote form) and the full Google presence.',
+          'Across two comparable quarters, inbound leads rose roughly 7× — driven by the new platform, the multi-path funnel (roof test, chat widget, calculator, quote form) and the full Google presence.',
       },
     ],
     compound: {
@@ -448,8 +472,8 @@ const sandsSv: CaseStudy = {
     { label: 'Byggd', value: 'Agentiskt, i Claude Code' },
   ],
   metrics: [
-    { value: '17×', label: 'organisk synlighet i sök', note: '~90 → ~1 500 visningar/dag (Search Console)' },
-    { value: '7×', label: 'fler leads, kvartal mot kvartal', note: '7 (jan–mar) → ~50 (mitten av apr–mitten av jul)' },
+    { value: '17×', label: 'organisk synlighet i sök', note: 'En uppgång på ~1 500% i organiska visningar (Search Console)' },
+    { value: '7×', label: 'fler leads, kvartal mot kvartal', note: 'Över två jämförbara kvartal' },
     { value: 'Ägd', label: 'kanal, inte hyrd', note: 'Från att hyra leads på marknadsplatser → sin egen motor' },
   ],
   overview: {
@@ -563,13 +587,13 @@ const sandsSv: CaseStudy = {
         value: '17×',
         title: 'SEO-effekt — 17× organisk synlighet',
         body:
-          'Organiska visningar växte från ~90/dag till ~1 500/dag (Search Console) — en uppgång på ~1 500% — i takt med att 80-sidorsarkitekturen, de programmatiska områdessidorna, den interna länkstrukturen och 301-konsolideringen mognade. Organiskt gick från icke-faktor till en genuin kanal som för första gången genererade leads på egen hand.',
+          'Organiska visningar växte ungefär 1 500% (Search Console) — en 17× uppgång — i takt med att 80-sidorsarkitekturen, de programmatiska områdessidorna, den interna länkstrukturen och 301-konsolideringen mognade. Organiskt gick från icke-faktor till en genuin kanal som för första gången genererade leads på egen hand.',
       },
       {
         value: '7×',
         title: 'Affärseffekt — 7× fler leads',
         body:
-          'Över två jämförbara kvartal steg inkommande leads från 7 (jan–mar) till ~50 (mitten av apr–mitten av jul) — ungefär 7× — drivet av den nya plattformen, tratten med flera vägar (taktest, chatt-widget, kalkylator, offertformulär) och hela Google-närvaron.',
+          'Över två jämförbara kvartal steg inkommande leads ungefär 7× — drivet av den nya plattformen, tratten med flera vägar (taktest, chatt-widget, kalkylator, offertformulär) och hela Google-närvaron.',
       },
     ],
     compound: {
@@ -1711,9 +1735,511 @@ const happyVeganSv: CaseStudy = {
   },
 }
 
+// ── Bnbalyze case study ──────────────────────────────────────────────────────
+
+const bnbalyzeEn: CaseStudy = {
+  slug: 'bnbalyze',
+  accent: 'jungle',
+  kicker: 'Case study',
+  client: 'Bnbalyze',
+  title: 'A vibe-coding experiment that became a full proptech SaaS.',
+  intro:
+    'Built independently, adopted by 100+ organic users, tested with real-estate pilots — and now being rebuilt with AI at its core.',
+  meta: [
+    { label: 'Role', value: 'Founder & solo builder' },
+    { label: 'Type', value: 'Proptech SaaS — property investment analysis' },
+    { label: 'Scope', value: 'Product · full-stack · AI pipeline · GTM' },
+    { label: 'Build', value: 'Vibe-coded (Lovable) → AI-native (Next.js + Claude)' },
+  ],
+  metrics: [
+    { value: '100+', label: 'self-serve users, acquired organically', note: 'No paid-acquisition campaign or manual onboarding' },
+    { value: 'Pilots', label: 'real-estate pros onboarded', note: 'Validated the product with the industry' },
+    { value: '2.0', label: 'an AI-native rebuild underway', note: 'From a calculator to an agentic property analyst' },
+  ],
+  overview: {
+    heading: 'A vibe-coding test that turned into a product.',
+    body: [
+      'Bnbalyze began as a personal experiment: I wanted to see how far I could take an idea through vibe coding with Lovable. The initial concept was a simple calculator for evaluating the short-term-rental potential of a property.',
+      'It quickly grew into a full SaaS platform — user accounts, market-data integrations, comparable-property maps, interactive financial modelling, subscriptions, downloadable reports, analytics, an internal CRM and admin tooling. I conceived, designed, built and operated the entire product independently.',
+      'Bnbalyze moved beyond a technical experiment. I onboarded real-estate professionals as pilot customers and attracted more than 100 self-serve users organically, without a paid-acquisition campaign. The original product was later paused — and I am now building Bnbalyze 2.0: a ground-up, AI-native rebuild combining deterministic financial calculations with visual property analysis, autonomous area research, official market statistics and regulatory risk assessment.',
+    ],
+  },
+  startingPoint: {
+    label: 'The starting point',
+    heading: 'Property analysis is fragmented and slow.',
+    lead:
+      'Evaluating a property as an investment means stitching sources together by hand. Buyers typically need to combine:',
+    points: [
+      'Property listings',
+      'Short-term-rental platforms',
+      'Mortgage calculators',
+      'Local market information',
+      'Regulatory research',
+      'Spreadsheets',
+    ],
+    goal:
+      'Real-estate agents face a related problem — they may see a property’s investment potential but lack a structured, credible way to communicate it. My goal was to bring that whole process into one connected experience — and to test how far I could independently take a real product with an emerging vibe-coding workflow.',
+  },
+  acts: [
+    {
+      label: 'Act I',
+      title: 'From experiment to SaaS platform',
+      subtitle: 'Built independently with Lovable, React, TypeScript and Supabase.',
+      blocks: [
+        {
+          title: 'From address to report',
+          body:
+            'The journey was straightforward — search an address → confirm the property → add financing → analyze the market → explore scenarios → download a report. A single search returned a full investment analysis, with assumptions kept editable through interactive maps, charts, tables and sliders, and a completed analysis downloadable as a professional PDF:',
+          items: [
+            'Average daily rate, occupancy and estimated rental revenue',
+            'Nearby comparable short-term rentals',
+            'Purchase, mortgage and operating costs',
+            'Annual profit and cash-on-cash return',
+            'Investment score and estimated payback period',
+            'Ten-year rental-growth and property-appreciation scenarios',
+          ],
+        },
+        {
+          title: 'The platform behind the calculator',
+          body:
+            'What began as an interface experiment grew into a complete SaaS architecture. Supabase handled the database, auth, backend functions, caching and access controls; Google Maps and Places powered address search and comparables; Airbtics, AirDNA and Apify supplied rental-market intelligence; Stripe handled subscriptions and usage limits. On top of that I built:',
+          items: [
+            'A custom auth and user-management flow',
+            'A normalized data layer between external APIs and the product',
+            'Market-data caching to control cost and improve performance',
+            'Interactive mortgage, ROI and payback calculations',
+            'Custom PDF report generation',
+            'An internal CRM, product analytics and GA4',
+            'Slack operational notifications and admin tooling',
+            'A marketing site and blog CMS',
+            'Row-level security and protected backend functions',
+          ],
+        },
+        {
+          title: 'One stable internal format',
+          body:
+            'A particularly important decision was to translate every external API response into one stable internal format. That abstraction let me migrate the Airbtics integration from its old API setup to the public API without rebuilding the analysis interface or the report system.',
+        },
+      ],
+    },
+    {
+      label: 'Act II',
+      title: 'Real-world validation',
+      subtitle: 'Moving from a technical experiment to something people could find, understand and use.',
+      blocks: [
+        {
+          title: 'Real-estate pilot customers',
+          body:
+            'Once the platform was functional, I onboarded real-estate professionals as pilot customers — giving agents a data-driven way to communicate a property’s rental and investment potential, support conversations with investment-minded buyers, and share a report after a viewing. Their feedback showed which figures buyers cared about first, what made the analysis feel credible, how much detail an agent needed, and where the product could support the existing sales process. The agents contributed feedback and context; all product strategy, design, development and integrations remained entirely mine.',
+        },
+        {
+          title: 'UX research with Hyper Island',
+          body:
+            'I also ran a collaboration with UX students from Hyper Island to challenge my assumptions through structured research — user interviews, journey mapping, usability testing, prototype evaluation and hypothesis testing. The central challenge was communicating complex financial and market information without overwhelming the user. The findings sharpened the information hierarchy, the customer journey and the relationship between high-level recommendations and detailed data — and I translated the research into product decisions and implemented them myself.',
+        },
+        {
+          title: '100+ organic users',
+          body:
+            'Alongside the pilots, Bnbalyze attracted more than 100 self-serve users organically — people who discovered, understood and used the platform without a paid campaign or manual onboarding. For a project that began as a vibe-coding experiment, that organic adoption was meaningful evidence the problem and product resonated beyond my initial assumptions.',
+        },
+      ],
+    },
+    {
+      label: 'Act III',
+      title: 'Rebuilding with AI at its core',
+      subtitle: 'Not an AI assistant bolted onto the calculator — a ground-up rebuild with AI inside the analysis pipeline itself.',
+      blocks: [
+        {
+          title: 'The pause, and a sharper question',
+          body:
+            'I paused active development when other priorities took over, and the distance clarified the strongest opportunity. v1 was good at calculating an investment from market data and inputs — but it couldn’t understand a property’s actual condition, research the area itself, or judge whether short-term-rental regulation undermined the case. The central question for 2.0 became: how do you build an AI-driven property analysis reliable enough to inform an investment decision? My answer was to keep facts and judgement strictly separate. An LLM should never guess a price, calculate a mortgage or invent a return — but it’s excellent at interpreting images, researching an area, spotting contextual risks and explaining a complex case.',
+        },
+        {
+          title: 'Structured listing ingestion',
+          body:
+            'A user submits an Idealista or Hemnet listing URL, and a Next.js / TypeScript pipeline runs several stages in parallel. Apify and residential proxies extract the asking price, floor area, coordinates, attributes and images directly from the listing — the portals use anti-bot protection, so reliable ingestion needed dedicated infrastructure. An LLM never reads or guesses these figures.',
+        },
+        {
+          title: 'Visual property analysis',
+          body:
+            'Claude Opus inspects room-labelled photos and assesses the property’s actual condition. In testing it flagged a virtual-staging render that didn’t represent the real room and recognized a dated 1990s kitchen — producing a realistic €35,000–€65,000 renovation range instead of a generic €3,000–€9,000 estimate.',
+        },
+        {
+          title: 'Autonomous area research',
+          body:
+            'A web-research agent investigates schools, transport, amenities and planned developments. On a real Seville listing it returned 22 sources, identified 11 schools by name and uncovered a €400 million urban-regeneration project — none of which the user had to research manually.',
+        },
+        {
+          title: 'Official price statistics',
+          body:
+            'Spanish house-price data is retrieved deterministically from the national statistics institute (INE). Quarterly index data and year-over-year movements are computed in code, not estimated by an LLM.',
+        },
+        {
+          title: 'A regulatory gate',
+          body:
+            'Short-term-rental feasibility is classified RED, AMBER or GREEN — and the regulatory result appears before the projected returns, so a legal obstacle can’t be overlooked just because the yield looks attractive.',
+        },
+        {
+          title: 'A deterministic financial model',
+          body:
+            'Mortgage math, break-even and ten-year projections are implemented and unit-tested in TypeScript; the LLM never touches these numbers. It writes a grounded investment memo only after the calculations are complete, and the memo is validated against the underlying figures to prevent invented financial claims.',
+        },
+        {
+          title: 'Engineering reliable AI workflows',
+          body:
+            'LLM calls don’t always return the expected structure. I designed the pipeline so one imperfect response degrades a single section rather than crashing the analysis — tolerant schema validation, isolated error handling and fallbacks at every stage. Model routing sends expensive vision work to a stronger model while research, structuring and memo generation use a cheaper one, lowering cost per analysis without compromising quality where it matters most.',
+        },
+        {
+          title: 'Where it stands now',
+          body:
+            'The core 2.0 pipeline is proven end-to-end on real listings — structured ingestion, visual analysis, area research, official statistics, regulatory assessment and deterministic modelling working together, with the financial model under automated test coverage. Next:',
+          items: [
+            'Full support for Swedish Hemnet listings',
+            'Swedish market statistics through SCB',
+            'A user-selected mode for buying a home vs. evaluating an investment',
+          ],
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Results',
+    heading: 'What the experiment proved.',
+    intro: 'From a personal vibe-coding test to a product people could find, understand and use on their own.',
+    items: [
+      {
+        value: '100+',
+        title: 'Organic self-serve adoption',
+        body:
+          'More than 100 users discovered and tried the platform without a paid-acquisition campaign or manual onboarding — evidence the problem and product resonated beyond my initial assumptions.',
+      },
+      {
+        value: 'Pilots',
+        title: 'Validated with real-estate pros',
+        body:
+          'I onboarded agents as pilot customers, giving them a data-driven way to communicate a property’s rental and investment potential — and a report they could share after a viewing or meeting.',
+      },
+      {
+        value: 'Solo',
+        title: 'Idea to full SaaS, independently',
+        body:
+          'Product strategy, UX, architecture, frontend and backend, integrations, security, analytics and commercial development — every part owned and built by one person.',
+      },
+      {
+        value: '2.0',
+        title: 'Now an AI-native rebuild',
+        body:
+          'A ground-up rebuild is proven end-to-end on real listings, evolving the product from a rental calculator into an agentic property analyst that separates verified facts from machine judgement.',
+      },
+    ],
+  },
+  techStack: {
+    label: 'Tech stack',
+    items: [
+      'Lovable',
+      'React',
+      'TypeScript',
+      'Vite',
+      'Tailwind',
+      'Supabase',
+      'Next.js',
+      'Claude',
+      'Apify + residential proxies',
+      'Google Maps & Places',
+      'Airbtics / AirDNA',
+      'Stripe',
+      'INE market data',
+      'GA4',
+      'Slack',
+      'Automated testing',
+    ],
+  },
+  role: {
+    label: 'Ownership',
+    heading: 'Conceived, built and validated — solo.',
+    body:
+      'Bnbalyze was conceived, designed, built, integrated, operated and validated entirely by me:',
+    items: [
+      'Product strategy',
+      'Vibe-coding workflow',
+      'UX',
+      'Architecture',
+      'Frontend & backend development',
+      'Financial modelling',
+      'Integrations',
+      'Security',
+      'Analytics',
+      'Pilot recruitment',
+      'External research coordination',
+      'Commercial development',
+    ],
+  },
+  quote: {
+    text:
+      'What started as a vibe-coding experiment became a complete proptech SaaS with real-estate pilots and more than 100 organic users — and is now evolving into an AI-native property analyst built around a clear separation between verified facts and machine-generated judgement.',
+    author: 'Erik Werner',
+    role: 'Founder, Bnbalyze',
+  },
+  cta: {
+    heading: 'Have an idea worth testing?',
+    body: 'From a vibe-coded prototype to an AI-native product, let’s talk about building something real — fast, and without blurring facts and judgement.',
+    button: 'Book a call →',
+  },
+}
+
+const bnbalyzeSv: CaseStudy = {
+  slug: 'bnbalyze',
+  accent: 'jungle',
+  kicker: 'Case study',
+  client: 'Bnbalyze',
+  title: 'Ett vibe-coding-experiment som blev en komplett proptech-SaaS.',
+  intro:
+    'Byggd på egen hand, använd av 100+ organiska användare, testad med fastighetsmäklarpiloter — och nu ombyggd med AI i kärnan.',
+  meta: [
+    { label: 'Roll', value: 'Grundare & solobyggare' },
+    { label: 'Typ', value: 'Proptech-SaaS — fastighetsinvesteringsanalys' },
+    { label: 'Omfattning', value: 'Produkt · full-stack · AI-pipeline · GTM' },
+    { label: 'Byggd', value: 'Vibe-kodad (Lovable) → AI-native (Next.js + Claude)' },
+  ],
+  metrics: [
+    { value: '100+', label: 'self-serve-användare, organiskt', note: 'Ingen betald kampanj eller manuell onboarding' },
+    { value: 'Piloter', label: 'fastighetsmäklare onboardade', note: 'Validerade produkten med branschen' },
+    { value: '2.0', label: 'en AI-native ombyggnad pågår', note: 'Från kalkylator till en agentisk fastighetsanalytiker' },
+  ],
+  overview: {
+    heading: 'Ett vibe-coding-test som blev en produkt.',
+    body: [
+      'Bnbalyze började som ett personligt experiment: jag ville se hur långt jag kunde ta en idé genom vibe coding med Lovable. Den ursprungliga idén var en enkel kalkylator för att bedöma en fastighets potential för korttidsuthyrning.',
+      'Det växte snabbt till en komplett SaaS-plattform — användarkonton, marknadsdataintegrationer, kartor med jämförbara fastigheter, interaktiv finansiell modellering, prenumerationer, nedladdningsbara rapporter, analys, ett internt CRM och admin-verktyg. Jag tänkte ut, designade, byggde och drev hela produkten på egen hand.',
+      'Bnbalyze gick bortom ett tekniskt experiment. Jag onboardade fastighetsmäklare som pilotkunder och lockade mer än 100 self-serve-användare organiskt, utan en betald kampanj. Den ursprungliga produkten pausades senare — och jag bygger nu Bnbalyze 2.0: en AI-native ombyggnad från grunden som kombinerar deterministiska finansiella beräkningar med visuell fastighetsanalys, autonom områdesresearch, officiell marknadsstatistik och bedömning av regulatorisk risk.',
+    ],
+  },
+  startingPoint: {
+    label: 'Utgångsläget',
+    heading: 'Fastighetsanalys är splittrad och långsam.',
+    lead:
+      'Att bedöma en fastighet som investering innebär att sy ihop källor för hand. Köpare behöver oftast kombinera:',
+    points: [
+      'Fastighetsannonser',
+      'Korttidsuthyrningsplattformar',
+      'Bolånekalkylatorer',
+      'Lokal marknadsinformation',
+      'Regulatorisk research',
+      'Kalkylark',
+    ],
+    goal:
+      'Fastighetsmäklare har ett besläktat problem — de kan se en fastighets investeringspotential men saknar ett strukturerat, trovärdigt sätt att kommunicera den. Mitt mål var att föra in hela den processen i en sammankopplad upplevelse — och att testa hur långt jag på egen hand kunde ta en riktig produkt med ett framväxande vibe-coding-arbetsflöde.',
+  },
+  acts: [
+    {
+      label: 'Akt I',
+      title: 'Från experiment till SaaS-plattform',
+      subtitle: 'Byggd på egen hand med Lovable, React, TypeScript och Supabase.',
+      blocks: [
+        {
+          title: 'Från adress till rapport',
+          body:
+            'Resan var enkel — sök en adress → bekräfta fastigheten → lägg till finansiering → analysera marknaden → utforska scenarier → ladda ner en rapport. En enda sökning gav en fullständig investeringsanalys, med antaganden som gick att redigera via interaktiva kartor, diagram, tabeller och reglage, och en färdig analys kunde laddas ner som en professionell PDF:',
+          items: [
+            'Genomsnittligt dygnspris, beläggning och uppskattad hyresintäkt',
+            'Närliggande jämförbara korttidsuthyrningar',
+            'Köp-, bolåne- och driftskostnader',
+            'Årlig vinst och cash-on-cash-avkastning',
+            'Investeringsbetyg och uppskattad återbetalningstid',
+            'Tioåriga scenarier för hyrestillväxt och värdeökning',
+          ],
+        },
+        {
+          title: 'Plattformen bakom kalkylatorn',
+          body:
+            'Det som började som ett gränssnittsexperiment växte till en komplett SaaS-arkitektur. Supabase skötte databas, autentisering, backend-funktioner, caching och åtkomstkontroll; Google Maps och Places drev adressökning och jämförelseobjekt; Airbtics, AirDNA och Apify levererade marknadsdata; Stripe skötte prenumerationer och användningsgränser. Ovanpå det byggde jag:',
+          items: [
+            'Ett eget flöde för autentisering och användarhantering',
+            'Ett normaliserat datalager mellan externa API:er och produkten',
+            'Caching av marknadsdata för att styra kostnad och prestanda',
+            'Interaktiva bolåne-, ROI- och återbetalningsberäkningar',
+            'Egen PDF-rapportgenerering',
+            'Ett internt CRM, produktanalys och GA4',
+            'Slack-driftsnotiser och admin-verktyg',
+            'En marknadssajt och ett blogg-CMS',
+            'Row-level-säkerhet och skyddade backend-funktioner',
+          ],
+        },
+        {
+          title: 'Ett stabilt internt format',
+          body:
+            'Ett särskilt viktigt beslut var att översätta varje externt API-svar till ett stabilt internt format. Den abstraktionen lät mig migrera Airbtics-integrationen från dess gamla API-upplägg till det publika API:et utan att bygga om analysgränssnittet eller rapportsystemet.',
+        },
+      ],
+    },
+    {
+      label: 'Akt II',
+      title: 'Validering i verkligheten',
+      subtitle: 'Från ett tekniskt experiment till något människor kunde hitta, förstå och använda.',
+      blocks: [
+        {
+          title: 'Pilotkunder från fastighetsbranschen',
+          body:
+            'När plattformen fungerade onboardade jag fastighetsmäklare som pilotkunder — och gav mäklare ett datadrivet sätt att kommunicera en fastighets uthyrnings- och investeringspotential, stödja samtal med investeringsinriktade köpare, och dela en rapport efter en visning. Deras feedback visade vilka siffror köpare brydde sig om först, vad som fick analysen att kännas trovärdig, hur mycket detalj en mäklare behövde, och var produkten kunde stödja den befintliga säljprocessen. Mäklarna bidrog med feedback och kontext; all produktstrategi, design, utveckling och integration förblev helt mitt ansvar.',
+        },
+        {
+          title: 'UX-research med Hyper Island',
+          body:
+            'Jag drev också ett samarbete med UX-studenter från Hyper Island för att utmana mina antaganden genom strukturerad research — användarintervjuer, journey mapping, användbarhetstester, prototyputvärdering och hypotestestning. Den centrala utmaningen var att kommunicera komplex finansiell och marknadsinformation utan att överväldiga användaren. Insikterna skärpte informationshierarkin, kundresan och relationen mellan övergripande rekommendationer och detaljerad data — och jag översatte researchen till produktbeslut och implementerade dem själv.',
+        },
+        {
+          title: '100+ organiska användare',
+          body:
+            'Vid sidan av piloterna lockade Bnbalyze mer än 100 self-serve-användare organiskt — människor som hittade, förstod och använde plattformen utan en betald kampanj eller manuell onboarding. För ett projekt som började som ett vibe-coding-experiment var det organiska upptaget ett meningsfullt bevis på att problemet och produkten gav genklang bortom mina första antaganden.',
+        },
+      ],
+    },
+    {
+      label: 'Akt III',
+      title: 'Bygga om med AI i kärnan',
+      subtitle: 'Ingen AI-assistent påklistrad på kalkylatorn — en ombyggnad från grunden med AI inuti själva analys-pipelinen.',
+      blocks: [
+        {
+          title: 'Pausen, och en skarpare fråga',
+          body:
+            'Jag pausade den aktiva utvecklingen när andra prioriteringar tog över, och avståndet klargjorde den starkaste möjligheten. v1 var bra på att beräkna en investering utifrån marknadsdata och indata — men den kunde inte förstå fastighetens faktiska skick, researcha området själv, eller bedöma om reglering av korttidsuthyrning underminerade caset. Den centrala frågan för 2.0 blev: hur bygger man en AI-driven fastighetsanalys som är tillförlitlig nog att ligga till grund för ett investeringsbeslut? Mitt svar var att hålla fakta och omdöme strikt åtskilda. En LLM ska aldrig gissa ett pris, beräkna ett bolån eller hitta på en avkastning — men den är utmärkt på att tolka bilder, researcha ett område, upptäcka kontextuella risker och förklara ett komplext case.',
+        },
+        {
+          title: 'Strukturerad annonsinläsning',
+          body:
+            'En användare skickar en Idealista- eller Hemnet-annonslänk, och en Next.js / TypeScript-pipeline kör flera steg parallellt. Apify och residential proxies extraherar utropspris, boyta, koordinater, attribut och bilder direkt från annonsen — portalerna använder anti-bot-skydd, så tillförlitlig inläsning krävde dedikerad infrastruktur. En LLM läser eller gissar aldrig dessa siffror.',
+        },
+        {
+          title: 'Visuell fastighetsanalys',
+          body:
+            'Claude Opus granskar rumsmärkta foton och bedömer fastighetens faktiska skick. I tester flaggade den en virtual-staging-rendering som inte motsvarade det verkliga rummet och kände igen ett daterat 1990-talskök — och gav ett realistiskt renoveringsintervall på 35 000–65 000 € istället för en generisk uppskattning på 3 000–9 000 €.',
+        },
+        {
+          title: 'Autonom områdesresearch',
+          body:
+            'En web-research-agent undersöker skolor, kollektivtrafik, service och planerade utvecklingsprojekt. På en verklig annons i Sevilla returnerade den 22 källor, identifierade 11 skolor vid namn och hittade ett stadsförnyelseprojekt på 400 miljoner € — utan att användaren behövde researcha något av det manuellt.',
+        },
+        {
+          title: 'Officiell prisstatistik',
+          body:
+            'Spansk bostadsprisdata hämtas deterministiskt från det nationella statistikinstitutet (INE). Kvartalsvis indexdata och årsförändringar beräknas i kod, inte uppskattas av en LLM.',
+        },
+        {
+          title: 'En regulatorisk grind',
+          body:
+            'Möjligheten till korttidsuthyrning klassas som RÖD, GUL eller GRÖN — och det regulatoriska resultatet visas före den projicerade avkastningen, så att ett juridiskt hinder inte kan förbises bara för att avkastningen ser attraktiv ut.',
+        },
+        {
+          title: 'En deterministisk finansiell modell',
+          body:
+            'Bolånematematik, break-even och tioårsprognoser är implementerade och enhetstestade i TypeScript; LLM:en rör aldrig dessa siffror. Den skriver ett förankrat investerings-memo först när beräkningarna är klara, och memot valideras mot de underliggande siffrorna för att förhindra påhittade finansiella påståenden.',
+        },
+        {
+          title: 'Att bygga tillförlitliga AI-flöden',
+          body:
+            'LLM-anrop returnerar inte alltid den förväntade strukturen. Jag designade pipelinen så att ett bristfälligt svar försämrar en enskild sektion snarare än kraschar hela analysen — tolerant schemavalidering, isolerad felhantering och fallbacks i varje steg. Modellrouting skickar dyra vision-uppgifter till en starkare modell medan research, strukturering och memo-generering använder en billigare, vilket sänker kostnaden per analys utan att kompromissa med kvaliteten där den betyder mest.',
+        },
+        {
+          title: 'Var det står nu',
+          body:
+            'Kärnan i 2.0-pipelinen är bevisad från start till mål på verkliga annonser — strukturerad inläsning, visuell analys, områdesresearch, officiell statistik, regulatorisk bedömning och deterministisk modellering fungerar tillsammans, med den finansiella modellen under automatiserad testtäckning. Härnäst:',
+          items: [
+            'Fullt stöd för svenska Hemnet-annonser',
+            'Svensk marknadsstatistik via SCB',
+            'Ett användarvalt läge för att köpa bostad kontra att utvärdera en investering',
+          ],
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Resultat',
+    heading: 'Vad experimentet bevisade.',
+    intro: 'Från ett personligt vibe-coding-test till en produkt människor kunde hitta, förstå och använda på egen hand.',
+    items: [
+      {
+        value: '100+',
+        title: 'Organiskt self-serve-upptag',
+        body:
+          'Mer än 100 användare hittade och testade plattformen utan en betald kampanj eller manuell onboarding — ett bevis på att problemet och produkten gav genklang bortom mina första antaganden.',
+      },
+      {
+        value: 'Piloter',
+        title: 'Validerad med fastighetsmäklare',
+        body:
+          'Jag onboardade mäklare som pilotkunder och gav dem ett datadrivet sätt att kommunicera en fastighets uthyrnings- och investeringspotential — och en rapport att dela efter en visning eller ett möte.',
+      },
+      {
+        value: 'Solo',
+        title: 'Idé till komplett SaaS, på egen hand',
+        body:
+          'Produktstrategi, UX, arkitektur, frontend och backend, integrationer, säkerhet, analys och kommersiell utveckling — varje del ägd och byggd av en enda person.',
+      },
+      {
+        value: '2.0',
+        title: 'Nu en AI-native ombyggnad',
+        body:
+          'En ombyggnad från grunden är bevisad från start till mål på verkliga annonser, och utvecklar produkten från en hyreskalkylator till en agentisk fastighetsanalytiker som skiljer verifierade fakta från maskinellt omdöme.',
+      },
+    ],
+  },
+  techStack: {
+    label: 'Teknik-stack',
+    items: [
+      'Lovable',
+      'React',
+      'TypeScript',
+      'Vite',
+      'Tailwind',
+      'Supabase',
+      'Next.js',
+      'Claude',
+      'Apify + residential proxies',
+      'Google Maps & Places',
+      'Airbtics / AirDNA',
+      'Stripe',
+      'INE-marknadsdata',
+      'GA4',
+      'Slack',
+      'Automatiserad testning',
+    ],
+  },
+  role: {
+    label: 'Ägarskap',
+    heading: 'Tänkt ut, byggd och validerad — solo.',
+    body:
+      'Bnbalyze tänktes ut, designades, byggdes, integrerades, drevs och validerades helt av mig:',
+    items: [
+      'Produktstrategi',
+      'Vibe-coding-arbetsflöde',
+      'UX',
+      'Arkitektur',
+      'Frontend- & backend-utveckling',
+      'Finansiell modellering',
+      'Integrationer',
+      'Säkerhet',
+      'Analys',
+      'Pilotrekrytering',
+      'Samordning av extern research',
+      'Kommersiell utveckling',
+    ],
+  },
+  quote: {
+    text:
+      'Det som började som ett vibe-coding-experiment blev en komplett proptech-SaaS med fastighetsmäklarpiloter och mer än 100 organiska användare — och utvecklas nu till en AI-native fastighetsanalytiker byggd kring en tydlig åtskillnad mellan verifierade fakta och maskingenererat omdöme.',
+    author: 'Erik Werner',
+    role: 'Grundare, Bnbalyze',
+  },
+  cta: {
+    heading: 'Har du en idé värd att testa?',
+    body: 'Från en vibe-kodad prototyp till en AI-native produkt — låt oss prata om att bygga något på riktigt, snabbt, och utan att sudda ut gränsen mellan fakta och omdöme.',
+    button: 'Boka ett samtal →',
+  },
+}
+
 export const caseStudies: Record<Lang, Record<string, CaseStudy>> = {
-  en: { 'leadfeeder-dealfront': leadfeederEn, 'happy-vegan': happyVeganEn, 'sands-entreprenad': sandsEn },
-  sv: { 'leadfeeder-dealfront': leadfeederSv, 'happy-vegan': happyVeganSv, 'sands-entreprenad': sandsSv },
+  en: { 'leadfeeder-dealfront': leadfeederEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn, 'sands-entreprenad': sandsEn },
+  sv: { 'leadfeeder-dealfront': leadfeederSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv, 'sands-entreprenad': sandsSv },
 }
 
 // ── SEO helpers ──────────────────────────────────────────────────────────────

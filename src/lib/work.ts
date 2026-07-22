@@ -112,13 +112,11 @@ export const engagements: Record<Lang, Engagement[]> = {
   en: [
     { client: 'Funnel', logo: '/assets/logo-funnel.svg', metric: '0 → 20%', label: 'of MRR via Product-Led Growth, built from scratch in under a year.' },
     { client: 'Telia', logo: '/assets/logo-telia.svg', metric: '+100%', label: 'conversion rate after rebuilding the entire checkout.' },
-    { client: 'Happy Vegan', logo: '/assets/logo-happyvegan.svg', metric: '2×', label: 'revenue in 6 months via SEO, CRO and paid search.' },
     { client: 'RiksTV / Strim', logo: '/assets/logo-rikstv.svg', metric: '−40%', label: 'CAC after introducing the STDC framework and performance rig.' },
   ],
   sv: [
     { client: 'Funnel', logo: '/assets/logo-funnel.svg', metric: '0 → 20%', label: 'av MRR via Product-Led Growth, byggt från noll på under ett år.' },
     { client: 'Telia', logo: '/assets/logo-telia.svg', metric: '+100%', label: 'konverteringsgrad efter en total ombyggnad av checkouten.' },
-    { client: 'Happy Vegan', logo: '/assets/logo-happyvegan.svg', metric: '2×', label: 'omsättning på 6 månader via SEO, CRO och betald sök.' },
     { client: 'RiksTV / Strim', logo: '/assets/logo-rikstv.svg', metric: '−40%', label: 'CAC efter införandet av STDC-ramverket och en performance-rigg.' },
   ],
 }
@@ -136,6 +134,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['PLG', 'Onboarding', 'Pricing', 'Product UX', 'GTM'],
       metric: { value: '100%', label: 'more new accounts' },
       year: '2025–26',
+    },
+    {
+      slug: 'happy-vegan',
+      href: '/work/happy-vegan/',
+      accent: 'turquoise',
+      client: 'Happy Vegan',
+      logo: '/assets/logo-happyvegan.svg',
+      title: 'Sweden’s largest vegan online store, built solo — from zero to a successful exit',
+      blurb: 'A solo side project I built, grew and sold in two years: brand, storefront, paid and organic growth, CRM, and the entire physical grocery operation — sourcing, cold-chain, 10,000+ SKUs and 500+ monthly shipments.',
+      tags: ['Founder', 'E-commerce', 'Performance', 'SEO', 'Operations'],
+      metric: { value: 'SEK 2.5M', label: 'revenue, then exit' },
+      year: '2022–24',
     },
     {
       slug: 'sands-entreprenad',
@@ -162,6 +172,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['PLG', 'Onboarding', 'Pricing', 'Produkt-UX', 'GTM'],
       metric: { value: '100%', label: 'fler nya konton' },
       year: '2025–26',
+    },
+    {
+      slug: 'happy-vegan',
+      href: '/sv/case/happy-vegan/',
+      accent: 'turquoise',
+      client: 'Happy Vegan',
+      logo: '/assets/logo-happyvegan.svg',
+      title: 'Sveriges största veganska nätbutik, byggd solo — från noll till en lyckad exit',
+      blurb: 'Ett soloprojekt jag byggde, växte och sålde på två år: varumärke, butik, betald och organisk tillväxt, CRM, och hela den fysiska livsmedelsverksamheten — inköp, kylkedja, 10 000+ artiklar och 500+ försändelser i månaden.',
+      tags: ['Grundare', 'E-handel', 'Performance', 'SEO', 'Drift'],
+      metric: { value: '2,5M kr', label: 'omsättning, sedan exit' },
+      year: '2022–24',
     },
     {
       slug: 'sands-entreprenad',
@@ -1187,9 +1209,511 @@ const leadfeederSv: CaseStudy = {
   },
 }
 
+// ── Happy Vegan case study ───────────────────────────────────────────────────
+
+const happyVeganEn: CaseStudy = {
+  slug: 'happy-vegan',
+  accent: 'turquoise',
+  kicker: 'Case study',
+  client: 'Happy Vegan',
+  title: 'Building Sweden’s largest vegan online store as a solo side project.',
+  intro:
+    'From zero to SEK 2.5 million in revenue, 500+ monthly orders and a successful exit — brand, storefront, growth and the entire physical operation, built and run by one person in two years.',
+  meta: [
+    { label: 'Role', value: 'Founder & solo operator' },
+    { label: 'Period', value: '2022 – 2024' },
+    { label: 'Scope', value: 'Brand · e-commerce · growth · operations' },
+    { label: 'Outcome', value: 'Built, scaled and sold — successful exit' },
+  ],
+  metrics: [
+    { value: '2.5M', label: 'SEK revenue in under a year', note: 'From zero, built as a solo side project' },
+    { value: '500+', label: 'orders shipped per month', note: 'At peak — sourcing to fulfilment, all solo' },
+    { value: '#1', label: 'vegan online store in Sweden', note: 'Reached in under two years, then a successful exit' },
+  ],
+  overview: {
+    heading: 'One person, an entire retail company.',
+    body: [
+      'Happy Vegan was a vegan e-commerce store I launched in 2022 as a side project alongside my full-time work as a consultant. It started with a personal ambition: to see whether I could independently build a serious consumer brand and take it all the way from an idea to a functioning retail business.',
+      'I rebuilt the store from scratch, created the brand, launched it to market, and personally managed every part of the business — from sourcing, purchasing, warehousing and fulfilment to UX, conversion optimization, paid acquisition, CRM and email marketing.',
+      'In less than one year, Happy Vegan generated SEK 2.5 million in revenue. It grew to more than 500 orders per month, attracted over 20,000 organic sessions annually, and became Sweden’s largest vegan online store in under two years. I then sold the business in a successful exit.',
+    ],
+  },
+  startingPoint: {
+    label: 'The starting point',
+    heading: 'The hardest kind of e-commerce, solo.',
+    lead:
+      'Happy Vegan was created during a difficult period for the category. The rapid growth of the vegan movement had begun to slow, demand was becoming less predictable, and running an online grocery store involved far more complexity than conventional e-commerce. Products could require:',
+    points: [
+      'Refrigerated storage and shipping',
+      'Expiration-date management and careful stock rotation',
+      'Food-handling procedures, licences and certificates',
+      'Reliable packaging and fulfilment',
+      'Detailed product and allergen information',
+    ],
+    goal:
+      'I entered that environment with no team, operator or established infrastructure. The challenge wasn’t simply to build a website — it was to create the complete retail operation behind it while generating enough demand to make the business commercially viable.',
+  },
+  ownership: {
+    label: 'What made it distinctive',
+    heading: 'An entire retail company, owned end-to-end.',
+    intro:
+      'Happy Vegan was not just a website or a marketing assignment — it was a full retail company I created and operated independently. There was no internal team dividing the work. I was simultaneously responsible for:',
+    items: [
+      'Founder & business strategy',
+      'Brand & creative direction',
+      'E-commerce development',
+      'UX & conversion optimization',
+      'Performance marketing',
+      'SEO & organic growth',
+      'CRM & lifecycle marketing',
+      'Buying & supplier relationships',
+      'Inventory & warehouse operations',
+      'Food compliance',
+      'Fulfilment & customer service',
+      'Commercial performance',
+      'Preparing & completing the exit',
+    ],
+    outro:
+      'Every part of the business — from an ad impression to a refrigerated product arriving at the customer’s door — was designed, built or managed by me.',
+  },
+  acts: [
+    {
+      label: 'Act I',
+      title: 'Building the brand and store',
+      subtitle: 'A focused destination for vegan customers, rebuilt from scratch.',
+      blocks: [
+        {
+          title: 'From scratch on WordPress',
+          body:
+            'I rebuilt Happy Vegan completely on WordPress and created its visual identity, online experience, product structure and commercial positioning — a focused destination where vegan customers could discover and buy without searching through the non-vegan assortment of a general grocery store.',
+        },
+        {
+          title: 'Everything under one roof',
+          body: 'I independently handled the full storefront and its commercial systems:',
+          items: [
+            'Brand identity and visual direction',
+            'Website design, development and technical operations',
+            'UX and conversion-rate optimization',
+            'Product catalogue, merchandising, photography and content',
+            'Pricing and promotional strategy',
+            'Klarna payments, Google Analytics and conversion tracking',
+          ],
+        },
+        {
+          title: 'Iterating the purchase journey',
+          body:
+            'The store had to support a large, constantly changing catalogue while staying easy to navigate and trustworthy for first-time customers. I continuously improved the journey using behavior, sales and conversion data — adjusting navigation, product presentation, promotions and checkout friction as the business grew.',
+        },
+      ],
+    },
+    {
+      label: 'Act II',
+      title: 'Building the growth engine',
+      subtitle: 'Paid, owned and organic — three channels feeding one store.',
+      blocks: [
+        {
+          title: 'Paid acquisition',
+          body:
+            'I built and managed the full paid-acquisition operation across Meta and Google Ads. Because I owned both the storefront and the marketing, I could connect campaign performance directly to product selection, merchandising, pricing and conversion improvements:',
+          items: [
+            'Campaign structure and audience targeting',
+            'Creative production; product and promotional campaigns',
+            'Budget management and performance analysis',
+            'Continuous testing and optimization',
+          ],
+        },
+        {
+          title: 'CRM & email automation',
+          body:
+            'I set up the CRM and built automated email journeys in Mailchimp — an owned retention channel that reduced dependence on repeatedly paying to reach existing customers:',
+          items: [
+            'New-customer onboarding and abandoned-cart recovery',
+            'Product and campaign launches',
+            'Repeat purchasing and customer reactivation',
+            'Ongoing brand communication',
+          ],
+        },
+        {
+          title: 'Organic growth',
+          body:
+            'Alongside paid marketing, I grew the store’s organic visibility through product content, category structure, search optimization and continued catalogue growth — reaching more than 20,000 organic sessions per year, a recurring acquisition channel beyond advertising.',
+        },
+      ],
+    },
+    {
+      label: 'Act III',
+      title: 'Building the physical operation',
+      subtitle: 'The hardest part wasn’t the website — it was the operation behind it.',
+      blocks: [
+        {
+          title: 'Sourcing to shipping',
+          body: 'I independently set up and ran the entire physical operation:',
+          items: [
+            'Supplier sourcing, negotiation, purchasing and replenishment',
+            'Warehouse structure and inventory management — 10,000+ items in stock',
+            'Expiration-date monitoring and cold-goods handling',
+            'Packaging and fulfilment — 500+ monthly shipments',
+            'Food-related licences and certificates',
+            'Customer service and returns',
+          ],
+        },
+        {
+          title: 'Balancing the business',
+          body:
+            'Running an online grocery business meant balancing product availability against cash flow, storage constraints, expiration risk and changing demand. Cold products added another layer: packaging and fulfilment had to preserve quality while staying commercially sustainable.',
+        },
+        {
+          title: 'All of it, alongside a full-time job',
+          body:
+            'Throughout, I was still responsible for marketing, technology, analytics, UX, purchasing and customer experience — all while continuing my full-time consulting work. That made Happy Vegan as much an operational achievement as a digital one.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Results',
+    heading: 'Zero to market leader — and out.',
+    intro: 'Built during a broader downturn in the vegan category, making the growth an uphill effort rather than the result of a rising market.',
+    items: [
+      {
+        value: '2.5M',
+        title: 'SEK 2.5 million in revenue',
+        body:
+          'Happy Vegan grew from zero to SEK 2.5 million in revenue in under a year — the combination of a focused brand, a large specialist assortment, paid acquisition, organic visibility, email automation and continuous conversion optimization.',
+      },
+      {
+        value: '500+',
+        title: 'More than 500 monthly orders',
+        body:
+          'At its peak the store processed and shipped over 500 orders per month. I personally built and managed the systems required to support that volume — from procurement and stock control to packaging and customer communication.',
+      },
+      {
+        value: '#1',
+        title: 'Sweden’s largest vegan online store',
+        body:
+          'In under two years, Happy Vegan grew into Sweden’s largest dedicated vegan online store — a destination combining specialist positioning with the convenience of e-commerce.',
+      },
+      {
+        value: 'Exit',
+        title: 'A successful exit',
+        body:
+          'Rather than simply closing it, I prepared and sold the company in a successful deal — completing the full journey: idea → brand → platform → operations → growth → market leadership → sale.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What building the whole thing taught.',
+    items: [
+      {
+        title: 'A digital business is only as strong as its operation.',
+        body: 'The website could generate demand, but sourcing, inventory, fulfilment and customer experience determined whether the business could retain it.',
+      },
+      {
+        title: 'Specialist positioning can compete with larger retailers.',
+        body: 'A focused assortment and clear identity gave customers a reason to choose Happy Vegan over general grocery stores.',
+      },
+      {
+        title: 'Owning the complete funnel creates faster learning.',
+        body: 'Controlling acquisition, UX, merchandising, CRM and fulfilment let me spot problems and ship improvements without organizational delay.',
+      },
+      {
+        title: 'Revenue and operational complexity scale together.',
+        body: 'More orders meant greater demands on inventory, cold-chain handling, customer service and working capital.',
+      },
+      {
+        title: 'Knowing when to exit is part of building well.',
+        body: 'Selling the company turned two years of intense execution into a completed entrepreneurial outcome.',
+      },
+    ],
+  },
+  techStack: {
+    label: 'Tech & growth stack',
+    items: [
+      'WordPress',
+      'Klarna',
+      'Mailchimp',
+      'Meta Ads',
+      'Google Ads',
+      'Google Analytics',
+      'SEO',
+      'CRM automation',
+      'Conversion tracking',
+      'Custom ops workflows',
+    ],
+  },
+  role: {
+    label: 'Ownership',
+    heading: 'Conceived, built, grown and sold — solo.',
+    body:
+      'Happy Vegan was conceived, rebuilt, launched, grown, operated and sold entirely by me while I worked full-time as a consultant — brand, technology, marketing, customer experience, purchasing, supplier relationships, warehouse, logistics, compliance, financial performance and the eventual sale.',
+  },
+  quote: {
+    text:
+      'I built Happy Vegan from scratch as a solo side project, grew it to SEK 2.5 million in revenue and more than 500 monthly orders, made it Sweden’s largest vegan online store, and completed a successful exit — all within two years.',
+    author: 'Erik Werner',
+    role: 'Founder, Happy Vegan',
+  },
+  cta: {
+    heading: 'From idea to exit?',
+    body: 'Whether it’s a brand from zero or a growth engine on top of an existing one, let’s talk about building something that compounds.',
+    button: 'Book a call →',
+  },
+}
+
+const happyVeganSv: CaseStudy = {
+  slug: 'happy-vegan',
+  accent: 'turquoise',
+  kicker: 'Case study',
+  client: 'Happy Vegan',
+  title: 'Byggde Sveriges största veganska nätbutik som ett soloprojekt vid sidan om.',
+  intro:
+    'Från noll till 2,5 miljoner kronor i omsättning, 500+ ordrar i månaden och en lyckad exit — varumärke, butik, tillväxt och hela den fysiska verksamheten, byggd och driven av en enda person på två år.',
+  meta: [
+    { label: 'Roll', value: 'Grundare & soloperatör' },
+    { label: 'Period', value: '2022 – 2024' },
+    { label: 'Omfattning', value: 'Varumärke · e-handel · tillväxt · drift' },
+    { label: 'Utfall', value: 'Byggd, skalad och såld — lyckad exit' },
+  ],
+  metrics: [
+    { value: '2,5M', label: 'kr i omsättning på under ett år', note: 'Från noll, byggt som ett soloprojekt vid sidan om' },
+    { value: '500+', label: 'ordrar skickade per månad', note: 'Som mest — från inköp till frakt, allt solo' },
+    { value: '#1', label: 'veganska nätbutik i Sverige', note: 'Nått på under två år, sedan en lyckad exit' },
+  ],
+  overview: {
+    heading: 'En person, ett helt detaljhandelsbolag.',
+    body: [
+      'Happy Vegan var en vegansk e-handel som jag lanserade 2022 som ett sidoprojekt vid sidan av mitt heltidsarbete som konsult. Det började med en personlig ambition: att se om jag på egen hand kunde bygga ett seriöst konsumentvarumärke och ta det hela vägen från idé till en fungerande detaljhandelsverksamhet.',
+      'Jag byggde om butiken från grunden, skapade varumärket, lanserade det på marknaden och skötte personligen varje del av verksamheten — från inköp, lager och frakt till UX, konverteringsoptimering, betald annonsering, CRM och e-postmarknadsföring.',
+      'På mindre än ett år omsatte Happy Vegan 2,5 miljoner kronor. Det växte till mer än 500 ordrar i månaden, lockade över 20 000 organiska sessioner per år och blev Sveriges största veganska nätbutik på under två år. Sedan sålde jag verksamheten i en lyckad exit.',
+    ],
+  },
+  startingPoint: {
+    label: 'Utgångsläget',
+    heading: 'Den svåraste sortens e-handel, solo.',
+    lead:
+      'Happy Vegan skapades under en tuff period för kategorin. Den snabba tillväxten i veganrörelsen hade börjat mattas av, efterfrågan blev mindre förutsägbar, och att driva en nätbaserad livsmedelsbutik innebar långt mer komplexitet än vanlig e-handel. Produkterna kunde kräva:',
+    points: [
+      'Kyld lagring och frakt',
+      'Hantering av utgångsdatum och noggrann lageromsättning',
+      'Livsmedelshantering, licenser och certifikat',
+      'Tillförlitlig förpackning och frakt',
+      'Detaljerad produkt- och allergeninformation',
+    ],
+    goal:
+      'Jag klev in i den miljön utan team, operatör eller etablerad infrastruktur. Utmaningen var inte bara att bygga en webbplats — den var att skapa hela detaljhandelsverksamheten bakom den, samtidigt som jag genererade tillräckligt med efterfrågan för att göra affären kommersiellt hållbar.',
+  },
+  ownership: {
+    label: 'Vad som gjorde det unikt',
+    heading: 'Ett helt detaljhandelsbolag, ägt från start till mål.',
+    intro:
+      'Happy Vegan var inte bara en webbplats eller ett marknadsföringsuppdrag — det var ett komplett detaljhandelsbolag som jag skapade och drev på egen hand. Det fanns inget internt team som delade upp arbetet. Jag var samtidigt ansvarig för:',
+    items: [
+      'Grundare & affärsstrategi',
+      'Varumärke & kreativ riktning',
+      'E-handelsutveckling',
+      'UX & konverteringsoptimering',
+      'Performance marketing',
+      'SEO & organisk tillväxt',
+      'CRM & lifecycle-marknadsföring',
+      'Inköp & leverantörsrelationer',
+      'Lager & lagerdrift',
+      'Livsmedelsregelefterlevnad',
+      'Frakt & kundservice',
+      'Kommersiellt resultat',
+      'Förbereda & genomföra exiten',
+    ],
+    outro:
+      'Varje del av verksamheten — från en annonsvisning till en kyld produkt som anländer till kundens dörr — var designad, byggd eller skött av mig.',
+  },
+  acts: [
+    {
+      label: 'Akt I',
+      title: 'Bygga varumärket och butiken',
+      subtitle: 'En fokuserad destination för veganska kunder, ombyggd från grunden.',
+      blocks: [
+        {
+          title: 'Från grunden på WordPress',
+          body:
+            'Jag byggde om Happy Vegan helt på WordPress och skapade dess visuella identitet, onlineupplevelse, produktstruktur och kommersiella positionering — en fokuserad destination där veganska kunder kunde upptäcka och köpa utan att leta genom det icke-veganska sortimentet i en vanlig livsmedelsbutik.',
+        },
+        {
+          title: 'Allt under ett tak',
+          body: 'Jag skötte på egen hand hela butiken och dess kommersiella system:',
+          items: [
+            'Varumärkesidentitet och visuell riktning',
+            'Webbdesign, utveckling och teknisk drift',
+            'UX och konverteringsoptimering',
+            'Produktkatalog, merchandising, foto och innehåll',
+            'Pris- och kampanjstrategi',
+            'Klarna-betalningar, Google Analytics och konverteringsmätning',
+          ],
+        },
+        {
+          title: 'Iterera köpresan',
+          body:
+            'Butiken behövde stödja en stor, ständigt föränderlig katalog och samtidigt vara enkel att navigera och trovärdig för förstagångskunder. Jag förbättrade köpresan kontinuerligt med beteende-, försäljnings- och konverteringsdata — och justerade navigation, produktpresentation, kampanjer och checkout-friktion i takt med att verksamheten växte.',
+        },
+      ],
+    },
+    {
+      label: 'Akt II',
+      title: 'Bygga tillväxtmotorn',
+      subtitle: 'Betalt, ägt och organiskt — tre kanaler som matade en butik.',
+      blocks: [
+        {
+          title: 'Betald annonsering',
+          body:
+            'Jag byggde och skötte hela den betalda annonseringen över Meta och Google Ads. Eftersom jag ägde både butiken och marknadsföringen kunde jag koppla kampanjresultat direkt till produkturval, merchandising, pris och konverteringsförbättringar:',
+          items: [
+            'Kampanjstruktur och målgruppsstyrning',
+            'Kreativproduktion; produkt- och kampanjannonsering',
+            'Budgethantering och resultatanalys',
+            'Löpande testning och optimering',
+          ],
+        },
+        {
+          title: 'CRM & e-postautomation',
+          body:
+            'Jag satte upp CRM:et och byggde automatiserade e-postflöden i Mailchimp — en ägd retentionskanal som minskade beroendet av att gång på gång betala för att nå befintliga kunder:',
+          items: [
+            'Onboarding av nya kunder och återhämtning av övergivna varukorgar',
+            'Produkt- och kampanjlanseringar',
+            'Återköp och kundreaktivering',
+            'Löpande varumärkeskommunikation',
+          ],
+        },
+        {
+          title: 'Organisk tillväxt',
+          body:
+            'Vid sidan av den betalda marknadsföringen byggde jag butikens organiska synlighet genom produktinnehåll, kategoristruktur, sökoptimering och fortsatt katalogtillväxt — och nådde mer än 20 000 organiska sessioner per år, en återkommande förvärvskanal bortom annonsering.',
+        },
+      ],
+    },
+    {
+      label: 'Akt III',
+      title: 'Bygga den fysiska verksamheten',
+      subtitle: 'Det svåraste var inte webbplatsen — det var verksamheten bakom den.',
+      blocks: [
+        {
+          title: 'Från inköp till frakt',
+          body: 'Jag satte på egen hand upp och drev hela den fysiska verksamheten:',
+          items: [
+            'Leverantörssökning, förhandling, inköp och påfyllnad',
+            'Lagerstruktur och lagerhantering — 10 000+ artiklar i lager',
+            'Bevakning av utgångsdatum och hantering av kylvaror',
+            'Förpackning och frakt — 500+ försändelser per månad',
+            'Livsmedelsrelaterade licenser och certifikat',
+            'Kundservice och returer',
+          ],
+        },
+        {
+          title: 'Balansera affären',
+          body:
+            'Att driva en nätbaserad livsmedelsbutik innebar att balansera produkttillgänglighet mot kassaflöde, lagerutrymme, utgångsdatumsrisk och föränderlig efterfrågan. Kylvaror la till ytterligare ett lager: förpackning och frakt måste bevara kvaliteten och samtidigt vara kommersiellt hållbara.',
+        },
+        {
+          title: 'Allt detta, vid sidan av ett heltidsjobb',
+          body:
+            'Hela tiden var jag fortfarande ansvarig för marknadsföring, teknik, analys, UX, inköp och kundupplevelse — allt medan jag fortsatte mitt heltidsarbete som konsult. Det gjorde Happy Vegan lika mycket till en operativ bedrift som en digital.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Resultat',
+    heading: 'Från noll till marknadsledare — och ut.',
+    intro: 'Byggt under en bredare nedgång i vegankategorin, vilket gjorde tillväxten till en uppförsbacke snarare än resultatet av en stigande marknad.',
+    items: [
+      {
+        value: '2,5M',
+        title: '2,5 miljoner kr i omsättning',
+        body:
+          'Happy Vegan växte från noll till 2,5 miljoner kronor i omsättning på under ett år — kombinationen av ett fokuserat varumärke, ett stort specialistsortiment, betald annonsering, organisk synlighet, e-postautomation och löpande konverteringsoptimering.',
+      },
+      {
+        value: '500+',
+        title: 'Mer än 500 ordrar i månaden',
+        body:
+          'Som mest hanterade och skickade butiken över 500 ordrar i månaden. Jag byggde och skötte personligen de system som krävdes för den volymen — från inköp och lagerstyrning till förpackning och kundkommunikation.',
+      },
+      {
+        value: '#1',
+        title: 'Sveriges största veganska nätbutik',
+        body:
+          'På under två år växte Happy Vegan till Sveriges största renodlade veganska nätbutik — en destination som kombinerade specialistpositionering med e-handelns bekvämlighet.',
+      },
+      {
+        value: 'Exit',
+        title: 'En lyckad exit',
+        body:
+          'Istället för att bara lägga ner den förberedde och sålde jag bolaget i en lyckad affär — och slutförde hela resan: idé → varumärke → plattform → drift → tillväxt → marknadsledarskap → försäljning.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad det lärde mig att bygga allt.',
+    items: [
+      {
+        title: 'En digital affär är bara så stark som sin verksamhet.',
+        body: 'Webbplatsen kunde skapa efterfrågan, men inköp, lager, frakt och kundupplevelse avgjorde om affären kunde behålla den.',
+      },
+      {
+        title: 'Specialistpositionering kan konkurrera med större kedjor.',
+        body: 'Ett fokuserat sortiment och en tydlig identitet gav kunderna en anledning att välja Happy Vegan framför vanliga livsmedelsbutiker.',
+      },
+      {
+        title: 'Att äga hela tratten skapar snabbare lärande.',
+        body: 'Att kontrollera förvärv, UX, merchandising, CRM och frakt lät mig upptäcka problem och släppa förbättringar utan organisatorisk fördröjning.',
+      },
+      {
+        title: 'Omsättning och operativ komplexitet skalar tillsammans.',
+        body: 'Fler ordrar innebar större krav på lager, kylkedja, kundservice och rörelsekapital.',
+      },
+      {
+        title: 'Att veta när man ska göra exit är en del av att bygga väl.',
+        body: 'Att sälja bolaget förvandlade två års intensivt genomförande till ett fullbordat entreprenöriellt utfall.',
+      },
+    ],
+  },
+  techStack: {
+    label: 'Teknik & tillväxt-stack',
+    items: [
+      'WordPress',
+      'Klarna',
+      'Mailchimp',
+      'Meta Ads',
+      'Google Ads',
+      'Google Analytics',
+      'SEO',
+      'CRM-automation',
+      'Konverteringsmätning',
+      'Egna operativa flöden',
+    ],
+  },
+  role: {
+    label: 'Ägarskap',
+    heading: 'Tänkt ut, byggd, växt och såld — solo.',
+    body:
+      'Happy Vegan tänktes ut, byggdes om, lanserades, växtes, drevs och såldes helt av mig medan jag arbetade heltid som konsult — varumärke, teknik, marknadsföring, kundupplevelse, inköp, leverantörsrelationer, lager, logistik, regelefterlevnad, ekonomiskt resultat och den slutliga försäljningen.',
+  },
+  quote: {
+    text:
+      'Jag byggde Happy Vegan från grunden som ett soloprojekt vid sidan om, växte det till 2,5 miljoner kronor i omsättning och mer än 500 ordrar i månaden, gjorde det till Sveriges största veganska nätbutik, och genomförde en lyckad exit — allt inom två år.',
+    author: 'Erik Werner',
+    role: 'Grundare, Happy Vegan',
+  },
+  cta: {
+    heading: 'Från idé till exit?',
+    body: 'Oavsett om det är ett varumärke från noll eller en tillväxtmotor ovanpå en befintlig affär — låt oss prata om att bygga något som växer med tiden.',
+    button: 'Boka ett samtal →',
+  },
+}
+
 export const caseStudies: Record<Lang, Record<string, CaseStudy>> = {
-  en: { 'leadfeeder-dealfront': leadfeederEn, 'sands-entreprenad': sandsEn },
-  sv: { 'leadfeeder-dealfront': leadfeederSv, 'sands-entreprenad': sandsSv },
+  en: { 'leadfeeder-dealfront': leadfeederEn, 'happy-vegan': happyVeganEn, 'sands-entreprenad': sandsEn },
+  sv: { 'leadfeeder-dealfront': leadfeederSv, 'happy-vegan': happyVeganSv, 'sands-entreprenad': sandsSv },
 }
 
 // ── SEO helpers ──────────────────────────────────────────────────────────────

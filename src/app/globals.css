@@ -1203,10 +1203,13 @@ footer {
 .case-role-list li::before { content: '→'; position: absolute; left: 0; color: var(--salmon); font-size: 0.9rem; }
 .case-details-grid.single { grid-template-columns: 1fr; }
 
-/* Salmon accent for featured-card metric panels (index variety) */
+/* Accent variety for featured-card metric panels */
 .work-case-metric.accent-salmon { background: var(--salmon); }
 .work-case-metric.accent-salmon .work-case-metric-value { color: var(--white); }
 .work-case-metric.accent-salmon .work-case-metric-label { color: rgba(255,255,255,0.9); }
+.work-case-metric.accent-turquoise { background: var(--turquoise); }
+.work-case-metric.accent-turquoise .work-case-metric-value { color: var(--jungle-dark); }
+.work-case-metric.accent-turquoise .work-case-metric-label { color: var(--jungle); }
 
 /* ── WORK / CASE MOBILE ── */
 @media (max-width: 768px) {

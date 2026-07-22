@@ -84,6 +84,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${SITE_URL}/work/happy-vegan/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/happy-vegan/`,
+          sv: `${SITE_URL}/sv/case/happy-vegan/`,
+          'x-default': `${SITE_URL}/work/happy-vegan/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/case/happy-vegan/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/happy-vegan/`,
+          sv: `${SITE_URL}/sv/case/happy-vegan/`,
+          'x-default': `${SITE_URL}/work/happy-vegan/`,
+        },
+      },
+    },
+    {
       url: `${SITE_URL}/work/sands-entreprenad/`,
       lastModified,
       changeFrequency: 'monthly',

@@ -73,7 +73,7 @@ export default function Nav({ t, lang }: NavProps) {
   const close = () => setOpen(false)
 
   return (
-    <nav>
+    <nav className="site-nav">
       <div className="nav-inner">
         <Link href={home} className="nav-logo" onClick={close}>
           <span className="logo-icon"><LogoIcon /></span>

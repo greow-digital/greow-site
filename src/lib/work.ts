@@ -113,11 +113,9 @@ export interface WorkIndexCopy {
 export const engagements: Record<Lang, Engagement[]> = {
   en: [
     { client: 'Telia', logo: '/assets/logo-telia.svg', metric: '+100%', label: 'conversion rate after rebuilding the entire checkout.' },
-    { client: 'RiksTV / Strim', logo: '/assets/logo-rikstv.svg', metric: '−40%', label: 'CAC after introducing the STDC framework and performance rig.' },
   ],
   sv: [
     { client: 'Telia', logo: '/assets/logo-telia.svg', metric: '+100%', label: 'konverteringsgrad efter en total ombyggnad av checkouten.' },
-    { client: 'RiksTV / Strim', logo: '/assets/logo-rikstv.svg', metric: '−40%', label: 'CAC efter införandet av STDC-ramverket och en performance-rigg.' },
   ],
 }
 
@@ -158,6 +156,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['PLG', 'Website', 'SEO', 'CRO', 'Experimentation'],
       metric: { value: '0 → 20%', label: 'of MRR via PLG' },
       year: '2022–25',
+    },
+    {
+      slug: 'rikstv-strim',
+      href: '/work/rikstv-strim/',
+      accent: 'salmon',
+      client: 'RiksTV & Strim.no',
+      logo: '/assets/logo-rikstv.svg',
+      title: 'Launching Norway’s first B2C streaming service — and transforming a TV distributor’s digital sales',
+      blurb: 'As Head of Growth & Acquisition, I built Strim.no’s acquisition engine from zero — team, agencies, channels, creative and measurement — cutting CAC by 40% and beating subscriber targets, while rebuilding rikstv.no and leading digital sales for the established business.',
+      tags: ['Growth leadership', 'Acquisition', 'Performance', 'Attribution', 'E-commerce'],
+      metric: { value: '−40%', label: 'lower CAC' },
+      year: '2018–20',
     },
     {
       slug: 'bnbalyze',
@@ -219,6 +229,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['PLG', 'Webbplats', 'SEO', 'CRO', 'Experimentering'],
       metric: { value: '0 → 20%', label: 'av MRR via PLG' },
       year: '2022–25',
+    },
+    {
+      slug: 'rikstv-strim',
+      href: '/sv/case/rikstv-strim/',
+      accent: 'salmon',
+      client: 'RiksTV & Strim.no',
+      logo: '/assets/logo-rikstv.svg',
+      title: 'Lanserade Norges första B2C-streamingtjänst — och transformerade en TV-distributörs digitala försäljning',
+      blurb: 'Som Head of Growth & Acquisition byggde jag Strim.nos förvärvsmotor från noll — team, byråer, kanaler, kreativ och mätning — sänkte CAC med 40% och slog prenumerantmålen, samtidigt som jag byggde om rikstv.no och ledde digital försäljning för den etablerade affären.',
+      tags: ['Growth-ledarskap', 'Förvärv', 'Performance', 'Attribution', 'E-handel'],
+      metric: { value: '−40%', label: 'lägre CAC' },
+      year: '2018–20',
     },
     {
       slug: 'bnbalyze',
@@ -2733,9 +2755,485 @@ const funnelSv: CaseStudy = {
   },
 }
 
+// ── RiksTV & Strim.no case study ─────────────────────────────────────────────
+
+const rikstvEn: CaseStudy = {
+  slug: 'rikstv-strim',
+  accent: 'salmon',
+  kicker: 'Case study',
+  client: 'RiksTV & Strim.no',
+  title: 'Launching Norway’s first pure B2C streaming service — while transforming digital sales for a major TV distributor.',
+  intro:
+    'Built Strim.no’s acquisition engine from zero and cut CAC by 40%, exceeding subscriber targets ahead of schedule — while simultaneously rebuilding RiksTV’s website and leading digital sales for the established core business.',
+  meta: [
+    { label: 'Role', value: 'Head of Growth & Acquisition' },
+    { label: 'Period', value: 'Oct 2018 – Jun 2020' },
+    { label: 'Scope', value: 'Digital sales · performance · measurement · agencies' },
+    { label: 'Context', value: 'Norway — TV distribution + a new B2C streaming launch' },
+  ],
+  metrics: [
+    { value: '−40%', label: 'lower customer acquisition cost', note: 'From disciplined budgets, creative iteration and measurement' },
+    { value: 'Launch', label: 'Strim.no built from zero', note: 'Norway’s first pure B2C streaming subscription' },
+    { value: 'Ahead', label: 'of schedule on subscriber targets', note: 'Growth targets exceeded early' },
+  ],
+  overview: {
+    heading: 'Two products, two growth logics, at once.',
+    body: [
+      'RiksTV is one of Norway’s largest television distributors, serving hundreds of thousands of households with digital TV. In 2018 the company decided to launch Strim.no — Norway’s first pure B2C streaming subscription service — as a digital-first product alongside RiksTV’s established distribution business.',
+      'I held a dual leadership role. For RiksTV, I led digital sales and e-commerce across an established brand, existing infrastructure and a mature customer base. For Strim, I started with a blank page: no dedicated team, acquisition engine, channel strategy, measurement framework, agency setup or proven commercial model.',
+      'My responsibility was to build all of it — and to establish whether Strim could acquire and retain subscribers at a commercially sustainable cost.',
+    ],
+  },
+  startingPoint: {
+    label: 'The starting point',
+    heading: 'A new category, with no data to optimise against.',
+    lead:
+      'RiksTV was an established subscription business — the challenge there was efficiency and e-commerce. Strim was a new category proposition with no historical performance data; the acquisition model, operating structure and measurement all had to be created while the product entered the market. Strim needed to:',
+    points: [
+      'Establish a distinctive market position and build awareness from zero',
+      'Explain a new way of purchasing television content',
+      'Create a scalable subscriber-acquisition model',
+      'Identify the right channel mix and develop effective creative',
+      'Measure conversion and acquisition cost reliably',
+      'Balance subscriber growth with commercial sustainability',
+    ],
+    goal:
+      'The task was to build a complete commercial growth system for a product entering the market — while simultaneously making an established digital business more efficient.',
+  },
+  ownership: {
+    label: 'What I owned',
+    heading: 'Growth and acquisition across both businesses.',
+    intro:
+      'At RiksTV I owned digital sales, e-commerce, website, paid acquisition, agencies and conversion. At Strim I owned the complete commercial growth system — meaning I was simultaneously improving an established digital business and building an entirely new one:',
+    items: [
+      'Digital sales & e-commerce',
+      'Website development',
+      'Product & proposition',
+      'Team & operating model',
+      'Channel strategy',
+      'Paid search, social & programmatic',
+      'Creative strategy',
+      'Agency selection & management',
+      'Measurement & attribution',
+      'Budget allocation & CAC economics',
+      'Subscriber-growth performance',
+    ],
+  },
+  acts: [
+    {
+      label: 'Act I',
+      title: 'Building Strim’s growth engine from zero',
+      subtitle: 'One connected acquisition operation, not several disconnected channels.',
+      blocks: [
+        {
+          title: 'Agency partners as one operation',
+          body:
+            'I selected and onboarded specialist media and creative agency partners across paid search, paid social, programmatic and creative development. Rather than treating them as separate suppliers, I built a shared performance structure around them:',
+          items: [
+            'Clear commercial and channel briefs, with defined responsibilities',
+            'Shared success metrics and regular performance reviews',
+            'Creative feedback loops and testing / optimisation cadences',
+            'Transparent budget decisions',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Act II',
+      title: 'Establishing measurement and attribution',
+      subtitle: 'Decisions based on subscribers and economics — not impressions or traffic.',
+      blocks: [
+        {
+          title: 'Beyond clicks to subscribers',
+          body:
+            'Strim needed to understand far more than how many people clicked an ad. I implemented the measurement and attribution framework required to answer the questions that actually mattered:',
+          items: [
+            'Which channels generated subscribers',
+            'Which campaigns and creatives performed best',
+            'How acquisition costs differed by audience and source',
+            'Where users dropped out of the journey',
+            'How budgets should be distributed, and whether growth stayed viable',
+          ],
+        },
+        {
+          title: 'A shared foundation for performance',
+          body:
+            'The framework created a common language across internal stakeholders, agencies, channels and creative teams — so decisions could be based on subscriber outcomes and acquisition economics rather than platform-specific vanity metrics.',
+        },
+      ],
+    },
+    {
+      label: 'Act III',
+      title: 'Rebuilding the performance strategy',
+      subtitle: 'Faster learning and stronger commercial discipline.',
+      blocks: [
+        {
+          title: 'Faster creative iteration',
+          body:
+            'Streaming is a highly creative-dependent category — performance varies with the content promoted, the proposition, the audience and the timing. I introduced tighter iteration cycles between campaign data and creative production, using performance insight to continuously refine messaging, formats and concepts rather than treating creative as a fixed deliverable.',
+        },
+        {
+          title: 'Budget allocation on marginal returns',
+          body:
+            'Budgets were evaluated on the additional subscriber value each channel could generate — not historical allocation or average platform metrics. That made it possible to scale channels while they stayed efficient and redirect investment when marginal returns deteriorated.',
+        },
+        {
+          title: 'Agency accountability',
+          body:
+            'Clearer briefs, feedback structures and optimisation cadences meant every partner worked toward shared commercial outcomes, with channel results connected to subscriber growth and CAC. Together, these changes reduced Strim’s customer acquisition cost by 40% while subscriber-growth targets were exceeded ahead of schedule.',
+        },
+      ],
+    },
+    {
+      label: 'Act IV',
+      title: 'Transforming RiksTV’s digital sales',
+      subtitle: 'A different playbook for the established core business.',
+      blocks: [
+        {
+          title: 'Optimising an established business',
+          body:
+            'Alongside launching Strim, I remained responsible for digital sales and acquisition at RiksTV — a business with established products, awareness, infrastructure and a broad subscriber base. My work included rebuilding rikstv.no, improving the e-commerce journey, managing digital-sales performance, overseeing paid-acquisition partners and optimising conversion across existing and new customers. The new site had to explain a more complex TV offering, support package selection and convert within an established subscription model.',
+        },
+        {
+          title: 'Two growth logics at once',
+          body:
+            'Managing RiksTV and Strim simultaneously meant holding two separate growth logics: optimisation and transformation for an established business, and validation and rapid scaling for a new digital service — while sharing knowledge, capabilities and commercial discipline across both.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Results',
+    heading: 'A launch and a transformation, in parallel.',
+    intro: 'Two products, two commercial models, one coordinated growth operation.',
+    items: [
+      {
+        value: 'Launch',
+        title: 'Strim launched from zero',
+        body:
+          'I built the team, agency structure, channel strategy, creative process, measurement framework and acquisition operation to bring Strim to market — moving it from a strategic concept to an operating B2C subscription business with a measurable growth engine.',
+      },
+      {
+        value: '−40%',
+        title: '40% reduction in CAC',
+        body:
+          'The rebuilt performance strategy cut customer acquisition cost by 40% — driven by more disciplined budget allocation, tighter creative iteration, better measurement and stronger agency management.',
+      },
+      {
+        value: 'Ahead',
+        title: 'Subscriber targets exceeded early',
+        body:
+          'Strim grew faster than planned and exceeded its subscriber-acquisition targets ahead of schedule, while improving acquisition efficiency.',
+      },
+      {
+        value: '2',
+        title: 'Two products, two commercial models',
+        body:
+          'In parallel I led the rebuild of rikstv.no and continued managing digital sales for the mature distribution business — running separate strategies for an established product and a ground-up streaming service while sharing capability and commercial discipline across both.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What launching-and-transforming taught.',
+    items: [
+      {
+        title: 'A new product needs operating infrastructure before it can scale.',
+        body: 'Channels, agencies, creative, measurement and decision cadences had to be built together, not bolted on later.',
+      },
+      {
+        title: 'Subscriber growth only matters when the economics work.',
+        body: 'CAC was treated as a central product and commercial constraint — not just a marketing metric.',
+      },
+      {
+        title: 'Creative and performance can’t operate separately.',
+        body: 'Faster feedback between channel data and creative production materially improved acquisition efficiency.',
+      },
+      {
+        title: 'Attribution creates organisational alignment.',
+        body: 'A shared measurement framework let internal teams and agencies optimise toward subscriber outcomes rather than channel-specific vanity metrics.',
+      },
+      {
+        title: 'Established and new products need different growth systems.',
+        body: 'RiksTV benefited from structured optimisation; Strim required rapid validation and infrastructure creation.',
+      },
+      {
+        title: 'Agency management is a growth capability.',
+        body: 'Clear briefs, shared metrics, fast feedback and commercial accountability turned external partners into one coordinated acquisition operation.',
+      },
+    ],
+  },
+  role: {
+    label: 'My role',
+    heading: 'Growth and acquisition across RiksTV and Strim.no.',
+    body:
+      'I led growth and acquisition across both businesses — launching a new B2C streaming service while transforming digital sales for an established distributor:',
+    items: [
+      'Launching Strim’s growth operation from scratch',
+      'Developing the product and commercial proposition',
+      'Building the team and agency model',
+      'Selecting and onboarding media and creative partners',
+      'Creating the measurement and attribution framework',
+      'Leading paid search, paid social and programmatic strategy',
+      'Directing creative testing and iteration',
+      'Managing budgets based on marginal returns',
+      'Reducing CAC by 40% and exceeding subscriber targets ahead of schedule',
+      'Rebuilding rikstv.no and leading RiksTV digital sales & e-commerce',
+    ],
+  },
+  quote: {
+    text:
+      'I built Strim’s acquisition engine from zero, reduced CAC by 40%, and exceeded subscriber targets ahead of schedule — while simultaneously rebuilding RiksTV’s website and leading digital sales for the established core business.',
+    author: 'Erik Werner',
+    role: 'Head of Growth & Acquisition, RiksTV & Strim.no',
+  },
+  cta: {
+    heading: 'Launching something new?',
+    body: 'Whether it’s a new product from zero or a more efficient engine for an established one, let’s talk about the acquisition system behind it.',
+    button: 'Book a call →',
+  },
+}
+
+const rikstvSv: CaseStudy = {
+  slug: 'rikstv-strim',
+  accent: 'salmon',
+  kicker: 'Case study',
+  client: 'RiksTV & Strim.no',
+  title: 'Lanserade Norges första rena B2C-streamingtjänst — samtidigt som jag transformerade digital försäljning för en stor TV-distributör.',
+  intro:
+    'Byggde Strim.nos förvärvsmotor från noll och sänkte CAC med 40%, och överträffade prenumerantmålen före tidplan — samtidigt som jag byggde om RiksTVs webbplats och ledde digital försäljning för den etablerade kärnaffären.',
+  meta: [
+    { label: 'Roll', value: 'Head of Growth & Acquisition' },
+    { label: 'Period', value: 'Okt 2018 – Jun 2020' },
+    { label: 'Omfattning', value: 'Digital försäljning · performance · mätning · byråer' },
+    { label: 'Kontext', value: 'Norge — TV-distribution + en ny B2C-streaminglansering' },
+  ],
+  metrics: [
+    { value: '−40%', label: 'lägre kundförvärvskostnad', note: 'Från disciplinerade budgetar, kreativ iteration och mätning' },
+    { value: 'Lansering', label: 'Strim.no byggd från noll', note: 'Norges första rena B2C-streamingprenumeration' },
+    { value: 'Före', label: 'tidplan på prenumerantmålen', note: 'Tillväxtmålen överträffades tidigt' },
+  ],
+  overview: {
+    heading: 'Två produkter, två tillväxtlogiker, samtidigt.',
+    body: [
+      'RiksTV är en av Norges största TV-distributörer och betjänar hundratusentals hushåll med digital-TV. 2018 beslutade bolaget att lansera Strim.no — Norges första rena B2C-streamingprenumeration — som en digital-first-produkt vid sidan av RiksTVs etablerade distributionsaffär.',
+      'Jag hade en dubbel ledarroll. För RiksTV ledde jag digital försäljning och e-handel över ett etablerat varumärke, befintlig infrastruktur och en mogen kundbas. För Strim började jag med ett blankt papper: inget dedikerat team, ingen förvärvsmotor, kanalstrategi, mätramverk, byråuppsättning eller beprövad kommersiell modell.',
+      'Mitt ansvar var att bygga allt detta — och att fastställa om Strim kunde förvärva och behålla prenumeranter till en kommersiellt hållbar kostnad.',
+    ],
+  },
+  startingPoint: {
+    label: 'Utgångsläget',
+    heading: 'En ny kategori, utan data att optimera mot.',
+    lead:
+      'RiksTV var en etablerad prenumerationsaffär — där handlade utmaningen om effektivitet och e-handel. Strim var ett nytt kategorierbjudande utan historisk performance-data; förvärvsmodellen, den operativa strukturen och mätningen fick alla skapas medan produkten gick ut på marknaden. Strim behövde:',
+    points: [
+      'Etablera en distinkt marknadsposition och bygga kännedom från noll',
+      'Förklara ett nytt sätt att köpa TV-innehåll',
+      'Skapa en skalbar modell för prenumerantförvärv',
+      'Identifiera rätt kanalmix och utveckla effektiv kreativ',
+      'Mäta konvertering och förvärvskostnad tillförlitligt',
+      'Balansera prenumeranttillväxt med kommersiell hållbarhet',
+    ],
+    goal:
+      'Uppgiften var att bygga ett komplett kommersiellt tillväxtsystem för en produkt på väg in på marknaden — samtidigt som jag gjorde en etablerad digital affär effektivare.',
+  },
+  ownership: {
+    label: 'Vad jag ägde',
+    heading: 'Growth och förvärv över båda affärerna.',
+    intro:
+      'På RiksTV ägde jag digital försäljning, e-handel, webbplats, betalt förvärv, byråer och konvertering. På Strim ägde jag hela det kommersiella tillväxtsystemet — vilket innebar att jag samtidigt förbättrade en etablerad digital affär och byggde en helt ny:',
+    items: [
+      'Digital försäljning & e-handel',
+      'Webbplatsutveckling',
+      'Produkt & erbjudande',
+      'Team & operativ modell',
+      'Kanalstrategi',
+      'Betald sök, social & programmatic',
+      'Kreativ strategi',
+      'Byråval & byråstyrning',
+      'Mätning & attribution',
+      'Budgetallokering & CAC-ekonomi',
+      'Prenumeranttillväxt',
+    ],
+  },
+  acts: [
+    {
+      label: 'Akt I',
+      title: 'Bygga Strims tillväxtmotor från noll',
+      subtitle: 'En sammankopplad förvärvsoperation, inte flera frånkopplade kanaler.',
+      blocks: [
+        {
+          title: 'Byråpartners som en operation',
+          body:
+            'Jag valde och onboardade specialiserade medie- och kreativbyråpartners inom betald sök, betald social, programmatic och kreativutveckling. Istället för att behandla dem som separata leverantörer byggde jag en gemensam performance-struktur runt dem:',
+          items: [
+            'Tydliga kommersiella och kanalbriefs, med definierat ansvar',
+            'Gemensamma framgångsmått och regelbundna performance-genomgångar',
+            'Kreativa feedback-loopar och test- / optimeringscykler',
+            'Transparenta budgetbeslut',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Akt II',
+      title: 'Etablera mätning och attribution',
+      subtitle: 'Beslut baserade på prenumeranter och ekonomi — inte visningar eller trafik.',
+      blocks: [
+        {
+          title: 'Bortom klick till prenumeranter',
+          body:
+            'Strim behövde förstå långt mer än hur många som klickade på en annons. Jag implementerade det mät- och attributionsramverk som krävdes för att besvara frågorna som faktiskt spelade roll:',
+          items: [
+            'Vilka kanaler som genererade prenumeranter',
+            'Vilka kampanjer och kreativ som presterade bäst',
+            'Hur förvärvskostnaderna skilde sig efter målgrupp och källa',
+            'Var användare hoppade av resan',
+            'Hur budgetar borde fördelas, och om tillväxten förblev hållbar',
+          ],
+        },
+        {
+          title: 'En gemensam grund för performance',
+          body:
+            'Ramverket skapade ett gemensamt språk över interna intressenter, byråer, kanaler och kreativteam — så att beslut kunde baseras på prenumerantutfall och förvärvsekonomi snarare än plattformsspecifika fåfängemått.',
+        },
+      ],
+    },
+    {
+      label: 'Akt III',
+      title: 'Bygga om performance-strategin',
+      subtitle: 'Snabbare lärande och starkare kommersiell disciplin.',
+      blocks: [
+        {
+          title: 'Snabbare kreativ iteration',
+          body:
+            'Streaming är en starkt kreativberoende kategori — performance varierar med innehållet som marknadsförs, erbjudandet, målgruppen och tajmingen. Jag införde tätare iterationscykler mellan kampanjdata och kreativproduktion, och använde performance-insikter för att löpande förfina budskap, format och koncept snarare än att behandla kreativ som en fast leverabel.',
+        },
+        {
+          title: 'Budgetallokering på marginalavkastning',
+          body:
+            'Budgetar utvärderades utifrån det ytterligare prenumerantvärde varje kanal kunde generera — inte historisk allokering eller genomsnittliga plattformsmått. Det gjorde det möjligt att skala kanaler så länge de var effektiva och styra om investeringar när marginalavkastningen försämrades.',
+        },
+        {
+          title: 'Byråansvar',
+          body:
+            'Tydligare briefs, feedback-strukturer och optimeringscykler innebar att varje partner arbetade mot gemensamma kommersiella utfall, med kanalresultat kopplade till prenumeranttillväxt och CAC. Tillsammans sänkte dessa förändringar Strims kundförvärvskostnad med 40% samtidigt som prenumerantmålen överträffades före tidplan.',
+        },
+      ],
+    },
+    {
+      label: 'Akt IV',
+      title: 'Transformera RiksTVs digitala försäljning',
+      subtitle: 'En annan spelbok för den etablerade kärnaffären.',
+      blocks: [
+        {
+          title: 'Optimera en etablerad affär',
+          body:
+            'Vid sidan av Strim-lanseringen var jag fortsatt ansvarig för digital försäljning och förvärv på RiksTV — en affär med etablerade produkter, kännedom, infrastruktur och en bred prenumerantbas. Mitt arbete omfattade att bygga om rikstv.no, förbättra e-handelsresan, styra digital försäljning, övervaka partners för betalt förvärv och optimera konvertering över både befintliga och nya kunder. Den nya sajten behövde förklara ett mer komplext TV-erbjudande, stödja paketval och konvertera inom en etablerad prenumerationsmodell.',
+        },
+        {
+          title: 'Två tillväxtlogiker samtidigt',
+          body:
+            'Att driva RiksTV och Strim samtidigt innebar att hålla två separata tillväxtlogiker: optimering och transformation för en etablerad affär, och validering och snabb skalning för en ny digital tjänst — samtidigt som kunskap, förmågor och kommersiell disciplin delades över båda.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Resultat',
+    heading: 'En lansering och en transformation, parallellt.',
+    intro: 'Två produkter, två kommersiella modeller, en samordnad tillväxtoperation.',
+    items: [
+      {
+        value: 'Lansering',
+        title: 'Strim lanserad från noll',
+        body:
+          'Jag byggde teamet, byråstrukturen, kanalstrategin, kreativprocessen, mätramverket och förvärvsoperationen för att ta Strim till marknaden — och flyttade det från ett strategiskt koncept till en operativ B2C-prenumerationsaffär med en mätbar tillväxtmotor.',
+      },
+      {
+        value: '−40%',
+        title: '40% lägre CAC',
+        body:
+          'Den ombyggda performance-strategin sänkte kundförvärvskostnaden med 40% — drivet av mer disciplinerad budgetallokering, tätare kreativ iteration, bättre mätning och starkare byråstyrning.',
+      },
+      {
+        value: 'Före',
+        title: 'Prenumerantmål överträffade tidigt',
+        body:
+          'Strim växte snabbare än planerat och överträffade sina mål för prenumerantförvärv före tidplan, samtidigt som förvärvseffektiviteten förbättrades.',
+      },
+      {
+        value: '2',
+        title: 'Två produkter, två kommersiella modeller',
+        body:
+          'Parallellt ledde jag ombyggnaden av rikstv.no och fortsatte styra digital försäljning för den mogna distributionsaffären — och körde separata strategier för en etablerad produkt och en streamingtjänst byggd från grunden, samtidigt som förmåga och kommersiell disciplin delades över båda.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad det lärde mig att lansera-och-transformera.',
+    items: [
+      {
+        title: 'En ny produkt behöver operativ infrastruktur innan den kan skala.',
+        body: 'Kanaler, byråer, kreativ, mätning och beslutscykler måste byggas tillsammans, inte skruvas på i efterhand.',
+      },
+      {
+        title: 'Prenumeranttillväxt spelar bara roll när ekonomin fungerar.',
+        body: 'CAC behandlades som en central produkt- och affärsbegränsning — inte bara ett marknadsföringsmått.',
+      },
+      {
+        title: 'Kreativ och performance kan inte drivas separat.',
+        body: 'Snabbare feedback mellan kanaldata och kreativproduktion förbättrade förvärvseffektiviteten påtagligt.',
+      },
+      {
+        title: 'Attribution skapar organisatorisk samsyn.',
+        body: 'Ett gemensamt mätramverk lät interna team och byråer optimera mot prenumerantutfall snarare än kanalspecifika fåfängemått.',
+      },
+      {
+        title: 'Etablerade och nya produkter behöver olika tillväxtsystem.',
+        body: 'RiksTV gynnades av strukturerad optimering; Strim krävde snabb validering och skapande av infrastruktur.',
+      },
+      {
+        title: 'Byråstyrning är en tillväxtförmåga.',
+        body: 'Tydliga briefs, gemensamma mått, snabb feedback och kommersiellt ansvar gjorde externa partners till en samordnad förvärvsoperation.',
+      },
+    ],
+  },
+  role: {
+    label: 'Min roll',
+    heading: 'Growth och förvärv över RiksTV och Strim.no.',
+    body:
+      'Jag ledde growth och förvärv över båda affärerna — lanserade en ny B2C-streamingtjänst samtidigt som jag transformerade digital försäljning för en etablerad distributör:',
+    items: [
+      'Lansera Strims tillväxtoperation från grunden',
+      'Utveckla produkten och det kommersiella erbjudandet',
+      'Bygga teamet och byråmodellen',
+      'Välja och onboarda medie- och kreativpartners',
+      'Skapa mät- och attributionsramverket',
+      'Leda strategi för betald sök, betald social och programmatic',
+      'Styra kreativ testning och iteration',
+      'Hantera budgetar baserat på marginalavkastning',
+      'Sänka CAC med 40% och överträffa prenumerantmålen före tidplan',
+      'Bygga om rikstv.no och leda RiksTVs digitala försäljning & e-handel',
+    ],
+  },
+  quote: {
+    text:
+      'Jag byggde Strims förvärvsmotor från noll, sänkte CAC med 40%, och överträffade prenumerantmålen före tidplan — samtidigt som jag byggde om RiksTVs webbplats och ledde digital försäljning för den etablerade kärnaffären.',
+    author: 'Erik Werner',
+    role: 'Head of Growth & Acquisition, RiksTV & Strim.no',
+  },
+  cta: {
+    heading: 'Lanserar du något nytt?',
+    body: 'Oavsett om det är en ny produkt från noll eller en effektivare motor för en etablerad — låt oss prata om förvärvssystemet bakom.',
+    button: 'Boka ett samtal →',
+  },
+}
+
 export const caseStudies: Record<Lang, Record<string, CaseStudy>> = {
-  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
-  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
+  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'rikstv-strim': rikstvEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
+  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'rikstv-strim': rikstvSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
 }
 
 // ── SEO helpers ──────────────────────────────────────────────────────────────

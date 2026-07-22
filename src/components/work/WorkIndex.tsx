@@ -76,26 +76,28 @@ export default function WorkIndex({ t, lang }: WorkIndexProps) {
       </section>
 
       {/* MORE ENGAGEMENTS */}
-      <section className="section work-more">
-        <div className="container">
-          <div className="work-more-header reveal">
-            <p className="section-label">{copy.moreLabel}</p>
-            <h2>{copy.moreHeading}</h2>
-            <p>{copy.moreIntro}</p>
+      {more.length > 0 && (
+        <section className="section work-more">
+          <div className="container">
+            <div className="work-more-header reveal">
+              <p className="section-label">{copy.moreLabel}</p>
+              <h2>{copy.moreHeading}</h2>
+              <p>{copy.moreIntro}</p>
+            </div>
+            <div className={`work-more-grid count-${more.length}`}>
+              {more.map((e) => (
+                <div key={e.client} className="work-more-card reveal">
+                  <div className="work-more-metric">{e.metric}</div>
+                  <p className="work-more-label">{e.label}</p>
+                  <span className="work-more-logo">
+                    <img src={e.logo} alt={e.client} loading="lazy" decoding="async" height={26} />
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className={`work-more-grid count-${more.length}`}>
-            {more.map((e) => (
-              <div key={e.client} className="work-more-card reveal">
-                <div className="work-more-metric">{e.metric}</div>
-                <p className="work-more-label">{e.label}</p>
-                <span className="work-more-logo">
-                  <img src={e.logo} alt={e.client} loading="lazy" decoding="async" height={26} />
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="section work-cta-wrap">

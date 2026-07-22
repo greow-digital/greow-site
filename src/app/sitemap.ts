@@ -31,5 +31,83 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    {
+      url: `${SITE_URL}/work/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/`,
+          sv: `${SITE_URL}/sv/case/`,
+          'x-default': `${SITE_URL}/work/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/case/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/`,
+          sv: `${SITE_URL}/sv/case/`,
+          'x-default': `${SITE_URL}/work/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/work/leadfeeder-dealfront/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/leadfeeder-dealfront/`,
+          sv: `${SITE_URL}/sv/case/leadfeeder-dealfront/`,
+          'x-default': `${SITE_URL}/work/leadfeeder-dealfront/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/case/leadfeeder-dealfront/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/leadfeeder-dealfront/`,
+          sv: `${SITE_URL}/sv/case/leadfeeder-dealfront/`,
+          'x-default': `${SITE_URL}/work/leadfeeder-dealfront/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/work/sands-entreprenad/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/sands-entreprenad/`,
+          sv: `${SITE_URL}/sv/case/sands-entreprenad/`,
+          'x-default': `${SITE_URL}/work/sands-entreprenad/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/case/sands-entreprenad/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/sands-entreprenad/`,
+          sv: `${SITE_URL}/sv/case/sands-entreprenad/`,
+          'x-default': `${SITE_URL}/work/sands-entreprenad/`,
+        },
+      },
+    },
   ]
 }

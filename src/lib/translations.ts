@@ -9,6 +9,7 @@ export const translations = {
       how: 'How it works',
       pricing: 'Pricing',
       other: 'Other',
+      work: 'Work',
       cta: 'Book a call →',
     },
     hero: {
@@ -203,6 +204,7 @@ export const translations = {
       how: 'Så fungerar det',
       pricing: 'Priser',
       other: 'Övrigt',
+      work: 'Case',
       cta: 'Boka samtal →',
     },
     hero: {

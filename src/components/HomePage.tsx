@@ -1,5 +1,6 @@
 import type { Translations } from '@/lib/translations'
 import CalEmbed from './CalEmbed'
+import Footer from './Footer'
 
 // Feature icons — order matches features.items in translations
 const featureIcons = [
@@ -348,18 +349,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
       </section>
 
       {/* FOOTER */}
-      <footer>
-        <div className="footer-inner">
-          <div className="footer-left">
-            <span className="name">Erik Werner</span> · Greow · Growth as a Service · Stockholm
-          </div>
-          <div className="footer-links">
-            {t.footer.links.map((link) => (
-              <a key={link.label} href={link.href}>{link.label}</a>
-            ))}
-          </div>
-        </div>
-      </footer>
+      <Footer t={t} lang={lang} />
     </>
   )
 }

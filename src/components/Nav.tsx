@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
+import { workBase } from '@/lib/work'
 
 interface NavProps {
   t: Translations['nav']
@@ -61,6 +62,7 @@ const LogoIcon = () => (
 )
 
 export default function Nav({ t, lang }: NavProps) {
+  const home = lang === 'en' ? '/' : '/sv/'
   const altHref = lang === 'en' ? '/sv/' : '/'
   const altLabel = lang === 'en' ? 'SV' : 'EN'
   const AltFlag = lang === 'en' ? FlagSV : FlagEN
@@ -68,21 +70,22 @@ export default function Nav({ t, lang }: NavProps) {
   return (
     <nav>
       <div className="nav-inner">
-        <Link href={lang === 'en' ? '/' : '/sv/'} className="nav-logo">
+        <Link href={home} className="nav-logo">
           <span className="logo-icon"><LogoIcon /></span>
           Greow
         </Link>
 
         {/* Desktop links */}
         <div className="nav-links">
-          <a href="#how">{t.how}</a>
-          <a href="#pricing">{t.pricing}</a>
-          <a href="#extras">{t.other}</a>
+          <a href={`${home}#how`}>{t.how}</a>
+          <a href={`${home}#pricing`}>{t.pricing}</a>
+          <Link href={workBase[lang]}>{t.work}</Link>
+          <a href={`${home}#extras`}>{t.other}</a>
           <Link href={altHref} className="lang-switcher" aria-label={`Switch to ${altLabel}`}>
             <AltFlag />
             <span>{altLabel}</span>
           </Link>
-          <a href="#book" className="nav-cta">{t.cta}</a>
+          <a href={`${home}#book`} className="nav-cta">{t.cta}</a>
         </div>
 
         {/* Mobile: flag switcher always visible */}

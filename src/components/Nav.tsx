@@ -82,20 +82,25 @@ export default function Nav({ t, lang }: NavProps) {
 
         {/* Desktop links */}
         <div className="nav-links">
-          <a href={`${home}#how`}>{t.how}</a>
           <div className="nav-dropdown">
             <button type="button" className="nav-dropdown-trigger">{t.services}</button>
             <div className="nav-dropdown-menu">
               <div className="nav-dropdown-card">
                 {serviceNav.map((s) => (
-                  <Link key={s.key} href={s.url[lang]}>{s.label[lang]}</Link>
+                  <Link key={s.key} href={s.url[lang]} className="nav-dropdown-item">
+                    <span className={`nav-dropdown-dot accent-${s.accent}`} aria-hidden="true" />
+                    <span className="nav-dropdown-text">
+                      <span className="nav-dropdown-label">{s.label[lang]}</span>
+                      <span className="nav-dropdown-tagline">{s.tagline[lang]}</span>
+                    </span>
+                  </Link>
                 ))}
               </div>
             </div>
           </div>
           <Link href={workBase[lang]}>{t.work}</Link>
           <a href={`${home}#pricing`}>{t.pricing}</a>
-          <a href={`${home}#extras`}>{t.other}</a>
+          <a href={`${home}#how`}>{t.how}</a>
           <Link href={altHref} className="lang-switcher" aria-label={`Switch to ${altLabel}`}>
             <AltFlag />
             <span>{altLabel}</span>
@@ -126,16 +131,15 @@ export default function Nav({ t, lang }: NavProps) {
       {/* Mobile dropdown menu */}
       {open && (
         <div className="nav-mobile-menu">
-          <a href={`${home}#how`} onClick={close}>{t.how}</a>
-          <Link href={workBase[lang]} onClick={close}>{t.work}</Link>
-          <a href={`${home}#pricing`} onClick={close}>{t.pricing}</a>
-          <a href={`${home}#extras`} onClick={close}>{t.other}</a>
           <span className="nav-mobile-heading">{t.services}</span>
           {serviceNav.map((s) => (
             <Link key={s.key} href={s.url[lang]} className="nav-mobile-sub" onClick={close}>
               {s.label[lang]}
             </Link>
           ))}
+          <Link href={workBase[lang]} onClick={close}>{t.work}</Link>
+          <a href={`${home}#pricing`} onClick={close}>{t.pricing}</a>
+          <a href={`${home}#how`} onClick={close}>{t.how}</a>
           <a href={`${home}#book`} className="nav-cta-mobile" onClick={close}>{t.cta}</a>
         </div>
       )}

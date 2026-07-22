@@ -92,6 +92,15 @@ export interface Engagement {
   label: string
 }
 
+export interface Appearance {
+  type: string // localized, e.g. "Keynote" / "Podcast"
+  title: string
+  description: string
+  videoId: string // YouTube id (for thumbnail)
+  url: string // YouTube watch URL
+  meta: string // localized context line
+}
+
 export interface WorkIndexCopy {
   meta: { title: string; description: string }
   kicker: string
@@ -104,6 +113,12 @@ export interface WorkIndexCopy {
   moreIntro: string
   ctaCard: { heading: string; body: string; button: string }
   readCase: string
+  casesTab: string
+  appearancesTab: string
+  appearancesLabel: string
+  appearancesHeading: string
+  appearancesIntro: string
+  watch: string
 }
 
 // ── Shared registry ──────────────────────────────────────────────────────────
@@ -116,6 +131,49 @@ export interface WorkIndexCopy {
 export const engagements: Record<Lang, Engagement[]> = {
   en: [],
   sv: [],
+}
+
+export const appearances: Record<Lang, Appearance[]> = {
+  en: [
+    {
+      type: 'Keynote',
+      title: 'Growth — From buzz to bizz',
+      description:
+        'A keynote on turning growth from hype and buzzwords into real commercial results — the mindset and mechanics that connect marketing activity to the business.',
+      videoId: '-Bnny3oX7U8',
+      url: 'https://www.youtube.com/watch?v=-Bnny3oX7U8&t=1702s',
+      meta: 'Marketing-event keynote · in Swedish',
+    },
+    {
+      type: 'Podcast',
+      title: 'Bringing commercial and tech teams together, remotely',
+      description:
+        'A Favro podcast conversation on how to align commercial and technical teams — shared goals, communication and ways of working — when everyone is remote.',
+      videoId: 'CgBsg0IUnho',
+      url: 'https://www.youtube.com/watch?v=CgBsg0IUnho',
+      meta: 'Favro podcast',
+    },
+  ],
+  sv: [
+    {
+      type: 'Keynote',
+      title: 'Growth — From buzz to bizz',
+      description:
+        'En keynote om att förvandla growth från hype och buzzwords till verkliga kommersiella resultat — tänket och mekaniken som kopplar marknadsföring till affären.',
+      videoId: '-Bnny3oX7U8',
+      url: 'https://www.youtube.com/watch?v=-Bnny3oX7U8&t=1702s',
+      meta: 'Keynote på marknadsföringsevent · på svenska',
+    },
+    {
+      type: 'Podd',
+      title: 'Att föra samman kommersiella team och tech-team, på distans',
+      description:
+        'Ett Favro-poddsamtal om hur man samordnar kommersiella och tekniska team — gemensamma mål, kommunikation och arbetssätt — när alla jobbar på distans.',
+      videoId: 'CgBsg0IUnho',
+      url: 'https://www.youtube.com/watch?v=CgBsg0IUnho',
+      meta: 'Favro-podd',
+    },
+  ],
 }
 
 export const projects: Record<Lang, ProjectSummary[]> = {
@@ -404,6 +462,12 @@ export const workIndexCopy: Record<Lang, WorkIndexCopy> = {
       button: 'Book a call →',
     },
     readCase: 'Read the case',
+    casesTab: 'Case studies',
+    appearancesTab: 'Appearances',
+    appearancesLabel: 'Talks & podcasts',
+    appearancesHeading: 'Appearances',
+    appearancesIntro: 'Talks and conversations on growth, and on bringing commercial and technical teams together.',
+    watch: 'Watch →',
   },
   sv: {
     meta: {
@@ -427,6 +491,12 @@ export const workIndexCopy: Record<Lang, WorkIndexCopy> = {
       button: 'Boka ett samtal →',
     },
     readCase: 'Läs caset',
+    casesTab: 'Case studies',
+    appearancesTab: 'Framträdanden',
+    appearancesLabel: 'Föredrag & poddar',
+    appearancesHeading: 'Framträdanden',
+    appearancesIntro: 'Föredrag och samtal om growth, och om att föra samman kommersiella team och tech-team.',
+    watch: 'Se →',
   },
 }
 

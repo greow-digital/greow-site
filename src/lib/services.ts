@@ -26,6 +26,8 @@ export interface ServiceContent {
 export interface ServiceNavItem {
   key: string
   label: Record<Lang, string>
+  tagline: Record<Lang, string>
+  accent: 'jungle' | 'salmon' | 'turquoise'
   url: Record<Lang, string>
 }
 
@@ -33,27 +35,43 @@ export const serviceNav: ServiceNavItem[] = [
   {
     key: 'gaas',
     label: { en: 'Growth as a Service', sv: 'Growth as a Service' },
+    tagline: { en: 'Senior growth leadership, on a monthly retainer', sv: 'Senior tillväxtledning, på månadsbasis' },
+    accent: 'jungle',
     url: { en: '/growth-as-a-service/', sv: '/sv/growth-as-a-service/' },
   },
   {
     key: 'fractional',
     label: { en: 'Fractional Growth Lead', sv: 'Interim tillväxtchef' },
+    tagline: { en: 'A senior growth owner, a few days a month', sv: 'En senior tillväxtägare, några dagar i månaden' },
+    accent: 'salmon',
     url: { en: '/fractional-growth-lead/', sv: '/sv/interim-growth-lead/' },
   },
   {
     key: 'advisory',
     label: { en: 'Growth Advisory', sv: 'Growth Advisory' },
+    tagline: { en: 'A senior sounding board for the big calls', sv: 'Ett senior bollplank för de stora besluten' },
+    accent: 'turquoise',
     url: { en: '/growth-advisory/', sv: '/sv/growth-advisory/' },
   },
   {
     key: 'coaching',
     label: { en: 'Coaching & Mentorship', sv: 'Coaching & mentorskap' },
+    tagline: { en: '1:1 coaching for growth people', sv: '1:1-coaching för growth-människor' },
+    accent: 'jungle',
     url: { en: '/growth-coaching/', sv: '/sv/growth-coaching/' },
   },
 ]
 
 export function serviceUrl(key: string, lang: Lang): string {
   return serviceNav.find((s) => s.key === key)!.url[lang]
+}
+
+// Case-study slugs to feature on each service page (language-independent).
+export const serviceRelatedCases: Record<string, string[]> = {
+  gaas: ['sands-entreprenad', 'funnel', 'leadfeeder-dealfront'],
+  fractional: ['leadfeeder-dealfront', 'funnel', 'refapp'],
+  advisory: ['funnel', 'dnb-eiendom', 'telia-norway'],
+  coaching: ['funnel', 'leadfeeder-dealfront'],
 }
 
 // ── English content ──────────────────────────────────────────────────────────

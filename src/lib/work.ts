@@ -181,6 +181,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       year: '2014–17',
     },
     {
+      slug: 'dnb-eiendom',
+      href: '/work/dnb-eiendom/',
+      accent: 'salmon',
+      client: 'DNB Eiendom',
+      logo: '/assets/logo-dnb.svg',
+      title: 'Rebuilding the digital experience of Norway’s largest real estate agency',
+      blurb: 'As Head of Product Development & Experience, I rebuilt DNB Eiendom’s two-sided platform around the distinct needs of buyers and sellers — with a measurement foundation built from scratch — driving 75% more leads and 40% higher customer-experience scores.',
+      tags: ['Product', 'UX', 'Two-sided', 'Analytics', 'CX'],
+      metric: { value: '+75%', label: 'more leads' },
+      year: '2020–21',
+    },
+    {
       slug: 'bnbalyze',
       href: '/work/bnbalyze/',
       accent: 'jungle',
@@ -264,6 +276,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['E-handel', 'Agilt', 'CRO', 'Performance', 'Omnikanal'],
       metric: { value: '2×', label: 'e-handelskonvertering' },
       year: '2014–17',
+    },
+    {
+      slug: 'dnb-eiendom',
+      href: '/sv/case/dnb-eiendom/',
+      accent: 'salmon',
+      client: 'DNB Eiendom',
+      logo: '/assets/logo-dnb.svg',
+      title: 'Byggde om den digitala upplevelsen för Norges största mäklarfirma',
+      blurb: 'Som Head of Product Development & Experience byggde jag om DNB Eiendoms tvåsidiga plattform kring köparnas och säljarnas skilda behov — med en mätgrund byggd från grunden — och drev 75% fler leads och 40% högre kundupplevelsepoäng.',
+      tags: ['Produkt', 'UX', 'Tvåsidig', 'Analys', 'CX'],
+      metric: { value: '+75%', label: 'fler leads' },
+      year: '2020–21',
     },
     {
       slug: 'bnbalyze',
@@ -3778,9 +3802,565 @@ const teliaSv: CaseStudy = {
   },
 }
 
+// ── DNB Eiendom case study ───────────────────────────────────────────────────
+
+const dnbEn: CaseStudy = {
+  slug: 'dnb-eiendom',
+  accent: 'salmon',
+  kicker: 'Case study',
+  client: 'DNB Eiendom',
+  title: 'Rebuilding the digital experience of Norway’s largest real estate agency.',
+  intro:
+    'Driving 75% more leads and improving customer-experience scores by 40% — a complete platform rebuild around the distinct needs of buyers and sellers, with measurement infrastructure established from scratch.',
+  meta: [
+    { label: 'Role', value: 'Head of Product Development & Experience' },
+    { label: 'Period', value: 'Dec 2020 – Dec 2021' },
+    { label: 'Scope', value: 'Product · UX · development · analytics · CX' },
+    { label: 'Context', value: 'Norway — real estate, part of DNB Group' },
+  ],
+  metrics: [
+    { value: '+75%', label: 'increase in lead generation', note: 'Clearer buyer enquiry and seller valuation journeys' },
+    { value: '+40%', label: 'improvement in customer-experience scores', note: 'Across both buyer and seller journeys' },
+    { value: 'Rebuild', label: 'of the platform, buyer & seller', note: 'With measurement infrastructure built from scratch' },
+  ],
+  overview: {
+    heading: 'One product, two very different customers.',
+    body: [
+      'DNB Eiendom is Norway’s largest real estate agency and part of DNB Group, one of the Nordic region’s largest financial institutions. Real estate is a uniquely two-sided product challenge: the platform must serve sellers looking for an agent and buyers searching for their next home — audiences with different needs, motivations, timelines and definitions of value.',
+      'When I joined in late 2020, the digital product was outdated, measurement was underdeveloped, and the online experience didn’t reflect DNB Eiendom’s position in the market. My mandate was to close that gap.',
+      'I owned the full digital product across buyer and seller journeys — strategy, roadmap, UX, development, analytics and customer experience — leading a cross-functional team through a complete platform rebuild and introducing the measurement infrastructure needed to understand and continuously improve performance. The result: a 75% increase in lead generation and a 40% improvement in customer-experience scores.',
+    ],
+  },
+  startingPoint: {
+    label: 'The starting point',
+    heading: 'A powerful brand, a digital experience that lagged it.',
+    lead:
+      'DNB Eiendom had a strong brand, an extensive national presence and high recognition among Norwegian buyers and sellers — but its digital experience didn’t yet live up to that position. The existing platform had several connected challenges:',
+    points: [
+      'An outdated property-discovery experience and inconsistent listing presentation',
+      'Weak conversion journeys',
+      'Different buyer and seller needs compressed into the same structure',
+      'Limited insight into user behaviour and no mature measurement framework',
+      'A gap between the offline brand and its digital expression',
+      'Product prioritisation without sufficient behavioural evidence',
+    ],
+    goal:
+      'The challenge wasn’t simply redesigning a website — it was rethinking how the complete digital product supported both sides of the real estate transaction.',
+  },
+  ownership: {
+    label: 'What I owned',
+    heading: 'The digital product and customer experience, end-to-end.',
+    intro:
+      'I owned the digital product across both sides of the market — leading developers, designers and analysts while working closely with DNB Eiendom’s commercial, marketing and brand functions to translate customer needs, business objectives and brand ambitions into one coherent product:',
+    items: [
+      'Product vision & strategy',
+      'Roadmap & prioritisation',
+      'Buyer & seller journeys',
+      'UX strategy & product specification',
+      'Platform development',
+      'Brand implementation',
+      'Conversion architecture',
+      'Measurement & analytics',
+      'Customer experience',
+      'Cross-functional delivery',
+      'Post-launch product performance',
+    ],
+  },
+  acts: [
+    {
+      label: 'Act I',
+      title: 'Understanding a two-sided journey',
+      subtitle: 'Buyers and sellers use the same market, but need fundamentally different product strategies.',
+      blocks: [
+        {
+          title: 'The buyer journey',
+          body:
+            'Buyers came to search, browse and compare listings, understand locations and details, evaluate fit, and move from inspiration to active decision-making. For them, the product needed to make discovery intuitive, present listings clearly, and reduce friction between interest and action — across:',
+          items: [
+            'Searching, browsing and comparing listings',
+            'Understanding locations and property details',
+            'Evaluating whether a home matched their needs',
+            'Registering interest or contacting an agent',
+          ],
+        },
+        {
+          title: 'The seller journey',
+          body:
+            'Sellers had a different objective — less about search, more about credibility, reassurance and local expertise. The journey needed to build trust and lead them to the first step:',
+          items: [
+            'Understanding DNB Eiendom’s value and the selling process',
+            'Building trust in the agency and local agents',
+            'Requesting a property valuation',
+            'Contacting the right agent with confidence',
+          ],
+        },
+        {
+          title: 'Both, without one diluting the other',
+          body:
+            'The new platform had to support both experiences fully — without allowing one audience to dominate the structure or dilute the other.',
+        },
+      ],
+    },
+    {
+      label: 'Act II',
+      title: 'Rebuilding the platform from the ground up',
+      subtitle: 'A ground-up rethink, not an incremental update.',
+      blocks: [
+        {
+          title: 'A ground-up rethink',
+          body:
+            'The central initiative was a complete rebuild. I defined the product specification, led the UX strategy, established the roadmap and managed the cross-functional team through design, development and launch — rethinking property discovery, search and navigation, listing presentation, buyer conversion, seller lead generation, agent discovery, information architecture, mobile experience and brand expression.',
+        },
+        {
+          title: 'Property discovery',
+          body:
+            'The buyer experience was redesigned to make finding and evaluating relevant properties easier — helping buyers understand a property quickly without removing the depth a serious purchase requires:',
+          items: [
+            'Clearer search and navigation, and stronger property presentation',
+            'Better visual hierarchy and improved listing information',
+            'Easier movement from browsing to enquiry',
+            'A more coherent mobile experience',
+          ],
+        },
+        {
+          title: 'Seller conversion',
+          body:
+            'Rather than treating sellers as a secondary website audience, the new experience gave them a dedicated path — a clearer conversion architecture for one of the company’s most commercially important lead sources:',
+          items: [
+            'Understanding the sales process',
+            'Discovering relevant agents and evaluating DNB Eiendom',
+            'Requesting a valuation and making contact',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Act III',
+      title: 'Translating the brand into product',
+      subtitle: 'Making the digital product feel like a natural extension of DNB Eiendom.',
+      blocks: [
+        {
+          title: 'More than colours and type',
+          body:
+            'DNB Eiendom’s market position carried expectations of trust, quality and professionalism that the previous experience didn’t consistently communicate. Working closely with the brand and commercial teams, I translated the new brand expression into the product across:',
+          items: [
+            'Information hierarchy, layout and visual rhythm',
+            'Property presentation and imagery',
+            'Tone of voice and calls to action',
+            'Interaction patterns, mobile behaviour and trust signals',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Act IV',
+      title: 'Building the measurement foundation',
+      subtitle: 'From retrospective reporting to an active input into product development.',
+      blocks: [
+        {
+          title: 'From no visibility to structured insight',
+          body:
+            'Before the rebuild, it was hard to answer basic product questions — where users entered, which paths they followed, where they dropped out, what drove buyer enquiries, and what led sellers to request a valuation. I implemented a new measurement and analytics strategy from scratch:',
+          items: [
+            'Defining critical buyer and seller journeys',
+            'Establishing conversion events and behavioural tracking',
+            'Creating funnel measurement and dashboards',
+            'Connecting product changes to commercial outcomes',
+            'Introducing data into prioritisation and roadmap decisions',
+          ],
+        },
+        {
+          title: 'Analytics as an active input',
+          body:
+            'For the first time, the team gained structured visibility into how the digital product performed across both sides of the market — changing the role of analytics from retrospective reporting into an active input into product development.',
+        },
+      ],
+    },
+    {
+      label: 'Act V',
+      title: 'Creating a data-driven product practice',
+      subtitle: 'Treating launch as a beginning, not the end of the project.',
+      blocks: [
+        {
+          title: 'Launch as a beginning',
+          body:
+            'The new measurement foundation let the team identify friction, prioritise improvements and evaluate changes by customer and commercial outcomes — connecting user behaviour, customer feedback, lead generation, experience scores, product releases and commercial priorities. Roadmap decisions became informed by evidence rather than stakeholder assumptions alone, and the combination of platform design, UX strategy and measurement-led optimisation produced significant gains across both customer experience and lead generation.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Results',
+    heading: 'A two-sided platform, built on evidence.',
+    intro: 'Customer experience and commercial performance improved together.',
+    items: [
+      {
+        value: '+75%',
+        title: 'Lead generation increased by 75%',
+        body:
+          'The new platform and conversion architecture increased lead generation by 75% — clearer paths for buyers to express interest, and stronger seller journeys toward agent contact and property valuation.',
+      },
+      {
+        value: '+40%',
+        title: 'Customer-experience scores improved by 40%',
+        body:
+          'CX scores improved by 40% across buyer and seller journeys, reflecting gains in usability, clarity, property discovery, seller guidance and overall consistency.',
+      },
+      {
+        value: 'Launch',
+        title: 'A complete platform launched',
+        body:
+          'A new property-discovery platform with new UX, brand expression and information architecture, improved listing presentation, separate buyer and seller journeys and a new conversion architecture.',
+      },
+      {
+        value: 'Measure',
+        title: 'Measurement infrastructure from scratch',
+        body:
+          'The tracking, analytics and dashboard foundation needed to understand product behaviour and prioritise future improvements — and a cross-functional product model connecting strategy, insight, delivery, measurement and iteration.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What the transformation taught.',
+    items: [
+      {
+        title: 'Two-sided platforms need distinct customer journeys.',
+        body: 'Buyers and sellers interact with the same market but have fundamentally different goals and decision processes.',
+      },
+      {
+        title: 'A strong brand creates a product expectation.',
+        body: 'The digital experience must express the same trust and quality as the wider organisation.',
+      },
+      {
+        title: 'Measurement should be designed with the product.',
+        body: 'Tracking added after launch rarely provides the same quality of insight as measurement built into the journey from the start.',
+      },
+      {
+        title: 'Lead generation is a product outcome.',
+        body: 'Better conversion came from improving customer understanding, confidence and next actions — not simply adding more forms.',
+      },
+      {
+        title: 'Customer experience and commercial performance reinforce each other.',
+        body: 'The improvements that made the product clearer and easier to use also generated more leads.',
+      },
+      {
+        title: 'A launch creates the foundation for optimisation.',
+        body: 'The platform became more valuable when analytics and continuous iteration were treated as part of the product, not follow-up activities.',
+      },
+    ],
+  },
+  role: {
+    label: 'My role',
+    heading: 'Digital product transformation, end-to-end.',
+    body:
+      'I led DNB Eiendom’s digital product transformation across strategy, experience, delivery and measurement — aligning Product, Technology, Analytics, Brand and Commercial teams:',
+    items: [
+      'Product vision and roadmap',
+      'Buyer and seller journey strategy',
+      'Complete platform specification',
+      'UX and information architecture',
+      'Property-discovery experience and seller conversion journeys',
+      'Digital brand implementation',
+      'Measurement and analytics strategy',
+      'Funnel and behavioural tracking, and dashboard development',
+      'Cross-functional leadership',
+      'Launch and post-launch optimisation',
+    ],
+  },
+  quote: {
+    text:
+      'I rebuilt DNB Eiendom’s digital platform around the distinct needs of buyers and sellers — driving 75% more leads, improving customer-experience scores by 40%, and establishing the measurement foundation for continuous product development.',
+    author: 'Erik Werner',
+    role: 'Head of Product Development & Experience, DNB Eiendom',
+  },
+  cta: {
+    heading: 'Rebuilding a digital product?',
+    body: 'Whether it’s a two-sided platform, a brand-to-product translation or a measurement foundation, let’s talk about building an experience that compounds.',
+    button: 'Book a call →',
+  },
+}
+
+const dnbSv: CaseStudy = {
+  slug: 'dnb-eiendom',
+  accent: 'salmon',
+  kicker: 'Case study',
+  client: 'DNB Eiendom',
+  title: 'Byggde om den digitala upplevelsen för Norges största mäklarfirma.',
+  intro:
+    'Drev 75% fler leads och förbättrade kundupplevelsepoängen med 40% — en total plattformsombyggnad kring köparnas och säljarnas skilda behov, med mätinfrastruktur byggd från grunden.',
+  meta: [
+    { label: 'Roll', value: 'Head of Product Development & Experience' },
+    { label: 'Period', value: 'Dec 2020 – Dec 2021' },
+    { label: 'Omfattning', value: 'Produkt · UX · utveckling · analys · CX' },
+    { label: 'Kontext', value: 'Norge — fastighetsmäkleri, del av DNB Group' },
+  ],
+  metrics: [
+    { value: '+75%', label: 'ökning av leadgenerering', note: 'Tydligare köpar-förfrågan och säljar-värderingsresor' },
+    { value: '+40%', label: 'förbättring av kundupplevelsepoäng', note: 'Över både köpar- och säljarresor' },
+    { value: 'Ombyggd', label: 'plattform, köpare & säljare', note: 'Med mätinfrastruktur byggd från grunden' },
+  ],
+  overview: {
+    heading: 'En produkt, två väldigt olika kunder.',
+    body: [
+      'DNB Eiendom är Norges största mäklarfirma och en del av DNB Group, en av Nordens största finansinstitutioner. Fastigheter är en unikt tvåsidig produktutmaning: plattformen måste betjäna säljare som söker en mäklare och köpare som söker sitt nästa hem — målgrupper med olika behov, motivation, tidslinjer och värdedefinitioner.',
+      'När jag klev in i slutet av 2020 var den digitala produkten föråldrad, mätningen underutvecklad, och onlineupplevelsen speglade inte DNB Eiendoms position på marknaden. Mitt uppdrag var att sluta det gapet.',
+      'Jag ägde hela den digitala produkten över köpar- och säljarresor — strategi, roadmap, UX, utveckling, analys och kundupplevelse — och ledde ett tvärfunktionellt team genom en total plattformsombyggnad samt införde den mätinfrastruktur som krävdes för att förstå och löpande förbättra prestandan. Resultatet: en 75-procentig ökning av leadgenerering och en 40-procentig förbättring av kundupplevelsepoängen.',
+    ],
+  },
+  startingPoint: {
+    label: 'Utgångsläget',
+    heading: 'Ett starkt varumärke, en digital upplevelse som släpade efter.',
+    lead:
+      'DNB Eiendom hade ett starkt varumärke, en omfattande nationell närvaro och hög kännedom bland norska köpare och säljare — men den digitala upplevelsen levde ännu inte upp till den positionen. Den befintliga plattformen hade flera sammankopplade utmaningar:',
+    points: [
+      'En föråldrad upplevelse för fastighetsupptäckt och inkonsekvent objektpresentation',
+      'Svaga konverteringsresor',
+      'Olika köpar- och säljarbehov hoptryckta i samma struktur',
+      'Begränsad insikt i användarbeteende och inget moget mätramverk',
+      'Ett gap mellan offline-varumärket och dess digitala uttryck',
+      'Produktprioritering utan tillräcklig beteendeevidens',
+    ],
+    goal:
+      'Utmaningen var inte bara att göra om en webbplats — den var att tänka om hur hela den digitala produkten stödde båda sidorna av fastighetsaffären.',
+  },
+  ownership: {
+    label: 'Vad jag ägde',
+    heading: 'Den digitala produkten och kundupplevelsen, från start till mål.',
+    intro:
+      'Jag ägde den digitala produkten över båda sidor av marknaden — ledde utvecklare, designers och analytiker samtidigt som jag arbetade nära DNB Eiendoms kommersiella, marknads- och varumärkesfunktioner för att översätta kundbehov, affärsmål och varumärkesambitioner till en sammanhängande produkt:',
+    items: [
+      'Produktvision & strategi',
+      'Roadmap & prioritering',
+      'Köpar- & säljarresor',
+      'UX-strategi & produktspecifikation',
+      'Plattformsutveckling',
+      'Varumärkesimplementering',
+      'Konverteringsarkitektur',
+      'Mätning & analys',
+      'Kundupplevelse',
+      'Tvärfunktionell leverans',
+      'Produktprestanda efter lansering',
+    ],
+  },
+  acts: [
+    {
+      label: 'Akt I',
+      title: 'Förstå en tvåsidig resa',
+      subtitle: 'Köpare och säljare använder samma marknad, men behöver fundamentalt olika produktstrategier.',
+      blocks: [
+        {
+          title: 'Köparresan',
+          body:
+            'Köpare kom för att söka, bläddra och jämföra objekt, förstå lägen och detaljer, bedöma passform och röra sig från inspiration till aktivt beslut. För dem behövde produkten göra upptäckt intuitiv, presentera objekt tydligt och minska friktionen mellan intresse och handling — över:',
+          items: [
+            'Att söka, bläddra och jämföra objekt',
+            'Att förstå lägen och objektdetaljer',
+            'Att bedöma om ett hem matchade deras behov',
+            'Att anmäla intresse eller kontakta en mäklare',
+          ],
+        },
+        {
+          title: 'Säljarresan',
+          body:
+            'Säljare hade ett annat mål — mindre om sökning, mer om trovärdighet, trygghet och lokal expertis. Resan behövde bygga förtroende och leda dem till första steget:',
+          items: [
+            'Att förstå DNB Eiendoms värde och säljprocessen',
+            'Att bygga förtroende för firman och lokala mäklare',
+            'Att begära en värdering',
+            'Att kontakta rätt mäklare med tillförsikt',
+          ],
+        },
+        {
+          title: 'Båda, utan att den ena späder ut den andra',
+          body:
+            'Den nya plattformen måste stödja båda upplevelserna fullt ut — utan att låta den ena målgruppen dominera strukturen eller späda ut den andra.',
+        },
+      ],
+    },
+    {
+      label: 'Akt II',
+      title: 'Bygga om plattformen från grunden',
+      subtitle: 'Ett omtänk från grunden, inte en inkrementell uppdatering.',
+      blocks: [
+        {
+          title: 'Ett omtänk från grunden',
+          body:
+            'Det centrala initiativet var en total ombyggnad. Jag definierade produktspecifikationen, ledde UX-strategin, etablerade roadmapen och drev det tvärfunktionella teamet genom design, utveckling och lansering — och tänkte om fastighetsupptäckt, sök och navigation, objektpresentation, köparkonvertering, säljar-leadgenerering, mäklarupptäckt, informationsarkitektur, mobilupplevelse och varumärkesuttryck.',
+        },
+        {
+          title: 'Fastighetsupptäckt',
+          body:
+            'Köparupplevelsen designades om för att göra det enklare att hitta och bedöma relevanta objekt — och hjälpa köpare att snabbt förstå ett objekt utan att ta bort det djup ett seriöst köp kräver:',
+          items: [
+            'Tydligare sök och navigation, och starkare objektpresentation',
+            'Bättre visuell hierarki och förbättrad objektinformation',
+            'Enklare övergång från bläddring till förfrågan',
+            'En mer sammanhängande mobilupplevelse',
+          ],
+        },
+        {
+          title: 'Säljarkonvertering',
+          body:
+            'Istället för att behandla säljare som en sekundär webbmålgrupp gav den nya upplevelsen dem en dedikerad väg — en tydligare konverteringsarkitektur för en av bolagets kommersiellt viktigaste lead-källor:',
+          items: [
+            'Att förstå säljprocessen',
+            'Att hitta relevanta mäklare och bedöma DNB Eiendom',
+            'Att begära en värdering och ta kontakt',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Akt III',
+      title: 'Översätta varumärket till produkt',
+      subtitle: 'Att få den digitala produkten att kännas som en naturlig förlängning av DNB Eiendom.',
+      blocks: [
+        {
+          title: 'Mer än färger och typografi',
+          body:
+            'DNB Eiendoms marknadsposition bar förväntningar på förtroende, kvalitet och professionalism som den tidigare upplevelsen inte konsekvent kommunicerade. I nära samarbete med varumärkes- och kommersiella team översatte jag det nya varumärkesuttrycket till produkten över:',
+          items: [
+            'Informationshierarki, layout och visuell rytm',
+            'Objektpresentation och bildspråk',
+            'Tonalitet och calls to action',
+            'Interaktionsmönster, mobilbeteende och trust-signaler',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Akt IV',
+      title: 'Bygga mätgrunden',
+      subtitle: 'Från retrospektiv rapportering till en aktiv input i produktutvecklingen.',
+      blocks: [
+        {
+          title: 'Från ingen synlighet till strukturerad insikt',
+          body:
+            'Före ombyggnaden var det svårt att besvara grundläggande produktfrågor — var användare kom in, vilka vägar de följde, var de hoppade av, vad som drev köparförfrågningar, och vad som fick säljare att begära en värdering. Jag implementerade en ny mät- och analysstrategi från grunden:',
+          items: [
+            'Definiera kritiska köpar- och säljarresor',
+            'Etablera konverteringshändelser och beteendespårning',
+            'Skapa trattmätning och dashboards',
+            'Koppla produktförändringar till kommersiella utfall',
+            'Föra in data i prioritering och roadmap-beslut',
+          ],
+        },
+        {
+          title: 'Analys som en aktiv input',
+          body:
+            'För första gången fick teamet strukturerad synlighet i hur den digitala produkten presterade över båda sidor av marknaden — vilket förändrade analysens roll från retrospektiv rapportering till en aktiv input i produktutvecklingen.',
+        },
+      ],
+    },
+    {
+      label: 'Akt V',
+      title: 'Skapa en datadriven produktpraktik',
+      subtitle: 'Att behandla lansering som en början, inte projektets slut.',
+      blocks: [
+        {
+          title: 'Lansering som en början',
+          body:
+            'Den nya mätgrunden lät teamet identifiera friktion, prioritera förbättringar och utvärdera förändringar utifrån kund- och kommersiella utfall — och koppla ihop användarbeteende, kundfeedback, leadgenerering, upplevelsepoäng, produktreleaser och kommersiella prioriteringar. Roadmap-beslut blev informerade av evidens snarare än enbart intressentantaganden, och kombinationen av plattformsdesign, UX-strategi och mätningsledd optimering gav betydande vinster över både kundupplevelse och leadgenerering.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Resultat',
+    heading: 'En tvåsidig plattform, byggd på evidens.',
+    intro: 'Kundupplevelse och kommersiell prestanda förbättrades tillsammans.',
+    items: [
+      {
+        value: '+75%',
+        title: 'Leadgenerering ökad med 75%',
+        body:
+          'Den nya plattformen och konverteringsarkitekturen ökade leadgenereringen med 75% — tydligare vägar för köpare att anmäla intresse, och starkare säljarresor mot mäklarkontakt och värdering.',
+      },
+      {
+        value: '+40%',
+        title: 'Kundupplevelsepoäng förbättrad med 40%',
+        body:
+          'CX-poängen förbättrades med 40% över köpar- och säljarresor, vilket speglade vinster i användbarhet, tydlighet, fastighetsupptäckt, säljarvägledning och övergripande konsekvens.',
+      },
+      {
+        value: 'Lansering',
+        title: 'En komplett plattform lanserad',
+        body:
+          'En ny plattform för fastighetsupptäckt med ny UX, nytt varumärkesuttryck och informationsarkitektur, förbättrad objektpresentation, separata köpar- och säljarresor och en ny konverteringsarkitektur.',
+      },
+      {
+        value: 'Mätning',
+        title: 'Mätinfrastruktur från grunden',
+        body:
+          'Den spårnings-, analys- och dashboard-grund som krävdes för att förstå produktbeteende och prioritera framtida förbättringar — och en tvärfunktionell produktmodell som kopplar strategi, insikt, leverans, mätning och iteration.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad transformationen lärde mig.',
+    items: [
+      {
+        title: 'Tvåsidiga plattformar behöver skilda kundresor.',
+        body: 'Köpare och säljare interagerar med samma marknad men har fundamentalt olika mål och beslutsprocesser.',
+      },
+      {
+        title: 'Ett starkt varumärke skapar en produktförväntan.',
+        body: 'Den digitala upplevelsen måste uttrycka samma förtroende och kvalitet som organisationen i stort.',
+      },
+      {
+        title: 'Mätning bör designas tillsammans med produkten.',
+        body: 'Spårning som läggs till efter lansering ger sällan samma insiktskvalitet som mätning inbyggd i resan från början.',
+      },
+      {
+        title: 'Leadgenerering är ett produktutfall.',
+        body: 'Bättre konvertering kom från att förbättra kundens förståelse, trygghet och nästa steg — inte bara att lägga till fler formulär.',
+      },
+      {
+        title: 'Kundupplevelse och kommersiell prestanda förstärker varandra.',
+        body: 'Förbättringarna som gjorde produkten tydligare och enklare att använda genererade också fler leads.',
+      },
+      {
+        title: 'En lansering skapar grunden för optimering.',
+        body: 'Plattformen blev mer värdefull när analys och löpande iteration behandlades som en del av produkten, inte som efterföljande aktiviteter.',
+      },
+    ],
+  },
+  role: {
+    label: 'Min roll',
+    heading: 'Digital produkttransformation, från start till mål.',
+    body:
+      'Jag ledde DNB Eiendoms digitala produkttransformation över strategi, upplevelse, leverans och mätning — och samordnade Produkt, Teknik, Analys, Varumärke och Kommersiella team:',
+    items: [
+      'Produktvision och roadmap',
+      'Strategi för köpar- och säljarresor',
+      'Komplett plattformsspecifikation',
+      'UX och informationsarkitektur',
+      'Upplevelse för fastighetsupptäckt och säljarkonverteringsresor',
+      'Digital varumärkesimplementering',
+      'Mät- och analysstrategi',
+      'Tratt- och beteendespårning, och dashboard-utveckling',
+      'Tvärfunktionellt ledarskap',
+      'Lansering och optimering efter lansering',
+    ],
+  },
+  quote: {
+    text:
+      'Jag byggde om DNB Eiendoms digitala plattform kring köparnas och säljarnas skilda behov — drev 75% fler leads, förbättrade kundupplevelsepoängen med 40%, och etablerade mätgrunden för löpande produktutveckling.',
+    author: 'Erik Werner',
+    role: 'Head of Product Development & Experience, DNB Eiendom',
+  },
+  cta: {
+    heading: 'Bygger du om en digital produkt?',
+    body: 'Oavsett om det är en tvåsidig plattform, en översättning av varumärke till produkt eller en mätgrund — låt oss prata om att bygga en upplevelse som växer med tiden.',
+    button: 'Boka ett samtal →',
+  },
+}
+
 export const caseStudies: Record<Lang, Record<string, CaseStudy>> = {
-  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'rikstv-strim': rikstvEn, 'telia-norway': teliaEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
-  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'rikstv-strim': rikstvSv, 'telia-norway': teliaSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
+  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'rikstv-strim': rikstvEn, 'telia-norway': teliaEn, 'dnb-eiendom': dnbEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
+  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'rikstv-strim': rikstvSv, 'telia-norway': teliaSv, 'dnb-eiendom': dnbSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
 }
 
 // ── SEO helpers ──────────────────────────────────────────────────────────────

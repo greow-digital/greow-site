@@ -162,6 +162,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${SITE_URL}/work/dnb-eiendom/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/dnb-eiendom/`,
+          sv: `${SITE_URL}/sv/case/dnb-eiendom/`,
+          'x-default': `${SITE_URL}/work/dnb-eiendom/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/case/dnb-eiendom/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/dnb-eiendom/`,
+          sv: `${SITE_URL}/sv/case/dnb-eiendom/`,
+          'x-default': `${SITE_URL}/work/dnb-eiendom/`,
+        },
+      },
+    },
+    {
       url: `${SITE_URL}/work/bnbalyze/`,
       lastModified,
       changeFrequency: 'monthly',

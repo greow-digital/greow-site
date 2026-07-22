@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
-import { type CaseStudy, workBase, type Lang } from '@/lib/work'
+import { type CaseStudy, workBase, engagementKind, engagementKindLabel, type Lang } from '@/lib/work'
 import Footer from '@/components/Footer'
 
 interface CaseStudyProps {
@@ -22,7 +22,9 @@ export default function CaseStudyView({ t, lang, data }: CaseStudyProps) {
             ← {backLabel}
           </Link>
           <p className="case-eyebrow">
-            <span>{data.kicker}</span>
+            <span className={`case-type type-${engagementKind[data.slug]}`}>
+              {engagementKindLabel[lang][engagementKind[data.slug]]}
+            </span>
             <span className="case-eyebrow-client">{data.client}</span>
           </p>
           <h1>{data.title}</h1>

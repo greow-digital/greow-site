@@ -315,6 +315,33 @@ export const projects: Record<Lang, ProjectSummary[]> = {
   ],
 }
 
+// The kind of engagement each case was, shown as a badge on the index and hero.
+export type EngagementKind = 'project' | 'consultant' | 'employment'
+
+export const engagementKind: Record<string, EngagementKind> = {
+  'sands-entreprenad': 'project',
+  'bnbalyze': 'project',
+  'happy-vegan': 'project',
+  'leadfeeder-dealfront': 'consultant',
+  'funnel': 'consultant',
+  'dnb-eiendom': 'consultant',
+  'rikstv-strim': 'employment',
+  'telia-norway': 'employment',
+}
+
+export const engagementKindLabel: Record<Lang, Record<EngagementKind, string>> = {
+  en: {
+    project: 'Project · Founder',
+    consultant: 'Consultant · Contract',
+    employment: 'Employment',
+  },
+  sv: {
+    project: 'Projekt · Grundare',
+    consultant: 'Konsult · Uppdrag',
+    employment: 'Anställning',
+  },
+}
+
 // Display order of the featured cases on the Work index. Reorder here — the
 // registry above can stay in any order; the index sorts by this list.
 export const caseOrder: string[] = [

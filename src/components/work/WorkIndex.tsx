@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
-import { workIndexCopy, projects, engagements, caseOrder, type Lang } from '@/lib/work'
+import { workIndexCopy, projects, engagements, caseOrder, engagementKind, engagementKindLabel, type Lang } from '@/lib/work'
 import Footer from '@/components/Footer'
 
 interface WorkIndexProps {
@@ -39,7 +39,9 @@ export default function WorkIndex({ t, lang }: WorkIndexProps) {
                 <>
                   <div className="work-case-body">
                     <p className="work-case-eyebrow">
-                      <span>{copy.featuredLabel}</span>
+                      <span className={`work-case-type type-${engagementKind[p.slug]}`}>
+                        {engagementKindLabel[lang][engagementKind[p.slug]]}
+                      </span>
                       <span className="work-case-year">{p.year}</span>
                     </p>
                     {p.logo ? (

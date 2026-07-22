@@ -6,10 +6,10 @@ import { translations } from '@/lib/translations'
 import { caseStudies, caseJsonLd } from '@/lib/work'
 
 const t = translations.sv
-const data = caseStudies.sv['bnbalyze']
+const data = caseStudies.sv['funnel']
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/bnbalyze-og.png`
-const URL_PATH = `${SITE_URL}/sv/case/bnbalyze/`
+const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const URL_PATH = `${SITE_URL}/sv/case/funnel/`
 
 export const metadata: Metadata = {
   title: `${data.client} — Case · Greow`,
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: URL_PATH,
     languages: {
-      en: `${SITE_URL}/work/bnbalyze/`,
+      en: `${SITE_URL}/work/funnel/`,
       sv: URL_PATH,
-      'x-default': `${SITE_URL}/work/bnbalyze/`,
+      'x-default': `${SITE_URL}/work/funnel/`,
     },
   },
   openGraph: {
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     url: URL_PATH,
     type: 'article',
     locale: 'sv_SE',
-    images: [{ url: OG_IMAGE, width: 2502, height: 1092, alt: `${data.client} — Case` }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: `${data.client} — Case` }],
   },
 }
 
-export default function BnbalyzeCaseSv() {
+export default function FunnelCaseSv() {
   const jsonLd = caseJsonLd('sv', data)
   return (
     <>

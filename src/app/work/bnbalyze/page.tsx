@@ -8,7 +8,7 @@ import { caseStudies, caseJsonLd } from '@/lib/work'
 const t = translations.en
 const data = caseStudies.en['bnbalyze']
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/bnbalyze-og.png`
 const URL_PATH = `${SITE_URL}/work/bnbalyze/`
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     description: data.intro,
     url: URL_PATH,
     type: 'article',
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: `${data.client} — Case study` }],
+    images: [{ url: OG_IMAGE, width: 2502, height: 1092, alt: `${data.client} — Case study` }],
   },
 }
 

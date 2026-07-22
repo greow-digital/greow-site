@@ -898,6 +898,8 @@ footer {
 }
 .work-more-header p { color: var(--jet-muted); font-size: 1.05rem; margin-top: 14px; line-height: 1.7; }
 .work-more-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.work-more-grid.count-2 { grid-template-columns: repeat(2, 1fr); max-width: 780px; margin: 0 auto; }
+.work-more-grid.count-1 { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
 .work-more-card {
   background: var(--white); border: 1.5px solid var(--border);
   border-radius: var(--radius); padding: 36px 32px;
@@ -992,12 +994,29 @@ footer {
 }
 .case-meta dd { font-size: 0.95rem; color: rgba(255,255,255,0.85); line-height: 1.45; }
 
+/* Hero showcase image — straddles the hero and the metrics band */
+.case-hero.has-media { overflow: visible; padding-bottom: 0; }
+.case-hero.has-media::after { display: none; }
+.case-hero-media {
+  margin: 56px 0 -90px;
+  position: relative; z-index: 3;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 40px 90px rgba(0,0,0,0.42);
+  background: var(--white);
+}
+.case-hero-media img { width: 100%; display: block; }
+
 /* Metrics band — cards overlap the hero for a modern, layered feel */
 .case-metrics-band { background: var(--white); }
 .case-metrics {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
   margin-top: -60px; position: relative; z-index: 2;
 }
+/* When a hero image provides the overlap, the metrics sit normally below it */
+.case-metrics-band.has-media { padding-top: 90px; }
+.case-metrics-band.has-media .case-metrics { margin-top: 0; }
 .case-metric {
   background: var(--white); border: 1.5px solid var(--border);
   border-radius: var(--radius); padding: 40px 36px;
@@ -1223,8 +1242,12 @@ footer {
   .work-cta { flex-direction: column; align-items: flex-start; padding: 40px 28px; }
 
   .case-hero { padding: 120px 0 72px; }
+  .case-hero.has-media { padding-bottom: 0; }
+  .case-hero-media { margin: 36px 0 -50px; }
   .case-meta { grid-template-columns: 1fr 1fr; gap: 22px; }
   .case-metrics { grid-template-columns: 1fr; margin-top: -40px; }
+  .case-metrics-band.has-media { padding-top: 60px; }
+  .work-more-grid.count-2 { grid-template-columns: 1fr; }
   .case-overview { grid-template-columns: 1fr; gap: 28px; }
   .case-overview h2 { position: static; }
   .case-proof { padding: 36px 28px; }

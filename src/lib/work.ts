@@ -44,6 +44,8 @@ export interface CaseStudy {
   client: string
   title: string
   intro: string
+  // Optional showcase image straddling the hero and the metrics band.
+  heroImage?: { src: string; alt?: string }
   meta: { label: string; value: string }[]
   metrics: Metric[]
   overview: { heading: string; body: string[] }
@@ -110,12 +112,10 @@ export interface WorkIndexCopy {
 // Work index as a portfolio strip alongside the full case studies.
 export const engagements: Record<Lang, Engagement[]> = {
   en: [
-    { client: 'Funnel', logo: '/assets/logo-funnel.svg', metric: '0 → 20%', label: 'of MRR via Product-Led Growth, built from scratch in under a year.' },
     { client: 'Telia', logo: '/assets/logo-telia.svg', metric: '+100%', label: 'conversion rate after rebuilding the entire checkout.' },
     { client: 'RiksTV / Strim', logo: '/assets/logo-rikstv.svg', metric: '−40%', label: 'CAC after introducing the STDC framework and performance rig.' },
   ],
   sv: [
-    { client: 'Funnel', logo: '/assets/logo-funnel.svg', metric: '0 → 20%', label: 'av MRR via Product-Led Growth, byggt från noll på under ett år.' },
     { client: 'Telia', logo: '/assets/logo-telia.svg', metric: '+100%', label: 'konverteringsgrad efter en total ombyggnad av checkouten.' },
     { client: 'RiksTV / Strim', logo: '/assets/logo-rikstv.svg', metric: '−40%', label: 'CAC efter införandet av STDC-ramverket och en performance-rigg.' },
   ],
@@ -146,6 +146,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['PLG', 'Onboarding', 'Pricing', 'Product UX', 'GTM'],
       metric: { value: '100%', label: 'more new accounts' },
       year: '2025–26',
+    },
+    {
+      slug: 'funnel',
+      href: '/work/funnel/',
+      accent: 'turquoise',
+      client: 'Funnel.io',
+      logo: '/assets/logo-funnel.svg',
+      title: 'A new product-led growth engine for a sales-led B2B SaaS',
+      blurb: 'As Growth Product Lead for Acquisition, I built Funnel’s self-serve motion from zero to 20% of total MRR — and ran the website as a product, rebuilding brand, pricing, SEO, CRO and an experimentation engine across the whole acquisition surface.',
+      tags: ['PLG', 'Website', 'SEO', 'CRO', 'Experimentation'],
+      metric: { value: '0 → 20%', label: 'of MRR via PLG' },
+      year: '2022–25',
     },
     {
       slug: 'bnbalyze',
@@ -195,6 +207,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       tags: ['PLG', 'Onboarding', 'Pricing', 'Produkt-UX', 'GTM'],
       metric: { value: '100%', label: 'fler nya konton' },
       year: '2025–26',
+    },
+    {
+      slug: 'funnel',
+      href: '/sv/case/funnel/',
+      accent: 'turquoise',
+      client: 'Funnel.io',
+      logo: '/assets/logo-funnel.svg',
+      title: 'En ny product-led growth-motor för en säljledd B2B-SaaS',
+      blurb: 'Som Growth Product Lead för Acquisition byggde jag Funnels self-serve-motion från noll till 20% av total MRR — och drev webbplatsen som en produkt, byggde om varumärke, pricing, SEO, CRO och en experimenteringsmotor över hela förvärvsytan.',
+      tags: ['PLG', 'Webbplats', 'SEO', 'CRO', 'Experimentering'],
+      metric: { value: '0 → 20%', label: 'av MRR via PLG' },
+      year: '2022–25',
     },
     {
       slug: 'bnbalyze',
@@ -1743,6 +1767,7 @@ const bnbalyzeEn: CaseStudy = {
   title: 'A vibe-coding experiment that became a full proptech SaaS.',
   intro:
     'Built independently, adopted by 100+ organic users, tested with real-estate pilots — and now being rebuilt with AI at its core.',
+  heroImage: { src: '/images/bnbalyze-og.png', alt: 'Bnbalyze — AI-native property investment analysis' },
   meta: [
     { label: 'Role', value: 'Founder & solo builder' },
     { label: 'Type', value: 'Proptech SaaS — property investment analysis' },
@@ -1993,6 +2018,7 @@ const bnbalyzeSv: CaseStudy = {
   title: 'Ett vibe-coding-experiment som blev en komplett proptech-SaaS.',
   intro:
     'Byggd på egen hand, använd av 100+ organiska användare, testad med fastighetsmäklarpiloter — och nu ombyggd med AI i kärnan.',
+  heroImage: { src: '/images/bnbalyze-og.png', alt: 'Bnbalyze — AI-native fastighetsinvesteringsanalys' },
   meta: [
     { label: 'Roll', value: 'Grundare & solobyggare' },
     { label: 'Typ', value: 'Proptech-SaaS — fastighetsinvesteringsanalys' },
@@ -2235,9 +2261,481 @@ const bnbalyzeSv: CaseStudy = {
   },
 }
 
+// ── Funnel.io case study ─────────────────────────────────────────────────────
+
+const funnelEn: CaseStudy = {
+  slug: 'funnel',
+  accent: 'turquoise',
+  kicker: 'Case study',
+  client: 'Funnel.io',
+  title: 'Building a new product-led growth engine for a sales-led B2B SaaS.',
+  intro:
+    'Taking self-serve from zero to 20% of total MRR while improving acquisition across every major channel — website, SEO, paid, experimentation and pricing, run as one connected system.',
+  meta: [
+    { label: 'Role', value: 'Growth Product Lead, Acquisition (ex PM)' },
+    { label: 'Period', value: 'May 2022 – Jun 2025' },
+    { label: 'Scope', value: 'PLG · website · SEO · CRO · experimentation' },
+    { label: 'Type', value: 'B2B SaaS — marketing data platform' },
+  ],
+  metrics: [
+    { value: '0 → 20%', label: 'of total MRR via PLG', note: 'A self-serve channel built from scratch in under two years' },
+    { value: '50%', label: 'growth in organic traffic', note: 'From a brand, website and SEO overhaul' },
+    { value: '−30%', label: 'lower CAC, year over year', note: 'Stronger organic, conversion and self-serve combined' },
+  ],
+  overview: {
+    heading: 'From sales-led to a compounding growth system.',
+    body: [
+      'Funnel.io is a B2B SaaS data platform that helps marketing teams collect, connect and visualise their performance data. I joined in 2022 as an embedded growth consultant. Funnel had strong product-market fit and a growing sales-led business — but no self-serve revenue channel, an underperforming website and no systematic approach to experimentation.',
+      'The brief was deliberately open-ended: own growth. In practice that meant building the infrastructure, commercial motion and experimentation culture needed to make acquisition and monetisation more efficient over time.',
+      'Over three years my role evolved from embedded consultant and Product Manager to Growth Product Lead for Acquisition. I owned the complete acquisition surface and led the creation of a PLG motion that grew from zero to 20% of total MRR in under two years.',
+    ],
+  },
+  startingPoint: {
+    label: 'The starting point',
+    heading: 'A strong product, an immature growth engine.',
+    lead:
+      'Funnel had a strong product and an established sales-led motion, but its growth infrastructure hadn’t matured to the same level. The main challenges:',
+    points: [
+      'No product-led or self-serve purchasing channel',
+      'A website that didn’t convert efficiently',
+      'Ad-hoc experimentation without consistent hypotheses or measurement',
+      'Limited connection between acquisition data and product decisions',
+      'High customer-acquisition costs and untapped organic search potential',
+      'Growth initiatives distributed across functions without one owner',
+    ],
+    goal:
+      'The opportunity was to treat acquisition as a connected product system rather than a collection of independent marketing channels — connecting positioning, website, paid, SEO, experimentation, onboarding, activation, attribution and revenue.',
+  },
+  ownership: {
+    label: 'What I owned',
+    heading: 'The acquisition surface, end-to-end.',
+    intro:
+      'I owned Funnel’s acquisition experience end-to-end, and acted as Product Manager for funnel.io — leading developers and designers to ship website experiences, growth infrastructure and customer-facing improvements. My remit spanned:',
+    items: [
+      'The marketing website as a product',
+      'Product-led growth',
+      'Free trials & self-serve onboarding',
+      'Activation strategy & measurement',
+      'Pricing & monetisation',
+      'SEO & organic acquisition',
+      'Performance marketing',
+      'Conversion-rate optimisation',
+      'Experimentation strategy',
+      'RevOps & attribution',
+      'Growth analytics & infrastructure',
+    ],
+    outro:
+      'The work combined commercial strategy with hands-on product leadership — defining problems, writing briefs, prioritising opportunities, running sprints, aligning stakeholders and measuring outcomes.',
+  },
+  acts: [
+    {
+      label: 'Act I',
+      title: 'Building an experimentation engine',
+      subtitle: 'Turning ad-hoc tests into a repeatable growth capability.',
+      blocks: [
+        {
+          title: 'From ad hoc to a system',
+          body:
+            'When I joined, experimentation was largely ad hoc — individual tests could launch, but there was no shared structure for defining hypotheses, choosing opportunities, prioritising work or evaluating results, which made it hard to build institutional knowledge. I created a systematic framework that standardised:',
+          items: [
+            'Problem definition and hypothesis design',
+            'Opportunity prioritisation and experiment briefs',
+            'Success metrics and test analysis',
+            'Documentation, knowledge sharing and how learnings informed future decisions',
+          ],
+        },
+        {
+          title: '70% more experiments, 2× the velocity',
+          body:
+            'Within a year Funnel was running 70% more experiments at twice the previous velocity. More importantly, the insights fed back into the website, product, positioning, pricing and acquisition strategy — experimentation became part of how the organisation made decisions rather than an occasional optimisation exercise.',
+        },
+      ],
+    },
+    {
+      label: 'Act II',
+      title: 'Rebuilding the acquisition experience',
+      subtitle: 'A fundamental rethink of brand, pricing and website — treated as a product, not a redesign.',
+      blocks: [
+        {
+          title: 'Not a cosmetic redesign',
+          body:
+            'A complete overhaul of Funnel’s brand, pricing and website — rethinking how Funnel positioned itself, which audiences it addressed, how product value and pricing were communicated, how users moved from discovery to conversion, and how the site supported both sales-led and self-serve journeys.',
+        },
+        {
+          title: 'The website as a product',
+          body:
+            'I treated the website as a continuously evolving product, combining qualitative insight, behavioural data, SEO opportunities, conversion analysis and experimentation to improve the whole acquisition journey. The work covered:',
+          items: [
+            'Brand and positioning rollout',
+            'Information architecture and product / value communication',
+            'Pricing experience and conversion paths',
+            'Search visibility and landing-page performance',
+            'Analytics, attribution and lead-generation journeys',
+            'Continuous CRO',
+          ],
+        },
+        {
+          title: 'Measurable across the funnel',
+          body:
+            'The overhaul produced 50% growth in organic traffic, a 20% increase in marketing-qualified leads and more than a 30% reduction in CAC year over year — not just a stronger website, but a more efficient acquisition system that improved both organic and paid channels.',
+        },
+      ],
+    },
+    {
+      label: 'Act III',
+      title: 'Creating the PLG motion',
+      subtitle: 'A self-serve route to revenue, built from the ground up.',
+      blocks: [
+        {
+          title: 'From no self-serve to a new channel',
+          body:
+            'When I joined, Funnel had no self-serve channel — prospects moved through a predominantly sales-led process, limiting the company’s ability to serve users who wanted to evaluate and adopt independently. I built the PLG motion from the ground up:',
+          items: [
+            'Free-trial infrastructure and self-serve acquisition journeys',
+            'Product onboarding, activation metrics and trial-behaviour measurement',
+            'Conversion paths and commercial packaging',
+            'Product and sales handoffs',
+            'The operating model required to scale the channel',
+          ],
+        },
+        {
+          title: 'Defining meaningful activation',
+          body:
+            'A central part was defining meaningful activation — which behaviours showed a user had understood the product, experienced its value and was likely to convert. Those signals informed onboarding, experimentation, prioritisation and the relationship between product-led and sales-assisted growth.',
+        },
+        {
+          title: 'Zero to 20% of total MRR',
+          body:
+            'This wasn’t simply a new signup flow — it connected the website, product experience, commercial model, data and internal teams around one new route to revenue. Within two years the PLG motion grew from zero to 20% of Funnel’s total MRR, a meaningful new channel alongside the existing sales-led business.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Results',
+    heading: 'A compounding acquisition system.',
+    intro: 'Across acquisition, conversion and a brand-new self-serve channel.',
+    items: [
+      {
+        value: '0 → 20%',
+        title: 'PLG from zero to 20% of MRR',
+        body:
+          'I created Funnel’s self-serve growth motion from scratch. Within two years it generated 20% of total monthly recurring revenue — a significant new commercial channel that hadn’t existed when I joined.',
+      },
+      {
+        value: '50%',
+        title: '50% organic traffic growth',
+        body:
+          'The brand and website overhaul, combined with a more structured SEO approach, increased organic traffic by 50%.',
+      },
+      {
+        value: '20%',
+        title: '20% more marketing-qualified leads',
+        body:
+          'Improved positioning, conversion journeys and acquisition performance increased MQL volume by 20%.',
+      },
+      {
+        value: '−30%',
+        title: 'More than 30% lower CAC',
+        body:
+          'Stronger organic acquisition, better conversion, systematic optimisation and a new self-serve motion reduced customer-acquisition cost by more than 30% year over year.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What the engagement taught.',
+    items: [
+      {
+        title: 'PLG requires more than opening the product.',
+        body: 'A successful self-serve motion depends on acquisition, onboarding, activation, pricing, measurement and revenue operations working as one system.',
+      },
+      {
+        title: 'The website should be managed like a product.',
+        body: 'Continuous discovery, prioritisation, experimentation and iteration create more value than occasional redesigns.',
+      },
+      {
+        title: 'Experiment velocity matters, but learning quality matters more.',
+        body: 'A strong framework makes individual tests cumulative by feeding their insights into future decisions.',
+      },
+      {
+        title: 'Sales-led and product-led growth can reinforce each other.',
+        body: 'Self-serve created a new revenue channel without requiring Funnel to abandon its established sales motion.',
+      },
+      {
+        title: 'Growth ownership needs to cross organisational boundaries.',
+        body: 'The largest gains came from connecting product, marketing, data, design, engineering and revenue rather than optimising each function independently.',
+      },
+    ],
+  },
+  role: {
+    label: 'My role',
+    heading: 'Growth product leadership across the whole acquisition surface.',
+    body:
+      'I operated as the de facto Product Manager for Funnel’s growth surface, working directly with developers and designers to move initiatives from opportunity to shipped experience — and managing website, acquisition, onboarding and monetisation as parts of one customer journey rather than disconnected functions:',
+    items: [
+      'Building the PLG motion from concept to 20% of total MRR',
+      'Managing the website as a product',
+      'Leading the brand, pricing and website overhaul',
+      'Establishing Funnel’s experimentation framework',
+      'Owning SEO, CRO and performance marketing',
+      'Developing activation and onboarding strategy',
+      'Building growth analytics, RevOps and attribution infrastructure',
+      'Leading developers and designers',
+      'Connecting Product, Marketing, Sales and Revenue Operations around shared outcomes',
+    ],
+  },
+  quote: {
+    text:
+      'I helped turn Funnel’s acquisition model from a primarily sales-led motion into a compounding growth system — building PLG from zero to 20% of total MRR while increasing organic traffic by 50%, growing MQLs by 20%, and reducing CAC by more than 30%.',
+    author: 'Erik Werner',
+    role: 'Growth Product Lead — Acquisition, Funnel.io',
+  },
+  cta: {
+    heading: 'Building a PLG motion?',
+    body: 'If you’re adding self-serve alongside a sales-led business, let’s talk about the system — acquisition, activation, pricing and experimentation — that makes it compound.',
+    button: 'Book a call →',
+  },
+}
+
+const funnelSv: CaseStudy = {
+  slug: 'funnel',
+  accent: 'turquoise',
+  kicker: 'Case study',
+  client: 'Funnel.io',
+  title: 'Byggde en ny product-led growth-motor för en säljledd B2B-SaaS.',
+  intro:
+    'Tog self-serve från noll till 20% av total MRR och förbättrade förvärvet över varje större kanal — webbplats, SEO, betald sök, experimentering och pricing, drivet som ett sammankopplat system.',
+  meta: [
+    { label: 'Roll', value: 'Growth Product Lead, Acquisition (tidigare PM)' },
+    { label: 'Period', value: 'Maj 2022 – Jun 2025' },
+    { label: 'Omfattning', value: 'PLG · webbplats · SEO · CRO · experimentering' },
+    { label: 'Typ', value: 'B2B-SaaS — plattform för marknadsföringsdata' },
+  ],
+  metrics: [
+    { value: '0 → 20%', label: 'av total MRR via PLG', note: 'En self-serve-kanal byggd från noll på under två år' },
+    { value: '50%', label: 'tillväxt i organisk trafik', note: 'Från en omgörning av varumärke, webbplats och SEO' },
+    { value: '−30%', label: 'lägre CAC, år över år', note: 'Starkare organiskt, konvertering och self-serve tillsammans' },
+  ],
+  overview: {
+    heading: 'Från säljledd till ett tillväxtsystem som växer med tiden.',
+    body: [
+      'Funnel.io är en B2B-SaaS-dataplattform som hjälper marknadsteam att samla in, koppla ihop och visualisera sin performance-data. Jag klev in 2022 som en inbäddad growth-konsult. Funnel hade stark product-market fit och en växande säljledd affär — men ingen self-serve-intäktskanal, en underpresterande webbplats och inget systematiskt sätt att experimentera.',
+      'Uppdraget var medvetet öppet: äg growth. I praktiken innebar det att bygga infrastrukturen, den kommersiella motorn och experimenteringskulturen som krävdes för att göra förvärv och monetisering effektivare över tid.',
+      'Under tre år utvecklades min roll från inbäddad konsult och Product Manager till Growth Product Lead för Acquisition. Jag ägde hela förvärvsytan och ledde skapandet av en PLG-motor som växte från noll till 20% av total MRR på under två år.',
+    ],
+  },
+  startingPoint: {
+    label: 'Utgångsläget',
+    heading: 'En stark produkt, en omogen tillväxtmotor.',
+    lead:
+      'Funnel hade en stark produkt och en etablerad säljledd motion, men tillväxtinfrastrukturen hade inte mognat till samma nivå. De främsta utmaningarna:',
+    points: [
+      'Ingen product-led eller self-serve-köpkanal',
+      'En webbplats som inte konverterade effektivt',
+      'Ad-hoc-experimentering utan konsekventa hypoteser eller mätning',
+      'Begränsad koppling mellan förvärvsdata och produktbeslut',
+      'Höga förvärvskostnader och outnyttjad potential i organisk sök',
+      'Tillväxtinitiativ utspridda över funktioner utan en ägare',
+    ],
+    goal:
+      'Möjligheten var att behandla förvärv som ett sammankopplat produktsystem snarare än en samling oberoende marknadskanaler — och koppla ihop positionering, webbplats, betald sök, SEO, experimentering, onboarding, aktivering, attribution och intäkter.',
+  },
+  ownership: {
+    label: 'Vad jag ägde',
+    heading: 'Förvärvsytan, från start till mål.',
+    intro:
+      'Jag ägde Funnels förvärvsupplevelse från start till mål, och agerade Product Manager för funnel.io — ledde utvecklare och designers för att leverera webbplatsupplevelser, tillväxtinfrastruktur och kundnära förbättringar. Mitt ansvar spände över:',
+    items: [
+      'Marknadswebbplatsen som en produkt',
+      'Product-led growth',
+      'Free trials & self-serve-onboarding',
+      'Aktiveringsstrategi & mätning',
+      'Pricing & monetisering',
+      'SEO & organiskt förvärv',
+      'Performance marketing',
+      'Konverteringsoptimering',
+      'Experimenteringsstrategi',
+      'RevOps & attribution',
+      'Tillväxtanalys & infrastruktur',
+    ],
+    outro:
+      'Arbetet kombinerade kommersiell strategi med praktiskt produktledarskap — att definiera problem, skriva briefs, prioritera möjligheter, köra sprintar, samordna intressenter och mäta utfall.',
+  },
+  acts: [
+    {
+      label: 'Akt I',
+      title: 'Bygga en experimenteringsmotor',
+      subtitle: 'Göra ad-hoc-tester till en repeterbar tillväxtförmåga.',
+      blocks: [
+        {
+          title: 'Från ad hoc till ett system',
+          body:
+            'När jag klev in var experimenteringen till stor del ad hoc — enskilda tester kunde lanseras, men det fanns ingen gemensam struktur för att definiera hypoteser, välja möjligheter, prioritera arbete eller utvärdera resultat, vilket gjorde det svårt att bygga institutionell kunskap. Jag skapade ett systematiskt ramverk som standardiserade:',
+          items: [
+            'Problemdefinition och hypotesdesign',
+            'Prioritering av möjligheter och experiment-briefs',
+            'Framgångsmått och testanalys',
+            'Dokumentation, kunskapsdelning och hur lärdomar informerade framtida beslut',
+          ],
+        },
+        {
+          title: '70% fler experiment, 2× hastigheten',
+          body:
+            'Inom ett år körde Funnel 70% fler experiment i dubbla den tidigare hastigheten. Ännu viktigare: insikterna matades tillbaka in i webbplatsen, produkten, positioneringen, pricingen och förvärvsstrategin — experimentering blev en del av hur organisationen fattade beslut snarare än en enstaka optimeringsövning.',
+        },
+      ],
+    },
+    {
+      label: 'Akt II',
+      title: 'Bygga om förvärvsupplevelsen',
+      subtitle: 'Ett grundläggande omtänk av varumärke, pricing och webbplats — behandlat som en produkt, inte en redesign.',
+      blocks: [
+        {
+          title: 'Ingen kosmetisk redesign',
+          body:
+            'En komplett omgörning av Funnels varumärke, pricing och webbplats — ett omtänk av hur Funnel positionerade sig, vilka målgrupper det adresserade, hur produktvärde och pris kommunicerades, hur användare rörde sig från upptäckt till konvertering, och hur sajten stödde både säljledda och self-serve-resor.',
+        },
+        {
+          title: 'Webbplatsen som en produkt',
+          body:
+            'Jag behandlade webbplatsen som en produkt i ständig utveckling, och kombinerade kvalitativa insikter, beteendedata, SEO-möjligheter, konverteringsanalys och experimentering för att förbättra hela förvärvsresan. Arbetet omfattade:',
+          items: [
+            'Utrullning av varumärke och positionering',
+            'Informationsarkitektur och produkt- / värdekommunikation',
+            'Prisupplevelse och konverteringsvägar',
+            'Söksynlighet och landningssidors prestanda',
+            'Analys, attribution och leadgenereringsresor',
+            'Löpande CRO',
+          ],
+        },
+        {
+          title: 'Mätbart genom hela tratten',
+          body:
+            'Omgörningen gav 50% tillväxt i organisk trafik, en 20-procentig ökning av marketing-qualified leads och mer än 30% lägre CAC år över år — inte bara en starkare webbplats, utan ett effektivare förvärvssystem som förbättrade både organiska och betalda kanaler.',
+        },
+      ],
+    },
+    {
+      label: 'Akt III',
+      title: 'Skapa PLG-motorn',
+      subtitle: 'En self-serve-väg till intäkter, byggd från grunden.',
+      blocks: [
+        {
+          title: 'Från ingen self-serve till en ny kanal',
+          body:
+            'När jag klev in hade Funnel ingen self-serve-kanal — prospekt rörde sig genom en övervägande säljledd process, vilket begränsade förmågan att betjäna användare som ville utvärdera och adoptera på egen hand. Jag byggde PLG-motorn från grunden:',
+          items: [
+            'Free-trial-infrastruktur och self-serve-förvärvsresor',
+            'Produkt-onboarding, aktiveringsmått och mätning av trial-beteende',
+            'Konverteringsvägar och kommersiell paketering',
+            'Produkt- och säljöverlämningar',
+            'Den operativa modellen som krävdes för att skala kanalen',
+          ],
+        },
+        {
+          title: 'Definiera meningsfull aktivering',
+          body:
+            'En central del var att definiera meningsfull aktivering — vilka beteenden som visade att en användare förstått produkten, upplevt dess värde och sannolikt skulle konvertera. Dessa signaler informerade onboarding, experimentering, prioritering och relationen mellan product-led och säljassisterad tillväxt.',
+        },
+        {
+          title: 'Från noll till 20% av total MRR',
+          body:
+            'Detta var inte bara ett nytt registreringsflöde — det kopplade ihop webbplatsen, produktupplevelsen, den kommersiella modellen, datan och de interna teamen kring en ny väg till intäkter. Inom två år växte PLG-motorn från noll till 20% av Funnels totala MRR, en meningsfull ny kanal vid sidan av den befintliga säljledda affären.',
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Resultat',
+    heading: 'Ett förvärvssystem som växer med tiden.',
+    intro: 'Över förvärv, konvertering och en helt ny self-serve-kanal.',
+    items: [
+      {
+        value: '0 → 20%',
+        title: 'PLG från noll till 20% av MRR',
+        body:
+          'Jag skapade Funnels self-serve-motor från grunden. Inom två år genererade den 20% av total månatlig återkommande intäkt — en betydande ny kommersiell kanal som inte fanns när jag klev in.',
+      },
+      {
+        value: '50%',
+        title: '50% tillväxt i organisk trafik',
+        body:
+          'Omgörningen av varumärke och webbplats, kombinerad med ett mer strukturerat SEO-arbete, ökade den organiska trafiken med 50%.',
+      },
+      {
+        value: '20%',
+        title: '20% fler marketing-qualified leads',
+        body:
+          'Förbättrad positionering, konverteringsresor och förvärvsprestanda ökade MQL-volymen med 20%.',
+      },
+      {
+        value: '−30%',
+        title: 'Mer än 30% lägre CAC',
+        body:
+          'Starkare organiskt förvärv, bättre konvertering, systematisk optimering och en ny self-serve-motion minskade förvärvskostnaden med mer än 30% år över år.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad uppdraget lärde mig.',
+    items: [
+      {
+        title: 'PLG kräver mer än att öppna produkten.',
+        body: 'En framgångsrik self-serve-motion beror på att förvärv, onboarding, aktivering, pricing, mätning och revenue operations fungerar som ett system.',
+      },
+      {
+        title: 'Webbplatsen bör drivas som en produkt.',
+        body: 'Löpande discovery, prioritering, experimentering och iteration skapar mer värde än enstaka redesigns.',
+      },
+      {
+        title: 'Experimenthastighet spelar roll, men lärandekvalitet spelar större roll.',
+        body: 'Ett starkt ramverk gör enskilda tester kumulativa genom att mata deras insikter in i framtida beslut.',
+      },
+      {
+        title: 'Säljledd och product-led growth kan förstärka varandra.',
+        body: 'Self-serve skapade en ny intäktskanal utan att kräva att Funnel övergav sin etablerade säljmotion.',
+      },
+      {
+        title: 'Tillväxtägarskap måste korsa organisatoriska gränser.',
+        body: 'De största vinsterna kom från att koppla ihop produkt, marknad, data, design, utveckling och intäkter snarare än att optimera varje funktion för sig.',
+      },
+    ],
+  },
+  role: {
+    label: 'Min roll',
+    heading: 'Growth-produktledarskap över hela förvärvsytan.',
+    body:
+      'Jag agerade de facto Product Manager för Funnels tillväxtyta, arbetade direkt med utvecklare och designers för att flytta initiativ från möjlighet till levererad upplevelse — och drev webbplats, förvärv, onboarding och monetisering som delar av en kundresa snarare än frånkopplade funktioner:',
+    items: [
+      'Bygga PLG-motorn från koncept till 20% av total MRR',
+      'Driva webbplatsen som en produkt',
+      'Leda omgörningen av varumärke, pricing och webbplats',
+      'Etablera Funnels experimenteringsramverk',
+      'Äga SEO, CRO och performance marketing',
+      'Utveckla aktiverings- och onboarding-strategi',
+      'Bygga tillväxtanalys, RevOps och attribution-infrastruktur',
+      'Leda utvecklare och designers',
+      'Koppla ihop Produkt, Marknad, Sälj och Revenue Operations kring gemensamma utfall',
+    ],
+  },
+  quote: {
+    text:
+      'Jag hjälpte till att förvandla Funnels förvärvsmodell från en primärt säljledd motion till ett tillväxtsystem som växer med tiden — byggde PLG från noll till 20% av total MRR samtidigt som jag ökade organisk trafik med 50%, växte MQL med 20% och sänkte CAC med mer än 30%.',
+    author: 'Erik Werner',
+    role: 'Growth Product Lead — Acquisition, Funnel.io',
+  },
+  cta: {
+    heading: 'Bygger du en PLG-motion?',
+    body: 'Om du lägger till self-serve vid sidan av en säljledd affär — låt oss prata om systemet (förvärv, aktivering, pricing och experimentering) som får det att växa med tiden.',
+    button: 'Boka ett samtal →',
+  },
+}
+
 export const caseStudies: Record<Lang, Record<string, CaseStudy>> = {
-  en: { 'leadfeeder-dealfront': leadfeederEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn, 'sands-entreprenad': sandsEn },
-  sv: { 'leadfeeder-dealfront': leadfeederSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv, 'sands-entreprenad': sandsSv },
+  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
+  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
 }
 
 // ── SEO helpers ──────────────────────────────────────────────────────────────

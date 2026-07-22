@@ -5,21 +5,21 @@ import CaseStudyView from '@/components/work/CaseStudy'
 import { translations } from '@/lib/translations'
 import { caseStudies, caseJsonLd } from '@/lib/work'
 
-const t = translations.sv
-const data = caseStudies.sv['bnbalyze']
+const t = translations.en
+const data = caseStudies.en['funnel']
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/bnbalyze-og.png`
-const URL_PATH = `${SITE_URL}/sv/case/bnbalyze/`
+const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const URL_PATH = `${SITE_URL}/work/funnel/`
 
 export const metadata: Metadata = {
-  title: `${data.client} — Case · Greow`,
+  title: `${data.client} — Case study · Greow`,
   description: data.intro,
   alternates: {
     canonical: URL_PATH,
     languages: {
-      en: `${SITE_URL}/work/bnbalyze/`,
-      sv: URL_PATH,
-      'x-default': `${SITE_URL}/work/bnbalyze/`,
+      en: URL_PATH,
+      sv: `${SITE_URL}/sv/case/funnel/`,
+      'x-default': URL_PATH,
     },
   },
   openGraph: {
@@ -27,22 +27,21 @@ export const metadata: Metadata = {
     description: data.intro,
     url: URL_PATH,
     type: 'article',
-    locale: 'sv_SE',
-    images: [{ url: OG_IMAGE, width: 2502, height: 1092, alt: `${data.client} — Case` }],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: `${data.client} — Case study` }],
   },
 }
 
-export default function BnbalyzeCaseSv() {
-  const jsonLd = caseJsonLd('sv', data)
+export default function FunnelCaseEn() {
+  const jsonLd = caseJsonLd('en', data)
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Nav t={t.nav} lang="sv" />
+      <Nav t={t.nav} lang="en" />
       <main>
-        <CaseStudyView t={t} lang="sv" data={data} />
+        <CaseStudyView t={t} lang="en" data={data} />
       </main>
       <ScrollReveal />
     </>

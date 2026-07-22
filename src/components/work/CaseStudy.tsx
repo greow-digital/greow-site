@@ -16,7 +16,7 @@ export default function CaseStudyView({ t, lang, data }: CaseStudyProps) {
   return (
     <>
       {/* HERO */}
-      <section className="case-hero accent-jungle">
+      <section className={`case-hero accent-jungle${data.heroImage ? ' has-media' : ''}`}>
         <div className="container">
           <Link href={workBase[lang]} className="case-back">
             ← {backLabel}
@@ -35,11 +35,16 @@ export default function CaseStudyView({ t, lang, data }: CaseStudyProps) {
               </div>
             ))}
           </dl>
+          {data.heroImage && (
+            <figure className="case-hero-media">
+              <img src={data.heroImage.src} alt={data.heroImage.alt ?? data.client} decoding="async" />
+            </figure>
+          )}
         </div>
       </section>
 
       {/* HEADLINE METRICS */}
-      <section className="case-metrics-band">
+      <section className={`case-metrics-band${data.heroImage ? ' has-media' : ''}`}>
         <div className="container">
           <div className="case-metrics">
             {data.metrics.map((m) => (

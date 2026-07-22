@@ -83,7 +83,7 @@ export default function WorkIndex({ t, lang }: WorkIndexProps) {
             <h2>{copy.moreHeading}</h2>
             <p>{copy.moreIntro}</p>
           </div>
-          <div className="work-more-grid">
+          <div className={`work-more-grid count-${more.length}`}>
             {more.map((e) => (
               <div key={e.client} className="work-more-card reveal">
                 <div className="work-more-metric">{e.metric}</div>

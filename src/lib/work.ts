@@ -193,6 +193,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       year: '2020–21',
     },
     {
+      slug: 'refapp',
+      href: '/work/refapp/',
+      accent: 'jungle',
+      client: 'Refapp',
+      logo: '/assets/logo-refapp.svg',
+      title: 'Building the growth function for an HR-tech scale-up, from zero',
+      blurb: 'As Chief Growth Officer, I built Refapp’s growth function from scratch — team, HubSpot martech, a rebrand and website, a multi-channel demand engine and an international GTM strategy — doubling inbound pipeline in a year.',
+      tags: ['Growth leadership', 'Demand gen', 'HubSpot', 'Brand', 'International GTM'],
+      metric: { value: '+100%', label: 'inbound pipeline' },
+      year: '2021–22',
+    },
+    {
       slug: 'bnbalyze',
       href: '/work/bnbalyze/',
       accent: 'jungle',
@@ -290,6 +302,18 @@ export const projects: Record<Lang, ProjectSummary[]> = {
       year: '2020–21',
     },
     {
+      slug: 'refapp',
+      href: '/sv/case/refapp/',
+      accent: 'jungle',
+      client: 'Refapp',
+      logo: '/assets/logo-refapp.svg',
+      title: 'Byggde growth-funktionen för en HR-tech-scaleup, från noll',
+      blurb: 'Som Chief Growth Officer byggde jag Refapps growth-funktion från grunden — team, HubSpot-martech, en rebrand och webbplats, en demand-motor med flera kanaler och en internationell GTM-strategi — och fördubblade inbound pipeline på ett år.',
+      tags: ['Growth-ledarskap', 'Demand gen', 'HubSpot', 'Varumärke', 'Internationell GTM'],
+      metric: { value: '+100%', label: 'inbound pipeline' },
+      year: '2021–22',
+    },
+    {
       slug: 'bnbalyze',
       href: '/sv/case/bnbalyze/',
       accent: 'jungle',
@@ -325,6 +349,7 @@ export const engagementKind: Record<string, EngagementKind> = {
   'leadfeeder-dealfront': 'consultant',
   'funnel': 'consultant',
   'dnb-eiendom': 'consultant',
+  'refapp': 'consultant',
   'rikstv-strim': 'employment',
   'telia-norway': 'employment',
 }
@@ -351,6 +376,7 @@ export const caseOrder: string[] = [
   'bnbalyze',
   'happy-vegan',
   'dnb-eiendom',
+  'refapp',
   'rikstv-strim',
   'telia-norway',
 ]
@@ -4398,9 +4424,565 @@ const dnbSv: CaseStudy = {
   },
 }
 
+// ── Refapp case study ────────────────────────────────────────────────────────
+
+const refappEn: CaseStudy = {
+  slug: 'refapp',
+  accent: 'jungle',
+  kicker: 'Case study',
+  client: 'Refapp',
+  title: 'Building the growth function for an HR-tech scale-up.',
+  intro:
+    'From no team or demand engine to a 100% increase in inbound pipeline — team, martech, brand, a multi-channel demand engine and an international GTM strategy, built from zero in a year.',
+  meta: [
+    { label: 'Role', value: 'Chief Growth Officer' },
+    { label: 'Period', value: 'May 2021 – May 2022' },
+    { label: 'Scope', value: 'Growth · demand gen · martech · brand · GTM' },
+    { label: 'Context', value: 'B2B SaaS HR-tech — digital reference checking' },
+  ],
+  metrics: [
+    { value: '+100%', label: 'increase in inbound pipeline', note: 'In one year, from a demand engine built from scratch' },
+    { value: 'Built', label: 'growth function from zero', note: 'Team, martech, brand, demand engine and GTM' },
+    { value: 'GTM', label: 'international expansion strategy', note: 'A structured market-entry foundation beyond the Nordics' },
+  ],
+  overview: {
+    heading: 'A strong product, no engine to take it to market.',
+    body: [
+      'Refapp is a B2B SaaS HR-tech company that digitises and automates the reference-checking process. When I joined in 2021, the product had clear customer value and early traction — but no growth and marketing function: no internal team, no structured demand-generation engine, no GTM strategy, no marketing-automation infrastructure, no reliable attribution between marketing and revenue, and no operating model for agencies.',
+      'At the same time, Refapp was preparing for international expansion and needed a commercial foundation capable of supporting growth beyond the Nordic market.',
+      'As Chief Growth Officer I reported directly to the CEO and joined the leadership team, owning everything related to growth and marketing — from recruiting the team and implementing the technology to rebuilding the brand, generating pipeline and defining the international go-to-market strategy. Within one year, the growth engine increased inbound pipeline by 100%.',
+    ],
+  },
+  startingPoint: {
+    label: 'The starting point',
+    heading: 'Value proven — a repeatable system missing.',
+    lead:
+      'Refapp had a strong proposition: replace slow, inconsistent, manual reference checks with a structured digital workflow. The challenge wasn’t proving the product solved a problem — it was building a repeatable system for taking that value to market. Growth existed in isolated pieces, with no shared infrastructure connecting:',
+    points: [
+      'Market positioning, brand and messaging',
+      'Website conversion, content and SEO',
+      'Paid acquisition and lead management',
+      'Marketing automation and sales handoffs',
+      'Pipeline attribution',
+      'International expansion',
+    ],
+    goal:
+      'The opportunity was to build a complete growth function — not to optimise one existing channel.',
+  },
+  ownership: {
+    label: 'What I owned',
+    heading: 'Growth and marketing, end-to-end.',
+    intro:
+      'I had end-to-end responsibility for growth and marketing, and as a member of the leadership team I connected growth priorities to company strategy, the sales organisation, product direction and international ambitions:',
+    items: [
+      'Growth strategy',
+      'Team structure & recruitment',
+      'Demand generation',
+      'Brand & positioning',
+      'Website strategy & delivery',
+      'Marketing technology & HubSpot',
+      'Lead scoring & nurture flows',
+      'Pipeline & revenue attribution',
+      'SEO & content',
+      'Performance marketing',
+      'Agency selection & management',
+      'International GTM strategy',
+    ],
+  },
+  acts: [
+    {
+      label: 'Act I',
+      title: 'Building the team and operating model',
+      subtitle: 'A commercially accountable growth team — not a traditional marketing department.',
+      blocks: [
+        {
+          title: 'The function itself, first',
+          body:
+            'The first priority was creating the function. I defined the capabilities Refapp needed, recruited the team, established responsibilities and created a shared way of working — built from the start around commercial accountability rather than campaign output:',
+          items: [
+            'Clear commercial targets and ownership by channel and initiative',
+            'Continuous testing, fast feedback and transparent performance reporting',
+            'Collaboration between Marketing and Sales',
+            'Decisions based on pipeline contribution rather than activity volume',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Act II',
+      title: 'Building the martech foundation',
+      subtitle: 'One system to follow a lead from first interaction to commercial outcome.',
+      blocks: [
+        {
+          title: 'HubSpot as the core platform',
+          body:
+            'Refapp lacked the infrastructure to follow a lead through to a commercial outcome. I implemented HubSpot as the core growth and marketing platform:',
+          items: [
+            'CRM and lifecycle structure, lead capture, scoring and segmentation',
+            'Automated nurture journeys and sales handoffs',
+            'Funnel reporting and campaign tracking',
+            'Pipeline and revenue attribution',
+          ],
+        },
+        {
+          title: 'From “how many leads” to “what created value”',
+          body:
+            'Lead scoring surfaced which accounts showed real buying intent; nurture flows developed relationships with prospects who were interested but not yet sales-ready. Most importantly, the setup connected marketing activity to pipeline and revenue — changing the internal conversation from “How many leads did we generate?” to “Which activities created qualified opportunities and commercial value?”',
+        },
+      ],
+    },
+    {
+      label: 'Act III',
+      title: 'Rebuilding the brand and website',
+      subtitle: 'Making Refapp understandable to people outside the Nordic HR-tech market.',
+      blocks: [
+        {
+          title: 'A rebrand, and a website that works',
+          body:
+            'The existing brand and website reflected an earlier stage of the company. I led a complete rebrand and rebuilt the website in HubSpot — so it became a central part of the growth system rather than a static company presentation, connecting content, campaigns, lead generation, automation and sales follow-up in one environment:',
+          items: [
+            'Brand strategy, positioning, core messaging and visual identity',
+            'Website information architecture and product / value communication',
+            'Conversion journeys and lead-capture points',
+            'Content structure and international positioning',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Act IV',
+      title: 'Creating the demand-generation engine',
+      subtitle: 'A connected acquisition system, not a collection of isolated campaigns.',
+      blocks: [
+        {
+          title: 'Each channel with a role',
+          body:
+            'With the team, brand, website and martech in place, I built a multi-channel demand engine. SEO and content built long-term visibility and educated the market; paid acquisition created faster access to high-intent audiences; the website converted demand; HubSpot captured, qualified, nurtured and attributed it:',
+          items: [
+            'SEO and content marketing',
+            'Performance marketing and conversion optimisation',
+            'Marketing automation and lead nurturing',
+            'Campaign-driven acquisition',
+          ],
+        },
+        {
+          title: 'Inbound pipeline doubled',
+          body:
+            'Together these elements formed a connected acquisition system rather than a set of isolated campaigns — and within one year, inbound pipeline increased by 100%.',
+        },
+      ],
+    },
+    {
+      label: 'Act V',
+      title: 'Building the agency model',
+      subtitle: 'Agencies as extensions of the growth function, not disconnected suppliers.',
+      blocks: [
+        {
+          title: 'Specialist capacity, internal ownership',
+          body:
+            'To expand execution capacity quickly, I selected and onboarded specialist agency partners across content, creative and performance — while keeping strategy, prioritisation and commercial ownership internal:',
+          items: [
+            'Clear strategic and campaign briefs, with defined responsibilities',
+            'Shared commercial objectives and regular performance reviews',
+            'Creative feedback loops and testing / optimisation routines',
+            'Accountability for measurable outcomes',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Act VI',
+      title: 'Preparing for international expansion',
+      subtitle: 'Market entry as a deliberate choice, not a translation exercise.',
+      blocks: [
+        {
+          title: 'A structured market-entry foundation',
+          body:
+            'Refapp’s next stage required moving beyond its Nordic position. I developed the international go-to-market strategy with concrete market-entry priorities — so expansion wasn’t treated as simply translating the website and launching ads, but as a deliberate choice of audience, positioning, channel mix, commercial motion and resource commitment per market. The work considered:',
+          items: [
+            'Market attractiveness, category maturity and competitive intensity',
+            'Local buying behaviour and search demand',
+            'Regulatory and operational conditions',
+            'Sales capacity, localisation and the balance of central vs local execution',
+          ],
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Results',
+    heading: 'A growth engine, built to scale.',
+    intro: 'From fragmented marketing activity to an accountable internal growth organisation.',
+    items: [
+      {
+        value: '+100%',
+        title: 'Inbound pipeline doubled',
+        body:
+          'The demand-generation engine doubled inbound pipeline within one year — by connecting brand, website, SEO, performance marketing, content, automation and sales handoffs into one measurable system.',
+      },
+      {
+        value: 'Built',
+        title: 'Growth & marketing from zero',
+        body:
+          'I created the function from the ground up — team, roles and targets, processes, channel strategy, technology, agency partnerships, reporting and a performance culture — plus a rebrand and a HubSpot website built for international growth.',
+      },
+      {
+        value: 'HubSpot',
+        title: 'Complete HubSpot implementation',
+        body:
+          'HubSpot became the central infrastructure for lead management, scoring, segmentation, nurturing, sales handoffs, funnel reporting, and pipeline and revenue attribution.',
+      },
+      {
+        value: 'GTM',
+        title: 'International GTM priorities defined',
+        body:
+          'A structured international expansion strategy with concrete market-entry priorities, giving the leadership team a clear basis for its next stage of growth.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What building a growth function taught.',
+    items: [
+      {
+        title: 'Building a growth function starts with the operating system.',
+        body: 'Team structure, technology, goals and measurement need to work together before channels can scale efficiently.',
+      },
+      {
+        title: 'Marketing should be accountable to pipeline.',
+        body: 'Connecting activity to revenue creates better prioritisation and stronger alignment with Sales and leadership.',
+      },
+      {
+        title: 'A website is part of the GTM infrastructure.',
+        body: 'Positioning, conversion, content, automation and attribution need to be designed as one connected experience.',
+      },
+      {
+        title: 'Automation should improve timing, not replace relevance.',
+        body: 'Lead scoring and nurture flows work when they help the company respond appropriately to buying readiness.',
+      },
+      {
+        title: 'Agency relationships require internal ownership.',
+        body: 'External expertise produces stronger results when strategy, measurement and commercial accountability stay inside the company.',
+      },
+      {
+        title: 'International expansion is a market-entry problem, not a translation exercise.',
+        body: 'Successful expansion requires deliberate decisions about positioning, channels, resources and sales motion.',
+      },
+    ],
+  },
+  role: {
+    label: 'My role',
+    heading: 'Chief Growth Officer — the whole growth function.',
+    body:
+      'As Chief Growth Officer and a member of the leadership team, I built and led Refapp’s complete growth and marketing function:',
+    items: [
+      'Growth strategy and commercial planning',
+      'Team design, recruitment and leadership',
+      'Demand-generation strategy',
+      'Full HubSpot implementation',
+      'Lead scoring and nurture automation',
+      'Pipeline and revenue attribution',
+      'Brand strategy and rebrand',
+      'Website strategy and rebuild',
+      'SEO, content and performance marketing',
+      'Agency selection and management',
+      'Marketing and Sales alignment',
+      'International GTM strategy and leadership reporting',
+    ],
+  },
+  quote: {
+    text:
+      'I built Refapp’s growth function from the ground up — creating the team, brand, website, martech, demand engine and international GTM strategy that doubled inbound pipeline within one year.',
+    author: 'Erik Werner',
+    role: 'Chief Growth Officer, Refapp',
+  },
+  cta: {
+    heading: 'Building a growth function from zero?',
+    body: 'If you have product-market fit but no engine to scale it, let’s talk about the team, martech and demand system that turns traction into pipeline.',
+    button: 'Book a call →',
+  },
+}
+
+const refappSv: CaseStudy = {
+  slug: 'refapp',
+  accent: 'jungle',
+  kicker: 'Case study',
+  client: 'Refapp',
+  title: 'Byggde growth-funktionen för en HR-tech-scaleup.',
+  intro:
+    'Från inget team eller demand-motor till en 100-procentig ökning av inbound pipeline — team, martech, varumärke, en demand-motor med flera kanaler och en internationell GTM-strategi, byggt från noll på ett år.',
+  meta: [
+    { label: 'Roll', value: 'Chief Growth Officer' },
+    { label: 'Period', value: 'Maj 2021 – Maj 2022' },
+    { label: 'Omfattning', value: 'Growth · demand gen · martech · varumärke · GTM' },
+    { label: 'Kontext', value: 'B2B SaaS HR-tech — digital referenstagning' },
+  ],
+  metrics: [
+    { value: '+100%', label: 'ökning av inbound pipeline', note: 'På ett år, från en demand-motor byggd från grunden' },
+    { value: 'Byggd', label: 'growth-funktion från noll', note: 'Team, martech, varumärke, demand-motor och GTM' },
+    { value: 'GTM', label: 'internationell expansionsstrategi', note: 'En strukturerad grund för marknadsinträde bortom Norden' },
+  ],
+  overview: {
+    heading: 'En stark produkt, ingen motor att ta den till marknad.',
+    body: [
+      'Refapp är ett B2B SaaS HR-tech-bolag som digitaliserar och automatiserar referenstagningsprocessen. När jag klev in 2021 hade produkten tydligt kundvärde och tidig traction — men ingen growth- och marknadsfunktion: inget internt team, ingen strukturerad demand-motor, ingen GTM-strategi, ingen marketing-automation-infrastruktur, ingen tillförlitlig attribution mellan marknad och intäkt, och ingen operativ modell för byråer.',
+      'Samtidigt förberedde sig Refapp för internationell expansion och behövde en kommersiell grund som kunde bära tillväxt bortom den nordiska marknaden.',
+      'Som Chief Growth Officer rapporterade jag direkt till VD och satt i ledningsgruppen, och ägde allt som rörde growth och marknad — från att rekrytera teamet och implementera tekniken till att bygga om varumärket, generera pipeline och definiera den internationella go-to-market-strategin. Inom ett år ökade growth-motorn inbound pipeline med 100%.',
+    ],
+  },
+  startingPoint: {
+    label: 'Utgångsläget',
+    heading: 'Värdet bevisat — ett repeterbart system saknades.',
+    lead:
+      'Refapp hade ett starkt erbjudande: ersätta långsamma, inkonsekventa, manuella referenstagningar med ett strukturerat digitalt arbetsflöde. Utmaningen var inte att bevisa att produkten löste ett problem — det var att bygga ett repeterbart system för att ta det värdet till marknaden. Growth fanns i isolerade delar, utan gemensam infrastruktur som kopplade ihop:',
+    points: [
+      'Marknadspositionering, varumärke och budskap',
+      'Webbkonvertering, innehåll och SEO',
+      'Betalt förvärv och lead-hantering',
+      'Marketing automation och säljöverlämningar',
+      'Pipeline-attribution',
+      'Internationell expansion',
+    ],
+    goal:
+      'Möjligheten var att bygga en komplett growth-funktion — inte att optimera en befintlig kanal.',
+  },
+  ownership: {
+    label: 'Vad jag ägde',
+    heading: 'Growth och marknad, från start till mål.',
+    intro:
+      'Jag hade helhetsansvar för growth och marknad, och som medlem i ledningsgruppen kopplade jag growth-prioriteringar till bolagsstrategin, säljorganisationen, produktriktningen och de internationella ambitionerna:',
+    items: [
+      'Growth-strategi',
+      'Teamstruktur & rekrytering',
+      'Demand generation',
+      'Varumärke & positionering',
+      'Webbstrategi & leverans',
+      'Marknadsteknik & HubSpot',
+      'Lead scoring & nurture-flöden',
+      'Pipeline- & intäktsattribution',
+      'SEO & innehåll',
+      'Performance marketing',
+      'Byråval & byråstyrning',
+      'Internationell GTM-strategi',
+    ],
+  },
+  acts: [
+    {
+      label: 'Akt I',
+      title: 'Bygga teamet och den operativa modellen',
+      subtitle: 'Ett kommersiellt ansvarigt growth-team — inte en traditionell marknadsavdelning.',
+      blocks: [
+        {
+          title: 'Först själva funktionen',
+          body:
+            'Första prioriteringen var att skapa funktionen. Jag definierade de förmågor Refapp behövde, rekryterade teamet, etablerade ansvar och skapade ett gemensamt arbetssätt — byggt från start kring kommersiellt ansvar snarare än kampanj-output:',
+          items: [
+            'Tydliga kommersiella mål och ägarskap per kanal och initiativ',
+            'Löpande testning, snabb feedback och transparent performance-rapportering',
+            'Samarbete mellan Marknad och Sälj',
+            'Beslut baserade på pipeline-bidrag snarare än aktivitetsvolym',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Akt II',
+      title: 'Bygga martech-grunden',
+      subtitle: 'Ett system för att följa en lead från första interaktion till kommersiellt utfall.',
+      blocks: [
+        {
+          title: 'HubSpot som kärnplattform',
+          body:
+            'Refapp saknade infrastrukturen för att följa en lead hela vägen till ett kommersiellt utfall. Jag implementerade HubSpot som kärnplattform för growth och marknad:',
+          items: [
+            'CRM- och lifecycle-struktur, lead capture, scoring och segmentering',
+            'Automatiserade nurture-resor och säljöverlämningar',
+            'Trattrapportering och kampanjspårning',
+            'Pipeline- och intäktsattribution',
+          ],
+        },
+        {
+          title: 'Från “hur många leads” till “vad skapade värde”',
+          body:
+            'Lead scoring lyfte fram vilka konton som visade verklig köpintention; nurture-flöden utvecklade relationer med prospekt som var intresserade men inte redo för sälj. Viktigast: uppsättningen kopplade marknadsaktivitet till pipeline och intäkt — och ändrade den interna frågan från “Hur många leads genererade vi?” till “Vilka aktiviteter skapade kvalificerade möjligheter och kommersiellt värde?”',
+        },
+      ],
+    },
+    {
+      label: 'Akt III',
+      title: 'Bygga om varumärket och webbplatsen',
+      subtitle: 'Att göra Refapp begripligt för människor utanför den nordiska HR-tech-marknaden.',
+      blocks: [
+        {
+          title: 'En rebrand, och en webbplats som fungerar',
+          body:
+            'Det befintliga varumärket och webbplatsen speglade ett tidigare skede av bolaget. Jag ledde en komplett rebrand och byggde om webbplatsen i HubSpot — så att den blev en central del av growth-systemet snarare än en statisk bolagspresentation, och kopplade ihop innehåll, kampanjer, leadgenerering, automation och säljuppföljning i en miljö:',
+          items: [
+            'Varumärkesstrategi, positionering, kärnbudskap och visuell identitet',
+            'Webbplatsens informationsarkitektur och produkt- / värdekommunikation',
+            'Konverteringsresor och lead-capture-punkter',
+            'Innehållsstruktur och internationell positionering',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Akt IV',
+      title: 'Skapa demand-generation-motorn',
+      subtitle: 'Ett sammankopplat förvärvssystem, inte en samling isolerade kampanjer.',
+      blocks: [
+        {
+          title: 'Varje kanal med en roll',
+          body:
+            'Med teamet, varumärket, webbplatsen och martech på plats byggde jag en demand-motor med flera kanaler. SEO och innehåll byggde långsiktig synlighet och utbildade marknaden; betalt förvärv gav snabbare åtkomst till målgrupper med hög intention; webbplatsen konverterade efterfrågan; HubSpot fångade, kvalificerade, vårdade och attribuerade den:',
+          items: [
+            'SEO och content marketing',
+            'Performance marketing och konverteringsoptimering',
+            'Marketing automation och lead nurturing',
+            'Kampanjdrivet förvärv',
+          ],
+        },
+        {
+          title: 'Inbound pipeline fördubblad',
+          body:
+            'Tillsammans bildade dessa delar ett sammankopplat förvärvssystem snarare än en uppsättning isolerade kampanjer — och inom ett år ökade inbound pipeline med 100%.',
+        },
+      ],
+    },
+    {
+      label: 'Akt V',
+      title: 'Bygga byråmodellen',
+      subtitle: 'Byråer som förlängningar av growth-funktionen, inte frånkopplade leverantörer.',
+      blocks: [
+        {
+          title: 'Specialistkapacitet, internt ägarskap',
+          body:
+            'För att snabbt utöka exekveringskapaciteten valde och onboardade jag specialiserade byråpartners inom innehåll, kreativ och performance — samtidigt som strategi, prioritering och kommersiellt ägarskap hölls internt:',
+          items: [
+            'Tydliga strategiska och kampanjbriefs, med definierat ansvar',
+            'Gemensamma kommersiella mål och regelbundna performance-genomgångar',
+            'Kreativa feedback-loopar och test- / optimeringsrutiner',
+            'Ansvar för mätbara utfall',
+          ],
+        },
+      ],
+    },
+    {
+      label: 'Akt VI',
+      title: 'Förbereda för internationell expansion',
+      subtitle: 'Marknadsinträde som ett medvetet val, inte en översättningsövning.',
+      blocks: [
+        {
+          title: 'En strukturerad grund för marknadsinträde',
+          body:
+            'Refapps nästa skede krävde att gå bortom den nordiska positionen. Jag utvecklade den internationella go-to-market-strategin med konkreta prioriteringar för marknadsinträde — så att expansion inte behandlades som att bara översätta webbplatsen och starta annonser, utan som ett medvetet val av målgrupp, positionering, kanalmix, kommersiell motion och resurssatsning per marknad. Arbetet vägde in:',
+          items: [
+            'Marknadsattraktivitet, kategorimognad och konkurrensintensitet',
+            'Lokalt köpbeteende och sökefterfrågan',
+            'Regulatoriska och operativa förutsättningar',
+            'Säljkapacitet, lokalisering och balansen mellan central och lokal exekvering',
+          ],
+        },
+      ],
+    },
+  ],
+  results: {
+    label: 'Resultat',
+    heading: 'En growth-motor, byggd för att skala.',
+    intro: 'Från fragmenterad marknadsaktivitet till en ansvarig intern growth-organisation.',
+    items: [
+      {
+        value: '+100%',
+        title: 'Inbound pipeline fördubblad',
+        body:
+          'Demand-generation-motorn fördubblade inbound pipeline inom ett år — genom att koppla ihop varumärke, webbplats, SEO, performance marketing, innehåll, automation och säljöverlämningar till ett mätbart system.',
+      },
+      {
+        value: 'Byggd',
+        title: 'Growth & marknad från noll',
+        body:
+          'Jag skapade funktionen från grunden — team, roller och mål, processer, kanalstrategi, teknik, byråpartnerskap, rapportering och en performance-kultur — plus en rebrand och en HubSpot-webbplats byggd för internationell tillväxt.',
+      },
+      {
+        value: 'HubSpot',
+        title: 'Komplett HubSpot-implementering',
+        body:
+          'HubSpot blev den centrala infrastrukturen för lead-hantering, scoring, segmentering, nurturing, säljöverlämningar, trattrapportering och pipeline- och intäktsattribution.',
+      },
+      {
+        value: 'GTM',
+        title: 'Internationella GTM-prioriteringar definierade',
+        body:
+          'En strukturerad internationell expansionsstrategi med konkreta prioriteringar för marknadsinträde, som gav ledningsgruppen en tydlig grund för nästa tillväxtskede.',
+      },
+    ],
+  },
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad det lärde mig att bygga en growth-funktion.',
+    items: [
+      {
+        title: 'Att bygga en growth-funktion börjar med operativsystemet.',
+        body: 'Teamstruktur, teknik, mål och mätning måste fungera tillsammans innan kanaler kan skala effektivt.',
+      },
+      {
+        title: 'Marknad bör vara ansvarig mot pipeline.',
+        body: 'Att koppla aktivitet till intäkt skapar bättre prioritering och starkare samsyn med Sälj och ledning.',
+      },
+      {
+        title: 'En webbplats är en del av GTM-infrastrukturen.',
+        body: 'Positionering, konvertering, innehåll, automation och attribution måste designas som en sammankopplad upplevelse.',
+      },
+      {
+        title: 'Automation bör förbättra tajming, inte ersätta relevans.',
+        body: 'Lead scoring och nurture-flöden fungerar när de hjälper bolaget att svara lämpligt på köpmognad.',
+      },
+      {
+        title: 'Byrårelationer kräver internt ägarskap.',
+        body: 'Extern expertis ger starkare resultat när strategi, mätning och kommersiellt ansvar stannar inne i bolaget.',
+      },
+      {
+        title: 'Internationell expansion är ett marknadsinträdesproblem, inte en översättningsövning.',
+        body: 'Framgångsrik expansion kräver medvetna beslut om positionering, kanaler, resurser och säljmotion.',
+      },
+    ],
+  },
+  role: {
+    label: 'Min roll',
+    heading: 'Chief Growth Officer — hela growth-funktionen.',
+    body:
+      'Som Chief Growth Officer och medlem i ledningsgruppen byggde och ledde jag Refapps kompletta growth- och marknadsfunktion:',
+    items: [
+      'Growth-strategi och kommersiell planering',
+      'Teamdesign, rekrytering och ledarskap',
+      'Demand-generation-strategi',
+      'Full HubSpot-implementering',
+      'Lead scoring och nurture-automation',
+      'Pipeline- och intäktsattribution',
+      'Varumärkesstrategi och rebrand',
+      'Webbstrategi och ombyggnad',
+      'SEO, innehåll och performance marketing',
+      'Byråval och byråstyrning',
+      'Samsyn mellan Marknad och Sälj',
+      'Internationell GTM-strategi och ledningsrapportering',
+    ],
+  },
+  quote: {
+    text:
+      'Jag byggde Refapps growth-funktion från grunden — och skapade teamet, varumärket, webbplatsen, martech, demand-motorn och den internationella GTM-strategin som fördubblade inbound pipeline inom ett år.',
+    author: 'Erik Werner',
+    role: 'Chief Growth Officer, Refapp',
+  },
+  cta: {
+    heading: 'Bygger du en growth-funktion från noll?',
+    body: 'Om du har product-market fit men ingen motor att skala den — låt oss prata om teamet, martech och demand-systemet som gör traction till pipeline.',
+    button: 'Boka ett samtal →',
+  },
+}
+
 export const caseStudies: Record<Lang, Record<string, CaseStudy>> = {
-  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'rikstv-strim': rikstvEn, 'telia-norway': teliaEn, 'dnb-eiendom': dnbEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
-  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'rikstv-strim': rikstvSv, 'telia-norway': teliaSv, 'dnb-eiendom': dnbSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
+  en: { 'sands-entreprenad': sandsEn, 'leadfeeder-dealfront': leadfeederEn, 'funnel': funnelEn, 'refapp': refappEn, 'rikstv-strim': rikstvEn, 'telia-norway': teliaEn, 'dnb-eiendom': dnbEn, 'bnbalyze': bnbalyzeEn, 'happy-vegan': happyVeganEn },
+  sv: { 'sands-entreprenad': sandsSv, 'leadfeeder-dealfront': leadfeederSv, 'funnel': funnelSv, 'refapp': refappSv, 'rikstv-strim': rikstvSv, 'telia-norway': teliaSv, 'dnb-eiendom': dnbSv, 'bnbalyze': bnbalyzeSv, 'happy-vegan': happyVeganSv },
 }
 
 // ── SEO helpers ──────────────────────────────────────────────────────────────

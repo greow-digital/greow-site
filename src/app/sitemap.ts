@@ -188,6 +188,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${SITE_URL}/work/refapp/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/refapp/`,
+          sv: `${SITE_URL}/sv/case/refapp/`,
+          'x-default': `${SITE_URL}/work/refapp/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/case/refapp/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/work/refapp/`,
+          sv: `${SITE_URL}/sv/case/refapp/`,
+          'x-default': `${SITE_URL}/work/refapp/`,
+        },
+      },
+    },
+    {
       url: `${SITE_URL}/work/bnbalyze/`,
       lastModified,
       changeFrequency: 'monthly',

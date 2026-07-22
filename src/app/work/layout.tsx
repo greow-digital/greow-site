@@ -8,7 +8,14 @@ const SITE_URL = 'https://greow.digital'
 // title / description / canonical / openGraph.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: { icon: '/favicon.svg', shortcut: '/favicon.svg' },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96.png', type: 'image/png', sizes: '96x96' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
+  },
   robots: {
     index: true,
     follow: true,

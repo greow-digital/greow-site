@@ -11,7 +11,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: t.meta.title,
   description: t.meta.description,
-  icons: { icon: '/favicon.svg', shortcut: '/favicon.svg' },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-96.png', type: 'image/png', sizes: '96x96' },
+    ],
+    shortcut: '/favicon.svg',
+    apple: '/apple-touch-icon.png',
+  },
   robots: {
     index: true,
     follow: true,

@@ -1,4 +1,6 @@
+'use client'
 import Link from 'next/link'
+import { useState } from 'react'
 import type { Translations } from '@/lib/translations'
 import { workBase } from '@/lib/work'
 
@@ -62,15 +64,17 @@ const LogoIcon = () => (
 )
 
 export default function Nav({ t, lang }: NavProps) {
+  const [open, setOpen] = useState(false)
   const home = lang === 'en' ? '/' : '/sv/'
   const altHref = lang === 'en' ? '/sv/' : '/'
   const altLabel = lang === 'en' ? 'SV' : 'EN'
   const AltFlag = lang === 'en' ? FlagSV : FlagEN
+  const close = () => setOpen(false)
 
   return (
     <nav>
       <div className="nav-inner">
-        <Link href={home} className="nav-logo">
+        <Link href={home} className="nav-logo" onClick={close}>
           <span className="logo-icon"><LogoIcon /></span>
           Greow
         </Link>
@@ -88,12 +92,36 @@ export default function Nav({ t, lang }: NavProps) {
           <a href={`${home}#book`} className="nav-cta">{t.cta}</a>
         </div>
 
-        {/* Mobile: flag switcher always visible */}
-        <Link href={altHref} className="lang-switcher lang-switcher-mobile" aria-label={`Switch to ${altLabel}`}>
-          <AltFlag />
-          <span>{altLabel}</span>
-        </Link>
+        {/* Mobile controls: flag switcher + hamburger */}
+        <div className="nav-mobile-controls">
+          <Link href={altHref} className="lang-switcher lang-switcher-mobile" aria-label={`Switch to ${altLabel}`}>
+            <AltFlag />
+            <span>{altLabel}</span>
+          </Link>
+          <button
+            type="button"
+            className="nav-toggle"
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              {open ? <path d="M6 6l12 12M18 6L6 18" /> : <path d="M3 6h18M3 12h18M3 18h18" />}
+            </svg>
+          </button>
+        </div>
       </div>
+
+      {/* Mobile dropdown menu */}
+      {open && (
+        <div className="nav-mobile-menu">
+          <a href={`${home}#how`} onClick={close}>{t.how}</a>
+          <a href={`${home}#pricing`} onClick={close}>{t.pricing}</a>
+          <Link href={workBase[lang]} onClick={close}>{t.work}</Link>
+          <a href={`${home}#extras`} onClick={close}>{t.other}</a>
+          <a href={`${home}#book`} className="nav-cta-mobile" onClick={close}>{t.cta}</a>
+        </div>
+      )}
     </nav>
   )
 }

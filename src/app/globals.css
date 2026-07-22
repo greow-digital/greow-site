@@ -119,6 +119,18 @@ nav {
 .lang-switcher:hover { border-color: var(--jungle); color: var(--jungle) !important; }
 .lang-switcher-mobile { display: none; }
 
+/* Mobile nav controls + dropdown (hidden on desktop) */
+.nav-mobile-controls { display: none; align-items: center; gap: 10px; }
+.nav-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px;
+  border: 1.5px solid var(--border); border-radius: 11px;
+  background: var(--white); color: var(--jet);
+  cursor: pointer; transition: all 0.25s;
+}
+.nav-toggle:hover { border-color: var(--jungle); color: var(--jungle); }
+.nav-mobile-menu { display: none; }
+
 /* ── HERO ── */
 .hero {
   min-height: 100vh;
@@ -759,16 +771,16 @@ footer {
 .stat-card.teal:hover .stat-company.stat-company-logo img { opacity: 1; }
 
 /* ── CAL EMBED ── */
+/* Let Cal.com size the iframe to its content (it auto-resizes via postMessage).
+   Forcing the iframe height clips the month view on mobile, so we only set a
+   min-height floor and let the container grow to fit. */
 .cal-inline-embed {
-  height: 700px;
   width: 100%;
+  min-height: 640px;
 }
-.cal-inline-embed iframe { height: 100% !important; width: 100% !important; }
+.cal-inline-embed iframe { width: 100% !important; border: none; }
 @media (max-width: 768px) {
-  .cal-inline-embed {
-    height: auto;
-    min-height: 1100px;
-  }
+  .cal-inline-embed { min-height: 1000px; }
 }
 
 /* ── SCROLL REVEAL ── */
@@ -782,6 +794,27 @@ footer {
   .container { padding: 0 20px; }
   .nav-links { display: none; }
   .lang-switcher-mobile { display: inline-flex; }
+  .nav-mobile-controls { display: flex; }
+  .nav-mobile-menu {
+    display: flex; flex-direction: column;
+    padding: 8px 0 4px; margin-top: 12px;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.25s ease both;
+  }
+  .nav-mobile-menu a {
+    font-family: var(--font-body), Arial, sans-serif;
+    font-size: 1.02rem; font-weight: 500; color: var(--jet-muted);
+    padding: 13px 4px; transition: color 0.2s;
+  }
+  .nav-mobile-menu a:hover { color: var(--jet); }
+  .nav-cta-mobile {
+    margin-top: 10px; text-align: center;
+    color: var(--white) !important;
+    background: var(--jungle);
+    border-radius: 100px;
+    font-family: var(--font-heading), Arial, sans-serif; font-weight: 600;
+    padding: 14px 24px !important;
+  }
   .hero { padding: 130px 0 72px; min-height: auto; }
   .hero-inner { grid-template-columns: 1fr; gap: 48px; padding: 0 20px; }
   .hero-content { align-items: center; text-align: center; }

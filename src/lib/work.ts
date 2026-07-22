@@ -315,6 +315,19 @@ export const projects: Record<Lang, ProjectSummary[]> = {
   ],
 }
 
+// Display order of the featured cases on the Work index. Reorder here — the
+// registry above can stay in any order; the index sorts by this list.
+export const caseOrder: string[] = [
+  'sands-entreprenad',
+  'leadfeeder-dealfront',
+  'funnel',
+  'bnbalyze',
+  'happy-vegan',
+  'dnb-eiendom',
+  'rikstv-strim',
+  'telia-norway',
+]
+
 export const workIndexCopy: Record<Lang, WorkIndexCopy> = {
   en: {
     meta: {
@@ -1350,7 +1363,7 @@ const happyVeganEn: CaseStudy = {
     body: [
       'Happy Vegan was a vegan e-commerce store I launched in 2022 as a side project alongside my full-time work as a consultant. It started with a personal ambition: to see whether I could independently build a serious consumer brand and take it all the way from an idea to a functioning retail business.',
       'I rebuilt the store from scratch, created the brand, launched it to market, and personally managed every part of the business — from sourcing, purchasing, warehousing and fulfilment to UX, conversion optimization, paid acquisition, CRM and email marketing.',
-      'In less than one year, Happy Vegan generated SEK 2.5 million in revenue. It grew to more than 500 orders per month, attracted over 20,000 organic sessions annually, and became Sweden’s largest vegan online store in under two years. I then sold the business in a successful exit.',
+      'In less than one year, Happy Vegan generated SEK 2.5 million in revenue. It grew to more than 500 orders per month, attracted over 20,000 organic sessions a month, and became Sweden’s largest vegan online store in under two years. I then sold the business in a successful exit.',
     ],
   },
   startingPoint: {
@@ -1451,7 +1464,7 @@ const happyVeganEn: CaseStudy = {
         {
           title: 'Organic growth',
           body:
-            'Alongside paid marketing, I grew the store’s organic visibility through product content, category structure, search optimization and continued catalogue growth — reaching more than 20,000 organic sessions per year, a recurring acquisition channel beyond advertising.',
+            'Alongside paid marketing, I grew the store’s organic visibility through product content, category structure, search optimization and continued catalogue growth — reaching more than 20,000 organic sessions a month, a recurring acquisition channel beyond advertising.',
         },
       ],
     },
@@ -1600,7 +1613,7 @@ const happyVeganSv: CaseStudy = {
     body: [
       'Happy Vegan var en vegansk e-handel som jag lanserade 2022 som ett sidoprojekt vid sidan av mitt heltidsarbete som konsult. Det började med en personlig ambition: att se om jag på egen hand kunde bygga ett seriöst konsumentvarumärke och ta det hela vägen från idé till en fungerande detaljhandelsverksamhet.',
       'Jag byggde om butiken från grunden, skapade varumärket, lanserade det på marknaden och skötte personligen varje del av verksamheten — från inköp, lager och frakt till UX, konverteringsoptimering, betald annonsering, CRM och e-postmarknadsföring.',
-      'På mindre än ett år omsatte Happy Vegan 2,5 miljoner kronor. Det växte till mer än 500 ordrar i månaden, lockade över 20 000 organiska sessioner per år och blev Sveriges största veganska nätbutik på under två år. Sedan sålde jag verksamheten i en lyckad exit.',
+      'På mindre än ett år omsatte Happy Vegan 2,5 miljoner kronor. Det växte till mer än 500 ordrar i månaden, lockade över 20 000 organiska sessioner i månaden och blev Sveriges största veganska nätbutik på under två år. Sedan sålde jag verksamheten i en lyckad exit.',
     ],
   },
   startingPoint: {
@@ -1701,7 +1714,7 @@ const happyVeganSv: CaseStudy = {
         {
           title: 'Organisk tillväxt',
           body:
-            'Vid sidan av den betalda marknadsföringen byggde jag butikens organiska synlighet genom produktinnehåll, kategoristruktur, sökoptimering och fortsatt katalogtillväxt — och nådde mer än 20 000 organiska sessioner per år, en återkommande förvärvskanal bortom annonsering.',
+            'Vid sidan av den betalda marknadsföringen byggde jag butikens organiska synlighet genom produktinnehåll, kategoristruktur, sökoptimering och fortsatt katalogtillväxt — och nådde mer än 20 000 organiska sessioner i månaden, en återkommande förvärvskanal bortom annonsering.',
         },
       ],
     },

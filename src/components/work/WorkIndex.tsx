@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
-import { workIndexCopy, projects, engagements, type Lang } from '@/lib/work'
+import { workIndexCopy, projects, engagements, caseOrder, type Lang } from '@/lib/work'
 import Footer from '@/components/Footer'
 
 interface WorkIndexProps {
@@ -10,7 +10,9 @@ interface WorkIndexProps {
 
 export default function WorkIndex({ t, lang }: WorkIndexProps) {
   const copy = workIndexCopy[lang]
-  const list = projects[lang]
+  const list = [...projects[lang]].sort(
+    (a, b) => caseOrder.indexOf(a.slug) - caseOrder.indexOf(b.slug),
+  )
   const more = engagements[lang]
   const home = lang === 'en' ? '/' : '/sv/'
   const featured = list[0]

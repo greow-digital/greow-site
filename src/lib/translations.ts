@@ -1,15 +1,16 @@
 export const translations = {
   en: {
     meta: {
-      title: 'Greow · Growth as a Service',
+      title: 'Growth as a Service — Senior Growth Partner for B2B SaaS | Greow',
       description:
-        'A senior growth partner who creates direction, challenges priorities and drives momentum. B2B SaaS, e-commerce and fintech. Based in Stockholm.',
+        'A senior growth partner who sets direction, challenges priorities and drives momentum — not more initiatives. Growth as a Service for B2B SaaS, e-commerce and fintech. Stockholm.',
     },
     nav: {
       how: 'How it works',
       pricing: 'Pricing',
       other: 'Other',
       work: 'Work',
+      services: 'Services',
       cta: 'Book a call →',
     },
     hero: {
@@ -196,15 +197,16 @@ export const translations = {
 
   sv: {
     meta: {
-      title: 'Greow · Growth as a Service',
+      title: 'Growth as a Service — Senior tillväxtpartner för B2B SaaS | Greow',
       description:
-        'En senior growth-partner som skapar riktning, utmanar prioriteringar och driver momentum. B2B SaaS, e-handel och fintech. Baserad i Stockholm.',
+        'En senior tillväxtpartner som skapar riktning, utmanar prioriteringar och driver momentum — inte fler initiativ. Growth as a Service för B2B SaaS, e-handel och fintech. Stockholm.',
     },
     nav: {
       how: 'Så fungerar det',
       pricing: 'Priser',
       other: 'Övrigt',
       work: 'Case',
+      services: 'Tjänster',
       cta: 'Boka samtal →',
     },
     hero: {

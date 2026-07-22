@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
+import { serviceNav } from '@/lib/services'
 import CalEmbed from './CalEmbed'
 import Footer from './Footer'
 
@@ -334,6 +336,19 @@ export default function HomePage({ t, lang }: HomePageProps) {
                   </div>
                 ))}
               </div>
+            </div>
+          </div>
+
+          <div className="home-services reveal">
+            <p className="home-services-label">
+              {lang === 'en' ? 'Ways to work together' : 'Sätt att jobba tillsammans'}
+            </p>
+            <div className="home-services-links">
+              {serviceNav.map((s) => (
+                <Link key={s.key} href={s.url[lang]} className="home-service-link">
+                  {s.label[lang]} <span aria-hidden="true">→</span>
+                </Link>
+              ))}
             </div>
           </div>
         </div>

@@ -32,6 +32,110 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      url: `${SITE_URL}/growth-as-a-service/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/growth-as-a-service/`,
+          sv: `${SITE_URL}/sv/growth-as-a-service/`,
+          'x-default': `${SITE_URL}/growth-as-a-service/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/growth-as-a-service/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/growth-as-a-service/`,
+          sv: `${SITE_URL}/sv/growth-as-a-service/`,
+          'x-default': `${SITE_URL}/growth-as-a-service/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/fractional-growth-lead/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/fractional-growth-lead/`,
+          sv: `${SITE_URL}/sv/interim-growth-lead/`,
+          'x-default': `${SITE_URL}/fractional-growth-lead/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/interim-growth-lead/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/fractional-growth-lead/`,
+          sv: `${SITE_URL}/sv/interim-growth-lead/`,
+          'x-default': `${SITE_URL}/fractional-growth-lead/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/growth-advisory/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/growth-advisory/`,
+          sv: `${SITE_URL}/sv/growth-advisory/`,
+          'x-default': `${SITE_URL}/growth-advisory/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/growth-advisory/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/growth-advisory/`,
+          sv: `${SITE_URL}/sv/growth-advisory/`,
+          'x-default': `${SITE_URL}/growth-advisory/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/growth-coaching/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/growth-coaching/`,
+          sv: `${SITE_URL}/sv/growth-coaching/`,
+          'x-default': `${SITE_URL}/growth-coaching/`,
+        },
+      },
+    },
+    {
+      url: `${SITE_URL}/sv/growth-coaching/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/growth-coaching/`,
+          sv: `${SITE_URL}/sv/growth-coaching/`,
+          'x-default': `${SITE_URL}/growth-coaching/`,
+        },
+      },
+    },
+    {
       url: `${SITE_URL}/work/`,
       lastModified,
       changeFrequency: 'monthly',

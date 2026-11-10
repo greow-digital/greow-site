@@ -4,6 +4,7 @@
 
 import type { Lang } from './work'
 import { translations } from './translations'
+import { postalAddressSchema, mapsUrl } from './business'
 
 const SITE_URL = 'https://greow.digital'
 const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
@@ -31,12 +32,7 @@ export function siteGraph(lang: Lang) {
   const t = translations[lang]
   const c = copy[lang]
   const home = lang === 'en' ? `${SITE_URL}/` : `${SITE_URL}/sv/`
-  const address = {
-    '@type': 'PostalAddress',
-    addressLocality: 'Stockholm',
-    addressRegion: 'Stockholm',
-    addressCountry: 'SE',
-  }
+  const address = postalAddressSchema
 
   const website = {
     '@type': 'WebSite',
@@ -62,13 +58,17 @@ export function siteGraph(lang: Lang) {
   const person = {
     '@type': 'Person',
     '@id': `${SITE_URL}/#erik`,
-    name: 'Erik Werner',
-    alternateName: 'Erik Oliva Werner',
+    name: 'Erik Oliva Werner',
+    alternateName: 'Erik Werner',
     jobTitle: c.jobTitle,
     description: c.personDescription,
     worksFor: { '@id': `${SITE_URL}/#organization` },
     image: `${SITE_URL}/images/erik.jpg`,
-    homeLocation: { '@type': 'Place', name: 'Stockholm, Sweden', address },
+    homeLocation: {
+      '@type': 'Place',
+      name: 'Stockholm, Sweden',
+      address: { '@type': 'PostalAddress', addressLocality: 'Stockholm', addressCountry: 'SE' },
+    },
     knowsAbout: [
       'Growth strategy',
       'Go-to-market strategy',
@@ -92,6 +92,7 @@ export function siteGraph(lang: Lang) {
     provider: { '@id': `${SITE_URL}/#organization` },
     founder: { '@id': `${SITE_URL}/#erik` },
     address,
+    hasMap: mapsUrl,
     areaServed: c.areaServed,
     serviceType: c.capabilities,
     hasOfferCatalog: {

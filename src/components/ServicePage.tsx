@@ -49,7 +49,7 @@ export default function ServicePage({ t, lang, content }: ServicePageProps) {
           <div className="hero-founder">
             <img
               src="/assets/erik-werner.png"
-              alt="Erik Werner"
+              alt="Erik Oliva Werner"
               className="hero-founder-img"
               width={44}
               height={44}
@@ -57,7 +57,7 @@ export default function ServicePage({ t, lang, content }: ServicePageProps) {
               decoding="async"
             />
             <div>
-              <p className="hero-founder-name">Erik Werner</p>
+              <p className="hero-founder-name">Erik Oliva Werner</p>
               <p className="hero-founder-role">
                 {lang === 'en'
                   ? 'Senior Growth Advisor · ex Funnel, Leadfeeder, Telia'

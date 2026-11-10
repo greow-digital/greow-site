@@ -3,7 +3,7 @@ export const translations = {
     meta: {
       title: 'AI-Native Growth & GTM Partner for B2B SaaS | Greow, Stockholm',
       description:
-        'Greow is the Stockholm consultancy of Erik Werner: senior growth and GTM leadership plus hands-on, AI-native execution for B2B SaaS teams.',
+        'Greow is the Stockholm consultancy of Erik Oliva Werner: senior growth and GTM leadership plus hands-on, AI-native execution for B2B SaaS teams.',
     },
     nav: {
       how: 'How it works',
@@ -21,7 +21,7 @@ export const translations = {
       cta1: 'Book a call →',
       cta2: 'See what I do',
       tags: ['Growth Strategy', 'AI-Native GTM Systems', 'Product-Led Growth', 'Experimentation'],
-      founderName: 'Erik Werner',
+      founderName: 'Erik Oliva Werner',
       founderRole: 'Founder of Greow · Stockholm, Sweden',
       founderRole2: 'Ex growth leader at Funnel & Leadfeeder/Dealfront',
     },
@@ -71,7 +71,7 @@ export const translations = {
       h2a: 'Meet your',
       h2em: 'growth partner',
       greeting: "Hi, I'm",
-      name: 'Erik Werner',
+      name: 'Erik Oliva Werner',
       nameSuffix: ' — founder of Greow, based in Stockholm, Sweden.',
       role: 'Growth & GTM leader · ex Funnel, Leadfeeder, Telia',
       highlight: '10+ years driving growth',
@@ -218,7 +218,7 @@ export const translations = {
       cta: 'Book a call →',
     },
     footer: {
-      left: 'Erik Werner · Greow · AI-Native Growth & GTM Partner · Stockholm, Sweden',
+      left: 'Erik Oliva Werner · Greow · AI-Native Growth & GTM Partner · Stockholm, Sweden',
       links: [
         { label: 'Pricing', href: '#pricing' },
         { label: 'How it works', href: '#how' },
@@ -231,7 +231,7 @@ export const translations = {
     meta: {
       title: 'AI-native growth- & GTM-partner för B2B SaaS | Greow, Stockholm',
       description:
-        'Greow är Erik Werners konsultbolag i Stockholm: senior growth- och GTM-ledning plus praktiskt, AI-native genomförande för B2B SaaS-bolag.',
+        'Greow är Erik Oliva Werners konsultbolag i Stockholm: senior growth- och GTM-ledning plus praktiskt, AI-native genomförande för B2B SaaS-bolag.',
     },
     nav: {
       how: 'Så fungerar det',
@@ -249,7 +249,7 @@ export const translations = {
       cta1: 'Boka ett samtal →',
       cta2: 'Se vad jag gör',
       tags: ['Tillväxtstrategi', 'AI-native GTM-system', 'Product-Led Growth', 'Experimentation'],
-      founderName: 'Erik Werner',
+      founderName: 'Erik Oliva Werner',
       founderRole: 'Grundare av Greow · Stockholm',
       founderRole2: 'Ex growth-ledare på Funnel & Leadfeeder/Dealfront',
     },
@@ -299,7 +299,7 @@ export const translations = {
       h2a: 'Möt din',
       h2em: 'growth-partner',
       greeting: 'Hej, jag heter',
-      name: 'Erik Werner',
+      name: 'Erik Oliva Werner',
       nameSuffix: ' — grundare av Greow, baserad i Stockholm.',
       role: 'Growth- & GTM-ledare · ex Funnel, Leadfeeder, Telia',
       highlight: '10+ års erfarenhet av att driva tillväxt',
@@ -446,7 +446,7 @@ export const translations = {
       cta: 'Boka ett samtal →',
     },
     footer: {
-      left: 'Erik Werner · Greow · AI-native growth- & GTM-partner · Stockholm',
+      left: 'Erik Oliva Werner · Greow · AI-native growth- & GTM-partner · Stockholm',
       links: [
         { label: 'Priser', href: '#pricing' },
         { label: 'Så fungerar det', href: '#how' },

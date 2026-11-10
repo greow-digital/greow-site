@@ -674,7 +674,7 @@ const sandsEn: CaseStudy = {
   quote: {
     text:
       'They were renting their leads — paying per lead on a marketplace, with no guarantee of the job. I built them a channel they own outright: one landing page that became an entire digital presence, ranking 17× higher and generating 7× the leads, every request traced from click to closed job.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Greow',
   },
   cta: {
@@ -856,7 +856,7 @@ const sandsSv: CaseStudy = {
   quote: {
     text:
       'De hyrde sina leads — betalade per lead på en marknadsplats, utan garanti för jobbet. Jag byggde dem en kanal de äger fullt ut: en landningssida som blev en hel digital närvaro, som rankar 17× högre och genererar 7× fler leads, varje förfrågan spårad från klick till stängt jobb.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Greow',
   },
   cta: {
@@ -1154,7 +1154,7 @@ const leadfeederEn: CaseStudy = {
   quote: {
     text:
       'I helped turn a fragmented post-merger product into a unified self-serve growth platform — doubling new account creation, improving critical activation by more than 10%, and creating one product and GTM strategy across Leadfeeder and Dealfront.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Director of Growth & Product Experience, Dealfront',
   },
   cta: {
@@ -1450,7 +1450,7 @@ const leadfeederSv: CaseStudy = {
   quote: {
     text:
       'Jag hjälpte till att göra en splittrad post-merger-produkt till en enhetlig self-serve growth-plattform — fördubblade antalet nya konton, förbättrade kritisk aktivering med över 10%, och skapade en gemensam produkt- och GTM-strategi över Leadfeeder och Dealfront.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Director of Growth & Product Experience, Dealfront',
   },
   cta: {
@@ -1702,7 +1702,7 @@ const happyVeganEn: CaseStudy = {
   quote: {
     text:
       'I built Happy Vegan from scratch as a solo side project, grew it to SEK 2.5 million in revenue and more than 500 monthly orders, made it Sweden’s largest vegan online store, and completed a successful exit — all within two years.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Founder, Happy Vegan',
   },
   cta: {
@@ -1952,7 +1952,7 @@ const happyVeganSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde Happy Vegan från grunden som ett soloprojekt vid sidan om, växte det till 2,5 miljoner kronor i omsättning och mer än 500 ordrar i månaden, gjorde det till Sveriges största veganska nätbutik, och genomförde en lyckad exit — allt inom två år.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Grundare, Happy Vegan',
   },
   cta: {
@@ -2205,7 +2205,7 @@ const bnbalyzeEn: CaseStudy = {
   quote: {
     text:
       'What started as a vibe-coding experiment became a complete proptech SaaS with real-estate pilots and more than 100 organic users — and is now evolving into an AI-native property analyst built around a clear separation between verified facts and machine-generated judgement.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Founder, Bnbalyze',
   },
   cta: {
@@ -2456,7 +2456,7 @@ const bnbalyzeSv: CaseStudy = {
   quote: {
     text:
       'Det som började som ett vibe-coding-experiment blev en komplett proptech-SaaS med fastighetsmäklarpiloter och mer än 100 organiska användare — och utvecklas nu till en AI-native fastighetsanalytiker byggd kring en tydlig åtskillnad mellan verifierade fakta och maskingenererat omdöme.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Grundare, Bnbalyze',
   },
   cta: {
@@ -2693,7 +2693,7 @@ const funnelEn: CaseStudy = {
   quote: {
     text:
       'I helped turn Funnel’s acquisition model from a primarily sales-led motion into a compounding growth system — building PLG from zero to 20% of total MRR while increasing organic traffic by 50%, growing MQLs by 20%, and reducing CAC by more than 30%.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Growth Product Lead — Acquisition, Funnel.io',
   },
   cta: {
@@ -2928,7 +2928,7 @@ const funnelSv: CaseStudy = {
   quote: {
     text:
       'Jag hjälpte till att förvandla Funnels förvärvsmodell från en primärt säljledd motion till ett tillväxtsystem som växer med tiden — byggde PLG från noll till 20% av total MRR samtidigt som jag ökade organisk trafik med 50%, växte MQL med 20% och sänkte CAC med mer än 30%.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Growth Product Lead — Acquisition, Funnel.io',
   },
   cta: {
@@ -3167,7 +3167,7 @@ const rikstvEn: CaseStudy = {
   quote: {
     text:
       'I built Strim’s acquisition engine from zero, reduced CAC by 40%, and exceeded subscriber targets ahead of schedule — while simultaneously rebuilding RiksTV’s website and leading digital sales for the established core business.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Head of Growth & Acquisition, RiksTV & Strim.no',
   },
   cta: {
@@ -3404,7 +3404,7 @@ const rikstvSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde Strims förvärvsmotor från noll, sänkte CAC med 40%, och överträffade prenumerantmålen före tidplan — samtidigt som jag byggde om RiksTVs webbplats och ledde digital försäljning för den etablerade kärnaffären.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Head of Growth & Acquisition, RiksTV & Strim.no',
   },
   cta: {
@@ -3667,7 +3667,7 @@ const teliaEn: CaseStudy = {
   quote: {
     text:
       'I rebuilt Telia Norway’s e-commerce platform and operating model, doubled conversion, transformed performance marketing, and launched the company’s first omnichannel programme across B2C and B2B.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'E-Commerce Manager, Telia Norway',
   },
   cta: {
@@ -3928,7 +3928,7 @@ const teliaSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde om Telia Norges e-handelsplattform och operativa modell, fördubblade konverteringen, transformerade performance marketing, och lanserade bolagets första omnikanalprogram över B2C och B2B.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'E-Commerce Manager, Telia Norway',
   },
   cta: {
@@ -4207,7 +4207,7 @@ const dnbEn: CaseStudy = {
   quote: {
     text:
       'I rebuilt DNB Eiendom’s digital platform around the distinct needs of buyers and sellers — driving 75% more leads, improving customer-experience scores by 40%, and establishing the measurement foundation for continuous product development.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Head of Product Development & Experience, DNB Eiendom',
   },
   cta: {
@@ -4484,7 +4484,7 @@ const dnbSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde om DNB Eiendoms digitala plattform kring köparnas och säljarnas skilda behov — drev 75% fler leads, förbättrade kundupplevelsepoängen med 40%, och etablerade mätgrunden för löpande produktutveckling.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Head of Product Development & Experience, DNB Eiendom',
   },
   cta: {
@@ -4763,7 +4763,7 @@ const refappEn: CaseStudy = {
   quote: {
     text:
       'I built Refapp’s growth function from the ground up — creating the team, brand, website, martech, demand engine and international GTM strategy that doubled inbound pipeline within one year.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Chief Growth Officer, Refapp',
   },
   cta: {
@@ -5040,7 +5040,7 @@ const refappSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde Refapps growth-funktion från grunden — och skapade teamet, varumärket, webbplatsen, martech, demand-motorn och den internationella GTM-strategin som fördubblade inbound pipeline inom ett år.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Chief Growth Officer, Refapp',
   },
   cta: {

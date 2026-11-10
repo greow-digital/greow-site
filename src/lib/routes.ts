@@ -30,7 +30,7 @@ export const plannedPages: Record<PlannedPageKey, PlannedPage> = {
   },
   founder: {
     published: false,
-    url: { en: '/erik-werner/', sv: '/sv/erik-werner/' },
+    url: { en: '/erik-oliva-werner/', sv: '/sv/erik-oliva-werner/' },
     label: { en: 'More about Erik', sv: 'Mer om Erik' },
   },
 }

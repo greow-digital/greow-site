@@ -2,6 +2,8 @@ import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
 import { workBase } from '@/lib/work'
 import { serviceNav } from '@/lib/services'
+import { business, mapsUrl } from '@/lib/business'
+import FooterMap from './FooterMap'
 
 interface FooterProps {
   t: Translations
@@ -16,12 +18,27 @@ export default function Footer({ t, lang }: FooterProps) {
   const moreLabel = lang === 'en' ? 'More' : 'Mer'
   // footer.left is "Name · rest"; the name gets its own emphasis.
   const [footerName, ...footerRest] = t.footer.left.split(' · ')
+  const mapsLabel = lang === 'en' ? 'Open in Google Maps' : 'Öppna i Google Maps'
 
   return (
     <footer>
       <div className="footer-inner">
         <div className="footer-left">
-          <span className="name">{footerName}</span> · {footerRest.join(' · ')}
+          <p>
+            <span className="name">{footerName}</span> · {footerRest.join(' · ')}
+          </p>
+          <address className="footer-address">
+            {business.legalName}
+            <br />
+            {business.streetAddress}
+            <br />
+            {business.postalCode} {business.locality}, {business.countryName[lang]}
+            <br />
+            <a href={mapsUrl} target="_blank" rel="noopener noreferrer">
+              {mapsLabel} <span aria-hidden="true">↗</span>
+            </a>
+          </address>
+          <FooterMap lang={lang} />
         </div>
         <nav className="footer-nav" aria-label="Footer">
           <div className="footer-col">

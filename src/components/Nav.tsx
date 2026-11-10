@@ -1,6 +1,8 @@
 'use client'
 import Link from 'next/link'
 import { useState } from 'react'
+import { usePathname } from 'next/navigation'
+import { alternatePath } from '@/lib/alternates'
 import type { Translations } from '@/lib/translations'
 import { workBase } from '@/lib/work'
 import { servicesFor } from '@/lib/services'
@@ -69,7 +71,8 @@ const LogoIcon = () => (
 export default function Nav({ t, lang, altHref: altHrefProp }: NavProps) {
   const [open, setOpen] = useState(false)
   const home = lang === 'en' ? '/' : '/sv/'
-  const altHref = altHrefProp ?? (lang === 'en' ? '/sv/' : '/')
+  const pathname = usePathname() ?? home
+  const altHref = altHrefProp ?? alternatePath(pathname, lang) ?? (lang === 'en' ? '/sv/' : '/')
   const altLabel = lang === 'en' ? 'SV' : 'EN'
   const AltFlag = lang === 'en' ? FlagSV : FlagEN
   const close = () => setOpen(false)

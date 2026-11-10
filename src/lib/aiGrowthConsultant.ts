@@ -6,7 +6,7 @@ export const aiGrowthMeta = {
   path: '/ai-growth-consultant/',
   title: 'AI Growth Consultant | AI-Native Growth & GTM Systems | Greow',
   description:
-    'Work with Erik Oliva Werner, an AI Growth Consultant in Stockholm. Build AI-native growth systems, agentic workflows, custom platforms and automated GTM operations.',
+    'Work with Erik Oliva Werner, AI Growth Consultant in Stockholm: AI-native growth systems, agentic workflows, custom platforms and automated GTM operations.',
 }
 
 export const aiGrowth = {
@@ -694,6 +694,7 @@ export function aiGrowthJsonLd(lang: 'en' | 'sv') {
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': `${url}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Greow', item: sv ? `${SITE_URL}/sv/` : `${SITE_URL}/` },
           { '@type': 'ListItem', position: 2, name: sv ? 'AI-tillväxtkonsult' : 'AI Growth Consultant', item: url },

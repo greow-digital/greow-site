@@ -4,7 +4,7 @@
 
 import type { Lang } from './work'
 import { translations } from './translations'
-import { postalAddressSchema, mapsUrl } from './business'
+import { postalAddressSchema, mapsUrl, profiles } from './business'
 
 const SITE_URL = 'https://greow.digital'
 const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
@@ -49,16 +49,24 @@ export function siteGraph(lang: Lang) {
     name: 'Greow',
     alternateName: 'Greow Digital',
     url: SITE_URL,
-    logo: `${SITE_URL}/favicon.svg`,
+    logo: {
+      '@type': 'ImageObject',
+      '@id': `${SITE_URL}/#logo`,
+      url: `${SITE_URL}/apple-touch-icon.png`,
+      width: 180,
+      height: 180,
+    },
     image: OG_IMAGE,
     description: t.meta.description,
     address,
     founder: { '@id': `${SITE_URL}/#erik` },
+    ...(profiles.organization.length ? { sameAs: profiles.organization } : {}),
   }
   const person = {
     '@type': 'Person',
     '@id': `${SITE_URL}/#erik`,
     name: 'Erik Oliva Werner',
+    url: `${home}#about-erik`,
     jobTitle: c.jobTitle,
     description: c.personDescription,
     worksFor: { '@id': `${SITE_URL}/#organization` },
@@ -68,6 +76,7 @@ export function siteGraph(lang: Lang) {
       name: 'Stockholm, Sweden',
       address: { '@type': 'PostalAddress', addressLocality: 'Stockholm', addressCountry: 'SE' },
     },
+    ...(profiles.person.length ? { sameAs: profiles.person } : {}),
     knowsAbout: [
       'Growth strategy',
       'Go-to-market strategy',

@@ -463,7 +463,7 @@ export const caseOrder: string[] = [
 export const workIndexCopy: Record<Lang, WorkIndexCopy> = {
   en: {
     meta: {
-      title: 'Work · Greow',
+      title: 'Case Studies: Growth, PLG & AI-Native Builds | Greow',
       description:
         'Selected work by Greow — platforms, growth engines and the systems that turn traffic into revenue. Including the Sands Entreprenad AI-native lead platform.',
     },
@@ -492,7 +492,7 @@ export const workIndexCopy: Record<Lang, WorkIndexCopy> = {
   },
   sv: {
     meta: {
-      title: 'Case · Greow',
+      title: 'Case: tillväxt, PLG och AI-native byggen | Greow',
       description:
         'Utvalda case från Greow — plattformar, growth-motorer och systemen som gör trafik till intäkter. Inklusive Sands Entreprenads AI-native leadplattform.',
     },
@@ -1266,6 +1266,11 @@ const leadfeederEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Leadfeeder / Dealfront: Post-Merger PLG & Unified GTM | Greow',
+    description:
+      'How Erik Oliva Werner led product-led growth across two merged B2B SaaS platforms: self-serve on all plans, AI-powered onboarding and 100% more new accounts.',
+  },
   role: {
     label: 'My role',
     heading: 'Growth and product experience, end-to-end.',
@@ -1562,6 +1567,11 @@ const leadfeederSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Leadfeeder / Dealfront: PLG och enad GTM efter fusion | Greow',
+    description:
+      'Så ledde Erik Oliva Werner PLG över två sammanslagna SaaS-plattformar: self-serve på alla planer, AI-driven onboarding och 100 % fler nya konton.',
+  },
   role: {
     label: 'Min roll',
     heading: 'Growth och produktupplevelse, från start till mål.',
@@ -1828,6 +1838,11 @@ const happyVeganEn: CaseStudy = {
       'Custom ops workflows',
     ],
   },
+  seo: {
+    title: 'Happy Vegan: Solo-Built Vegan Store, SEK 2.5M and an Exit | Greow',
+    description:
+      'How Erik Oliva Werner built, grew and sold Sweden’s largest vegan online store in two years: brand, storefront, paid and organic growth, CRM and operations.',
+  },
   role: {
     label: 'Ownership',
     heading: 'Conceived, built, grown and sold — solo.',
@@ -2077,6 +2092,11 @@ const happyVeganSv: CaseStudy = {
       'Konverteringsmätning',
       'Egna operativa flöden',
     ],
+  },
+  seo: {
+    title: 'Happy Vegan: soloprojekt, 2,5 MSEK och en exit | Greow',
+    description:
+      'Så byggde, växte och sålde Erik Oliva Werner Sveriges största veganska nätbutik på två år: varumärke, butik, betald och organisk tillväxt, CRM och logistik.',
   },
   role: {
     label: 'Ägarskap',
@@ -2924,6 +2944,11 @@ const funnelEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Funnel.io: Building PLG From 0 to 20% of MRR – Case Study | Greow',
+    description:
+      'How Erik Oliva Werner built Funnel’s self-serve motion from zero to 20% of total MRR and ran the website as a product: SEO, CRO, pricing and experimentation.',
+  },
   role: {
     label: 'My role',
     heading: 'Growth product leadership across the whole acquisition surface.',
@@ -3158,6 +3183,11 @@ const funnelSv: CaseStudy = {
         body: 'De största vinsterna kom från att koppla ihop produkt, marknad, data, design, utveckling och intäkter snarare än att optimera varje funktion för sig.',
       },
     ],
+  },
+  seo: {
+    title: 'Funnel.io: PLG från 0 till 20 % av MRR – case | Greow',
+    description:
+      'Så byggde Erik Oliva Werner Funnels self-serve-motor från noll till 20 % av total MRR och drev sajten som en produkt: SEO, CRO, prissättning och experiment.',
   },
   role: {
     label: 'Min roll',
@@ -3397,6 +3427,11 @@ const rikstvEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'RiksTV & Strim.no: Streaming Launch With 40% Lower CAC | Greow',
+    description:
+      'How Erik Oliva Werner built Strim.no’s acquisition engine from zero – team, channels and measurement – cutting CAC by 40% while rebuilding rikstv.no.',
+  },
   role: {
     label: 'My role',
     heading: 'Growth and acquisition across RiksTV and Strim.no.',
@@ -3633,6 +3668,11 @@ const rikstvSv: CaseStudy = {
         body: 'Tydliga briefs, gemensamma mått, snabb feedback och kommersiellt ansvar gjorde externa partners till en samordnad förvärvsoperation.',
       },
     ],
+  },
+  seo: {
+    title: 'RiksTV & Strim.no: streaminglansering med 40 % lägre CAC | Greow',
+    description:
+      'Så byggde Erik Oliva Werner Strim.nos kundförvärv från noll – team, kanaler och mätning – och sänkte CAC med 40 % samtidigt som rikstv.no byggdes om.',
   },
   role: {
     label: 'Min roll',
@@ -3897,6 +3937,11 @@ const teliaEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Telia Norway: E-Commerce Rebuild That Doubled Conversion | Greow',
+    description:
+      'How Erik Oliva Werner rebuilt Telia Norway’s webshop across B2C and B2B, set up an agile product organisation and doubled e-commerce conversion.',
+  },
   role: {
     label: 'My role',
     heading: 'E-commerce transformation across B2C and B2B.',
@@ -4157,6 +4202,11 @@ const teliaSv: CaseStudy = {
         body: 'Kortare releasecykler lät Telia svara snabbare på kampanjer, kundinsikt och marknadsförändringar.',
       },
     ],
+  },
+  seo: {
+    title: 'Telia Norway: ombyggd e-handel med dubbel konvertering | Greow',
+    description:
+      'Så byggde Erik Oliva Werner om Telia Norways webbutik för B2C och B2B, satte upp en agil produktorganisation och fördubblade konverteringen i e-handeln.',
   },
   role: {
     label: 'Min roll',
@@ -4437,6 +4487,11 @@ const dnbEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'DNB Eiendom: Two-Sided Platform Rebuild, 75% More Leads | Greow',
+    description:
+      'How Erik Oliva Werner rebuilt DNB Eiendom’s platform for buyers and sellers, with measurement from scratch – 75% more leads and 40% higher CX scores.',
+  },
   role: {
     label: 'My role',
     heading: 'Digital product transformation, end-to-end.',
@@ -4713,6 +4768,11 @@ const dnbSv: CaseStudy = {
         body: 'Plattformen blev mer värdefull när analys och löpande iteration behandlades som en del av produkten, inte som efterföljande aktiviteter.',
       },
     ],
+  },
+  seo: {
+    title: 'DNB Eiendom: tvåsidig plattform med 75 % fler leads | Greow',
+    description:
+      'Så byggde Erik Oliva Werner om DNB Eiendoms plattform för köpare och säljare, med mätning från grunden – 75 % fler leads och 40 % högre kundupplevelsepoäng.',
   },
   role: {
     label: 'Min roll',
@@ -4991,6 +5051,11 @@ const refappEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Refapp: Building an HR-Tech Growth Function From Zero | Greow',
+    description:
+      'As Chief Growth Officer, Erik Oliva Werner built Refapp’s growth function from scratch – team, martech, brand and demand engine – doubling inbound pipeline.',
+  },
   role: {
     label: 'My role',
     heading: 'Chief Growth Officer — the whole growth function.',
@@ -5268,6 +5333,11 @@ const refappSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Refapp: en growth-funktion för HR-tech från noll | Greow',
+    description:
+      'Som Chief Growth Officer byggde Erik Oliva Werner Refapps growth-funktion från grunden – team, martech, varumärke och efterfrågemotor – och dubblerade inflödet.',
+  },
   role: {
     label: 'Min roll',
     heading: 'Chief Growth Officer — hela growth-funktionen.',
@@ -5322,6 +5392,7 @@ export function caseJsonLd(lang: Lang, data: CaseStudy) {
 
   const breadcrumb = {
     '@type': 'BreadcrumbList',
+    '@id': `${url}#breadcrumb`,
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Greow', item: home },
       { '@type': 'ListItem', position: 2, name: workLabel, item: `${SITE_URL}${workBase[lang]}` },
@@ -5331,6 +5402,7 @@ export function caseJsonLd(lang: Lang, data: CaseStudy) {
 
   const article = {
     '@type': 'Article',
+    '@id': `${url}#article`,
     headline: data.title,
     description: data.seo?.description ?? data.intro,
     about: data.client,
@@ -5339,7 +5411,42 @@ export function caseJsonLd(lang: Lang, data: CaseStudy) {
     author: { '@id': `${SITE_URL}/#erik` },
     publisher: { '@id': `${SITE_URL}/#organization` },
     mainEntityOfPage: url,
+    image: data.heroImage ? `${SITE_URL}${data.heroImage.src}` : `${SITE_URL}/images/HERO_CAROUSEL_2.png`,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
   }
 
   return { '@context': 'https://schema.org', '@graph': [breadcrumb, article] }
+}
+
+// Work index JSON-LD: breadcrumb + the list of published case studies.
+export function workIndexJsonLd(lang: Lang) {
+  const home = lang === 'en' ? `${SITE_URL}/` : `${SITE_URL}/sv/`
+  const url = `${SITE_URL}${workBase[lang]}`
+  const list = [...projects[lang]]
+    .filter((p) => p.href)
+    .sort((a, b) => caseOrder.indexOf(a.slug) - caseOrder.indexOf(b.slug))
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${url}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Greow', item: home },
+          { '@type': 'ListItem', position: 2, name: lang === 'en' ? 'Work' : 'Case', item: url },
+        ],
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${url}#cases`,
+        name: lang === 'en' ? 'Case studies' : 'Case',
+        itemListElement: list.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: `${p.client} — ${p.title}`,
+          url: `${SITE_URL}${p.href}`,
+        })),
+      },
+    ],
+  }
 }

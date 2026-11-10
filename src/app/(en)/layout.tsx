@@ -61,6 +61,10 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Without JS, scroll-reveal content must still be visible. */}
+        <noscript>
+          <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
+        </noscript>
       </head>
       <body>{children}</body>
     </html>

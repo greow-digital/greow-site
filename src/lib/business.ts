@@ -33,3 +33,10 @@ export const postalAddressSchema = {
   addressRegion: business.region,
   addressCountry: business.country,
 }
+
+// Public profiles for schema.org `sameAs`. Add only real, verified URLs
+// (e.g. LinkedIn). Left empty on purpose — nothing is guessed.
+export const profiles: { organization: string[]; person: string[] } = {
+  organization: [],
+  person: [],
+}

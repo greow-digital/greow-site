@@ -1148,6 +1148,7 @@ export function aiGtmJsonLd(lang: 'en' | 'sv') {
       },
       {
         '@type': 'BreadcrumbList',
+        '@id': `${url}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Greow', item: sv ? `${SITE_URL}/sv/` : `${SITE_URL}/` },
           { '@type': 'ListItem', position: 2, name: sv ? 'AI GTM-system' : 'AI GTM Systems', item: url },

@@ -107,7 +107,7 @@ const servicesEn: Record<string, ServiceContent> = {
     meta: {
       title: 'Growth as a Service — A Senior Growth Partner On Demand | Greow',
       description:
-        'Growth as a Service: senior growth leadership without a full-time hire. Direction, prioritisation and momentum for B2B SaaS, e-commerce and fintech. Based in Stockholm.',
+        'Growth as a Service: senior growth leadership without a full-time hire. Direction, priorities and momentum for B2B SaaS, e-commerce and fintech. Stockholm.',
     },
     h1: 'Growth as a Service',
     sub: 'Senior growth leadership — without the full-time hire.',
@@ -147,9 +147,9 @@ const servicesEn: Record<string, ServiceContent> = {
   fractional: {
     slug: 'fractional',
     meta: {
-      title: 'Fractional Growth Lead — Senior Growth Leadership, Part-Time | Greow',
+      title: 'Fractional Growth Lead — Senior Growth Leadership | Greow',
       description:
-        'Hire a fractional growth lead: senior, hands-on growth leadership a few days a month. Own your roadmap without a full-time VP of Growth. B2B SaaS, e-commerce, fintech.',
+        'Hire a fractional growth lead: senior, hands-on growth leadership a few days a month – roadmap ownership without a full-time VP of Growth.',
     },
     h1: 'Fractional Growth Lead',
     sub: 'The senior growth owner your team needs — a few days a month.',
@@ -196,7 +196,7 @@ const servicesEn: Record<string, ServiceContent> = {
     meta: {
       title: 'Growth Advisory — A Senior Sounding Board for Founders | Greow',
       description:
-        'Growth advisory for founders and leadership teams: senior, outside perspective on strategy, priorities and growth decisions. B2B SaaS, e-commerce and fintech. Stockholm.',
+        'Growth advisory for founders and leadership teams: a senior outside perspective on strategy, priorities and growth decisions. B2B SaaS, e-commerce, fintech.',
     },
     h1: 'Growth Advisory',
     sub: 'A senior sounding board — for the decisions that actually matter.',
@@ -237,9 +237,9 @@ const servicesEn: Record<string, ServiceContent> = {
   coaching: {
     slug: 'coaching',
     meta: {
-      title: 'Growth Coaching & Mentorship — Level Up as a Growth Leader | Greow',
+      title: 'Growth Coaching & Mentorship for Growth Leaders | Greow',
       description:
-        '1:1 growth coaching and mentorship for marketers and founders growing into growth leadership. Practical, senior guidance over 6, 10 or 20 sessions. Remote or Stockholm.',
+        '1:1 growth coaching and mentorship for marketers and founders growing into growth leadership. Senior guidance over 6, 10 or 20 sessions, remote or in Stockholm.',
     },
     h1: 'Coaching & Mentorship',
     sub: 'Grow as a growth leader — with a senior operator in your corner.',
@@ -287,7 +287,7 @@ const servicesSv: Record<string, ServiceContent> = {
     meta: {
       title: 'Growth as a Service — En senior tillväxtpartner på deltid | Greow',
       description:
-        'Growth as a Service: senior tillväxtkompetens utan att anställa heltid. Riktning, prioritering och momentum för B2B SaaS, e-handel och fintech. Baserad i Stockholm.',
+        'Growth as a Service: senior tillväxtkompetens utan att anställa heltid. Riktning, prioritering och momentum för B2B SaaS, e-handel och fintech. Stockholm.',
     },
     h1: 'Growth as a Service',
     sub: 'Senior tillväxtkompetens — utan att anställa heltid.',
@@ -329,7 +329,7 @@ const servicesSv: Record<string, ServiceContent> = {
     meta: {
       title: 'Interim tillväxtchef — Senior tillväxtledning på deltid | Greow',
       description:
-        'Anlita en interim tillväxtchef (fractional growth lead): senior, praktisk tillväxtledning några dagar i månaden. Äg din roadmap utan en heltidsanställd tillväxtchef.',
+        'Anlita en interim tillväxtchef: senior, praktisk tillväxtledning några dagar i månaden. Äg er roadmap utan en heltidsanställd tillväxtchef.',
     },
     h1: 'Interim tillväxtchef',
     sub: 'Den seniora tillväxtägaren ditt team behöver — några dagar i månaden.',
@@ -376,7 +376,7 @@ const servicesSv: Record<string, ServiceContent> = {
     meta: {
       title: 'Growth Advisory — Ett senior bollplank för grundare | Greow',
       description:
-        'Growth advisory för grundare och ledningsteam: ett senior, externt perspektiv på strategi, prioriteringar och tillväxtbeslut. B2B SaaS, e-handel och fintech. Stockholm.',
+        'Growth advisory för grundare och ledningsteam: ett senior, externt perspektiv på strategi, prioriteringar och tillväxtbeslut. B2B SaaS, e-handel, fintech.',
     },
     h1: 'Growth Advisory',
     sub: 'Ett senior bollplank — för besluten som faktiskt spelar roll.',
@@ -468,15 +468,30 @@ export const services: Record<Lang, Record<string, ServiceContent>> = {
 export function serviceJsonLd(lang: Lang, key: string) {
   const content = services[lang][key]
   const areaServed = lang === 'en' ? ['Sweden', 'Scandinavia', 'Europe'] : ['Sverige', 'Skandinavien', 'Europa']
+  const url = `${SITE_URL}${serviceUrl(key, lang)}`
+  const home = lang === 'en' ? `${SITE_URL}/` : `${SITE_URL}/sv/`
   return {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: content.schema.name,
-    serviceType: content.schema.serviceType,
-    description: content.schema.description,
-    provider: { '@id': `${SITE_URL}/#organization` },
-    areaServed,
-    inLanguage: lang,
-    url: `${SITE_URL}${serviceUrl(key, lang)}`,
+    '@graph': [
+      {
+        '@type': 'Service',
+        '@id': `${url}#service`,
+        name: content.schema.name,
+        serviceType: content.schema.serviceType,
+        description: content.schema.description,
+        provider: { '@id': `${SITE_URL}/#organization` },
+        areaServed,
+        inLanguage: lang,
+        url,
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${url}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Greow', item: home },
+          { '@type': 'ListItem', position: 2, name: content.h1, item: url },
+        ],
+      },
+    ],
   }
 }

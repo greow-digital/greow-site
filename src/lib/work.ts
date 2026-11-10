@@ -70,7 +70,28 @@ export interface CaseStudy {
   role: { label: string; heading: string; body: string; items?: string[] }
   quote: { text: string; author: string; role: string }
   cta: { heading: string; body: string; button: string }
+  // ── Optional, used by the strengthened cases ──
+  // Page <title> and meta description; falls back to client + intro.
+  seo?: { title: string; description: string }
+  // Strategic approach, rendered after the starting point.
+  approach?: { label: string; heading: string; intro: string; steps: { title: string; body: string }[] }
+  // Compact inventory of what Erik personally built.
+  built?: { label: string; heading: string; intro: string; items: { title: string; body: string }[] }
+  // AI and automation capabilities, each with an honest status.
+  aiCapabilities?: {
+    label: string
+    heading: string
+    intro: string
+    statusLabels: Partial<Record<CapabilityStatus, string>>
+    items: { title: string; body: string; status: CapabilityStatus }[]
+  }
+  // One line on what the result figures are based on (and what is not claimed).
+  verification?: string
+  // serviceNav keys to link to at the end of the case.
+  relatedServices?: { label: string; keys: string[] }
 }
+
+export type CapabilityStatus = 'live' | 'designed' | 'paused' | 'proven'
 
 export interface ProjectSummary {
   slug: string
@@ -530,7 +551,7 @@ const sandsEn: CaseStudy = {
     ],
   },
   startingPoint: {
-    label: 'The starting point',
+    label: 'The business challenge',
     heading: 'Renting demand, not owning it.',
     lead: 'Before the rebuild, growth was capped by a channel Sands didn’t control.',
     points: [
@@ -651,6 +672,63 @@ const sandsEn: CaseStudy = {
       ],
     },
   },
+  seo: {
+    title: 'Sands Entreprenad: AI-Native Lead Platform Case Study | Greow',
+    description:
+      'How Erik Oliva Werner built an AI-native lead platform for a Stockholm roofer: an agentic build, automated lead flows and 17× organic search visibility.',
+  },
+  approach: {
+    label: 'Strategic approach',
+    heading: 'Prove demand, then own the channel.',
+    intro: 'Four decisions shaped the engagement:',
+    steps: [
+      { title: 'Start with a contained test', body: 'One landing page with paid ads tested demand and messaging before any rebuild. The result earned the mandate for the full platform.' },
+      { title: 'Capture demand where it lives', body: 'A page per municipality in the county, so the site could rank for local roofing searches instead of competing with a single generic page.' },
+      { title: 'Give every visitor a way in', body: 'Roof test, chat, price calculator and quote form for different levels of intent – all feeding one measured pipeline.' },
+      { title: 'Optimise toward jobs, not clicks', body: 'Lead value imported into Google Ads for value-based bidding, and an offline-conversion loop designed to steer toward closed, profitable jobs.' },
+    ],
+  },
+  built: {
+    label: 'What I built',
+    heading: 'Built personally, end to end.',
+    intro: 'Everything below was designed and built by me, agentically in Claude Code:',
+    items: [
+      { title: 'The platform', body: 'A Next.js site of ~80 pages: 31 area pages, 40+ project references and a guide library.' },
+      { title: 'The content model', body: 'A Sanity CMS for projects, images and copy, structured via the Sanity MCP server from inside Claude Code.' },
+      { title: 'The lead funnel', body: 'Roof test, scripted chat widget, quote form and a price calculator with the ROT deduction built in.' },
+      { title: 'The lead automation', body: 'Edge API route → Google Apps Script webhook → Google Sheet and email, firing the GA4 and Google Ads conversion.' },
+      { title: 'The measurement', body: 'End-to-end tracking, value-based bidding and an automated weekly Ads, GA4 and Search Console report.' },
+      { title: 'The Google presence', body: 'Paid search, technical and programmatic SEO, review generation and the Business Profile.' },
+    ],
+  },
+  aiCapabilities: {
+    label: 'AI & automation',
+    heading: 'Where AI and automation do the work.',
+    intro: 'What runs today – and what is designed but not claimed as live:',
+    statusLabels: { live: 'Live', designed: 'Designed' },
+    items: [
+      { title: 'Agentic development', body: 'The whole platform was built agentically in Claude Code – from code to CMS schema and content entries.', status: 'live' },
+      { title: 'CMS structure via MCP', body: 'Schema, content model, entries and image uploads created through Sanity’s MCP server instead of a studio UI.', status: 'live' },
+      { title: 'Automatic lead handling', body: 'Every quote request is written to a sheet, emailed to Sands and reported as a conversion in the same event – no CRM needed.', status: 'live' },
+      { title: 'Programmatic SEO', body: 'Per-municipality meta descriptions generated automatically; a newly published project appears on the right area page by itself.', status: 'live' },
+      { title: 'Seasonal messaging', body: 'A date-driven hero rotates seasonal messages automatically.', status: 'live' },
+      { title: 'Automated reporting', body: 'A weekly report combining Google Ads, GA4 and Search Console.', status: 'live' },
+      { title: 'Offline-conversion loop', body: 'Designed to feed closed, profitable jobs back into bidding.', status: 'designed' },
+    ],
+  },
+  verification:
+    'How the figures are measured: organic visibility as organic impressions in Google Search Console (~1,500% uplift); lead growth across two comparable quarters. No revenue figures are claimed.',
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What the engagement taught.',
+    items: [
+      { title: 'Proof earns the mandate', body: 'A small, contained test did more to win the full rebuild than any pitch could have.' },
+      { title: 'Code for what’s stable, CMS for what changes', body: 'Separating structure and logic from editorial content gave the client independence without losing control.' },
+      { title: 'Measure to the job, not the click', body: 'Bidding only improves when it can see real leads – fixing one form-submit event mattered more than any ad tweak.' },
+      { title: 'Lightweight automation fits a small team', body: 'A sheet, an email and a conversion event match how the client already works. It still needed hardening after a real production incident.' },
+    ],
+  },
+  relatedServices: { label: 'Related services', keys: ['aiGtm', 'aiGrowth', 'gaas'] },
   techStack: {
     label: 'Tech stack',
     items: [
@@ -712,7 +790,7 @@ const sandsSv: CaseStudy = {
     ],
   },
   startingPoint: {
-    label: 'Utgångsläget',
+    label: 'Affärsutmaningen',
     heading: 'Hyrde efterfrågan — ägde den inte.',
     lead: 'Före ombyggnaden var tillväxten begränsad av en kanal Sands inte kontrollerade.',
     points: [
@@ -833,6 +911,63 @@ const sandsSv: CaseStudy = {
       ],
     },
   },
+  seo: {
+    title: 'Sands Entreprenad: AI-native leadplattform – case | Greow',
+    description:
+      'Så byggde Erik Oliva Werner en AI-native leadplattform för en takentreprenör i Stockholm: agentiskt bygge, automatiserade leadflöden och 17× synlighet i sök.',
+  },
+  approach: {
+    label: 'Strategiskt angreppssätt',
+    heading: 'Bevisa efterfrågan, äg sedan kanalen.',
+    intro: 'Fyra beslut formade uppdraget:',
+    steps: [
+      { title: 'Börja med ett avgränsat test', body: 'En landningssida med sökannonser testade efterfrågan och budskap innan något byggdes om. Resultatet gav mandatet för hela plattformen.' },
+      { title: 'Fånga efterfrågan där den finns', body: 'En sida per kommun i länet, så att sajten kunde ranka på lokala taksökningar i stället för att konkurrera med en enda generell sida.' },
+      { title: 'Ge varje besökare en väg in', body: 'Taktest, chatt, priskalkylator och offertformulär för olika grader av köpintention – allt till en och samma mätbara pipeline.' },
+      { title: 'Optimera mot jobb, inte klick', body: 'Leadvärde importerat till Google Ads för värdebaserad budgivning, och en offline-konverteringsloop designad för att styra mot stängda, lönsamma jobb.' },
+    ],
+  },
+  built: {
+    label: 'Det här byggde jag',
+    heading: 'Byggt av mig, från start till mål.',
+    intro: 'Allt nedan designade och byggde jag själv, agentiskt i Claude Code:',
+    items: [
+      { title: 'Plattformen', body: 'En Next.js-sajt med ~80 sidor: 31 områdessidor, 40+ projektreferenser och ett guidebibliotek.' },
+      { title: 'Innehållsmodellen', body: 'Ett Sanity CMS för projekt, bilder och text, strukturerat via Sanitys MCP-server inifrån Claude Code.' },
+      { title: 'Lead-tratten', body: 'Taktest, skriptad chattwidget, offertformulär och en priskalkylator med ROT-avdraget inbyggt.' },
+      { title: 'Leadautomationen', body: 'Edge API-route → Google Apps Script-webhook → Google Sheet och e-post, som samtidigt skickar konverteringen till GA4 och Google Ads.' },
+      { title: 'Mätningen', body: 'Spårning hela vägen, värdebaserad budgivning och en automatiserad veckorapport från Ads, GA4 och Search Console.' },
+      { title: 'Google-närvaron', body: 'Sökannonsering, teknisk och programmatisk SEO, recensionsinsamling och företagsprofilen.' },
+    ],
+  },
+  aiCapabilities: {
+    label: 'AI & automation',
+    heading: 'Där AI och automation gör jobbet.',
+    intro: 'Det som körs idag – och det som är designat men inte påstås vara live:',
+    statusLabels: { live: 'Live', designed: 'Designad' },
+    items: [
+      { title: 'Agentisk utveckling', body: 'Hela plattformen byggdes agentiskt i Claude Code – från kod till CMS-schema och innehållsposter.', status: 'live' },
+      { title: 'CMS-struktur via MCP', body: 'Schema, innehållsmodell, poster och bilduppladdningar skapade via Sanitys MCP-server i stället för ett studio-gränssnitt.', status: 'live' },
+      { title: 'Automatisk leadhantering', body: 'Varje offertförfrågan skrivs till ett kalkylark, mejlas till Sands och rapporteras som konvertering i samma händelse – utan CRM.', status: 'live' },
+      { title: 'Programmatisk SEO', body: 'Metabeskrivningar per kommun genereras automatiskt; ett nytt projekt hamnar av sig självt på rätt områdessida.', status: 'live' },
+      { title: 'Säsongsbudskap', body: 'En datumstyrd hero roterar säsongsbudskap automatiskt.', status: 'live' },
+      { title: 'Automatiserad rapportering', body: 'En veckorapport som kombinerar Google Ads, GA4 och Search Console.', status: 'live' },
+      { title: 'Offline-konverteringsloop', body: 'Designad för att mata tillbaka stängda, lönsamma jobb till budgivningen.', status: 'designed' },
+    ],
+  },
+  verification:
+    'Så mäts siffrorna: organisk synlighet som organiska visningar i Google Search Console (~1 500 % ökning); leadtillväxt mellan två jämförbara kvartal. Inga intäktssiffror påstås.',
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad uppdraget lärde mig.',
+    items: [
+      { title: 'Bevis ger mandat', body: 'Ett litet, avgränsat test gjorde mer för att vinna hela ombyggnaden än någon pitch hade kunnat göra.' },
+      { title: 'Kod för det stabila, CMS för det som ändras', body: 'Att skilja struktur och logik från redaktionellt innehåll gav kunden självständighet utan att tappa kontroll.' },
+      { title: 'Mät till jobbet, inte till klicket', body: 'Budgivningen blir bara bättre när den ser riktiga leads – att laga en enda formulärhändelse betydde mer än någon annonsjustering.' },
+      { title: 'Lätt automation passar ett litet team', body: 'Ett kalkylark, ett mejl och en konverteringshändelse matchar hur kunden redan arbetar. Den behövde ändå härdas efter en verklig incident i produktion.' },
+    ],
+  },
+  relatedServices: { label: 'Relaterade tjänster', keys: ['aiGtm', 'aiGrowth', 'gaas'] },
   techStack: {
     label: 'Teknik',
     items: [
@@ -1993,7 +2128,7 @@ const bnbalyzeEn: CaseStudy = {
     ],
   },
   startingPoint: {
-    label: 'The starting point',
+    label: 'The business challenge',
     heading: 'Property analysis is fragmented and slow.',
     lead:
       'Evaluating a property as an investment means stitching sources together by hand. Buyers typically need to combine:',
@@ -2161,6 +2296,64 @@ const bnbalyzeEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Bnbalyze: From Vibe-Coded SaaS to AI-Native Proptech | Greow',
+    description:
+      'How Erik Oliva Werner built Bnbalyze solo: a proptech SaaS with 100+ organic users and real-estate pilots, now rebuilt as an AI-native property analyst.',
+  },
+  approach: {
+    label: 'Strategic approach',
+    heading: 'Test fast, validate with people, rebuild around the real problem.',
+    intro: 'The product moved through four deliberate steps:',
+    steps: [
+      { title: 'Test the build workflow', body: 'Use vibe coding with Lovable to see how far one person could take a real product, quickly.' },
+      { title: 'Validate before scaling', body: 'Real-estate pilot customers, UX research with Hyper Island students and organic self-serve users – before any paid acquisition.' },
+      { title: 'Pause and reframe', body: 'Step back when other priorities took over, and name what v1 could not do: judge a property’s condition, research the area or assess regulation.' },
+      { title: 'Rebuild with clear boundaries', body: 'Put AI inside the analysis pipeline, but keep every financial figure deterministic and tested.' },
+    ],
+  },
+  built: {
+    label: 'What I built',
+    heading: 'Conceived, designed and built – solo.',
+    intro: 'Every part of the product was built by me:',
+    items: [
+      { title: 'The v1 SaaS platform', body: 'React, TypeScript and Supabase: accounts, auth, row-level security, and Stripe subscriptions with usage limits.' },
+      { title: 'The data layer', body: 'Google Maps and Places, Airbtics, AirDNA and Apify, normalised into one stable internal format with caching.' },
+      { title: 'Analysis and reports', body: 'Mortgage, ROI and payback calculations, interactive scenarios and custom PDF reports.' },
+      { title: 'Operations', body: 'Internal CRM, product analytics, GA4, Slack notifications, admin tooling, a marketing site and a blog CMS.' },
+      { title: 'The 2.0 AI pipeline', body: 'Next.js and TypeScript: listing ingestion, visual analysis, area research, official statistics, regulatory assessment and a unit-tested financial model.' },
+    ],
+  },
+  aiCapabilities: {
+    label: 'AI & automation',
+    heading: 'AI where it helps, code where it must be exact.',
+    intro: 'v1 automated data and operations; 2.0 puts AI inside the analysis itself. Status per capability:',
+    statusLabels: { paused: 'v1 · paused', proven: '2.0 · proven on real listings' },
+    items: [
+      { title: 'Automated market-data pipeline', body: 'External APIs normalised into one internal format and cached to control cost.', status: 'paused' },
+      { title: 'Automatic report generation', body: 'Completed analyses exported as professional PDF reports.', status: 'paused' },
+      { title: 'Operational notifications', body: 'Slack alerts and admin tooling for running the product.', status: 'paused' },
+      { title: 'Structured listing ingestion', body: 'Apify and residential proxies extract price, floor area, coordinates and images from Idealista listings – no LLM guesses these figures. Full Hemnet support is next.', status: 'proven' },
+      { title: 'Visual property analysis', body: 'Claude Opus assesses condition from room-labelled photos; in testing it flagged a virtual-staging render and recognised a dated kitchen.', status: 'proven' },
+      { title: 'Autonomous area research', body: 'A research agent investigates schools, transport, amenities and planned developments; on one Seville listing it returned 22 sources.', status: 'proven' },
+      { title: 'Regulatory gate', body: 'Short-term-rental feasibility classified red, amber or green – and shown before the projected returns.', status: 'proven' },
+      { title: 'Grounded investment memo', body: 'Written only after the deterministic, unit-tested model has run, and validated against its figures.', status: 'proven' },
+      { title: 'Model routing and fault tolerance', body: 'Vision on a stronger model, other steps on a cheaper one; one imperfect response degrades a section instead of crashing the analysis.', status: 'proven' },
+    ],
+  },
+  verification:
+    'What the figures cover: the 100+ self-serve users and the real-estate pilots refer to v1. The 2.0 pipeline is proven end-to-end on real listings, not launched commercially. No revenue figures are claimed.',
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What the build taught.',
+    items: [
+      { title: 'Separate facts from judgement', body: 'An LLM should interpret, research and explain – never calculate a price, a mortgage or a return.' },
+      { title: 'Abstract external data early', body: 'One stable internal format made it possible to change a data provider without rebuilding the product.' },
+      { title: 'Design AI pipelines to degrade gracefully', body: 'Tolerant validation and isolated errors stop one imperfect model response from breaking the whole analysis.' },
+      { title: 'Validate with people, not just code', body: 'Pilots and structured UX research showed which figures buyers and agents actually trusted.' },
+    ],
+  },
+  relatedServices: { label: 'Related services', keys: ['aiGrowth', 'aiGtm', 'advisory'] },
   techStack: {
     label: 'Tech stack',
     items: [
@@ -2244,7 +2437,7 @@ const bnbalyzeSv: CaseStudy = {
     ],
   },
   startingPoint: {
-    label: 'Utgångsläget',
+    label: 'Affärsutmaningen',
     heading: 'Fastighetsanalys är splittrad och långsam.',
     lead:
       'Att bedöma en fastighet som investering innebär att sy ihop källor för hand. Köpare behöver oftast kombinera:',
@@ -2412,6 +2605,64 @@ const bnbalyzeSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Bnbalyze: från vibe-kodad SaaS till AI-native proptech | Greow',
+    description:
+      'Så byggde Erik Oliva Werner Bnbalyze på egen hand: en proptech-SaaS med 100+ organiska användare och mäklarpiloter, nu ombyggd till en AI-native analytiker.',
+  },
+  approach: {
+    label: 'Strategiskt angreppssätt',
+    heading: 'Testa snabbt, validera med människor, bygg om kring det verkliga problemet.',
+    intro: 'Produkten gick igenom fyra medvetna steg:',
+    steps: [
+      { title: 'Testa byggsättet', body: 'Använda vibe coding med Lovable för att se hur långt en person kunde ta en riktig produkt, snabbt.' },
+      { title: 'Validera innan skalning', body: 'Mäklare som pilotkunder, UX-research med studenter från Hyper Island och organiska self-serve-användare – innan någon betald marknadsföring.' },
+      { title: 'Pausa och tänka om', body: 'Ta ett steg tillbaka när andra prioriteringar tog över, och sätta ord på vad v1 inte kunde: bedöma skicket, researcha området eller värdera regelverket.' },
+      { title: 'Bygg om med tydliga gränser', body: 'Lägga AI inne i analysflödet, men hålla varje finansiell siffra deterministisk och testad.' },
+    ],
+  },
+  built: {
+    label: 'Det här byggde jag',
+    heading: 'Idé, design och bygge – på egen hand.',
+    intro: 'Varje del av produkten byggde jag själv:',
+    items: [
+      { title: 'SaaS-plattformen (v1)', body: 'React, TypeScript och Supabase: konton, inloggning, radnivåsäkerhet och Stripe-prenumerationer med användningsgränser.' },
+      { title: 'Datalagret', body: 'Google Maps och Places, Airbtics, AirDNA och Apify, normaliserat till ett stabilt internt format med cache.' },
+      { title: 'Analys och rapporter', body: 'Beräkningar för bolån, ROI och återbetalningstid, interaktiva scenarier och egna PDF-rapporter.' },
+      { title: 'Drift', body: 'Internt CRM, produktanalys, GA4, Slack-notiser, admin-verktyg, en marknadssajt och ett blogg-CMS.' },
+      { title: 'AI-pipelinen i 2.0', body: 'Next.js och TypeScript: annonsinläsning, visuell analys, områdesresearch, officiell statistik, regelbedömning och en enhetstestad finansiell modell.' },
+    ],
+  },
+  aiCapabilities: {
+    label: 'AI & automation',
+    heading: 'AI där det hjälper, kod där det måste vara exakt.',
+    intro: 'v1 automatiserade data och drift; 2.0 lägger AI inne i själva analysen. Status per förmåga:',
+    statusLabels: { paused: 'v1 · pausad', proven: '2.0 · bevisad på riktiga annonser' },
+    items: [
+      { title: 'Automatiserat marknadsdataflöde', body: 'Externa API:er normaliserade till ett internt format och cachade för att hålla nere kostnaden.', status: 'paused' },
+      { title: 'Automatisk rapportgenerering', body: 'Färdiga analyser exporterade som professionella PDF-rapporter.', status: 'paused' },
+      { title: 'Driftnotiser', body: 'Slack-larm och admin-verktyg för att driva produkten.', status: 'paused' },
+      { title: 'Strukturerad annonsinläsning', body: 'Apify och residential proxies hämtar pris, yta, koordinater och bilder från Idealista-annonser – ingen LLM gissar siffrorna. Fullt stöd för Hemnet är nästa steg.', status: 'proven' },
+      { title: 'Visuell fastighetsanalys', body: 'Claude Opus bedömer skicket utifrån rumsmärkta bilder; i tester flaggade den en virtuellt möblerad bild och kände igen ett daterat kök.', status: 'proven' },
+      { title: 'Självständig områdesresearch', body: 'En researchagent undersöker skolor, kommunikationer, service och planerad bebyggelse; för en annons i Sevilla gav den 22 källor.', status: 'proven' },
+      { title: 'Regelspärr', body: 'Möjligheten till korttidsuthyrning klassas som röd, gul eller grön – och visas före den beräknade avkastningen.', status: 'proven' },
+      { title: 'Förankrat investerings-PM', body: 'Skrivs först när den deterministiska, enhetstestade modellen har körts, och valideras mot dess siffror.', status: 'proven' },
+      { title: 'Modellval och feltolerans', body: 'Bildanalys på en starkare modell, övriga steg på en billigare; ett ofullständigt svar försämrar ett avsnitt i stället för att krascha analysen.', status: 'proven' },
+    ],
+  },
+  verification:
+    'Vad siffrorna gäller: de 100+ self-serve-användarna och mäklarpiloterna avser v1. Pipelinen i 2.0 är bevisad hela vägen på riktiga annonser, men inte lanserad kommersiellt. Inga intäktssiffror påstås.',
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad bygget lärde mig.',
+    items: [
+      { title: 'Skilj fakta från bedömning', body: 'En LLM ska tolka, researcha och förklara – aldrig räkna ut ett pris, ett bolån eller en avkastning.' },
+      { title: 'Abstrahera extern data tidigt', body: 'Ett stabilt internt format gjorde det möjligt att byta dataleverantör utan att bygga om produkten.' },
+      { title: 'Bygg AI-flöden som tål fel', body: 'Tolerant validering och isolerade fel hindrar ett ofullständigt modellsvar från att förstöra hela analysen.' },
+      { title: 'Validera med människor, inte bara kod', body: 'Piloter och strukturerad UX-research visade vilka siffror köpare och mäklare faktiskt litade på.' },
+    ],
+  },
+  relatedServices: { label: 'Relaterade tjänster', keys: ['aiGrowth', 'aiGtm', 'advisory'] },
   techStack: {
     label: 'Teknik-stack',
     items: [
@@ -5081,7 +5332,7 @@ export function caseJsonLd(lang: Lang, data: CaseStudy) {
   const article = {
     '@type': 'Article',
     headline: data.title,
-    description: data.intro,
+    description: data.seo?.description ?? data.intro,
     about: data.client,
     inLanguage: lang,
     url,

@@ -488,3 +488,13 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | Claim accuracy | New "Built · In development · Possible" section. *Built* lists only what the Sands case documents; *In development* is Mentimeter (employment, not a client); *Possible* is scoped per engagement. Growthship lists relabelled "Examples of what can be built" with a scope note. | ✅ |
 | Agentic web | Four capability cards (custom web dev, agent-ready experiences, AI-driven content ops, integrated lead flows) with concrete examples, Sands proof chips and a "why the combination matters" panel. | ✅ |
 | Brand | The Growthship framed as Erik's operating model ("How I think about it"), not a product; FAQ clarifies Greow is the consultancy, not a licensed platform. No product schema. | ✅ |
+
+### 2026-11-10 — Sands & Bnbalyze cases strengthened; Mentimeter draft
+
+| Item | Change | Status |
+|---|---|---|
+| Case structure | Optional `CaseStudy` fields rendered by `CaseStudy.tsx`: `approach`, `built`, `aiCapabilities` (with Live / Designed / v1 paused / 2.0 proven status), `verification`, `relatedServices`, `seo`. "The starting point" relabelled "The business challenge" on both cases. Other cases unchanged. | ✅ EN + SV |
+| Claims | No new metrics. Every item restates facts already in the case text; designed (Sands offline-conversion loop) and not-yet-launched (Bnbalyze 2.0, Hemnet) items are labelled as such. Verification line states what figures cover and that no revenue is claimed. | ✅ |
+| SEO (T2/T3) | Outcome-led titles (57–62 chars) and descriptions (152–157 chars) for Sands and Bnbalyze in both languages; Article JSON-LD uses the same description. Other case titles still generic. | ◑ 2 of 9 cases |
+| Internal links | Case → service links: Sands → AI GTM Systems, AI Growth Consultant, Growth as a Service; Bnbalyze → AI Growth Consultant, AI GTM Systems, Growth Advisory (I4 for these two cases). | ✅ |
+| Mentimeter | Unpublished draft in `docs/drafts/mentimeter-experience.md` (EN + SV), framed as employment, no metrics, with an approval checklist. Not built or linked. | ✅ Draft only |

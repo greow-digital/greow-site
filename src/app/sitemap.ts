@@ -31,19 +31,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
-    {
-      // English only until the Swedish version exists.
-      url: `${SITE_URL}/ai-growth-consultant/`,
+    ...(['/ai-growth-consultant/', '/sv/ai-tillvaxtkonsult/'] as const).map((path) => ({
+      url: `${SITE_URL}${path}`,
       lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.9,
+      changeFrequency: 'monthly' as const,
+      priority: path.startsWith('/sv/') ? 0.8 : 0.9,
       alternates: {
         languages: {
           en: `${SITE_URL}/ai-growth-consultant/`,
+          sv: `${SITE_URL}/sv/ai-tillvaxtkonsult/`,
           'x-default': `${SITE_URL}/ai-growth-consultant/`,
         },
       },
-    },
+    })),
     {
       url: `${SITE_URL}/growth-as-a-service/`,
       lastModified,

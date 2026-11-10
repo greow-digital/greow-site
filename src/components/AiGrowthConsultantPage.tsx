@@ -1,17 +1,22 @@
 import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
-import { aiGrowth as c } from '@/lib/aiGrowthConsultant'
-import { projects, workIndexCopy } from '@/lib/work'
+import { aiGrowthByLang } from '@/lib/aiGrowthConsultant'
+import { projects, workIndexCopy, type Lang } from '@/lib/work'
 import { serviceNav, servicesFor, serviceUrl } from '@/lib/services'
 import { plannedLink } from '@/lib/routes'
 import CalEmbed from './CalEmbed'
 import Footer from './Footer'
 
-// /ai-growth-consultant/ — built from the existing Greow section patterns
-// (service-hero, section-label, capability cards, jungle "how" band, related
-// case cards, cta-section). English only for now.
-export default function AiGrowthConsultantPage({ t }: { t: Translations }) {
-  const lang = 'en' as const
+// /ai-growth-consultant/ (EN) and /sv/ai-tillvaxtkonsult/ (SV) — built from
+// the existing Greow section patterns (service-hero, section-label, capability
+// cards, jungle "how" band, related case cards, cta-section).
+const gtmSystemsTagline: Record<Lang, string> = {
+  en: 'Automated GTM operations and agentic workflows',
+  sv: 'Automatiserad GTM-drift och agentiska arbetsflöden',
+}
+
+export default function AiGrowthConsultantPage({ t, lang }: { t: Translations; lang: Lang }) {
+  const c = aiGrowthByLang[lang]
   const caseBySlug = (slug: string) => projects[lang].find((p) => p.slug === slug)
   const sands = caseBySlug(c.experience.sands.slug)
   const moreCases = c.experience.moreCases
@@ -27,7 +32,7 @@ export default function AiGrowthConsultantPage({ t }: { t: Translations }) {
       }),
     ...[plannedLink('aiGtmSystems', lang)]
       .filter((l): l is NonNullable<typeof l> => l !== null)
-      .map((l) => ({ ...l, tagline: 'Automated GTM operations and agentic workflows' })),
+      .map((l) => ({ ...l, tagline: gtmSystemsTagline[lang] })),
   ]
 
   return (

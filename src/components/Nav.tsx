@@ -8,6 +8,8 @@ import { servicesFor } from '@/lib/services'
 interface NavProps {
   t: Translations['nav']
   lang: 'en' | 'sv'
+  // This page's translation. Defaults to the other language's homepage.
+  altHref?: string
 }
 
 // Circular UK flag (English)
@@ -64,10 +66,10 @@ const LogoIcon = () => (
   </svg>
 )
 
-export default function Nav({ t, lang }: NavProps) {
+export default function Nav({ t, lang, altHref: altHrefProp }: NavProps) {
   const [open, setOpen] = useState(false)
   const home = lang === 'en' ? '/' : '/sv/'
-  const altHref = lang === 'en' ? '/sv/' : '/'
+  const altHref = altHrefProp ?? (lang === 'en' ? '/sv/' : '/')
   const altLabel = lang === 'en' ? 'SV' : 'EN'
   const AltFlag = lang === 'en' ? FlagSV : FlagEN
   const close = () => setOpen(false)

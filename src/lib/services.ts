@@ -41,7 +41,6 @@ export const serviceNav: ServiceNavItem[] = [
     tagline: { en: 'AI-native growth & GTM systems, strategy to build', sv: 'AI-native growth- & GTM-system, från strategi till bygge' },
     accent: 'salmon',
     url: { en: '/ai-growth-consultant/', sv: '/sv/ai-tillvaxtkonsult/' },
-    available: ['en'],
   },
   {
     key: 'gaas',

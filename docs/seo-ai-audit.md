@@ -467,5 +467,6 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | Proof | Sands Entreprenad (17× organic visibility) plus Bnbalyze, Leadfeeder/Dealfront and Funnel cards pulled from `work.ts`. Mentimeter shown as professional experience, explicitly not a client engagement. | ✅ |
 | Schema | Page: `Service` + `OfferCatalog`, `FAQPage`, `BreadcrumbList`. Layout: `siteGraph('en')` now on all EN service and work pages, so `#organization` / `#erik` resolve (fixes **J2**). | ✅ |
 | Internal links | Added to Services nav, footer, homepage "Ways to work together" and the homepage AI-systems capability card (EN only). Links out to Growth Advisory, Growth as a Service, Fractional Growth Lead and four case studies. | ✅ |
-| Language | English only. `serviceNav.available` keeps it out of Swedish menus; hreflang = `en` + `x-default`. SV version `/sv/ai-tillvaxtkonsult/` still to write. | ◑ |
+| Language | Swedish version live at `/sv/ai-tillvaxtkonsult/` (title 59, description 158 chars). Reciprocal hreflang en/sv/x-default in HTML and sitemap; in SV menus, footer and homepage. | ✅ |
 | Meta description | 164 chars as supplied, slightly over the ~160 guideline. | ⚠️ Accepted |
+| I2 (language switcher) | `Nav` accepts a page-level `altHref`; used on the AI Growth pair so EN ↔ SV switch to the matching page. Other pages still fall back to the other homepage. | ◑ Partial |

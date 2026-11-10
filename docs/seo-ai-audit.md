@@ -294,7 +294,7 @@ AI answer engines (Google AI Overviews/AI Mode, ChatGPT search, Perplexity, Clau
 
 | Pri | ID | Action | Effort | Files (expected) |
 |---|---|---|---|---|
-| **P0** | G1 | Submit `sitemap.xml` in Search Console (see §10) | XS | — (GSC) |
+| **P0** | G1 | ✅ **Done 2026-11-10** — submitted `sitemap.xml` in Search Console (status: pending, 0 errors/warnings at submission) | XS | — (GSC) |
 | **P0** | G4 | Install GA4 + booking key events; link to GSC (see §10) | S | layouts, `CalEmbed.tsx` |
 | **P0** | G2 + I2–I4 | Internal-linking fixes so `/work/`, case studies and all services get discovered (moved up from P1 by GSC data) | S | see I2–I4 rows below |
 | **P0** | W1 | Create correct 1200×630 OG image(s); fix declared dimensions | S | `public/images/`, all `metadata` blocks |

@@ -255,7 +255,7 @@ export const aiGrowth = {
     closing:
       'Whether you need strategic direction, a working prototype or an ongoing partner to help build and scale, we can start with the problem you’re trying to solve.',
     relatedLabel: 'Related services',
-    relatedServices: ['advisory', 'gaas', 'fractional'],
+    relatedServices: ['aiGtm', 'advisory', 'gaas', 'fractional'],
   },
 
   faq: {
@@ -580,7 +580,7 @@ const aiGrowthSv: typeof aiGrowth = {
     closing:
       'Oavsett om ni behöver strategisk riktning, en fungerande prototyp eller en löpande partner som hjälper er att bygga och skala, kan vi börja med problemet ni försöker lösa.',
     relatedLabel: 'Relaterade tjänster',
-    relatedServices: ['advisory', 'gaas', 'fractional'],
+    relatedServices: ['aiGtm', 'advisory', 'gaas', 'fractional'],
   },
 
   faq: {

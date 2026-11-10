@@ -31,6 +31,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
         },
       },
     },
+    ...(['/ai-gtm-systems/', '/sv/ai-gtm-system/'] as const).map((path) => ({
+      url: `${SITE_URL}${path}`,
+      lastModified,
+      changeFrequency: 'monthly' as const,
+      priority: path.startsWith('/sv/') ? 0.8 : 0.9,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/ai-gtm-systems/`,
+          sv: `${SITE_URL}/sv/ai-gtm-system/`,
+          'x-default': `${SITE_URL}/ai-gtm-systems/`,
+        },
+      },
+    })),
     ...(['/ai-growth-consultant/', '/sv/ai-tillvaxtkonsult/'] as const).map((path) => ({
       url: `${SITE_URL}${path}`,
       lastModified,

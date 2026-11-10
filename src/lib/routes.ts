@@ -9,7 +9,7 @@
 
 import type { Lang } from './work'
 
-export type PlannedPageKey = 'aiGtmSystems' | 'founder'
+export type PlannedPageKey = 'founder'
 
 interface PlannedPage {
   published: boolean
@@ -18,11 +18,6 @@ interface PlannedPage {
 }
 
 export const plannedPages: Record<PlannedPageKey, PlannedPage> = {
-  aiGtmSystems: {
-    published: false,
-    url: { en: '/ai-gtm-systems/', sv: '/sv/ai-gtm-system/' },
-    label: { en: 'AI GTM Systems', sv: 'AI GTM-system' },
-  },
   founder: {
     published: false,
     url: { en: '/erik-oliva-werner/', sv: '/sv/erik-oliva-werner/' },
@@ -51,8 +46,8 @@ export const capabilityLinks: Record<string, CapabilityLinks> = {
   },
   systems: {
     cases: ['sands-entreprenad', 'bnbalyze'],
-    services: ['aiGrowth'],
-    planned: ['aiGtmSystems'],
+    services: ['aiGrowth', 'aiGtm'],
+    planned: [],
   },
   execution: {
     cases: ['telia-norway', 'happy-vegan'],

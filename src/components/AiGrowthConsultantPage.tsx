@@ -3,18 +3,12 @@ import type { Translations } from '@/lib/translations'
 import { aiGrowthByLang } from '@/lib/aiGrowthConsultant'
 import { projects, workIndexCopy, type Lang } from '@/lib/work'
 import { serviceNav, servicesFor, serviceUrl } from '@/lib/services'
-import { plannedLink } from '@/lib/routes'
 import CalEmbed from './CalEmbed'
 import Footer from './Footer'
 
 // /ai-growth-consultant/ (EN) and /sv/ai-tillvaxtkonsult/ (SV) — built from
 // the existing Greow section patterns (service-hero, section-label, capability
 // cards, jungle "how" band, related case cards, cta-section).
-const gtmSystemsTagline: Record<Lang, string> = {
-  en: 'Automated GTM operations and agentic workflows',
-  sv: 'Automatiserad GTM-drift och agentiska arbetsflöden',
-}
-
 export default function AiGrowthConsultantPage({ t, lang }: { t: Translations; lang: Lang }) {
   const c = aiGrowthByLang[lang]
   const caseBySlug = (slug: string) => projects[lang].find((p) => p.slug === slug)
@@ -23,17 +17,12 @@ export default function AiGrowthConsultantPage({ t, lang }: { t: Translations; l
     .map(caseBySlug)
     .filter((p): p is NonNullable<typeof p> => Boolean(p && p.href))
   const available = new Set(servicesFor(lang).map((s) => s.key))
-  const relatedServices = [
-    ...c.who.relatedServices
-      .filter((key) => available.has(key))
-      .map((key) => {
-        const s = serviceNav.find((n) => n.key === key)!
-        return { href: serviceUrl(key, lang), label: s.label[lang], tagline: s.tagline[lang] }
-      }),
-    ...[plannedLink('aiGtmSystems', lang)]
-      .filter((l): l is NonNullable<typeof l> => l !== null)
-      .map((l) => ({ ...l, tagline: gtmSystemsTagline[lang] })),
-  ]
+  const relatedServices = c.who.relatedServices
+    .filter((key) => available.has(key))
+    .map((key) => {
+      const s = serviceNav.find((n) => n.key === key)!
+      return { href: serviceUrl(key, lang), label: s.label[lang], tagline: s.tagline[lang] }
+    })
 
   return (
     <>

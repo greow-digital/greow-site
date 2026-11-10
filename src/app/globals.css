@@ -1865,3 +1865,113 @@ a.stat-card:focus-visible, .capability-case:focus-visible, .capability-link:focu
 .ai-more-cases .service-related-card.accent-turquoise .related-metric { color: var(--jungle); }
 .ai-steps .step-card .step-num { font-size: 1.2rem; }
 .service-text p + p { margin-top: 14px; }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   AI GTM SYSTEMS (/ai-gtm-systems/) — extends the ai-* page styles above
+   ══════════════════════════════════════════════════════════════════════════ */
+.gtm-hero-sub { font-family: var(--font-heading), Arial, sans-serif; font-weight: 700; color: var(--jet); font-size: 1.4rem; }
+.gtm-hero-actions { margin-top: 16px; }
+.gtm-silos { list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 28px 0 8px; }
+.gtm-silos li {
+  background: var(--white); border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+  padding: 20px 22px; color: var(--jet-light); line-height: 1.6; box-shadow: var(--shadow-sm);
+}
+.gtm-silos strong { display: block; color: var(--jungle); font-family: var(--font-heading), Arial, sans-serif; margin-bottom: 2px; }
+.gtm-people {
+  margin-top: 28px; font-family: var(--font-heading), Arial, sans-serif;
+  font-size: 1.4rem; font-weight: 700; color: var(--jet);
+}
+.gtm-chores { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.gtm-chores li {
+  padding: 8px 16px; border-radius: 100px;
+  background: var(--salmon-soft); color: var(--jet); font-size: 0.95rem; font-weight: 500;
+}
+.gtm-question {
+  margin-top: 24px; font-family: var(--font-heading), Arial, sans-serif;
+  font-size: clamp(1.3rem, 2.4vw, 1.6rem); font-weight: 700; color: var(--jungle); max-width: 760px;
+}
+
+.gtm-solution { display: grid; grid-template-columns: 1.1fr 1fr; gap: 56px; align-items: start; max-width: none; }
+.gtm-stack { margin: 0; }
+.gtm-stack figcaption {
+  font-family: var(--font-heading), Arial, sans-serif; font-weight: 700;
+  font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--jungle);
+  margin-bottom: 14px;
+}
+.gtm-stack ol { list-style: none; display: grid; gap: 28px; }
+.gtm-layer {
+  position: relative; display: flex; flex-direction: column; gap: 4px;
+  padding: 20px 22px; border-radius: var(--radius-sm); line-height: 1.55;
+}
+.gtm-layer strong { font-family: var(--font-heading), Arial, sans-serif; font-size: 1.05rem; }
+.gtm-layer span { font-size: 0.95rem; }
+.gtm-layer:not(:last-child)::after {
+  content: '↓'; position: absolute; left: 50%; bottom: -26px; transform: translateX(-50%);
+  color: var(--salmon-dark); font-weight: 700; font-size: 1.1rem;
+}
+.gtm-layer-1 { background: var(--white); border: 1.5px solid var(--border); color: var(--jet-light); }
+.gtm-layer-1 strong { color: var(--jet); }
+.gtm-layer-2 { background: var(--turquoise-soft); color: var(--jet-light); }
+.gtm-layer-2 strong { color: var(--jungle); }
+.gtm-layer-3 { background: var(--jungle); color: rgba(255,255,255,0.85); }
+.gtm-layer-3 strong { color: var(--white); }
+.gtm-layer-4 { background: var(--salmon-soft); color: var(--jet-light); }
+.gtm-layer-4 strong { color: var(--jet); }
+
+.gtm-outcome {
+  margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border);
+  font-weight: 600; color: var(--jet); line-height: 1.55;
+}
+.gtm-outcome span { color: var(--jungle); text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.75rem; margin-right: 4px; }
+
+.how .ai-how-heading .gtm-em-light { font-style: normal; color: var(--salmon-light); font-weight: 500; }
+.gtm-timeline { list-style: none; counter-reset: gtm; margin-top: 40px; max-width: 820px; display: grid; gap: 0; }
+.gtm-timeline li {
+  counter-increment: gtm; position: relative;
+  padding: 0 0 26px 60px; color: rgba(255,255,255,0.85); font-size: 1.05rem; line-height: 1.65;
+}
+.gtm-timeline li::before {
+  content: counter(gtm); position: absolute; left: 0; top: -2px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(255,255,255,0.14); color: var(--white);
+  font-family: var(--font-heading), Arial, sans-serif; font-weight: 700; font-size: 1.15rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.gtm-timeline li:not(:last-child)::after {
+  content: ''; position: absolute; left: 17px; top: 38px; bottom: 4px;
+  width: 2px; background: rgba(255,255,255,0.18);
+}
+.gtm-loop { margin-top: 12px; font-family: var(--font-heading), Arial, sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--white); }
+.gtm-loop-closing { margin-top: 8px; color: rgba(255,255,255,0.85); font-size: 1.08rem; }
+.gtm-disclaimer-light { margin-top: 20px; font-size: 0.88rem; font-style: italic; color: rgba(255,255,255,0.78); }
+
+.gtm-subheading {
+  font-family: var(--font-heading), Arial, sans-serif; font-size: 1.4rem; font-weight: 700;
+  color: var(--jungle); margin-top: 36px;
+}
+.gtm-lead { margin-top: 10px; }
+.gtm-web-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 24px; }
+.gtm-web-grid .service-card { display: flex; flex-direction: column; gap: 6px; }
+
+.gtm-deliverables { list-style: none; margin-top: 8px; }
+.gtm-deliverables li {
+  position: relative; padding: 5px 0 5px 20px;
+  color: rgba(255,255,255,0.85); font-size: 0.95rem; line-height: 1.5;
+}
+.gtm-deliverables li::before { content: '→'; position: absolute; left: 0; color: var(--salmon-light); font-size: 0.85rem; }
+
+.gtm-needs li { padding-left: 22px; }
+.gtm-needs li::before { display: none; }
+.gtm-audiences { grid-template-columns: repeat(2, 1fr); gap: 28px 32px; }
+.gtm-audiences .ai-audience:nth-child(4) { border-top-color: var(--salmon-dark); }
+#growth-os, #how-we-build { scroll-margin-top: 80px; }
+
+@media (max-width: 1080px) {
+  .gtm-solution { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 768px) {
+  .gtm-silos, .gtm-audiences { grid-template-columns: 1fr; }
+  .gtm-timeline li { padding-left: 52px; font-size: 1rem; }
+  .gtm-people { font-size: 1.25rem; }
+}
+.capabilities-header p + p { margin-top: 10px; }

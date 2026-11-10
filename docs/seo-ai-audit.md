@@ -470,3 +470,12 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | Language | Swedish version live at `/sv/ai-tillvaxtkonsult/` (title 59, description 158 chars). Reciprocal hreflang en/sv/x-default in HTML and sitemap; in SV menus, footer and homepage. | ✅ |
 | Meta description | 164 chars as supplied, slightly over the ~160 guideline. | ⚠️ Accepted |
 | I2 (language switcher) | `Nav` accepts a page-level `altHref`; used on the AI Growth pair so EN ↔ SV switch to the matching page. Other pages still fall back to the other homepage. | ◑ Partial |
+
+### 2026-11-10 — `/ai-gtm-systems/` (EN) + `/sv/ai-gtm-system/` (SV)
+
+| Item | Change | Status |
+|---|---|---|
+| §5 AI GTM page | New EN + SV pages (titles 54 / 50 chars, descriptions 153 / 159). Problem, Growth Operating System stack diagram, Growthship framework (Bridge, Engine Room, Radar, Launchpad), illustrative scenario, agentic web, Sands + Mentimeter, Discover & Design → Build & Connect → Operate & Optimize, FAQ, contact with booking embed. | ✅ |
+| Claims | Scenario labelled illustrative; Growthship labelled an operating model, not a product; Mentimeter labelled professional experience, not a client. Proof metrics from `work.ts` (Sands, Bnbalyze, Leadfeeder/Dealfront, Refapp). | ✅ |
+| Linking | Promoted from the planned-pages registry to `serviceNav` (`aiGtm`): Services menu, footer, homepage "Ways to work together" and AI-systems capability card, plus related-services on both AI Growth Consultant pages. Language switcher targets the matching translation. | ✅ |
+| Overlap | Shares themes with `/ai-growth-consultant/` (Growth OS, Sands, Mentimeter). Intents kept distinct: *consultant* (who/advisory) vs *systems & automation* (what gets built). Both pages cross-link. Monitor GSC for query overlap. | ⚠️ Watch |

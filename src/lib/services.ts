@@ -43,6 +43,13 @@ export const serviceNav: ServiceNavItem[] = [
     url: { en: '/ai-growth-consultant/', sv: '/sv/ai-tillvaxtkonsult/' },
   },
   {
+    key: 'aiGtm',
+    label: { en: 'AI GTM Systems', sv: 'AI GTM-system' },
+    tagline: { en: 'Connected data, agents and workflows in one growth engine', sv: 'Data, agenter och arbetsflöden i en tillväxtmotor' },
+    accent: 'jungle',
+    url: { en: '/ai-gtm-systems/', sv: '/sv/ai-gtm-system/' },
+  },
+  {
     key: 'gaas',
     label: { en: 'Growth as a Service', sv: 'Growth as a Service' },
     tagline: { en: 'Senior growth leadership, on a monthly retainer', sv: 'Senior tillväxtledning, på månadsbasis' },

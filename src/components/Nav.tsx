@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import type { Translations } from '@/lib/translations'
 import { workBase } from '@/lib/work'
-import { serviceNav } from '@/lib/services'
+import { servicesFor } from '@/lib/services'
 
 interface NavProps {
   t: Translations['nav']
@@ -91,7 +91,7 @@ export default function Nav({ t, lang }: NavProps) {
             </button>
             <div className="nav-dropdown-menu">
               <div className="nav-dropdown-card">
-                {serviceNav.map((s) => (
+                {servicesFor(lang).map((s) => (
                   <Link key={s.key} href={s.url[lang]} className="nav-dropdown-item">
                     <span className={`nav-dropdown-dot accent-${s.accent}`} aria-hidden="true" />
                     <span className="nav-dropdown-text">
@@ -137,7 +137,7 @@ export default function Nav({ t, lang }: NavProps) {
       {open && (
         <div className="nav-mobile-menu">
           <span className="nav-mobile-heading">{t.services}</span>
-          {serviceNav.map((s) => (
+          {servicesFor(lang).map((s) => (
             <Link key={s.key} href={s.url[lang]} className="nav-mobile-sub" onClick={close}>
               {s.label[lang]}
             </Link>

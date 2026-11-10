@@ -32,6 +32,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     },
     {
+      // English only until the Swedish version exists.
+      url: `${SITE_URL}/ai-growth-consultant/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+      alternates: {
+        languages: {
+          en: `${SITE_URL}/ai-growth-consultant/`,
+          'x-default': `${SITE_URL}/ai-growth-consultant/`,
+        },
+      },
+    },
+    {
       url: `${SITE_URL}/growth-as-a-service/`,
       lastModified,
       changeFrequency: 'monthly',

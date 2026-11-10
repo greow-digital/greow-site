@@ -458,3 +458,14 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | A2 (reduced motion) | `prefers-reduced-motion` disables reveal and keyframe animations site-wide. | ✅ |
 | §5 planned pages | `src/lib/routes.ts` registry; AI Growth Consultant, AI GTM Systems and founder links render only when `published: true`. `npm run check:links` fails on any broken internal link in `out/`. | ✅ Mechanism; pages not built |
 | Local / NAP | Business address **Riddersviksvägen 161, 165 72 Hässelby** in `src/lib/business.ts`, rendered in an `<address>` in the footer of every page and in Organization/ProfessionalService `PostalAddress` + `hasMap`. Click-to-load Google Map in footer (no Google requests until clicked). Must match the Google Business Profile exactly. | ✅ |
+
+### 2026-11-10 — `/ai-growth-consultant/` (EN)
+
+| Item | Change | Status |
+|---|---|---|
+| §5 AI Growth page | New commercial page targeting "AI growth consultant" intent: title 61 chars, ~2,000 words, Discover → Build → Scale model, 4 offers, 7-question FAQ, contact section with booking embed. | ✅ EN live in build |
+| Proof | Sands Entreprenad (17× organic visibility) plus Bnbalyze, Leadfeeder/Dealfront and Funnel cards pulled from `work.ts`. Mentimeter shown as professional experience, explicitly not a client engagement. | ✅ |
+| Schema | Page: `Service` + `OfferCatalog`, `FAQPage`, `BreadcrumbList`. Layout: `siteGraph('en')` now on all EN service and work pages, so `#organization` / `#erik` resolve (fixes **J2**). | ✅ |
+| Internal links | Added to Services nav, footer, homepage "Ways to work together" and the homepage AI-systems capability card (EN only). Links out to Growth Advisory, Growth as a Service, Fractional Growth Lead and four case studies. | ✅ |
+| Language | English only. `serviceNav.available` keeps it out of Swedish menus; hreflang = `en` + `x-default`. SV version `/sv/ai-tillvaxtkonsult/` still to write. | ◑ |
+| Meta description | 164 chars as supplied, slightly over the ~160 guideline. | ⚠️ Accepted |

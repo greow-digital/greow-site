@@ -29,9 +29,20 @@ export interface ServiceNavItem {
   tagline: Record<Lang, string>
   accent: 'jungle' | 'salmon' | 'turquoise'
   url: Record<Lang, string>
+  // Languages the page exists in. Omitted = all. Menus and links skip a
+  // service in languages it isn't published in.
+  available?: Lang[]
 }
 
 export const serviceNav: ServiceNavItem[] = [
+  {
+    key: 'aiGrowth',
+    label: { en: 'AI Growth Consultant', sv: 'AI-tillväxtkonsult' },
+    tagline: { en: 'AI-native growth & GTM systems, strategy to build', sv: 'AI-native growth- & GTM-system, från strategi till bygge' },
+    accent: 'salmon',
+    url: { en: '/ai-growth-consultant/', sv: '/sv/ai-tillvaxtkonsult/' },
+    available: ['en'],
+  },
   {
     key: 'gaas',
     label: { en: 'Growth as a Service', sv: 'Growth as a Service' },
@@ -61,6 +72,14 @@ export const serviceNav: ServiceNavItem[] = [
     url: { en: '/growth-coaching/', sv: '/sv/growth-coaching/' },
   },
 ]
+
+export function isServiceAvailable(s: ServiceNavItem, lang: Lang): boolean {
+  return !s.available || s.available.includes(lang)
+}
+
+export function servicesFor(lang: Lang): ServiceNavItem[] {
+  return serviceNav.filter((s) => isServiceAvailable(s, lang))
+}
 
 export function serviceUrl(key: string, lang: Lang): string {
   return serviceNav.find((s) => s.key === key)!.url[lang]

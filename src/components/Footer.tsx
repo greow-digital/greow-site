@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
 import { workBase } from '@/lib/work'
-import { serviceNav } from '@/lib/services'
+import { servicesFor } from '@/lib/services'
 import { business, mapsUrl } from '@/lib/business'
 import FooterMap from './FooterMap'
 
@@ -43,7 +43,7 @@ export default function Footer({ t, lang }: FooterProps) {
         <nav className="footer-nav" aria-label="Footer">
           <div className="footer-col">
             <span className="footer-col-title">{t.nav.services}</span>
-            {serviceNav.map((s) => (
+            {servicesFor(lang).map((s) => (
               <Link key={s.key} href={s.url[lang]}>{s.label[lang]}</Link>
             ))}
           </div>

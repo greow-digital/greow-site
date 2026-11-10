@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
-import { serviceNav, serviceUrl } from '@/lib/services'
+import { serviceNav, servicesFor, serviceUrl, isServiceAvailable } from '@/lib/services'
 import { projects } from '@/lib/work'
 import { capabilityLinks, plannedLink } from '@/lib/routes'
 import CalEmbed from './CalEmbed'
@@ -172,10 +172,10 @@ export default function HomePage({ t, lang }: HomePageProps) {
                 .map(projectBySlug)
                 .filter((p): p is NonNullable<typeof p> => Boolean(p && p.href))
               const links = [
-                ...wiring.services.map((key) => ({
-                  href: serviceUrl(key, lang),
-                  label: serviceNav.find((s) => s.key === key)!.label[lang],
-                })),
+                ...wiring.services
+                  .map((key) => serviceNav.find((s) => s.key === key)!)
+                  .filter((s) => isServiceAvailable(s, lang))
+                  .map((s) => ({ href: serviceUrl(s.key, lang), label: s.label[lang] })),
                 ...wiring.planned
                   .map((key) => plannedLink(key, lang))
                   .filter((l): l is NonNullable<typeof l> => l !== null),
@@ -420,7 +420,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
               {lang === 'en' ? 'Ways to work together' : 'Sätt att jobba tillsammans'}
             </p>
             <div className="home-services-links">
-              {serviceNav.map((s) => (
+              {servicesFor(lang).map((s) => (
                 <Link key={s.key} href={s.url[lang]} className="home-service-link">
                   {s.label[lang]} <span aria-hidden="true">→</span>
                 </Link>

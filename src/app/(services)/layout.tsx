@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { ubuntu, sourceSans } from '@/lib/fonts'
+import { siteGraph } from '@/lib/schema'
 import '../globals.css'
 
 const SITE_URL = 'https://greow.digital'
@@ -28,6 +29,11 @@ export const metadata: Metadata = {
 export default function ServicesLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${ubuntu.variable} ${sourceSans.variable}`}>
+      <head>
+        {/* Organization + Person + WebSite, so page-level nodes that reference
+            #organization / #erik resolve on this page. */}
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph('en')) }} />
+      </head>
       <body>{children}</body>
     </html>
   )

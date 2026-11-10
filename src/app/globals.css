@@ -2192,3 +2192,215 @@ a.gtm-proof:focus-visible { outline: 3px solid var(--salmon); outline-offset: 3p
   .case-approach-steps, .case-built-grid { grid-template-columns: 1fr; }
   .case-services { padding-top: 64px; }
 }
+
+/* ══════════════════════════════════════════════════════════════════════════
+   GTM SYSTEM DIAGRAM (gsys) — animated flow on /ai-gtm-systems/
+   One 5.4s cycle: each column glows in turn (delay = 1s per step), a dot
+   travels along each connector between them, then activation channels light
+   up one by one. Only transform / opacity / box-shadow are animated.
+   ══════════════════════════════════════════════════════════════════════════ */
+.gsys-header { max-width: 760px; margin-bottom: 40px; }
+.gsys-header h2 em { font-style: normal; color: var(--jungle); font-weight: 500; }
+.gsys { margin: 0; --gsys-cycle: 5.4s; }
+
+.gsys-cycle {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 100px;
+  padding: 10px 22px 10px 14px; box-shadow: var(--shadow-sm); margin-bottom: 28px;
+  font-size: 0.9rem; color: var(--jet-light);
+}
+.gsys-cycle strong { display: block; font-family: var(--font-heading), Arial, sans-serif; color: var(--jet); font-size: 0.98rem; }
+.gsys-cycle-steps { display: block; }
+.gsys-cycle-icon { display: inline-flex; color: var(--jungle); animation: gsys-spin 8s linear infinite; }
+.gsys-cycle-icon svg { width: 26px; height: 26px; }
+
+.gsys-flow {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 34px 1fr 34px 1.25fr 34px 1.1fr 34px 1fr;
+  align-items: stretch;
+}
+.gsys-col {
+  position: relative; display: flex; flex-direction: column; gap: 10px;
+  background: rgba(255,255,255,0.6); border: 1.5px solid var(--border);
+  border-radius: var(--radius); padding: 18px 14px;
+  box-shadow: var(--shadow-sm);
+  animation: gsys-glow var(--gsys-cycle) ease-in-out infinite;
+}
+.gsys-col-1 { animation-delay: 0s; }
+.gsys-col-2 { animation-delay: 1s; }
+.gsys-col-3 { animation-delay: 2s; }
+.gsys-col-4 { animation-delay: 3s; }
+.gsys-col-5 { animation-delay: 4s; }
+.gsys-col-title {
+  font-family: var(--font-heading), Arial, sans-serif; font-size: 0.78rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--jungle); padding: 2px 6px 4px;
+}
+.gsys-ico {
+  flex: 0 0 auto; display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 9px; background: var(--turquoise-soft); color: var(--jungle);
+}
+.gsys-ico-lg { width: 38px; height: 38px; border-radius: 11px; }
+.gsys-ico-lg svg { width: 20px; height: 20px; }
+
+.gsys-pills { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.gsys-pills li {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--white); border: 1px solid var(--border); border-radius: 12px;
+  padding: 8px 10px; font-size: 0.88rem; font-weight: 600; color: var(--jet); line-height: 1.3;
+}
+.gsys-note {
+  display: flex; gap: 10px; margin-top: auto;
+  background: var(--turquoise-soft); border-radius: 12px; padding: 12px;
+  font-size: 0.8rem; line-height: 1.5; color: var(--jet-light);
+}
+.gsys-note strong { display: block; color: var(--jet); font-size: 0.88rem; margin-bottom: 2px; }
+.gsys-note .gsys-ico { background: var(--white); }
+
+.gsys-panel {
+  flex: 1; display: flex; flex-direction: column; gap: 10px;
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 14px;
+}
+.gsys-lead { font-weight: 700; color: var(--jet); font-size: 0.92rem; line-height: 1.4; }
+.gsys-checks { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.gsys-checks li { display: flex; align-items: center; gap: 8px; font-size: 0.86rem; color: var(--jet); }
+.gsys-check {
+  display: inline-flex; width: 20px; height: 20px; border-radius: 50%;
+  align-items: center; justify-content: center; border: 1.5px solid var(--turquoise-dark); color: var(--jungle);
+}
+.gsys-check svg { width: 12px; height: 12px; }
+
+.gsys-docs { list-style: none; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.gsys-doc {
+  flex: 1; display: flex; gap: 10px; align-items: flex-start;
+  background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 12px;
+  font-size: 0.8rem; line-height: 1.5; color: var(--jet-light);
+}
+.gsys-doc strong { display: block; font-family: var(--font-heading), Arial, sans-serif; font-size: 0.98rem; color: var(--jet); margin-bottom: 2px; }
+.gsys-doc-2 .gsys-ico { background: var(--salmon-soft); color: var(--salmon-dark); }
+.gsys-doc-3 .gsys-ico { background: var(--turquoise-light); color: var(--jungle-dark); }
+
+.gsys-engine {
+  align-items: center; text-align: center;
+  background: var(--jungle); border-color: var(--jungle); color: rgba(255,255,255,0.85);
+  animation-name: gsys-glow-engine;
+}
+.gsys-engine-mark {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 58px; height: 58px; border-radius: 16px; margin-top: 6px;
+  background: var(--salmon); color: var(--white);
+  animation: gsys-breathe 2.7s ease-in-out infinite;
+}
+.gsys-engine-mark svg { width: 30px; height: 30px; }
+.gsys-engine-title { font-family: var(--font-heading), Arial, sans-serif; font-size: 1.2rem; color: var(--white); line-height: 1.2; }
+.gsys-engine-body { font-size: 0.85rem; line-height: 1.5; }
+.gsys-tiers { list-style: none; display: flex; flex-direction: column; gap: 8px; width: 100%; margin-top: auto; text-align: left; }
+.gsys-tier {
+  display: flex; gap: 10px; align-items: flex-start;
+  border-radius: 12px; padding: 10px; font-size: 0.78rem; line-height: 1.45;
+}
+.gsys-tier strong { display: block; font-size: 0.86rem; }
+.gsys-tier-1 { background: var(--turquoise-light); color: var(--jungle-dark); }
+.gsys-tier-1 strong { color: var(--jungle-dark); }
+.gsys-tier-1 .gsys-ico { background: var(--white); color: var(--jungle); }
+.gsys-tier-1 .gsys-ico svg { animation: gsys-flicker var(--gsys-cycle) ease-in-out infinite; animation-delay: 3.2s; }
+.gsys-tier-2 { background: rgba(255,255,255,0.12); color: rgba(255,255,255,0.85); }
+.gsys-tier-2 strong { color: var(--white); }
+.gsys-tier-2 .gsys-ico { background: rgba(255,255,255,0.16); color: var(--white); }
+
+.gsys-channel { animation: gsys-light var(--gsys-cycle) ease-in-out infinite; }
+.gsys-channel-1 { animation-delay: 4.3s; }
+.gsys-channel-2 { animation-delay: 4.45s; }
+.gsys-channel-3 { animation-delay: 4.6s; }
+.gsys-channel-4 { animation-delay: 4.75s; }
+.gsys-channel-5 { animation-delay: 4.9s; }
+
+/* connectors with a travelling pulse */
+.gsys-conn { position: relative; display: flex; align-items: center; }
+.gsys-conn-line { position: absolute; left: 4px; right: 4px; top: 50%; height: 2px; background: var(--turquoise-dark); opacity: 0.55; }
+.gsys-conn-line::after {
+  content: ''; position: absolute; right: -2px; top: -4px;
+  border-left: 7px solid var(--turquoise-dark); border-top: 5px solid transparent; border-bottom: 5px solid transparent;
+}
+.gsys-conn-dot {
+  position: absolute; left: 0; top: 50%; width: 10px; height: 10px; margin-top: -5px;
+  border-radius: 50%; background: var(--salmon); box-shadow: 0 0 0 4px rgba(255,135,115,0.25);
+  opacity: 0; animation: gsys-travel-x var(--gsys-cycle) ease-in-out infinite;
+}
+.gsys-conn-1 .gsys-conn-dot { animation-delay: 0.5s; }
+.gsys-conn-2 .gsys-conn-dot { animation-delay: 1.5s; }
+.gsys-conn-3 .gsys-conn-dot { animation-delay: 2.5s; }
+.gsys-conn-4 .gsys-conn-dot { animation-delay: 3.5s; }
+
+/* feedback loop */
+.gsys-feedback { position: relative; height: 92px; margin-top: 6px; }
+.gsys-loop { position: absolute; left: 9%; right: 9%; top: 0; width: 82%; height: 64px; overflow: visible; }
+.gsys-loop path { fill: none; stroke-width: 2; vector-effect: non-scaling-stroke; }
+.gsys-loop-track { stroke: var(--turquoise-dark); stroke-dasharray: 6 6; opacity: 0.6; }
+.gsys-loop-flow {
+  stroke: var(--salmon); stroke-dasharray: 40 1000; stroke-linecap: round;
+  animation: gsys-loop 5.4s linear infinite;
+}
+.gsys-loop-arrow {
+  position: absolute; left: calc(9% + 82% * 0.05 - 7px); top: -10px;
+  color: var(--turquoise-dark); font-weight: 700; font-size: 1rem;
+}
+.gsys-feedback-pill {
+  position: absolute; left: 50%; top: 40px; transform: translate(-50%, -50%);
+  display: flex; align-items: center; gap: 12px; white-space: nowrap;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 100px;
+  padding: 10px 22px 10px 12px; box-shadow: var(--shadow-sm);
+  font-size: 0.86rem; color: var(--jet-light);
+}
+.gsys-feedback-pill strong { display: block; font-family: var(--font-heading), Arial, sans-serif; color: var(--jet); font-size: 0.95rem; }
+.gsys-feedback-pill > span:last-child > span { display: block; }
+.gsys-caption { margin-top: 16px; font-size: 0.88rem; font-style: italic; color: var(--jet-light); text-align: center; }
+
+@keyframes gsys-glow {
+  0%, 26%, 100% { box-shadow: var(--shadow-sm); border-color: var(--border); }
+  9% { box-shadow: 0 0 0 4px rgba(165,219,194,0.85), var(--shadow-md); border-color: var(--turquoise-dark); }
+}
+@keyframes gsys-glow-engine {
+  0%, 26%, 100% { box-shadow: 0 8px 24px rgba(25,91,90,0.25); }
+  9% { box-shadow: 0 0 0 5px rgba(255,135,115,0.55), 0 16px 40px rgba(25,91,90,0.35); }
+}
+@keyframes gsys-travel-x {
+  0% { transform: translateX(0); opacity: 0; }
+  3% { opacity: 1; }
+  15% { transform: translateX(24px); opacity: 1; }
+  18%, 100% { transform: translateX(24px); opacity: 0; }
+}
+@keyframes gsys-travel-y {
+  0% { transform: translateY(0); opacity: 0; }
+  3% { opacity: 1; }
+  15% { transform: translateY(26px); opacity: 1; }
+  18%, 100% { transform: translateY(26px); opacity: 0; }
+}
+@keyframes gsys-light {
+  0%, 12%, 100% { background: var(--white); border-color: var(--border); }
+  4% { background: var(--turquoise-soft); border-color: var(--turquoise-dark); }
+}
+@keyframes gsys-breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.07); } }
+@keyframes gsys-flicker { 0%, 14%, 100% { transform: scale(1); } 4% { transform: scale(1.25); } 8% { transform: scale(0.95); } }
+@keyframes gsys-spin { to { transform: rotate(360deg); } }
+@keyframes gsys-loop { from { stroke-dashoffset: 0; } to { stroke-dashoffset: -1040; } }
+
+@media (max-width: 1100px) {
+  .gsys-flow { grid-template-columns: 1fr; max-width: 560px; margin: 0 auto; }
+  .gsys-conn { height: 36px; justify-content: center; }
+  .gsys-conn-line { left: 50%; right: auto; top: 4px; bottom: 4px; width: 2px; height: auto; margin-left: -1px; }
+  .gsys-conn-line::after {
+    right: auto; top: auto; bottom: -2px; left: -4px;
+    border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid var(--turquoise-dark); border-bottom: 0;
+  }
+  .gsys-conn-dot { left: 50%; top: 0; margin: 0 0 0 -5px; animation-name: gsys-travel-y; }
+  .gsys-loop, .gsys-loop-arrow { display: none; }
+  .gsys-feedback { height: auto; margin-top: 18px; display: flex; justify-content: center; }
+  .gsys-feedback-pill { position: static; transform: none; white-space: normal; border-style: dashed; border-color: var(--turquoise-dark); }
+  .gsys-feedback-pill::before { content: '↺'; color: var(--jungle); font-weight: 700; font-size: 1.2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gsys *, .gsys-col { animation: none !important; }
+  .gsys-conn-dot { display: none; }
+  .gsys-loop-flow { display: none; }
+}

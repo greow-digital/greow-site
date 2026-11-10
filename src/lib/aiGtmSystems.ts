@@ -189,6 +189,48 @@ const aiGtmEn = {
     disclaimer: 'Illustrative future-state workflow. Actual capabilities depend on the systems and integrations implemented.',
   },
 
+  gtmSystem: {
+    label: 'A GTM system in practice',
+    h2a: 'From product development',
+    h2b: 'to market impact.',
+    intro:
+      'Here is the same thinking applied to a product launch. Product context is captured once, and a connected system turns it into activation across every channel – automated for small releases, curated for the big ones.',
+    cycle: { label: 'Continuous cycle', steps: ['Build', 'Launch', 'Activate', 'Learn'] },
+    product: {
+      title: 'Product',
+      items: ['New features', 'Releases & updates', 'Pricing & packaging', 'Integrations'],
+      noteTitle: 'Build & improve',
+      noteBody: 'Product teams ship continuously, with product marketing involved early with market and customer input.',
+    },
+    launch: {
+      title: 'Launch board',
+      lead: 'Plan, tier and prioritise what ships',
+      items: ['Tier & priority', 'Use cases', 'ICPs', 'Positioning', 'Messaging', 'USPs'],
+    },
+    context: {
+      title: 'GTM context',
+      items: [
+        { title: 'Product facts', body: 'Authoritative documentation of what the product does. Owned by Product.' },
+        { title: 'Market context', body: 'Strategy, ICPs, personas, positioning and messaging. Owned by Product Marketing.' },
+        { title: 'Assets', body: 'Images, video, guides and other launch assets, ordered early.' },
+      ],
+    },
+    engine: {
+      title: 'Growth Operating System',
+      body: 'Turns product context into go-to-market activation with agents, workflows and human curation.',
+      tiers: [
+        { size: 'S', title: 'Small releases', body: 'Automated end to end, always up to date' },
+        { size: 'M/L', title: 'Medium & large', body: 'Human curation and new campaigns' },
+      ],
+    },
+    activation: {
+      title: 'Activation',
+      items: ['Website', 'Email', 'In-app messages', 'Video', 'LinkedIn & social'],
+    },
+    feedback: { title: 'Feedback & insights', body: 'Product · Marketing · Growth' },
+    caption: 'Illustrative model. What gets automated depends on your stack, your data and your release process.',
+  },
+
   agenticWeb: {
     label: 'Agentic web',
     h2: 'What if your website could do more than display content?',
@@ -698,6 +740,48 @@ const aiGtmSv: AiGtmContent = {
     loop: 'En sammanhängande loop. Från signal till insikt till handling till lärande.',
     closing: 'Det är potentialen i ett AI-native Growth Operating System.',
     disclaimer: 'Illustrativt framtida arbetsflöde. Faktiska förmågor beror på vilka system och integrationer som implementeras.',
+  },
+
+  gtmSystem: {
+    label: 'Ett GTM-system i praktiken',
+    h2a: 'Från produktutveckling',
+    h2b: 'till effekt på marknaden.',
+    intro:
+      'Här är samma tänkande tillämpat på en produktlansering. Produktkontexten fångas en gång, och ett sammankopplat system gör den till aktivering i alla kanaler – automatiserat för små releaser, kurerat för de stora.',
+    cycle: { label: 'Kontinuerlig cykel', steps: ['Bygg', 'Lansera', 'Aktivera', 'Lär'] },
+    product: {
+      title: 'Produkt',
+      items: ['Nya funktioner', 'Releaser & uppdateringar', 'Prissättning & paketering', 'Integrationer'],
+      noteTitle: 'Bygg & förbättra',
+      noteBody: 'Produktteamen levererar löpande, med produktmarknadsföring involverad tidigt med marknads- och kundinsikter.',
+    },
+    launch: {
+      title: 'Lanseringstavla',
+      lead: 'Planera, nivåsätt och prioritera det som släpps',
+      items: ['Nivå & prioritet', 'Användningsfall', 'ICP:er', 'Positionering', 'Budskap', 'USP:ar'],
+    },
+    context: {
+      title: 'GTM-kontext',
+      items: [
+        { title: 'Produktfakta', body: 'Auktoritativ dokumentation av vad produkten gör. Ägs av produkt.' },
+        { title: 'Marknadskontext', body: 'Strategi, ICP:er, personas, positionering och budskap. Ägs av produktmarknadsföring.' },
+        { title: 'Material', body: 'Bilder, video, guider och annat lanseringsmaterial, beställt tidigt.' },
+      ],
+    },
+    engine: {
+      title: 'Growth Operating System',
+      body: 'Gör produktkontext till go-to-market-aktivering med agenter, arbetsflöden och mänsklig kurering.',
+      tiers: [
+        { size: 'S', title: 'Små releaser', body: 'Automatiserat hela vägen, alltid uppdaterat' },
+        { size: 'M/L', title: 'Mellanstora & stora', body: 'Mänsklig kurering och nya kampanjer' },
+      ],
+    },
+    activation: {
+      title: 'Aktivering',
+      items: ['Webbplats', 'E-post', 'Meddelanden i produkten', 'Video', 'LinkedIn & sociala medier'],
+    },
+    feedback: { title: 'Feedback & insikter', body: 'Produkt · Marknad · Growth' },
+    caption: 'Illustrativ modell. Vad som automatiseras beror på er stack, er data och er releaseprocess.',
   },
 
   agenticWeb: {

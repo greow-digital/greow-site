@@ -4,6 +4,7 @@ import { aiGtmByLang } from '@/lib/aiGtmSystems'
 import { projects, workIndexCopy, type Lang } from '@/lib/work'
 import { serviceNav, servicesFor, serviceUrl } from '@/lib/services'
 import CalEmbed from './CalEmbed'
+import GtmSystemDiagram from './GtmSystemDiagram'
 import Footer from './Footer'
 
 // /ai-gtm-systems/ (EN) and /sv/ai-gtm-system/ (SV). Shares the section
@@ -223,6 +224,20 @@ export default function AiGtmSystemsPage({ t, lang }: { t: Translations; lang: L
           <p className="gtm-loop">{c.bigPicture.loop}</p>
           <p className="gtm-loop-closing">{c.bigPicture.closing}</p>
           <p className="gtm-disclaimer-light">{c.bigPicture.disclaimer}</p>
+        </div>
+      </section>
+
+      {/* GTM SYSTEM IN PRACTICE — animated diagram */}
+      <section className="section service-sec soft gsys-section" aria-labelledby="gtm-system">
+        <div className="container">
+          <div className="gsys-header">
+            <p className="section-label">{c.gtmSystem.label}</p>
+            <h2 id="gtm-system">
+              {c.gtmSystem.h2a} <em>{c.gtmSystem.h2b}</em>
+            </h2>
+            <p className="service-text">{c.gtmSystem.intro}</p>
+          </div>
+          <GtmSystemDiagram g={c.gtmSystem} />
         </div>
       </section>
 

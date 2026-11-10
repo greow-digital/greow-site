@@ -498,3 +498,11 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | SEO (T2/T3) | Outcome-led titles (57–62 chars) and descriptions (152–157 chars) for Sands and Bnbalyze in both languages; Article JSON-LD uses the same description. Other case titles still generic. | ◑ 2 of 9 cases |
 | Internal links | Case → service links: Sands → AI GTM Systems, AI Growth Consultant, Growth as a Service; Bnbalyze → AI Growth Consultant, AI GTM Systems, Growth Advisory (I4 for these two cases). | ✅ |
 | Mentimeter | Unpublished draft in `docs/drafts/mentimeter-experience.md` (EN + SV), framed as employment, no metrics, with an approval checklist. Not built or linked. | ✅ Draft only |
+
+### 2026-11-10 — Animated GTM system diagram on AI GTM Systems (EN/SV)
+
+| Item | Change | Status |
+|---|---|---|
+| Visual | New section "A GTM system in practice" / "Ett GTM-system i praktiken": Product → Launch board → GTM context → Growth Operating System → Activation, with a feedback loop. HTML/CSS (`GtmSystemDiagram.tsx`, `gsys-*`), not an image: text is crawlable and translated. | ✅ |
+| Motion | 5.4 s pulse: columns glow in sequence, a dot travels each connector, activation channels light in turn, the feedback line flows back to Product. Transform/opacity/box-shadow only; fully disabled under `prefers-reduced-motion`. Vertical layout below 1100 px. | ✅ |
+| Source | Generalised from a Mentimeter GTM-process sketch supplied by the founder: no Mentimeter brand, products or internal document names; labelled "Illustrative model". | ⚠️ Founder to confirm comfort with publishing |

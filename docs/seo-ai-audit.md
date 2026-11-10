@@ -479,3 +479,12 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | Claims | Scenario labelled illustrative; Growthship labelled an operating model, not a product; Mentimeter labelled professional experience, not a client. Proof metrics from `work.ts` (Sands, Bnbalyze, Leadfeeder/Dealfront, Refapp). | ✅ |
 | Linking | Promoted from the planned-pages registry to `serviceNav` (`aiGtm`): Services menu, footer, homepage "Ways to work together" and AI-systems capability card, plus related-services on both AI Growth Consultant pages. Language switcher targets the matching translation. | ✅ |
 | Overlap | Shares themes with `/ai-growth-consultant/` (Growth OS, Sands, Mentimeter). Intents kept distinct: *consultant* (who/advisory) vs *systems & automation* (what gets built). Both pages cross-link. Monitor GSC for query overlap. | ⚠️ Watch |
+
+### 2026-11-10 — AI GTM Systems: product-led refinement (founder brief)
+
+| Item | Change | Status |
+|---|---|---|
+| Visual | Growthship diagram (four modules in a clockwise loop around a shared-context core) and a five-stage flow Data → Insight → Agent → Execution → Learning with UI-style cards, replacing the text timeline. | ✅ EN + SV |
+| Claim accuracy | New "Built · In development · Possible" section. *Built* lists only what the Sands case documents; *In development* is Mentimeter (employment, not a client); *Possible* is scoped per engagement. Growthship lists relabelled "Examples of what can be built" with a scope note. | ✅ |
+| Agentic web | Four capability cards (custom web dev, agent-ready experiences, AI-driven content ops, integrated lead flows) with concrete examples, Sands proof chips and a "why the combination matters" panel. | ✅ |
+| Brand | The Growthship framed as Erik's operating model ("How I think about it"), not a product; FAQ clarifies Greow is the consultancy, not a licensed platform. No product schema. | ✅ |

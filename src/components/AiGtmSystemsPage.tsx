@@ -9,6 +9,31 @@ import Footer from './Footer'
 // /ai-gtm-systems/ (EN) and /sv/ai-gtm-system/ (SV). Shares the section
 // patterns and ai-* styles of the AI Growth Consultant page; gtm-* styles add
 // the silo cards, the stack diagram and the scenario timeline.
+// Simple line icons for the four Growthship modules (decorative).
+const moduleIcons: Record<string, JSX.Element> = {
+  bridge: (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M3 17h18M5 17V9m14 8V9M3 9c3 0 6-3 9-3s6 3 9 3M9 17v-5m6 5v-5" />
+    </svg>
+  ),
+  radar: (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="9" /><circle cx="12" cy="12" r="5" /><path d="M12 12l6-6" /><circle cx="15.5" cy="9" r="1" fill="currentColor" />
+    </svg>
+  ),
+  engine: (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9l2.1 2.1m10 10 2.1 2.1M4.9 19.1 7 17m10-10 2.1-2.1" />
+    </svg>
+  ),
+  launchpad: (
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M12 3c3 2.5 4.5 6 4 10l-2 3h-4l-2-3c-.5-4 1-7.5 4-10Z" /><circle cx="12" cy="9.5" r="1.5" /><path d="M8 13l-3 3 3 1m8-4 3 3-3 1M10 19l2 2 2-2" />
+    </svg>
+  ),
+}
+
 export default function AiGtmSystemsPage({ t, lang }: { t: Translations; lang: Lang }) {
   const c = aiGtmByLang[lang]
   const caseBySlug = (slug: string) => projects[lang].find((p) => p.slug === slug)
@@ -125,6 +150,29 @@ export default function AiGtmSystemsPage({ t, lang }: { t: Translations; lang: L
             <h2 id="gtm-growthship">{c.growthship.h2}</h2>
             {c.growthship.intro.map((p) => <p key={p}>{p}</p>)}
           </div>
+          <figure className="gship">
+            <figcaption>{c.growthship.diagram.caption}</figcaption>
+            <div className="gship-grid">
+              <div className="gship-core">
+                <strong>{c.growthship.diagram.core}</strong>
+                <span>{c.growthship.diagram.coreSub}</span>
+              </div>
+              {c.growthship.diagram.modules.map((m, i) => (
+                <div key={m.key} className={`gship-module gship-${m.key}`}>
+                  <span className="gship-icon">{moduleIcons[m.key]}</span>
+                  <span className="gship-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                  <strong>{m.name}</strong>
+                  <span>{m.role}</span>
+                </div>
+              ))}
+              <span className="gship-arrow gship-a1" aria-hidden="true">→</span>
+              <span className="gship-arrow gship-a2" aria-hidden="true">↓</span>
+              <span className="gship-arrow gship-a3" aria-hidden="true">←</span>
+              <span className="gship-arrow gship-a4" aria-hidden="true">↑</span>
+            </div>
+            <p className="gship-loop"><span aria-hidden="true">↻</span> {c.growthship.diagram.loop}</p>
+          </figure>
+          <p className="gship-scope">{c.growthship.scopeNote}</p>
           <div className="capability-grid ai-offer-grid">
             {c.growthship.items.map((item) => (
               <article key={item.num} className="capability-card">
@@ -155,8 +203,22 @@ export default function AiGtmSystemsPage({ t, lang }: { t: Translations; lang: L
           <div className="ai-how-intro">
             {c.bigPicture.intro.map((p) => <p key={p}>{p}</p>)}
           </div>
-          <ol className="gtm-timeline">
-            {c.bigPicture.steps.map((step) => <li key={step}>{step}</li>)}
+          <ol className="gtm-flow">
+            {c.bigPicture.stages.map((stage, i) => (
+              <li key={stage.key} className={`gtm-stage gtm-stage-${stage.key}`}>
+                <div className="gtm-stage-head">
+                  <span className="gtm-stage-step" aria-hidden="true">{i + 1}</span>
+                  <span className="gtm-stage-name">{stage.name}</span>
+                  <span className="gtm-stage-module">{stage.module}</span>
+                </div>
+                <h3>{stage.title}</h3>
+                <p>{stage.body}</p>
+                <div className="gtm-ui" aria-hidden="true">
+                  <span className="gtm-ui-bar"><i /><i /><i /></span>
+                  <span className="gtm-ui-chip"><b />{stage.chip}</span>
+                </div>
+              </li>
+            ))}
           </ol>
           <p className="gtm-loop">{c.bigPicture.loop}</p>
           <p className="gtm-loop-closing">{c.bigPicture.closing}</p>
@@ -176,12 +238,30 @@ export default function AiGtmSystemsPage({ t, lang }: { t: Translations; lang: L
             <h3 className="gtm-subheading">{c.agenticWeb.h3}</h3>
             <p className="ai-closing gtm-lead">{c.agenticWeb.lead}</p>
             <div className="gtm-web-grid">
-              {c.agenticWeb.items.map((item) => (
-                <div key={item.title} className="service-card">
-                  <strong>{item.title}</strong>
-                  <span>{item.body}</span>
-                </div>
+              {c.agenticWeb.layers.map((layer) => (
+                <article key={layer.num} className="gtm-web-card">
+                  <span className="gtm-web-num" aria-hidden="true">{layer.num}</span>
+                  <h4>{layer.title}</h4>
+                  <p>{layer.body}</p>
+                  <p className="capability-sub">{c.agenticWeb.examplesLabel}</p>
+                  <ul className="capability-points">
+                    {layer.examples.map((ex) => <li key={ex}>{ex}</li>)}
+                  </ul>
+                  {layer.proofCase && sands?.href ? (
+                    <Link href={sands.href} className="gtm-proof">
+                      <span aria-hidden="true">✓</span> {layer.proof}
+                    </Link>
+                  ) : (
+                    <p className="gtm-proof">
+                      <span aria-hidden="true">✓</span> {layer.proof}
+                    </p>
+                  )}
+                </article>
               ))}
+            </div>
+            <div className="gtm-combination">
+              <h4>{c.agenticWeb.combination.h3}</h4>
+              <p>{c.agenticWeb.combination.body}</p>
             </div>
             <p className="ai-closing">
               {c.agenticWeb.closing[0]} <strong>{c.agenticWeb.closing[1]}</strong>
@@ -255,6 +335,33 @@ export default function AiGtmSystemsPage({ t, lang }: { t: Translations; lang: L
                 </div>
               </div>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* BUILT · IN DEVELOPMENT · POSSIBLE */}
+      <section className="section service-sec white" aria-labelledby="gtm-maturity">
+        <div className="container">
+          <div className="service-sec-inner wide">
+            <p className="section-label">{c.maturity.label}</p>
+            <h2 id="gtm-maturity">{c.maturity.h2}</h2>
+            <p className="service-text ai-narrow">{c.maturity.intro}</p>
+            <div className="gtm-maturity">
+              {c.maturity.columns.map((col) => (
+                <article key={col.key} className={`gtm-mat gtm-mat-${col.key}`}>
+                  <span className="gtm-mat-badge">{col.badge}</span>
+                  <h3>{col.title}</h3>
+                  <p className="gtm-mat-context">{col.context}</p>
+                  <ul className="capability-points">
+                    {col.items.map((item) => <li key={item}>{item}</li>)}
+                  </ul>
+                  {col.link && sands?.href && (
+                    <Link href={sands.href} className="capability-link">{col.link}</Link>
+                  )}
+                  {col.note && <p className="gtm-mat-note">{col.note}</p>}
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>

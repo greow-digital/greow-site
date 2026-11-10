@@ -68,13 +68,27 @@ const aiGtmEn = {
   },
 
   growthship: {
-    label: 'The Growthship framework',
+    label: 'How I think about it',
     h2: 'One system. Four interconnected capabilities.',
     intro: [
-      'My approach is inspired by The Growthship, an AI-native Growth & GTM operating model I’ve been developing through my work with modern growth organizations.',
-      'The concept brings together four interconnected capabilities.',
+      'I map growth work onto four connected capabilities. I call the model The Growthship: an operating model developed through my work with modern growth organizations.',
+      'It’s a way of thinking, not a product you buy. At Greow, I use it to decide what is worth building for your business – and in what order.',
     ],
-    enableLabel: 'What it can enable',
+    diagram: {
+      caption: 'The Growthship – an operating model, not a product',
+      core: 'Shared context',
+      coreSub: 'Data, knowledge and human review',
+      loop: 'Learning feeds back into the system',
+      modules: [
+        { key: 'bridge', name: 'The Bridge', role: 'Data → shared insight' },
+        { key: 'radar', name: 'The Radar', role: 'Signals → opportunities' },
+        { key: 'engine', name: 'The Engine Room', role: 'Agents → assets & actions' },
+        { key: 'launchpad', name: 'The Launchpad', role: 'Experiments → impact' },
+      ],
+    },
+    scopeNote:
+      'The lists below are examples, not a packaged product. What we build depends on your stack, your data and your priorities – and starts with one focused use case.',
+    enableLabel: 'Examples of what can be built',
     outcomeLabel: 'The outcome',
     items: [
       {
@@ -161,16 +175,14 @@ const aiGtmEn = {
     h2b: 'From decisions to action.',
     intro: [
       'The real value doesn’t come from any single agent, workflow or dashboard. It comes from connecting them.',
-      'Imagine this:',
+      'Here is what one loop could look like:',
     ],
-    steps: [
-      'Your analytics detects a drop in conversion rates on a key landing page.',
-      'An AI agent investigates the change, combines it with recent campaign data and identifies a potential issue.',
-      'Another agent reviews the page, customer feedback and competitive positioning.',
-      'The system suggests three possible experiments, complete with hypotheses, expected impact and implementation requirements.',
-      'Your growth team reviews the recommendations and selects one.',
-      'A workflow helps build the new landing page variation, prepares the experiment and supports the launch.',
-      'Results are monitored, documented and fed back into the system.',
+    stages: [
+      { key: 'data', name: 'Data', module: 'The Bridge', title: 'Everything in one context', body: 'Analytics, campaign, CRM and page data are connected into a shared context that people and agents can work from.', chip: 'GA4 · Ads · CRM · CMS' },
+      { key: 'insight', name: 'Insight', module: 'The Radar', title: 'A signal worth acting on', body: 'A drop in conversion on a key landing page is detected and combined with recent campaign data to find a likely cause.', chip: 'Conversion drop flagged' },
+      { key: 'agent', name: 'Agent', module: 'The Engine Room', title: 'Proposals, not just alerts', body: 'An agent reviews the page, customer feedback and competitive positioning, then suggests three experiments with hypotheses and expected impact.', chip: '3 experiment proposals' },
+      { key: 'execution', name: 'Execution', module: 'The Launchpad', title: 'Humans decide, workflows ship', body: 'Your team picks one. A workflow builds the landing page variant, sets up the test and supports the launch.', chip: 'Approved → variant live' },
+      { key: 'learning', name: 'Learning', module: 'The Bridge', title: 'Every test makes the next one smarter', body: 'Results are measured, documented and fed back into the shared context.', chip: 'Result added to context' },
     ],
     loop: 'One continuous loop. From signal to insight to action to learning.',
     closing: 'That’s the potential of an AI-native Growth Operating System.',
@@ -181,18 +193,50 @@ const aiGtmEn = {
     label: 'Agentic web',
     h2: 'What if your website could do more than display content?',
     intro: [
-      'For years, websites have been built around pages, templates and traditional content management systems. Marketing teams depend on developers to launch new experiences. Content gets trapped in rigid structures. Lead information gets passed between disconnected systems.',
-      'And now AI is changing how people discover, evaluate and interact with businesses online. It’s time to rethink the website itself.',
+      'Most websites are still built around pages, templates and a CMS that marketing can’t change without a developer. Content gets trapped in rigid structures, and leads get passed between systems that don’t talk to each other.',
+      'At the same time, AI is changing how people – and AI assistants acting for them – discover, evaluate and contact businesses. That makes the website more important, not less.',
     ],
-    h3: 'From static websites to intelligent growth platforms.',
-    lead: 'I help businesses explore and build modern digital experiences where websites, content, data and commercial workflows work together. This can include:',
-    items: [
-      { title: 'Custom websites and CMS', body: 'Flexible websites and content systems designed around your business, with AI-assisted development reducing the friction between idea and implementation.' },
-      { title: 'Agent-ready content and experiences', body: 'Structured, accessible content and interfaces designed for a world where both people and AI-powered systems discover and interact with digital services.' },
-      { title: 'Connected lead generation', body: 'Forms, lead capture, enrichment, qualification, routing and backoffice workflows that connect the website directly to commercial operations.' },
-      { title: 'Automated content operations', body: 'Workflows that support research, content production, optimization and publishing while keeping quality and human oversight in place.' },
-      { title: 'Custom growth applications', body: 'Internal tools, backoffice interfaces and purpose-built applications that remove manual work and help teams operate more efficiently.' },
+    h3: 'Four capabilities. One growth platform.',
+    lead: 'This is where Greow is most different. Not a website project, not an AI pilot, but the combination:',
+    examplesLabel: 'What it looks like',
+    layers: [
+      {
+        num: '01',
+        title: 'Custom web development',
+        body: 'Websites and CMS built around your business, with AI-assisted development cutting the time from idea to live page.',
+        examples: ['Code for what’s stable, a headless CMS for what editors change daily', 'Fast, measurable pages built for conversion', 'New pages and templates without waiting in a dev queue'],
+        proof: 'Built for Sands: Next.js + Sanity, ~80 pages',
+        proofCase: true,
+      },
+      {
+        num: '02',
+        title: 'Agent-ready experiences',
+        body: 'Structured, accessible content that both people and AI-powered systems can find, understand and act on.',
+        examples: ['Structured data describing your company, services and people', 'Clear, crawlable pages that answer real buyer questions', 'Interfaces designed for assistants, not just browsers'],
+        proof: 'Applied for Sands and on greow.digital: structured data',
+        proofCase: false,
+      },
+      {
+        num: '03',
+        title: 'AI-driven content operations',
+        body: 'Research, briefs, drafts, optimisation and publishing connected in one workflow – with a human approving what goes live.',
+        examples: ['Programmatic pages generated from structured data', 'AI-assisted research, drafting and on-page optimisation', 'Publishing workflows with review and quality control'],
+        proof: 'Built for Sands: programmatic area pages, CMS structure built via MCP from Claude Code',
+        proofCase: true,
+      },
+      {
+        num: '04',
+        title: 'Integrated lead flows',
+        body: 'Every form, calculator and chat connected to your commercial process, so each lead is captured, routed and traced.',
+        examples: ['Multiple ways in: forms, calculators, quizzes and chat', 'Enrichment, qualification and routing to the right person', 'Tracking from ad click to closed deal'],
+        proof: 'Built for Sands: roof test, calculator, chat and quote form, traced from the ad click',
+        proofCase: true,
+      },
     ],
+    combination: {
+      h3: 'Why the combination matters',
+      body: 'AI advice often stops at strategy or a single tool. Website projects often stop at launch. The value is in connecting them: a site that’s fast to change, content that’s easy to produce, pages machines can understand, and leads that flow straight into your sales process.',
+    },
     closing: ['The goal isn’t simply to build a faster website.', 'It’s to turn your digital presence into an active part of your growth engine.'],
   },
 
@@ -250,6 +294,58 @@ const aiGtmEn = {
     },
     moreLabel: 'More related work',
     moreCases: ['bnbalyze', 'leadfeeder-dealfront', 'refapp'],
+  },
+
+  maturity: {
+    label: 'Where things stand',
+    h2: 'Built, in development, possible.',
+    intro: 'AI is easy to overpromise. This is the honest split between what I have built, what I am developing in my current role and what we can build together.',
+    columns: [
+      {
+        key: 'built',
+        badge: 'Built',
+        title: 'Implemented for a Greow client',
+        context: 'Sands Entreprenad',
+        items: [
+          'Next.js platform of ~80 pages with a Sanity CMS, built agentically in Claude Code',
+          'Multiple ways in for leads: roof test, price calculator, chat and quote form',
+          'Lead automation: form → webhook → sheet + email, with the conversion sent to GA4 and Google Ads',
+          'Programmatic area pages, structured data and technical SEO',
+          'Automated weekly Ads, GA4 and Search Console report',
+        ],
+        link: 'Read the Sands case →',
+        note: '',
+      },
+      {
+        key: 'dev',
+        badge: 'In development',
+        title: 'Explored in my current role',
+        context: 'Mentimeter – professional experience, not a Greow client',
+        items: [
+          'The Growthship as an operating model for a growth team',
+          'Connecting data sources into shared insights',
+          'AI-assisted research, content and operational automation',
+          'Signal detection and experiment loops',
+        ],
+        link: '',
+        note: '',
+      },
+      {
+        key: 'possible',
+        badge: 'Possible',
+        title: 'What we can build for you',
+        context: 'Scoped per engagement',
+        items: [
+          'Custom AI agents for research, content and campaign operations',
+          'Workflow automation and integrations across your stack',
+          'Agent-ready website, CMS and content operations',
+          'Lead routing, enrichment and backoffice tools',
+          'Monitoring, recommendations and experiment workflows',
+        ],
+        link: '',
+        note: 'Scoped in Discover & Design, then built one use case at a time.',
+      },
+    ],
   },
 
   build: {
@@ -359,10 +455,10 @@ const aiGtmEn = {
         ],
       },
       {
-        q: 'Is The Growthship a software product?',
+        q: 'Is The Growthship a product I can buy?',
         a: [
-          'The Growthship is the name of an AI-native Growth & GTM operating model developed through my professional work. It provides a conceptual framework for connecting insights, AI agents, opportunities and execution.',
-          'It’s not presented here as an off-the-shelf commercial software product.',
+          'No. The Growthship is the operating model behind how I work – a way of connecting insights, AI agents, opportunities and execution, developed through my professional experience.',
+          'Greow is a consultancy. What you get is senior advice and hands-on implementation built around your stack and your priorities, not a licensed platform.',
         ],
       },
       {
@@ -483,13 +579,27 @@ const aiGtmSv: AiGtmContent = {
   },
 
   growthship: {
-    label: 'Growthship-ramverket',
+    label: 'Så tänker jag',
     h2: 'Ett system. Fyra sammankopplade förmågor.',
     intro: [
-      'Mitt arbetssätt är inspirerat av The Growthship, en AI-native operativ modell för growth och GTM som jag har utvecklat genom mitt arbete med moderna growth-organisationer.',
-      'Konceptet samlar fyra sammankopplade förmågor.',
+      'Jag delar upp growth-arbete i fyra sammankopplade förmågor. Modellen kallar jag The Growthship – en operativ modell som jag har utvecklat genom mitt arbete med moderna growth-organisationer.',
+      'Det är ett sätt att tänka, inte en produkt man köper. På Greow använder jag den för att avgöra vad som är värt att bygga för er verksamhet – och i vilken ordning.',
     ],
-    enableLabel: 'Det här kan det möjliggöra',
+    diagram: {
+      caption: 'The Growthship – en operativ modell, inte en produkt',
+      core: 'Gemensam kontext',
+      coreSub: 'Data, kunskap och mänsklig granskning',
+      loop: 'Lärandet matas tillbaka in i systemet',
+      modules: [
+        { key: 'bridge', name: 'The Bridge', role: 'Data → gemensam insikt' },
+        { key: 'radar', name: 'The Radar', role: 'Signaler → möjligheter' },
+        { key: 'engine', name: 'The Engine Room', role: 'Agenter → material & handling' },
+        { key: 'launchpad', name: 'The Launchpad', role: 'Experiment → effekt' },
+      ],
+    },
+    scopeNote:
+      'Listorna nedan är exempel, inte en färdig produkt. Vad vi bygger beror på er stack, er data och era prioriteringar – och börjar med ett avgränsat användningsfall.',
+    enableLabel: 'Exempel på vad som kan byggas',
     outcomeLabel: 'Resultatet',
     items: [
       {
@@ -576,16 +686,14 @@ const aiGtmSv: AiGtmContent = {
     h2b: 'Från beslut till handling.',
     intro: [
       'Det verkliga värdet kommer inte från en enskild agent, ett arbetsflöde eller en dashboard. Det kommer från att koppla ihop dem.',
-      'Tänk er det här:',
+      'Så här skulle en loop kunna se ut:',
     ],
-    steps: [
-      'Er analys upptäcker att konverteringsgraden sjunker på en viktig landningssida.',
-      'En AI-agent undersöker förändringen, kombinerar den med färsk kampanjdata och identifierar ett möjligt problem.',
-      'En annan agent granskar sidan, kundfeedback och konkurrenternas positionering.',
-      'Systemet föreslår tre möjliga experiment, med hypoteser, förväntad effekt och vad som krävs för att genomföra dem.',
-      'Ert growth-team går igenom rekommendationerna och väljer ett.',
-      'Ett arbetsflöde hjälper till att bygga den nya varianten av landningssidan, förbereder experimentet och stöttar lanseringen.',
-      'Resultaten bevakas, dokumenteras och matas tillbaka in i systemet.',
+    stages: [
+      { key: 'data', name: 'Data', module: 'The Bridge', title: 'Allt i en kontext', body: 'Analys-, kampanj-, CRM- och siddata kopplas ihop till en gemensam kontext som både människor och agenter kan arbeta utifrån.', chip: 'GA4 · Ads · CRM · CMS' },
+      { key: 'insight', name: 'Insikt', module: 'The Radar', title: 'En signal värd att agera på', body: 'En nedgång i konvertering på en viktig landningssida upptäcks och kombineras med färsk kampanjdata för att hitta en trolig orsak.', chip: 'Konverteringsfall flaggat' },
+      { key: 'agent', name: 'Agent', module: 'The Engine Room', title: 'Förslag, inte bara larm', body: 'En agent granskar sidan, kundfeedback och konkurrenternas positionering och föreslår tre experiment med hypoteser och förväntad effekt.', chip: '3 experimentförslag' },
+      { key: 'execution', name: 'Genomförande', module: 'The Launchpad', title: 'Människor beslutar, arbetsflöden levererar', body: 'Ert team väljer ett. Ett arbetsflöde bygger varianten av landningssidan, sätter upp testet och stöttar lanseringen.', chip: 'Godkänt → variant live' },
+      { key: 'learning', name: 'Lärande', module: 'The Bridge', title: 'Varje test gör nästa smartare', body: 'Resultaten mäts, dokumenteras och matas tillbaka in i den gemensamma kontexten.', chip: 'Resultat tillagt i kontexten' },
     ],
     loop: 'En sammanhängande loop. Från signal till insikt till handling till lärande.',
     closing: 'Det är potentialen i ett AI-native Growth Operating System.',
@@ -596,18 +704,50 @@ const aiGtmSv: AiGtmContent = {
     label: 'Agentisk webb',
     h2: 'Tänk om er sajt kunde göra mer än att visa innehåll?',
     intro: [
-      'I åratal har sajter byggts kring sidor, mallar och traditionella CMS. Marknadsteam är beroende av utvecklare för att lansera nya upplevelser. Innehåll fastnar i stela strukturer. Leadinformation skickas mellan system som inte hänger ihop.',
-      'Och nu förändrar AI hur människor hittar, utvärderar och interagerar med företag online. Det är dags att tänka om själva sajten.',
+      'De flesta sajter byggs fortfarande kring sidor, mallar och ett CMS som marknad inte kan ändra utan en utvecklare. Innehåll fastnar i stela strukturer och leads skickas mellan system som inte pratar med varandra.',
+      'Samtidigt förändrar AI hur människor – och AI-assistenter som agerar åt dem – hittar, utvärderar och kontaktar företag. Det gör sajten viktigare, inte mindre viktig.',
     ],
-    h3: 'Från statiska sajter till intelligenta tillväxtplattformar.',
-    lead: 'Jag hjälper företag att utforska och bygga moderna digitala upplevelser där sajt, innehåll, data och kommersiella arbetsflöden fungerar tillsammans. Det kan omfatta:',
-    items: [
-      { title: 'Skräddarsydda sajter och CMS', body: 'Flexibla sajter och innehållssystem byggda kring er verksamhet, där AI-assisterad utveckling minskar friktionen mellan idé och genomförande.' },
-      { title: 'Agentredo innehåll och upplevelser', body: 'Strukturerat, tillgängligt innehåll och gränssnitt för en värld där både människor och AI-drivna system hittar och interagerar med digitala tjänster.' },
-      { title: 'Sammankopplad leadgenerering', body: 'Formulär, leadfångst, berikning, kvalificering, routing och backoffice-flöden som kopplar sajten direkt till den kommersiella verksamheten.' },
-      { title: 'Automatiserad innehållsproduktion', body: 'Arbetsflöden som stöttar research, innehållsproduktion, optimering och publicering, med kvalitet och mänsklig tillsyn på plats.' },
-      { title: 'Skräddarsydda tillväxtapplikationer', body: 'Interna verktyg, backoffice-gränssnitt och specialbyggda applikationer som tar bort manuellt arbete och hjälper teamen att arbeta mer effektivt.' },
+    h3: 'Fyra förmågor. En tillväxtplattform.',
+    lead: 'Det är här Greow skiljer sig mest. Inte ett webbprojekt, inte en AI-pilot, utan kombinationen:',
+    examplesLabel: 'Så kan det se ut',
+    layers: [
+      {
+        num: '01',
+        title: 'Skräddarsydd webbutveckling',
+        body: 'Sajter och CMS byggda kring er verksamhet, där AI-assisterad utveckling kortar tiden från idé till publicerad sida.',
+        examples: ['Kod för det som är stabilt, ett headless CMS för det redaktörerna ändrar dagligen', 'Snabba, mätbara sidor byggda för konvertering', 'Nya sidor och mallar utan att vänta i en utvecklingskö'],
+        proof: 'Byggt för Sands: Next.js + Sanity, ~80 sidor',
+        proofCase: true,
+      },
+      {
+        num: '02',
+        title: 'Agentredo upplevelser',
+        body: 'Strukturerat, tillgängligt innehåll som både människor och AI-drivna system kan hitta, förstå och agera på.',
+        examples: ['Strukturerad data som beskriver ert bolag, era tjänster och era personer', 'Tydliga, indexerbara sidor som svarar på köparnas verkliga frågor', 'Gränssnitt utformade för assistenter, inte bara webbläsare'],
+        proof: 'Tillämpat för Sands och på greow.digital: strukturerad data',
+        proofCase: false,
+      },
+      {
+        num: '03',
+        title: 'AI-driven innehållsproduktion',
+        body: 'Research, briefer, utkast, optimering och publicering i ett sammanhängande flöde – med en människa som godkänner det som publiceras.',
+        examples: ['Programmatiska sidor genererade från strukturerad data', 'AI-assisterad research, skrivande och on-page-optimering', 'Publiceringsflöden med granskning och kvalitetskontroll'],
+        proof: 'Byggt för Sands: programmatiska områdessidor, CMS-struktur byggd via MCP från Claude Code',
+        proofCase: true,
+      },
+      {
+        num: '04',
+        title: 'Integrerade leadflöden',
+        body: 'Varje formulär, kalkylator och chatt kopplad till er kommersiella process, så att varje lead fångas, routas och spåras.',
+        examples: ['Flera vägar in: formulär, kalkylatorer, quiz och chatt', 'Berikning, kvalificering och routing till rätt person', 'Spårning från annonsklick till affär'],
+        proof: 'Byggt för Sands: taktest, kalkylator, chatt och offertformulär, spårade från annonsklick',
+        proofCase: true,
+      },
     ],
+    combination: {
+      h3: 'Varför kombinationen spelar roll',
+      body: 'AI-rådgivning stannar ofta vid strategi eller ett enskilt verktyg. Webbprojekt stannar ofta vid lansering. Värdet ligger i att koppla ihop dem: en sajt som är snabb att ändra, innehåll som är enkelt att producera, sidor som maskiner kan förstå och leads som flödar rakt in i er säljprocess.',
+    },
     closing: ['Målet är inte bara att bygga en snabbare sajt.', 'Det är att göra er digitala närvaro till en aktiv del av er tillväxtmotor.'],
   },
 
@@ -665,6 +805,58 @@ const aiGtmSv: AiGtmContent = {
     },
     moreLabel: 'Mer relaterat arbete',
     moreCases: ['bnbalyze', 'leadfeeder-dealfront', 'refapp'],
+  },
+
+  maturity: {
+    label: 'Var det står idag',
+    h2: 'Byggt, under utveckling, möjligt.',
+    intro: 'AI är lätt att överlova. Här är en ärlig uppdelning mellan vad jag har byggt, vad jag utvecklar i min nuvarande roll och vad vi kan bygga tillsammans.',
+    columns: [
+      {
+        key: 'built',
+        badge: 'Byggt',
+        title: 'Implementerat för en Greow-kund',
+        context: 'Sands Entreprenad',
+        items: [
+          'Next.js-plattform med ~80 sidor och Sanity CMS, byggd agentiskt i Claude Code',
+          'Flera vägar in för leads: taktest, priskalkylator, chatt och offertformulär',
+          'Leadautomation: formulär → webhook → kalkylark + e-post, med konverteringen skickad till GA4 och Google Ads',
+          'Programmatiska områdessidor, strukturerad data och teknisk SEO',
+          'Automatiserad veckorapport från Ads, GA4 och Search Console',
+        ],
+        link: 'Läs caset om Sands →',
+        note: '',
+      },
+      {
+        key: 'dev',
+        badge: 'Under utveckling',
+        title: 'Utforskas i min nuvarande roll',
+        context: 'Mentimeter – yrkeserfarenhet, inte en Greow-kund',
+        items: [
+          'The Growthship som operativ modell för ett growth-team',
+          'Datakällor som kopplas ihop till gemensamma insikter',
+          'AI-assisterad research, innehåll och operativ automation',
+          'Signalbevakning och experimentloopar',
+        ],
+        link: '',
+        note: '',
+      },
+      {
+        key: 'possible',
+        badge: 'Möjligt',
+        title: 'Det vi kan bygga för er',
+        context: 'Avgränsas per uppdrag',
+        items: [
+          'Skräddarsydda AI-agenter för research, innehåll och kampanjdrift',
+          'Automation och integrationer i hela er stack',
+          'Agentredo sajt, CMS och innehållsproduktion',
+          'Leadrouting, berikning och backoffice-verktyg',
+          'Bevakning, rekommendationer och experimentflöden',
+        ],
+        link: '',
+        note: 'Avgränsas i Upptäck & designa och byggs sedan ett användningsfall i taget.',
+      },
+    ],
   },
 
   build: {
@@ -774,10 +966,10 @@ const aiGtmSv: AiGtmContent = {
         ],
       },
       {
-        q: 'Är The Growthship en mjukvaruprodukt?',
+        q: 'Är The Growthship en produkt man kan köpa?',
         a: [
-          'The Growthship är namnet på en AI-native operativ modell för growth och GTM som jag har utvecklat genom mitt yrkesliv. Den ger ett konceptuellt ramverk för att koppla ihop insikter, AI-agenter, möjligheter och genomförande.',
-          'Den presenteras här inte som en färdig kommersiell mjukvaruprodukt.',
+          'Nej. The Growthship är den operativa modellen bakom hur jag arbetar – ett sätt att koppla ihop insikter, AI-agenter, möjligheter och genomförande, framtaget genom min yrkeserfarenhet.',
+          'Greow är ett konsultbolag. Det ni får är senior rådgivning och praktiskt genomförande byggt kring er stack och era prioriteringar, inte en licensierad plattform.',
         ],
       },
       {

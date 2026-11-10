@@ -14,12 +14,14 @@ interface FooterProps {
 export default function Footer({ t, lang }: FooterProps) {
   const home = lang === 'en' ? '/' : '/sv/'
   const moreLabel = lang === 'en' ? 'More' : 'Mer'
+  // footer.left is "Name · rest"; the name gets its own emphasis.
+  const [footerName, ...footerRest] = t.footer.left.split(' · ')
 
   return (
     <footer>
       <div className="footer-inner">
         <div className="footer-left">
-          <span className="name">Erik Werner</span> · Greow · Growth as a Service · Stockholm
+          <span className="name">{footerName}</span> · {footerRest.join(' · ')}
         </div>
         <nav className="footer-nav" aria-label="Footer">
           <div className="footer-col">

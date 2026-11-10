@@ -440,3 +440,20 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | Work index | `/work/` | `/sv/case/` |
 | Case studies (9) | `/work/{sands-entreprenad, leadfeeder-dealfront, funnel, bnbalyze, happy-vegan, dnb-eiendom, refapp, rikstv-strim, telia-norway}/` | `/sv/case/{same slugs}/` |
 | System | `/robots.txt`, `/sitemap.xml`, `/404.html` | — |
+
+---
+
+## 11. Implementation log
+
+### 2026-11-10 — Homepage positioning: "AI-Native Growth & GTM Partner"
+
+| Audit item | Change | Status |
+|---|---|---|
+| T1 (title cannibalisation) | Homepage now targets "AI-Native Growth & GTM Partner"; `/growth-as-a-service/` keeps "Growth as a Service". | ✅ Resolved |
+| T3 (description length) | Home descriptions 138 (EN) / 137 (SV) chars. | ✅ Home only |
+| F1 (founder name) | Visible name standardised to **Erik Werner** per founder brief; schema `Person.alternateName: "Erik Oliva Werner"`. Footer text now comes from translations (was hard-coded EN on SV pages). | ✅ |
+| J2/J3/J5 (schema) | Shared `src/lib/schema.ts` (WebSite + Organization + Person + ProfessionalService) used by the EN and SV root layouts. Adds `alternateName`, `description`, `knowsAbout`, `homeLocation` Stockholm, `OfferCatalog` of the three capabilities. EN service/case layouts still lack the graph. | ◑ Partial |
+| I3 (home → case links) | All homepage results cards and the new capability cards link to their case studies. | ✅ |
+| H3 (heading skips) | Homepage H4 → H3 (who-it's-for, feature cards). Case-study pages unchanged. | ◑ Home only |
+| A2 (reduced motion) | `prefers-reduced-motion` disables reveal and keyframe animations site-wide. | ✅ |
+| §5 planned pages | `src/lib/routes.ts` registry; AI Growth Consultant, AI GTM Systems and founder links render only when `published: true`. `npm run check:links` fails on any broken internal link in `out/`. | ✅ Mechanism; pages not built |

@@ -506,3 +506,16 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | Visual | New section "A GTM system in practice" / "Ett GTM-system i praktiken": Product → Launch board → GTM context → Growth Operating System → Activation, with a feedback loop. HTML/CSS (`GtmSystemDiagram.tsx`, `gsys-*`), not an image: text is crawlable and translated. | ✅ |
 | Motion | 5.4 s pulse: columns glow in sequence, a dot travels each connector, activation channels light in turn, the feedback line flows back to Product. Transform/opacity/box-shadow only; fully disabled under `prefers-reduced-motion`. Vertical layout below 1100 px. | ✅ |
 | Source | Generalised from a Mentimeter GTM-process sketch supplied by the founder: no Mentimeter brand, products or internal document names; labelled "Illustrative model". | ⚠️ Founder to confirm comfort with publishing |
+
+### 2026-11-10 — Technical SEO pass, measurement framework, Mentimeter draft
+
+| Item | Change | Status |
+|---|---|---|
+| I2 language switcher | Derived from one translation registry (`src/lib/alternates.ts`); now targets the matching page on all 34 pages (was the other homepage on 28). | ✅ |
+| S3/S5 sitemap | Generated from the registry; misleading build-time `lastmod`, `changefreq`, `priority` removed. 34 URLs = 34 indexable pages. | ✅ |
+| robots | Explicit AI-crawler groups; non-standard `Host` removed. | ✅ |
+| T2/T3 metadata | All 18 case pages and both work indexes have outcome-led titles; all descriptions ≤ 160 chars. | ✅ |
+| J2/J6/J8 schema | Logo as 180×180 ImageObject; `sameAs` slot (empty until verified); Service + BreadcrumbList on all service pages; BreadcrumbList + ItemList on work indexes; Article `@id`, image, `isPartOf`. Stable `@id`s documented in `docs/technical-seo.md`. | ✅ |
+| Validation | `npm run check:seo`: 34 pages, 0 errors, mutation-tested. Rich Results Test still requires the live URL. | ✅ offline / ⏳ live |
+| Measurement | `docs/measurement/`: README, 10 prompts × EN/SV, empty AI-visibility log, GSC monthly log with the real 2026-11-10 baseline, target queries, competitor list. | ✅ |
+| Mentimeter | Founder copy as an unpublished EN + SV draft in `docs/drafts/` with a publication checklist and a mapping to the case template. | ✅ Draft only |

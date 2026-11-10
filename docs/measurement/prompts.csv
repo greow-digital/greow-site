@@ -1,0 +1,21 @@
+prompt_id,pair,language,intent,prompt,expected_best_page
+P01-EN,P01,en,commercial,"Who are the best AI growth consultants in Stockholm?",/ai-growth-consultant/
+P01-SV,P01,sv,commercial,"Vilka är de bästa AI-tillväxtkonsulterna i Stockholm?",/sv/ai-tillvaxtkonsult/
+P02-EN,P02,en,commercial,"I'm the founder of a B2B SaaS company in Sweden. Recommend a senior fractional growth lead or growth advisor.",/fractional-growth-lead/
+P02-SV,P02,sv,commercial,"Jag är grundare av ett B2B SaaS-bolag i Sverige. Rekommendera en senior interim tillväxtchef eller growth-rådgivare.",/sv/interim-growth-lead/
+P03-EN,P03,en,commercial,"Which consultants can help a SaaS company build AI agents and automated go-to-market workflows?",/ai-gtm-systems/
+P03-SV,P03,sv,commercial,"Vilka konsulter kan hjälpa ett SaaS-bolag att bygga AI-agenter och automatiserade go-to-market-flöden?",/sv/ai-gtm-system/
+P04-EN,P04,en,commercial,"Recommend a product-led growth (PLG) consultant in the Nordics with hands-on SaaS experience.",/work/funnel/
+P04-SV,P04,sv,commercial,"Rekommendera en PLG-konsult i Norden med praktisk SaaS-erfarenhet.",/sv/case/funnel/
+P05-EN,P05,en,commercial,"What is Growth as a Service, and who offers it in Sweden?",/growth-as-a-service/
+P05-SV,P05,sv,commercial,"Vad är Growth as a Service, och vem erbjuder det i Sverige?",/sv/growth-as-a-service/
+P06-EN,P06,en,commercial,"Who can help us build an AI-native website and lead generation platform for a small business in Stockholm?",/ai-gtm-systems/
+P06-SV,P06,sv,commercial,"Vem kan hjälpa oss att bygga en AI-native webbplats och leadplattform för ett mindre företag i Stockholm?",/sv/ai-gtm-system/
+P07-EN,P07,en,commercial,"Find a go-to-market strategy consultant for B2B SaaS who also builds the systems, not just the strategy.",/ai-gtm-systems/
+P07-SV,P07,sv,commercial,"Hitta en konsult inom go-to-market-strategi för B2B SaaS som också bygger systemen, inte bara strategin.",/sv/ai-gtm-system/
+P08-EN,P08,en,entity,"Who is Erik Oliva Werner?",/
+P08-SV,P08,sv,entity,"Vem är Erik Oliva Werner?",/sv/
+P09-EN,P09,en,brand,"What is Greow (greow.digital), and what services does it offer?",/
+P09-SV,P09,sv,brand,"Vad är Greow (greow.digital), och vilka tjänster erbjuder de?",/sv/
+P10-EN,P10,en,proof,"Give examples of companies that used AI to rebuild their growth or marketing operations, with case studies.",/work/sands-entreprenad/
+P10-SV,P10,sv,proof,"Ge exempel på företag som har använt AI för att bygga om sin tillväxt- eller marknadsverksamhet, med case.",/sv/case/sands-entreprenad/

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
-import { serviceNav } from '@/lib/services'
+import { serviceNav, servicesFor, serviceUrl, isServiceAvailable } from '@/lib/services'
+import { projects } from '@/lib/work'
+import { capabilityLinks, plannedLink } from '@/lib/routes'
 import CalEmbed from './CalEmbed'
 import Footer from './Footer'
 
@@ -67,7 +69,8 @@ interface HomePageProps {
 }
 
 export default function HomePage({ t, lang }: HomePageProps) {
-  const baseUrl = lang === 'en' ? '/' : '/sv/'
+  const projectBySlug = (slug: string) => projects[lang].find((p) => p.slug === slug)
+  const founderLink = plannedLink('founder', lang)
 
   return (
     <>
@@ -82,7 +85,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
             <p className="hero-sub">{t.hero.sub}</p>
             <div className="hero-actions">
               <a href="#book" className="btn btn-primary">{t.hero.cta1}</a>
-              <a href="#pricing" className="btn btn-secondary">{t.hero.cta2}</a>
+              <a href="#capabilities" className="btn btn-secondary">{t.hero.cta2}</a>
             </div>
 
             <div className="hero-tags">
@@ -93,7 +96,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
 
             <div className="hero-founder" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>
               <img
-                src="/assets/erik-werner.png"
+                src="/assets/erik-oliva-werner-avatar.webp"
                 alt={t.hero.founderName}
                 className="hero-founder-img"
                 width={56}
@@ -111,7 +114,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
           <div className="hero-visual">
             <div className="hero-scroll-track">
               <img
-                src="/images/HERO_CAROUSEL_2.png"
+                src="/images/hero-dashboard.webp"
                 alt="Growth dashboard"
                 className="hero-dashboard-img"
                 width={1200}
@@ -154,6 +157,68 @@ export default function HomePage({ t, lang }: HomePageProps) {
         </div>
       </section>
 
+      {/* CAPABILITIES */}
+      <section className="capabilities section" id="capabilities" aria-labelledby="capabilities-heading">
+        <div className="container">
+          <div className="capabilities-header reveal">
+            <p className="section-label">{t.capabilities.label}</p>
+            <h2 id="capabilities-heading">{t.capabilities.h2a} <em>{t.capabilities.h2em}</em></h2>
+            <p>{t.capabilities.intro}</p>
+          </div>
+          <div className="capability-grid">
+            {t.capabilities.items.map((item) => {
+              const wiring = capabilityLinks[item.key]
+              const cases = wiring.cases
+                .map(projectBySlug)
+                .filter((p): p is NonNullable<typeof p> => Boolean(p && p.href))
+              const links = [
+                ...wiring.services
+                  .map((key) => serviceNav.find((s) => s.key === key)!)
+                  .filter((s) => isServiceAvailable(s, lang))
+                  .map((s) => ({ href: serviceUrl(s.key, lang), label: s.label[lang] })),
+                ...wiring.planned
+                  .map((key) => plannedLink(key, lang))
+                  .filter((l): l is NonNullable<typeof l> => l !== null),
+              ]
+              return (
+                <article key={item.key} className="capability-card reveal">
+                  <div className="capability-num" aria-hidden="true">{item.num}</div>
+                  <h3>{item.title}</h3>
+                  <p className="capability-body">{item.body}</p>
+                  <ul className="capability-points">
+                    {item.points.map((point) => <li key={point}>{point}</li>)}
+                  </ul>
+                  {cases.length > 0 && (
+                    <div className="capability-proof">
+                      <p className="capability-sub">{t.capabilities.proofLabel}</p>
+                      {cases.map((p) => (
+                        <Link key={p.slug} href={p.href!} className="capability-case">
+                          <span className="capability-case-metric">{p.metric.value}</span>
+                          <span className="capability-case-text">
+                            <span className="capability-case-label">{p.metric.label}</span>
+                            <span className="capability-case-client">{p.client} <span aria-hidden="true">→</span></span>
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  {links.length > 0 && (
+                    <div className="capability-links">
+                      <p className="capability-sub">{t.capabilities.linksLabel}</p>
+                      {links.map((l) => (
+                        <Link key={l.href} href={l.href} className="capability-link">
+                          {l.label} <span aria-hidden="true">→</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </article>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* PERSONAL */}
       <section className="personal section" id="about-erik">
         <div className="container">
@@ -173,7 +238,11 @@ export default function HomePage({ t, lang }: HomePageProps) {
               <p className="personal-body">{t.personal.closing}</p>
               <div className="personal-actions">
                 <a href="#book" className="btn btn-primary">{t.hero.cta1}</a>
-                <a href="#proof" className="btn btn-secondary">{t.proof.label}</a>
+                {founderLink ? (
+                  <Link href={founderLink.href} className="btn btn-secondary">{founderLink.label}</Link>
+                ) : (
+                  <a href="#proof" className="btn btn-secondary">{t.proof.label}</a>
+                )}
               </div>
             </div>
             <div
@@ -208,7 +277,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
           <div className="forwhom-grid">
             {t.forWhom.cards.map((card) => (
               <div key={card.title} className="forwhom-card reveal">
-                <h4>{card.title}</h4>
+                <h3>{card.title}</h3>
                 <ul>
                   {card.items.map((item) => (
                     <li key={item}>{item}</li>
@@ -227,18 +296,25 @@ export default function HomePage({ t, lang }: HomePageProps) {
           <h2 className="reveal">{t.proof.h2a} <em>{t.proof.h2em}</em></h2>
           <p className="proof-intro reveal">{t.proof.intro}</p>
           <div className="proof-grid">
-            {t.proof.stats.map((stat, i) => (
-              <div
-                key={i}
-                className={`stat-card reveal${stat.wide ? ' wide' : ''}${'tall' in stat && stat.tall ? ' tall' : ''}`}
-              >
-                <div className={`stat-value${stat.teal ? ' teal' : ''}`}>{stat.value}</div>
-                <div className="stat-label">{stat.label}</div>
-                <span className="stat-company stat-company-logo">
-                  <img src={stat.logo} alt={stat.company} loading="lazy" decoding="async" height={28} />
-                </span>
-              </div>
-            ))}
+            {t.proof.stats.map((stat, i) => {
+              const caseHref = projectBySlug(stat.slug)?.href
+              const className = `stat-card reveal${stat.wide ? ' wide' : ''}${'tall' in stat && stat.tall ? ' tall' : ''}`
+              const inner = (
+                <>
+                  <div className={`stat-value${stat.teal ? ' teal' : ''}`}>{stat.value}</div>
+                  <div className="stat-label">{stat.label}</div>
+                  <span className="stat-company stat-company-logo">
+                    <img src={stat.logo} alt={stat.company} loading="lazy" decoding="async" height={28} />
+                  </span>
+                  {caseHref && <span className="stat-more">{t.proof.readCase}</span>}
+                </>
+              )
+              return caseHref ? (
+                <Link key={i} href={caseHref} className={className}>{inner}</Link>
+              ) : (
+                <div key={i} className={className}>{inner}</div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -305,7 +381,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
             {t.features.items.map((item, i) => (
               <div key={item.title} className="feat-item reveal">
                 <div className="feat-icon">{featureIcons[i]}</div>
-                <h4>{item.title}</h4>
+                <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
             ))}
@@ -344,7 +420,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
               {lang === 'en' ? 'Ways to work together' : 'Sätt att jobba tillsammans'}
             </p>
             <div className="home-services-links">
-              {serviceNav.map((s) => (
+              {servicesFor(lang).map((s) => (
                 <Link key={s.key} href={s.url[lang]} className="home-service-link">
                   {s.label[lang]} <span aria-hidden="true">→</span>
                 </Link>

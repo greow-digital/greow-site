@@ -9,7 +9,7 @@ export default function SvPage() {
   return (
     <>
       <Nav t={t.nav} lang="sv" />
-      <main>
+      <main id="main">
         <HomePage t={t} lang="sv" />
       </main>
       <ScrollReveal />

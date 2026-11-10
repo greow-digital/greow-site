@@ -1,0 +1,17 @@
+query,language,segment,intent,target_url,priority,notes
+ai growth consultant,en,ai-growth,commercial,/ai-growth-consultant/,high,
+ai growth consultant stockholm,en,ai-growth,commercial,/ai-growth-consultant/,high,
+ai-tillväxtkonsult,sv,ai-growth,commercial,/sv/ai-tillvaxtkonsult/,high,
+ai konsult tillväxt,sv,ai-growth,commercial,/sv/ai-tillvaxtkonsult/,medium,
+ai gtm systems,en,ai-gtm,commercial,/ai-gtm-systems/,high,
+gtm automation consultant,en,ai-gtm,commercial,/ai-gtm-systems/,medium,
+go-to-market strategy consultant saas,en,ai-gtm,commercial,/ai-gtm-systems/,medium,
+go-to-market-strategi konsult,sv,ai-gtm,commercial,/sv/ai-gtm-system/,medium,
+fractional growth lead,en,fractional,commercial,/fractional-growth-lead/,high,1 impression at pos 9 in baseline window
+interim tillväxtchef,sv,fractional,commercial,/sv/interim-growth-lead/,high,
+growth as a service,en,gaas,commercial,/growth-as-a-service/,medium,
+growth advisory,en,advisory,commercial,/growth-advisory/,medium,
+plg consultant,en,plg,commercial,/work/funnel/,low,
+growth coaching,en,coaching,commercial,/growth-coaching/,low,
+greow,en,brand,navigational,/,high,13 impressions at pos 3.1 in baseline window
+erik oliva werner,en,brand,navigational,/,high,

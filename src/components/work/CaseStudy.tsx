@@ -2,6 +2,7 @@ import Link from 'next/link'
 import type { Translations } from '@/lib/translations'
 import { type CaseStudy, workBase, engagementKind, engagementKindLabel, type Lang } from '@/lib/work'
 import Footer from '@/components/Footer'
+import { serviceNav, servicesFor, serviceUrl } from '@/lib/services'
 
 interface CaseStudyProps {
   t: Translations
@@ -12,6 +13,13 @@ interface CaseStudyProps {
 export default function CaseStudyView({ t, lang, data }: CaseStudyProps) {
   const home = lang === 'en' ? '/' : '/sv/'
   const backLabel = t.nav.work
+  const available = new Set(servicesFor(lang).map((s) => s.key))
+  const relatedServices = (data.relatedServices?.keys ?? [])
+    .filter((key) => available.has(key))
+    .map((key) => {
+      const s = serviceNav.find((n) => n.key === key)!
+      return { href: serviceUrl(key, lang), label: s.label[lang], tagline: s.tagline[lang] }
+    })
 
   return (
     <>
@@ -123,6 +131,28 @@ export default function CaseStudyView({ t, lang, data }: CaseStudyProps) {
         </section>
       )}
 
+      {/* STRATEGIC APPROACH */}
+      {data.approach && (
+        <section className="section case-approach">
+          <div className="container">
+            <div className="case-act-header reveal">
+              <p className="section-label">{data.approach.label}</p>
+              <h2>{data.approach.heading}</h2>
+              <p className="case-act-subtitle">{data.approach.intro}</p>
+            </div>
+            <ol className="case-approach-steps">
+              {data.approach.steps.map((step, i) => (
+                <li key={step.title} className="reveal">
+                  <span className="case-approach-num" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
       {/* ACTS */}
       {data.acts.map((act) => (
         <section key={act.label} className="section case-act">
@@ -154,6 +184,51 @@ export default function CaseStudyView({ t, lang, data }: CaseStudyProps) {
         </section>
       ))}
 
+      {/* WHAT I BUILT */}
+      {data.built && (
+        <section className="section case-built">
+          <div className="container">
+            <div className="case-act-header reveal">
+              <p className="section-label">{data.built.label}</p>
+              <h2>{data.built.heading}</h2>
+              <p className="case-act-subtitle">{data.built.intro}</p>
+            </div>
+            <dl className="case-built-grid">
+              {data.built.items.map((item) => (
+                <div key={item.title} className="reveal">
+                  <dt>{item.title}</dt>
+                  <dd>{item.body}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+      )}
+
+      {/* AI & AUTOMATION */}
+      {data.aiCapabilities && (
+        <section className="section case-ai">
+          <div className="container">
+            <div className="case-act-header reveal">
+              <p className="section-label">{data.aiCapabilities.label}</p>
+              <h2>{data.aiCapabilities.heading}</h2>
+              <p className="case-act-subtitle">{data.aiCapabilities.intro}</p>
+            </div>
+            <div className="case-ai-grid">
+              {data.aiCapabilities.items.map((item) => (
+                <div key={item.title} className="case-ai-card reveal">
+                  <span className={`case-ai-status status-${item.status}`}>
+                    {data.aiCapabilities!.statusLabels[item.status]}
+                  </span>
+                  <h3>{item.title}</h3>
+                  <p>{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* RESULTS */}
       <section className="section case-results">
         <div className="container">
@@ -171,6 +246,7 @@ export default function CaseStudyView({ t, lang, data }: CaseStudyProps) {
               </div>
             ))}
           </div>
+          {data.verification && <p className="case-verification reveal">{data.verification}</p>}
           {data.results.compound && (
             <div className="case-compound reveal">
               <h3>{data.results.compound.heading}</h3>
@@ -246,6 +322,25 @@ export default function CaseStudyView({ t, lang, data }: CaseStudyProps) {
           </div>
         </div>
       </section>
+
+      {/* RELATED SERVICES */}
+      {relatedServices.length > 0 && (
+        <section className="section case-services">
+          <div className="container">
+            <nav className="ai-related-services" aria-label={data.relatedServices!.label}>
+              <p className="section-label">{data.relatedServices!.label}</p>
+              <div className="ai-related-grid">
+                {relatedServices.map((s) => (
+                  <Link key={s.href} href={s.href} className="ai-related-link">
+                    <span className="ai-related-name">{s.label} <span aria-hidden="true">→</span></span>
+                    <span className="ai-related-tagline">{s.tagline}</span>
+                  </Link>
+                ))}
+              </div>
+            </nav>
+          </div>
+        </section>
+      )}
 
       {/* CTA */}
       <section className="cta-section case-cta">

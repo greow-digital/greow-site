@@ -70,7 +70,28 @@ export interface CaseStudy {
   role: { label: string; heading: string; body: string; items?: string[] }
   quote: { text: string; author: string; role: string }
   cta: { heading: string; body: string; button: string }
+  // ── Optional, used by the strengthened cases ──
+  // Page <title> and meta description; falls back to client + intro.
+  seo?: { title: string; description: string }
+  // Strategic approach, rendered after the starting point.
+  approach?: { label: string; heading: string; intro: string; steps: { title: string; body: string }[] }
+  // Compact inventory of what Erik personally built.
+  built?: { label: string; heading: string; intro: string; items: { title: string; body: string }[] }
+  // AI and automation capabilities, each with an honest status.
+  aiCapabilities?: {
+    label: string
+    heading: string
+    intro: string
+    statusLabels: Partial<Record<CapabilityStatus, string>>
+    items: { title: string; body: string; status: CapabilityStatus }[]
+  }
+  // One line on what the result figures are based on (and what is not claimed).
+  verification?: string
+  // serviceNav keys to link to at the end of the case.
+  relatedServices?: { label: string; keys: string[] }
 }
+
+export type CapabilityStatus = 'live' | 'designed' | 'paused' | 'proven'
 
 export interface ProjectSummary {
   slug: string
@@ -442,7 +463,7 @@ export const caseOrder: string[] = [
 export const workIndexCopy: Record<Lang, WorkIndexCopy> = {
   en: {
     meta: {
-      title: 'Work · Greow',
+      title: 'Case Studies: Growth, PLG & AI-Native Builds | Greow',
       description:
         'Selected work by Greow — platforms, growth engines and the systems that turn traffic into revenue. Including the Sands Entreprenad AI-native lead platform.',
     },
@@ -471,7 +492,7 @@ export const workIndexCopy: Record<Lang, WorkIndexCopy> = {
   },
   sv: {
     meta: {
-      title: 'Case · Greow',
+      title: 'Case: tillväxt, PLG och AI-native byggen | Greow',
       description:
         'Utvalda case från Greow — plattformar, growth-motorer och systemen som gör trafik till intäkter. Inklusive Sands Entreprenads AI-native leadplattform.',
     },
@@ -530,7 +551,7 @@ const sandsEn: CaseStudy = {
     ],
   },
   startingPoint: {
-    label: 'The starting point',
+    label: 'The business challenge',
     heading: 'Renting demand, not owning it.',
     lead: 'Before the rebuild, growth was capped by a channel Sands didn’t control.',
     points: [
@@ -651,6 +672,63 @@ const sandsEn: CaseStudy = {
       ],
     },
   },
+  seo: {
+    title: 'Sands Entreprenad: AI-Native Lead Platform Case Study | Greow',
+    description:
+      'How Erik Oliva Werner built an AI-native lead platform for a Stockholm roofer: an agentic build, automated lead flows and 17× organic search visibility.',
+  },
+  approach: {
+    label: 'Strategic approach',
+    heading: 'Prove demand, then own the channel.',
+    intro: 'Four decisions shaped the engagement:',
+    steps: [
+      { title: 'Start with a contained test', body: 'One landing page with paid ads tested demand and messaging before any rebuild. The result earned the mandate for the full platform.' },
+      { title: 'Capture demand where it lives', body: 'A page per municipality in the county, so the site could rank for local roofing searches instead of competing with a single generic page.' },
+      { title: 'Give every visitor a way in', body: 'Roof test, chat, price calculator and quote form for different levels of intent – all feeding one measured pipeline.' },
+      { title: 'Optimise toward jobs, not clicks', body: 'Lead value imported into Google Ads for value-based bidding, and an offline-conversion loop designed to steer toward closed, profitable jobs.' },
+    ],
+  },
+  built: {
+    label: 'What I built',
+    heading: 'Built personally, end to end.',
+    intro: 'Everything below was designed and built by me, agentically in Claude Code:',
+    items: [
+      { title: 'The platform', body: 'A Next.js site of ~80 pages: 31 area pages, 40+ project references and a guide library.' },
+      { title: 'The content model', body: 'A Sanity CMS for projects, images and copy, structured via the Sanity MCP server from inside Claude Code.' },
+      { title: 'The lead funnel', body: 'Roof test, scripted chat widget, quote form and a price calculator with the ROT deduction built in.' },
+      { title: 'The lead automation', body: 'Edge API route → Google Apps Script webhook → Google Sheet and email, firing the GA4 and Google Ads conversion.' },
+      { title: 'The measurement', body: 'End-to-end tracking, value-based bidding and an automated weekly Ads, GA4 and Search Console report.' },
+      { title: 'The Google presence', body: 'Paid search, technical and programmatic SEO, review generation and the Business Profile.' },
+    ],
+  },
+  aiCapabilities: {
+    label: 'AI & automation',
+    heading: 'Where AI and automation do the work.',
+    intro: 'What runs today – and what is designed but not claimed as live:',
+    statusLabels: { live: 'Live', designed: 'Designed' },
+    items: [
+      { title: 'Agentic development', body: 'The whole platform was built agentically in Claude Code – from code to CMS schema and content entries.', status: 'live' },
+      { title: 'CMS structure via MCP', body: 'Schema, content model, entries and image uploads created through Sanity’s MCP server instead of a studio UI.', status: 'live' },
+      { title: 'Automatic lead handling', body: 'Every quote request is written to a sheet, emailed to Sands and reported as a conversion in the same event – no CRM needed.', status: 'live' },
+      { title: 'Programmatic SEO', body: 'Per-municipality meta descriptions generated automatically; a newly published project appears on the right area page by itself.', status: 'live' },
+      { title: 'Seasonal messaging', body: 'A date-driven hero rotates seasonal messages automatically.', status: 'live' },
+      { title: 'Automated reporting', body: 'A weekly report combining Google Ads, GA4 and Search Console.', status: 'live' },
+      { title: 'Offline-conversion loop', body: 'Designed to feed closed, profitable jobs back into bidding.', status: 'designed' },
+    ],
+  },
+  verification:
+    'How the figures are measured: organic visibility as organic impressions in Google Search Console (~1,500% uplift); lead growth across two comparable quarters. No revenue figures are claimed.',
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What the engagement taught.',
+    items: [
+      { title: 'Proof earns the mandate', body: 'A small, contained test did more to win the full rebuild than any pitch could have.' },
+      { title: 'Code for what’s stable, CMS for what changes', body: 'Separating structure and logic from editorial content gave the client independence without losing control.' },
+      { title: 'Measure to the job, not the click', body: 'Bidding only improves when it can see real leads – fixing one form-submit event mattered more than any ad tweak.' },
+      { title: 'Lightweight automation fits a small team', body: 'A sheet, an email and a conversion event match how the client already works. It still needed hardening after a real production incident.' },
+    ],
+  },
+  relatedServices: { label: 'Related services', keys: ['aiGtm', 'aiGrowth', 'gaas'] },
   techStack: {
     label: 'Tech stack',
     items: [
@@ -674,7 +752,7 @@ const sandsEn: CaseStudy = {
   quote: {
     text:
       'They were renting their leads — paying per lead on a marketplace, with no guarantee of the job. I built them a channel they own outright: one landing page that became an entire digital presence, ranking 17× higher and generating 7× the leads, every request traced from click to closed job.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Greow',
   },
   cta: {
@@ -712,7 +790,7 @@ const sandsSv: CaseStudy = {
     ],
   },
   startingPoint: {
-    label: 'Utgångsläget',
+    label: 'Affärsutmaningen',
     heading: 'Hyrde efterfrågan — ägde den inte.',
     lead: 'Före ombyggnaden var tillväxten begränsad av en kanal Sands inte kontrollerade.',
     points: [
@@ -833,6 +911,63 @@ const sandsSv: CaseStudy = {
       ],
     },
   },
+  seo: {
+    title: 'Sands Entreprenad: AI-native leadplattform – case | Greow',
+    description:
+      'Så byggde Erik Oliva Werner en AI-native leadplattform för en takentreprenör i Stockholm: agentiskt bygge, automatiserade leadflöden och 17× synlighet i sök.',
+  },
+  approach: {
+    label: 'Strategiskt angreppssätt',
+    heading: 'Bevisa efterfrågan, äg sedan kanalen.',
+    intro: 'Fyra beslut formade uppdraget:',
+    steps: [
+      { title: 'Börja med ett avgränsat test', body: 'En landningssida med sökannonser testade efterfrågan och budskap innan något byggdes om. Resultatet gav mandatet för hela plattformen.' },
+      { title: 'Fånga efterfrågan där den finns', body: 'En sida per kommun i länet, så att sajten kunde ranka på lokala taksökningar i stället för att konkurrera med en enda generell sida.' },
+      { title: 'Ge varje besökare en väg in', body: 'Taktest, chatt, priskalkylator och offertformulär för olika grader av köpintention – allt till en och samma mätbara pipeline.' },
+      { title: 'Optimera mot jobb, inte klick', body: 'Leadvärde importerat till Google Ads för värdebaserad budgivning, och en offline-konverteringsloop designad för att styra mot stängda, lönsamma jobb.' },
+    ],
+  },
+  built: {
+    label: 'Det här byggde jag',
+    heading: 'Byggt av mig, från start till mål.',
+    intro: 'Allt nedan designade och byggde jag själv, agentiskt i Claude Code:',
+    items: [
+      { title: 'Plattformen', body: 'En Next.js-sajt med ~80 sidor: 31 områdessidor, 40+ projektreferenser och ett guidebibliotek.' },
+      { title: 'Innehållsmodellen', body: 'Ett Sanity CMS för projekt, bilder och text, strukturerat via Sanitys MCP-server inifrån Claude Code.' },
+      { title: 'Lead-tratten', body: 'Taktest, skriptad chattwidget, offertformulär och en priskalkylator med ROT-avdraget inbyggt.' },
+      { title: 'Leadautomationen', body: 'Edge API-route → Google Apps Script-webhook → Google Sheet och e-post, som samtidigt skickar konverteringen till GA4 och Google Ads.' },
+      { title: 'Mätningen', body: 'Spårning hela vägen, värdebaserad budgivning och en automatiserad veckorapport från Ads, GA4 och Search Console.' },
+      { title: 'Google-närvaron', body: 'Sökannonsering, teknisk och programmatisk SEO, recensionsinsamling och företagsprofilen.' },
+    ],
+  },
+  aiCapabilities: {
+    label: 'AI & automation',
+    heading: 'Där AI och automation gör jobbet.',
+    intro: 'Det som körs idag – och det som är designat men inte påstås vara live:',
+    statusLabels: { live: 'Live', designed: 'Designad' },
+    items: [
+      { title: 'Agentisk utveckling', body: 'Hela plattformen byggdes agentiskt i Claude Code – från kod till CMS-schema och innehållsposter.', status: 'live' },
+      { title: 'CMS-struktur via MCP', body: 'Schema, innehållsmodell, poster och bilduppladdningar skapade via Sanitys MCP-server i stället för ett studio-gränssnitt.', status: 'live' },
+      { title: 'Automatisk leadhantering', body: 'Varje offertförfrågan skrivs till ett kalkylark, mejlas till Sands och rapporteras som konvertering i samma händelse – utan CRM.', status: 'live' },
+      { title: 'Programmatisk SEO', body: 'Metabeskrivningar per kommun genereras automatiskt; ett nytt projekt hamnar av sig självt på rätt områdessida.', status: 'live' },
+      { title: 'Säsongsbudskap', body: 'En datumstyrd hero roterar säsongsbudskap automatiskt.', status: 'live' },
+      { title: 'Automatiserad rapportering', body: 'En veckorapport som kombinerar Google Ads, GA4 och Search Console.', status: 'live' },
+      { title: 'Offline-konverteringsloop', body: 'Designad för att mata tillbaka stängda, lönsamma jobb till budgivningen.', status: 'designed' },
+    ],
+  },
+  verification:
+    'Så mäts siffrorna: organisk synlighet som organiska visningar i Google Search Console (~1 500 % ökning); leadtillväxt mellan två jämförbara kvartal. Inga intäktssiffror påstås.',
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad uppdraget lärde mig.',
+    items: [
+      { title: 'Bevis ger mandat', body: 'Ett litet, avgränsat test gjorde mer för att vinna hela ombyggnaden än någon pitch hade kunnat göra.' },
+      { title: 'Kod för det stabila, CMS för det som ändras', body: 'Att skilja struktur och logik från redaktionellt innehåll gav kunden självständighet utan att tappa kontroll.' },
+      { title: 'Mät till jobbet, inte till klicket', body: 'Budgivningen blir bara bättre när den ser riktiga leads – att laga en enda formulärhändelse betydde mer än någon annonsjustering.' },
+      { title: 'Lätt automation passar ett litet team', body: 'Ett kalkylark, ett mejl och en konverteringshändelse matchar hur kunden redan arbetar. Den behövde ändå härdas efter en verklig incident i produktion.' },
+    ],
+  },
+  relatedServices: { label: 'Relaterade tjänster', keys: ['aiGtm', 'aiGrowth', 'gaas'] },
   techStack: {
     label: 'Teknik',
     items: [
@@ -856,7 +991,7 @@ const sandsSv: CaseStudy = {
   quote: {
     text:
       'De hyrde sina leads — betalade per lead på en marknadsplats, utan garanti för jobbet. Jag byggde dem en kanal de äger fullt ut: en landningssida som blev en hel digital närvaro, som rankar 17× högre och genererar 7× fler leads, varje förfrågan spårad från klick till stängt jobb.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Greow',
   },
   cta: {
@@ -1131,6 +1266,11 @@ const leadfeederEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Leadfeeder / Dealfront: Post-Merger PLG & Unified GTM | Greow',
+    description:
+      'How Erik Oliva Werner led product-led growth across two merged B2B SaaS platforms: self-serve on all plans, AI-powered onboarding and 100% more new accounts.',
+  },
   role: {
     label: 'My role',
     heading: 'Growth and product experience, end-to-end.',
@@ -1154,7 +1294,7 @@ const leadfeederEn: CaseStudy = {
   quote: {
     text:
       'I helped turn a fragmented post-merger product into a unified self-serve growth platform — doubling new account creation, improving critical activation by more than 10%, and creating one product and GTM strategy across Leadfeeder and Dealfront.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Director of Growth & Product Experience, Dealfront',
   },
   cta: {
@@ -1427,6 +1567,11 @@ const leadfeederSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Leadfeeder / Dealfront: PLG och enad GTM efter fusion | Greow',
+    description:
+      'Så ledde Erik Oliva Werner PLG över två sammanslagna SaaS-plattformar: self-serve på alla planer, AI-driven onboarding och 100 % fler nya konton.',
+  },
   role: {
     label: 'Min roll',
     heading: 'Growth och produktupplevelse, från start till mål.',
@@ -1450,7 +1595,7 @@ const leadfeederSv: CaseStudy = {
   quote: {
     text:
       'Jag hjälpte till att göra en splittrad post-merger-produkt till en enhetlig self-serve growth-plattform — fördubblade antalet nya konton, förbättrade kritisk aktivering med över 10%, och skapade en gemensam produkt- och GTM-strategi över Leadfeeder och Dealfront.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Director of Growth & Product Experience, Dealfront',
   },
   cta: {
@@ -1693,6 +1838,11 @@ const happyVeganEn: CaseStudy = {
       'Custom ops workflows',
     ],
   },
+  seo: {
+    title: 'Happy Vegan: Solo-Built Vegan Store, SEK 2.5M and an Exit | Greow',
+    description:
+      'How Erik Oliva Werner built, grew and sold Sweden’s largest vegan online store in two years: brand, storefront, paid and organic growth, CRM and operations.',
+  },
   role: {
     label: 'Ownership',
     heading: 'Conceived, built, grown and sold — solo.',
@@ -1702,7 +1852,7 @@ const happyVeganEn: CaseStudy = {
   quote: {
     text:
       'I built Happy Vegan from scratch as a solo side project, grew it to SEK 2.5 million in revenue and more than 500 monthly orders, made it Sweden’s largest vegan online store, and completed a successful exit — all within two years.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Founder, Happy Vegan',
   },
   cta: {
@@ -1943,6 +2093,11 @@ const happyVeganSv: CaseStudy = {
       'Egna operativa flöden',
     ],
   },
+  seo: {
+    title: 'Happy Vegan: soloprojekt, 2,5 MSEK och en exit | Greow',
+    description:
+      'Så byggde, växte och sålde Erik Oliva Werner Sveriges största veganska nätbutik på två år: varumärke, butik, betald och organisk tillväxt, CRM och logistik.',
+  },
   role: {
     label: 'Ägarskap',
     heading: 'Tänkt ut, byggd, växt och såld — solo.',
@@ -1952,7 +2107,7 @@ const happyVeganSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde Happy Vegan från grunden som ett soloprojekt vid sidan om, växte det till 2,5 miljoner kronor i omsättning och mer än 500 ordrar i månaden, gjorde det till Sveriges största veganska nätbutik, och genomförde en lyckad exit — allt inom två år.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Grundare, Happy Vegan',
   },
   cta: {
@@ -1993,7 +2148,7 @@ const bnbalyzeEn: CaseStudy = {
     ],
   },
   startingPoint: {
-    label: 'The starting point',
+    label: 'The business challenge',
     heading: 'Property analysis is fragmented and slow.',
     lead:
       'Evaluating a property as an investment means stitching sources together by hand. Buyers typically need to combine:',
@@ -2161,6 +2316,64 @@ const bnbalyzeEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Bnbalyze: From Vibe-Coded SaaS to AI-Native Proptech | Greow',
+    description:
+      'How Erik Oliva Werner built Bnbalyze solo: a proptech SaaS with 100+ organic users and real-estate pilots, now rebuilt as an AI-native property analyst.',
+  },
+  approach: {
+    label: 'Strategic approach',
+    heading: 'Test fast, validate with people, rebuild around the real problem.',
+    intro: 'The product moved through four deliberate steps:',
+    steps: [
+      { title: 'Test the build workflow', body: 'Use vibe coding with Lovable to see how far one person could take a real product, quickly.' },
+      { title: 'Validate before scaling', body: 'Real-estate pilot customers, UX research with Hyper Island students and organic self-serve users – before any paid acquisition.' },
+      { title: 'Pause and reframe', body: 'Step back when other priorities took over, and name what v1 could not do: judge a property’s condition, research the area or assess regulation.' },
+      { title: 'Rebuild with clear boundaries', body: 'Put AI inside the analysis pipeline, but keep every financial figure deterministic and tested.' },
+    ],
+  },
+  built: {
+    label: 'What I built',
+    heading: 'Conceived, designed and built – solo.',
+    intro: 'Every part of the product was built by me:',
+    items: [
+      { title: 'The v1 SaaS platform', body: 'React, TypeScript and Supabase: accounts, auth, row-level security, and Stripe subscriptions with usage limits.' },
+      { title: 'The data layer', body: 'Google Maps and Places, Airbtics, AirDNA and Apify, normalised into one stable internal format with caching.' },
+      { title: 'Analysis and reports', body: 'Mortgage, ROI and payback calculations, interactive scenarios and custom PDF reports.' },
+      { title: 'Operations', body: 'Internal CRM, product analytics, GA4, Slack notifications, admin tooling, a marketing site and a blog CMS.' },
+      { title: 'The 2.0 AI pipeline', body: 'Next.js and TypeScript: listing ingestion, visual analysis, area research, official statistics, regulatory assessment and a unit-tested financial model.' },
+    ],
+  },
+  aiCapabilities: {
+    label: 'AI & automation',
+    heading: 'AI where it helps, code where it must be exact.',
+    intro: 'v1 automated data and operations; 2.0 puts AI inside the analysis itself. Status per capability:',
+    statusLabels: { paused: 'v1 · paused', proven: '2.0 · proven on real listings' },
+    items: [
+      { title: 'Automated market-data pipeline', body: 'External APIs normalised into one internal format and cached to control cost.', status: 'paused' },
+      { title: 'Automatic report generation', body: 'Completed analyses exported as professional PDF reports.', status: 'paused' },
+      { title: 'Operational notifications', body: 'Slack alerts and admin tooling for running the product.', status: 'paused' },
+      { title: 'Structured listing ingestion', body: 'Apify and residential proxies extract price, floor area, coordinates and images from Idealista listings – no LLM guesses these figures. Full Hemnet support is next.', status: 'proven' },
+      { title: 'Visual property analysis', body: 'Claude Opus assesses condition from room-labelled photos; in testing it flagged a virtual-staging render and recognised a dated kitchen.', status: 'proven' },
+      { title: 'Autonomous area research', body: 'A research agent investigates schools, transport, amenities and planned developments; on one Seville listing it returned 22 sources.', status: 'proven' },
+      { title: 'Regulatory gate', body: 'Short-term-rental feasibility classified red, amber or green – and shown before the projected returns.', status: 'proven' },
+      { title: 'Grounded investment memo', body: 'Written only after the deterministic, unit-tested model has run, and validated against its figures.', status: 'proven' },
+      { title: 'Model routing and fault tolerance', body: 'Vision on a stronger model, other steps on a cheaper one; one imperfect response degrades a section instead of crashing the analysis.', status: 'proven' },
+    ],
+  },
+  verification:
+    'What the figures cover: the 100+ self-serve users and the real-estate pilots refer to v1. The 2.0 pipeline is proven end-to-end on real listings, not launched commercially. No revenue figures are claimed.',
+  keyLearnings: {
+    label: 'Key learnings',
+    heading: 'What the build taught.',
+    items: [
+      { title: 'Separate facts from judgement', body: 'An LLM should interpret, research and explain – never calculate a price, a mortgage or a return.' },
+      { title: 'Abstract external data early', body: 'One stable internal format made it possible to change a data provider without rebuilding the product.' },
+      { title: 'Design AI pipelines to degrade gracefully', body: 'Tolerant validation and isolated errors stop one imperfect model response from breaking the whole analysis.' },
+      { title: 'Validate with people, not just code', body: 'Pilots and structured UX research showed which figures buyers and agents actually trusted.' },
+    ],
+  },
+  relatedServices: { label: 'Related services', keys: ['aiGrowth', 'aiGtm', 'advisory'] },
   techStack: {
     label: 'Tech stack',
     items: [
@@ -2205,7 +2418,7 @@ const bnbalyzeEn: CaseStudy = {
   quote: {
     text:
       'What started as a vibe-coding experiment became a complete proptech SaaS with real-estate pilots and more than 100 organic users — and is now evolving into an AI-native property analyst built around a clear separation between verified facts and machine-generated judgement.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Founder, Bnbalyze',
   },
   cta: {
@@ -2244,7 +2457,7 @@ const bnbalyzeSv: CaseStudy = {
     ],
   },
   startingPoint: {
-    label: 'Utgångsläget',
+    label: 'Affärsutmaningen',
     heading: 'Fastighetsanalys är splittrad och långsam.',
     lead:
       'Att bedöma en fastighet som investering innebär att sy ihop källor för hand. Köpare behöver oftast kombinera:',
@@ -2412,6 +2625,64 @@ const bnbalyzeSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Bnbalyze: från vibe-kodad SaaS till AI-native proptech | Greow',
+    description:
+      'Så byggde Erik Oliva Werner Bnbalyze på egen hand: en proptech-SaaS med 100+ organiska användare och mäklarpiloter, nu ombyggd till en AI-native analytiker.',
+  },
+  approach: {
+    label: 'Strategiskt angreppssätt',
+    heading: 'Testa snabbt, validera med människor, bygg om kring det verkliga problemet.',
+    intro: 'Produkten gick igenom fyra medvetna steg:',
+    steps: [
+      { title: 'Testa byggsättet', body: 'Använda vibe coding med Lovable för att se hur långt en person kunde ta en riktig produkt, snabbt.' },
+      { title: 'Validera innan skalning', body: 'Mäklare som pilotkunder, UX-research med studenter från Hyper Island och organiska self-serve-användare – innan någon betald marknadsföring.' },
+      { title: 'Pausa och tänka om', body: 'Ta ett steg tillbaka när andra prioriteringar tog över, och sätta ord på vad v1 inte kunde: bedöma skicket, researcha området eller värdera regelverket.' },
+      { title: 'Bygg om med tydliga gränser', body: 'Lägga AI inne i analysflödet, men hålla varje finansiell siffra deterministisk och testad.' },
+    ],
+  },
+  built: {
+    label: 'Det här byggde jag',
+    heading: 'Idé, design och bygge – på egen hand.',
+    intro: 'Varje del av produkten byggde jag själv:',
+    items: [
+      { title: 'SaaS-plattformen (v1)', body: 'React, TypeScript och Supabase: konton, inloggning, radnivåsäkerhet och Stripe-prenumerationer med användningsgränser.' },
+      { title: 'Datalagret', body: 'Google Maps och Places, Airbtics, AirDNA och Apify, normaliserat till ett stabilt internt format med cache.' },
+      { title: 'Analys och rapporter', body: 'Beräkningar för bolån, ROI och återbetalningstid, interaktiva scenarier och egna PDF-rapporter.' },
+      { title: 'Drift', body: 'Internt CRM, produktanalys, GA4, Slack-notiser, admin-verktyg, en marknadssajt och ett blogg-CMS.' },
+      { title: 'AI-pipelinen i 2.0', body: 'Next.js och TypeScript: annonsinläsning, visuell analys, områdesresearch, officiell statistik, regelbedömning och en enhetstestad finansiell modell.' },
+    ],
+  },
+  aiCapabilities: {
+    label: 'AI & automation',
+    heading: 'AI där det hjälper, kod där det måste vara exakt.',
+    intro: 'v1 automatiserade data och drift; 2.0 lägger AI inne i själva analysen. Status per förmåga:',
+    statusLabels: { paused: 'v1 · pausad', proven: '2.0 · bevisad på riktiga annonser' },
+    items: [
+      { title: 'Automatiserat marknadsdataflöde', body: 'Externa API:er normaliserade till ett internt format och cachade för att hålla nere kostnaden.', status: 'paused' },
+      { title: 'Automatisk rapportgenerering', body: 'Färdiga analyser exporterade som professionella PDF-rapporter.', status: 'paused' },
+      { title: 'Driftnotiser', body: 'Slack-larm och admin-verktyg för att driva produkten.', status: 'paused' },
+      { title: 'Strukturerad annonsinläsning', body: 'Apify och residential proxies hämtar pris, yta, koordinater och bilder från Idealista-annonser – ingen LLM gissar siffrorna. Fullt stöd för Hemnet är nästa steg.', status: 'proven' },
+      { title: 'Visuell fastighetsanalys', body: 'Claude Opus bedömer skicket utifrån rumsmärkta bilder; i tester flaggade den en virtuellt möblerad bild och kände igen ett daterat kök.', status: 'proven' },
+      { title: 'Självständig områdesresearch', body: 'En researchagent undersöker skolor, kommunikationer, service och planerad bebyggelse; för en annons i Sevilla gav den 22 källor.', status: 'proven' },
+      { title: 'Regelspärr', body: 'Möjligheten till korttidsuthyrning klassas som röd, gul eller grön – och visas före den beräknade avkastningen.', status: 'proven' },
+      { title: 'Förankrat investerings-PM', body: 'Skrivs först när den deterministiska, enhetstestade modellen har körts, och valideras mot dess siffror.', status: 'proven' },
+      { title: 'Modellval och feltolerans', body: 'Bildanalys på en starkare modell, övriga steg på en billigare; ett ofullständigt svar försämrar ett avsnitt i stället för att krascha analysen.', status: 'proven' },
+    ],
+  },
+  verification:
+    'Vad siffrorna gäller: de 100+ self-serve-användarna och mäklarpiloterna avser v1. Pipelinen i 2.0 är bevisad hela vägen på riktiga annonser, men inte lanserad kommersiellt. Inga intäktssiffror påstås.',
+  keyLearnings: {
+    label: 'Lärdomar',
+    heading: 'Vad bygget lärde mig.',
+    items: [
+      { title: 'Skilj fakta från bedömning', body: 'En LLM ska tolka, researcha och förklara – aldrig räkna ut ett pris, ett bolån eller en avkastning.' },
+      { title: 'Abstrahera extern data tidigt', body: 'Ett stabilt internt format gjorde det möjligt att byta dataleverantör utan att bygga om produkten.' },
+      { title: 'Bygg AI-flöden som tål fel', body: 'Tolerant validering och isolerade fel hindrar ett ofullständigt modellsvar från att förstöra hela analysen.' },
+      { title: 'Validera med människor, inte bara kod', body: 'Piloter och strukturerad UX-research visade vilka siffror köpare och mäklare faktiskt litade på.' },
+    ],
+  },
+  relatedServices: { label: 'Relaterade tjänster', keys: ['aiGrowth', 'aiGtm', 'advisory'] },
   techStack: {
     label: 'Teknik-stack',
     items: [
@@ -2456,7 +2727,7 @@ const bnbalyzeSv: CaseStudy = {
   quote: {
     text:
       'Det som började som ett vibe-coding-experiment blev en komplett proptech-SaaS med fastighetsmäklarpiloter och mer än 100 organiska användare — och utvecklas nu till en AI-native fastighetsanalytiker byggd kring en tydlig åtskillnad mellan verifierade fakta och maskingenererat omdöme.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Grundare, Bnbalyze',
   },
   cta: {
@@ -2673,6 +2944,11 @@ const funnelEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Funnel.io: Building PLG From 0 to 20% of MRR – Case Study | Greow',
+    description:
+      'How Erik Oliva Werner built Funnel’s self-serve motion from zero to 20% of total MRR and ran the website as a product: SEO, CRO, pricing and experimentation.',
+  },
   role: {
     label: 'My role',
     heading: 'Growth product leadership across the whole acquisition surface.',
@@ -2693,7 +2969,7 @@ const funnelEn: CaseStudy = {
   quote: {
     text:
       'I helped turn Funnel’s acquisition model from a primarily sales-led motion into a compounding growth system — building PLG from zero to 20% of total MRR while increasing organic traffic by 50%, growing MQLs by 20%, and reducing CAC by more than 30%.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Growth Product Lead — Acquisition, Funnel.io',
   },
   cta: {
@@ -2908,6 +3184,11 @@ const funnelSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Funnel.io: PLG från 0 till 20 % av MRR – case | Greow',
+    description:
+      'Så byggde Erik Oliva Werner Funnels self-serve-motor från noll till 20 % av total MRR och drev sajten som en produkt: SEO, CRO, prissättning och experiment.',
+  },
   role: {
     label: 'Min roll',
     heading: 'Growth-produktledarskap över hela förvärvsytan.',
@@ -2928,7 +3209,7 @@ const funnelSv: CaseStudy = {
   quote: {
     text:
       'Jag hjälpte till att förvandla Funnels förvärvsmodell från en primärt säljledd motion till ett tillväxtsystem som växer med tiden — byggde PLG från noll till 20% av total MRR samtidigt som jag ökade organisk trafik med 50%, växte MQL med 20% och sänkte CAC med mer än 30%.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Growth Product Lead — Acquisition, Funnel.io',
   },
   cta: {
@@ -3146,6 +3427,11 @@ const rikstvEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'RiksTV & Strim.no: Streaming Launch With 40% Lower CAC | Greow',
+    description:
+      'How Erik Oliva Werner built Strim.no’s acquisition engine from zero – team, channels and measurement – cutting CAC by 40% while rebuilding rikstv.no.',
+  },
   role: {
     label: 'My role',
     heading: 'Growth and acquisition across RiksTV and Strim.no.',
@@ -3167,7 +3453,7 @@ const rikstvEn: CaseStudy = {
   quote: {
     text:
       'I built Strim’s acquisition engine from zero, reduced CAC by 40%, and exceeded subscriber targets ahead of schedule — while simultaneously rebuilding RiksTV’s website and leading digital sales for the established core business.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Head of Growth & Acquisition, RiksTV & Strim.no',
   },
   cta: {
@@ -3383,6 +3669,11 @@ const rikstvSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'RiksTV & Strim.no: streaminglansering med 40 % lägre CAC | Greow',
+    description:
+      'Så byggde Erik Oliva Werner Strim.nos kundförvärv från noll – team, kanaler och mätning – och sänkte CAC med 40 % samtidigt som rikstv.no byggdes om.',
+  },
   role: {
     label: 'Min roll',
     heading: 'Growth och förvärv över RiksTV och Strim.no.',
@@ -3404,7 +3695,7 @@ const rikstvSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde Strims förvärvsmotor från noll, sänkte CAC med 40%, och överträffade prenumerantmålen före tidplan — samtidigt som jag byggde om RiksTVs webbplats och ledde digital försäljning för den etablerade kärnaffären.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Head of Growth & Acquisition, RiksTV & Strim.no',
   },
   cta: {
@@ -3646,6 +3937,11 @@ const teliaEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Telia Norway: E-Commerce Rebuild That Doubled Conversion | Greow',
+    description:
+      'How Erik Oliva Werner rebuilt Telia Norway’s webshop across B2C and B2B, set up an agile product organisation and doubled e-commerce conversion.',
+  },
   role: {
     label: 'My role',
     heading: 'E-commerce transformation across B2C and B2B.',
@@ -3667,7 +3963,7 @@ const teliaEn: CaseStudy = {
   quote: {
     text:
       'I rebuilt Telia Norway’s e-commerce platform and operating model, doubled conversion, transformed performance marketing, and launched the company’s first omnichannel programme across B2C and B2B.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'E-Commerce Manager, Telia Norway',
   },
   cta: {
@@ -3907,6 +4203,11 @@ const teliaSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Telia Norway: ombyggd e-handel med dubbel konvertering | Greow',
+    description:
+      'Så byggde Erik Oliva Werner om Telia Norways webbutik för B2C och B2B, satte upp en agil produktorganisation och fördubblade konverteringen i e-handeln.',
+  },
   role: {
     label: 'Min roll',
     heading: 'E-handelstransformation över B2C och B2B.',
@@ -3928,7 +4229,7 @@ const teliaSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde om Telia Norges e-handelsplattform och operativa modell, fördubblade konverteringen, transformerade performance marketing, och lanserade bolagets första omnikanalprogram över B2C och B2B.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'E-Commerce Manager, Telia Norway',
   },
   cta: {
@@ -4186,6 +4487,11 @@ const dnbEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'DNB Eiendom: Two-Sided Platform Rebuild, 75% More Leads | Greow',
+    description:
+      'How Erik Oliva Werner rebuilt DNB Eiendom’s platform for buyers and sellers, with measurement from scratch – 75% more leads and 40% higher CX scores.',
+  },
   role: {
     label: 'My role',
     heading: 'Digital product transformation, end-to-end.',
@@ -4207,7 +4513,7 @@ const dnbEn: CaseStudy = {
   quote: {
     text:
       'I rebuilt DNB Eiendom’s digital platform around the distinct needs of buyers and sellers — driving 75% more leads, improving customer-experience scores by 40%, and establishing the measurement foundation for continuous product development.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Head of Product Development & Experience, DNB Eiendom',
   },
   cta: {
@@ -4463,6 +4769,11 @@ const dnbSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'DNB Eiendom: tvåsidig plattform med 75 % fler leads | Greow',
+    description:
+      'Så byggde Erik Oliva Werner om DNB Eiendoms plattform för köpare och säljare, med mätning från grunden – 75 % fler leads och 40 % högre kundupplevelsepoäng.',
+  },
   role: {
     label: 'Min roll',
     heading: 'Digital produkttransformation, från start till mål.',
@@ -4484,7 +4795,7 @@ const dnbSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde om DNB Eiendoms digitala plattform kring köparnas och säljarnas skilda behov — drev 75% fler leads, förbättrade kundupplevelsepoängen med 40%, och etablerade mätgrunden för löpande produktutveckling.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Head of Product Development & Experience, DNB Eiendom',
   },
   cta: {
@@ -4740,6 +5051,11 @@ const refappEn: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Refapp: Building an HR-Tech Growth Function From Zero | Greow',
+    description:
+      'As Chief Growth Officer, Erik Oliva Werner built Refapp’s growth function from scratch – team, martech, brand and demand engine – doubling inbound pipeline.',
+  },
   role: {
     label: 'My role',
     heading: 'Chief Growth Officer — the whole growth function.',
@@ -4763,7 +5079,7 @@ const refappEn: CaseStudy = {
   quote: {
     text:
       'I built Refapp’s growth function from the ground up — creating the team, brand, website, martech, demand engine and international GTM strategy that doubled inbound pipeline within one year.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Chief Growth Officer, Refapp',
   },
   cta: {
@@ -5017,6 +5333,11 @@ const refappSv: CaseStudy = {
       },
     ],
   },
+  seo: {
+    title: 'Refapp: en growth-funktion för HR-tech från noll | Greow',
+    description:
+      'Som Chief Growth Officer byggde Erik Oliva Werner Refapps growth-funktion från grunden – team, martech, varumärke och efterfrågemotor – och dubblerade inflödet.',
+  },
   role: {
     label: 'Min roll',
     heading: 'Chief Growth Officer — hela growth-funktionen.',
@@ -5040,7 +5361,7 @@ const refappSv: CaseStudy = {
   quote: {
     text:
       'Jag byggde Refapps growth-funktion från grunden — och skapade teamet, varumärket, webbplatsen, martech, demand-motorn och den internationella GTM-strategin som fördubblade inbound pipeline inom ett år.',
-    author: 'Erik Werner',
+    author: 'Erik Oliva Werner',
     role: 'Chief Growth Officer, Refapp',
   },
   cta: {
@@ -5071,6 +5392,7 @@ export function caseJsonLd(lang: Lang, data: CaseStudy) {
 
   const breadcrumb = {
     '@type': 'BreadcrumbList',
+    '@id': `${url}#breadcrumb`,
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Greow', item: home },
       { '@type': 'ListItem', position: 2, name: workLabel, item: `${SITE_URL}${workBase[lang]}` },
@@ -5080,15 +5402,51 @@ export function caseJsonLd(lang: Lang, data: CaseStudy) {
 
   const article = {
     '@type': 'Article',
+    '@id': `${url}#article`,
     headline: data.title,
-    description: data.intro,
+    description: data.seo?.description ?? data.intro,
     about: data.client,
     inLanguage: lang,
     url,
     author: { '@id': `${SITE_URL}/#erik` },
     publisher: { '@id': `${SITE_URL}/#organization` },
     mainEntityOfPage: url,
+    image: data.heroImage ? `${SITE_URL}${data.heroImage.src}` : `${SITE_URL}/images/og-greow-en.jpg`,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
   }
 
   return { '@context': 'https://schema.org', '@graph': [breadcrumb, article] }
+}
+
+// Work index JSON-LD: breadcrumb + the list of published case studies.
+export function workIndexJsonLd(lang: Lang) {
+  const home = lang === 'en' ? `${SITE_URL}/` : `${SITE_URL}/sv/`
+  const url = `${SITE_URL}${workBase[lang]}`
+  const list = [...projects[lang]]
+    .filter((p) => p.href)
+    .sort((a, b) => caseOrder.indexOf(a.slug) - caseOrder.indexOf(b.slug))
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${url}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Greow', item: home },
+          { '@type': 'ListItem', position: 2, name: lang === 'en' ? 'Work' : 'Case', item: url },
+        ],
+      },
+      {
+        '@type': 'ItemList',
+        '@id': `${url}#cases`,
+        name: lang === 'en' ? 'Case studies' : 'Case',
+        itemListElement: list.map((p, i) => ({
+          '@type': 'ListItem',
+          position: i + 1,
+          name: `${p.client} — ${p.title}`,
+          url: `${SITE_URL}${p.href}`,
+        })),
+      },
+    ],
+  }
 }

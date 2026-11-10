@@ -12,8 +12,8 @@ const OG_IMAGE = `${SITE_URL}/images/bnbalyze-og.png`
 const URL_PATH = `${SITE_URL}/sv/case/bnbalyze/`
 
 export const metadata: Metadata = {
-  title: `${data.client} — Case · Greow`,
-  description: data.intro,
+  title: data.seo?.title ?? `${data.client} — Case · Greow`,
+  description: data.seo?.description ?? data.intro,
   alternates: {
     canonical: URL_PATH,
     languages: {
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${data.client} — ${data.title}`,
-    description: data.intro,
+    title: data.seo?.title ?? `${data.client} — ${data.title}`,
+    description: data.seo?.description ?? data.intro,
     url: URL_PATH,
     type: 'article',
     locale: 'sv_SE',
@@ -41,7 +41,7 @@ export default function BnbalyzeCaseSv() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Nav t={t.nav} lang="sv" />
-      <main>
+      <main id="main">
         <CaseStudyView t={t} lang="sv" data={data} />
       </main>
       <ScrollReveal />

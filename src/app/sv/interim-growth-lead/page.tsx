@@ -10,7 +10,7 @@ const content = services.sv['fractional']
 const SITE_URL = 'https://greow.digital'
 const EN = `${SITE_URL}${serviceUrl('fractional', 'en')}`
 const SV = `${SITE_URL}${serviceUrl('fractional', 'sv')}`
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-sv.jpg`
 
 export const metadata: Metadata = {
   title: content.meta.title,
@@ -31,7 +31,7 @@ export default function FractionalGrowthLeadSv() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Nav t={t.nav} lang="sv" />
-      <main>
+      <main id="main">
         <ServicePage t={t} lang="sv" content={content} />
       </main>
       <ScrollReveal />

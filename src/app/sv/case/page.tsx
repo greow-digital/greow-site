@@ -3,12 +3,12 @@ import Nav from '@/components/Nav'
 import ScrollReveal from '@/components/ScrollReveal'
 import WorkIndex from '@/components/work/WorkIndex'
 import { translations } from '@/lib/translations'
-import { workIndexCopy } from '@/lib/work'
+import { workIndexCopy, workIndexJsonLd } from '@/lib/work'
 
 const t = translations.sv
 const copy = workIndexCopy.sv
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-sv.jpg`
 
 export const metadata: Metadata = {
   title: copy.meta.title,
@@ -33,8 +33,9 @@ export const metadata: Metadata = {
 export default function SvCasePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workIndexJsonLd('sv')) }} />
       <Nav t={t.nav} lang="sv" />
-      <main>
+      <main id="main">
         <WorkIndex t={t} lang="sv" />
       </main>
       <ScrollReveal />

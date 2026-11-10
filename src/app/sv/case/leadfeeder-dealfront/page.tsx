@@ -8,12 +8,12 @@ import { caseStudies, caseJsonLd } from '@/lib/work'
 const t = translations.sv
 const data = caseStudies.sv['leadfeeder-dealfront']
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-sv.jpg`
 const URL_PATH = `${SITE_URL}/sv/case/leadfeeder-dealfront/`
 
 export const metadata: Metadata = {
-  title: `${data.client} — Case · Greow`,
-  description: data.intro,
+  title: data.seo?.title ?? `${data.client} — Case · Greow`,
+  description: data.seo?.description ?? data.intro,
   alternates: {
     canonical: URL_PATH,
     languages: {
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${data.client} — ${data.title}`,
-    description: data.intro,
+    title: data.seo?.title ?? `${data.client} — ${data.title}`,
+    description: data.seo?.description ?? data.intro,
     url: URL_PATH,
     type: 'article',
     locale: 'sv_SE',
@@ -41,7 +41,7 @@ export default function LeadfeederCaseSv() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Nav t={t.nav} lang="sv" />
-      <main>
+      <main id="main">
         <CaseStudyView t={t} lang="sv" data={data} />
       </main>
       <ScrollReveal />

@@ -539,4 +539,11 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | A1/A3 accessibility | Skip-to-content link on every page (`#main`); Services dropdown has `aria-haspopup`/`aria-controls`. | ✅ |
 | A7 contrast | Grey tokens darkened (`--jet-muted` #777 → #6B6B6B, `--jet-dim` #AAA → #6B6B6B) and dimmed white text on dark bands raised to 85% opacity. **Open:** brand salmon/turquoise as text or button colour (e.g. white on salmon CTA, 2.34:1) fails WCAG AA — needs a brand decision. | ◑ |
 | Hygiene | Legacy root `index.html`, `assets/`, root `CNAME` removed (deploy uses `out/` and `public/CNAME`); README rewritten for the Next.js site. | ✅ |
-| I7 404 | Still Next's default 404 (multiple root layouts need a custom solution). | ⏳ |
+| I7 404 | See below. | ✅ |
+
+### 2026-11-10 — Brand-colour contrast + branded 404
+
+| Item | Change | Status |
+|---|---|---|
+| A7 contrast | New token `--salmon-ink` `#B84432` for salmon text on light backgrounds (5.4:1 on white, 4.8:1 on tints). Salmon buttons and badges keep their salmon background with dark text (7.4:1, was 2.3:1). Turquoise text on white → jungle. Step numbers on the jungle bands → white. Salmon "who it's for" card and salmon work-index metric cards → dark text. axe colour-contrast: 0 failures on 9 representative pages (was 12 failing colour pairs). | ✅ |
+| I7 404 | Branded, bilingual 404 ("This page churned." / "Den här sidan har churnat.") with a funnel-report visual (visited 1 → found 0 → conversion rate 0 %). Rendered from `src/app/(services)/page-not-found/`, copied to `out/404.html` by `scripts/postbuild-404.mjs` (part of `npm run build`), route removed afterwards. Swedish shown for missing URLs under `/sv/`. `noindex, follow`. | ✅ |

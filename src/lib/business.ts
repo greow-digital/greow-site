@@ -38,5 +38,5 @@ export const postalAddressSchema = {
 // (e.g. LinkedIn). Left empty on purpose — nothing is guessed.
 export const profiles: { organization: string[]; person: string[] } = {
   organization: [],
-  person: [],
+  person: ['https://www.linkedin.com/in/erwerner'],
 }

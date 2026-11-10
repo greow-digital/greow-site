@@ -103,7 +103,7 @@ These cannot be verified from the repository or the build. Do them after `claude
 | L8 | Share previews | LinkedIn Post Inspector on `/` and an AI page | `HERO_CAROUSEL_2.png` is 1306×3572 but declared 1200×630 (open P0 from the audit) |
 | L9 | Core Web Vitals | PageSpeed Insights (mobile) for `/` and an AI page | No field data observed |
 | L10 | Business identity (NAP) | Compare footer + schema address with the Google Business Profile, character for character | Postal town *Hässelby* and name *Greow* vs *Greow Digital* are unconfirmed |
-| L11 | `sameAs` | Add verified LinkedIn (and other) URLs to `profiles` | Strengthens entity matching for Google and AI assistants |
+| L11 | `sameAs` | Person: LinkedIn added 2026-11-10 (`linkedin.com/in/erwerner`). Organization: add a Greow company page URL if one exists | Strengthens entity matching for Google and AI assistants |
 | L12 | AI crawler access | Check server logs or CDN analytics for GPTBot / ClaudeBot / PerplexityBot hits | robots allows them; actual crawling not observed |
 | L13 | Analytics | GA4 property + tag | No analytics on the site; no traffic baseline |
 

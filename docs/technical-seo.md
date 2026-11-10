@@ -16,7 +16,8 @@ All structured data uses fixed `@id`s so that every page describes the same enti
 | WebSite | `https://greow.digital/#website` | `src/lib/schema.ts` | all |
 | Organization (Greow, alt. Greow Digital) | `https://greow.digital/#organization` | `src/lib/schema.ts` | all |
 | Logo (ImageObject, 180×180 PNG) | `https://greow.digital/#logo` | `src/lib/schema.ts` | all |
-| Person (Erik Oliva Werner) | `https://greow.digital/#erik` | `src/lib/schema.ts` | all |
+| Person (Erik Oliva Werner) | `https://greow.digital/#erik` | `src/lib/schema.ts` | all; `url` = `/erik-oliva-werner/`, description = micro bio |
+| ProfilePage (bio) | `<bio URL>#profilepage` | `founderJsonLd()` in `src/lib/founder.ts` | `/erik-oliva-werner/`, `/sv/erik-oliva-werner/` |
 | ProfessionalService (Greow) | `https://greow.digital/#service` | `src/lib/schema.ts` | all |
 | Service (per service page) | `<page URL>#service` | `services.ts`, `aiGrowthConsultant.ts`, `aiGtmSystems.ts` | service pages |
 | BreadcrumbList | `<page URL>#breadcrumb` | per page type | all except the two homepages |

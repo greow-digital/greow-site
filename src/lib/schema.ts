@@ -5,6 +5,7 @@
 import type { Lang } from './work'
 import { translations } from './translations'
 import { postalAddressSchema, mapsUrl, profiles } from './business'
+import { founderByLang, founderMetaByLang } from './founder'
 
 const SITE_URL = 'https://greow.digital'
 const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
@@ -12,16 +13,12 @@ const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
 const copy = {
   en: {
     jobTitle: 'Founder, AI-Native Growth & GTM Partner',
-    personDescription:
-      'Senior growth and go-to-market leader based in Stockholm, Sweden. Former growth leader at Funnel and Leadfeeder/Dealfront; combines growth strategy with hands-on, AI-native execution.',
     serviceName: 'Greow — AI-Native Growth & GTM Partner',
     areaServed: ['Sweden', 'Scandinavia', 'Europe'],
     capabilities: ['Growth Strategy & Advisory', 'AI-Native Growth & GTM Systems', 'Hands-on Growth Execution'],
   },
   sv: {
     jobTitle: 'Grundare, AI-native growth- & GTM-partner',
-    personDescription:
-      'Senior growth- och go-to-market-ledare baserad i Stockholm. Tidigare growth-ledare på Funnel och Leadfeeder/Dealfront; kombinerar tillväxtstrategi med praktiskt, AI-native genomförande.',
     serviceName: 'Greow — AI-native growth- & GTM-partner',
     areaServed: ['Sverige', 'Skandinavien', 'Europa'],
     capabilities: ['Tillväxtstrategi & rådgivning', 'AI-native growth- & GTM-system', 'Praktiskt growth-genomförande'],
@@ -66,9 +63,9 @@ export function siteGraph(lang: Lang) {
     '@type': 'Person',
     '@id': `${SITE_URL}/#erik`,
     name: 'Erik Oliva Werner',
-    url: `${home}#about-erik`,
+    url: `${SITE_URL}${founderMetaByLang.en.path}`,
     jobTitle: c.jobTitle,
-    description: c.personDescription,
+    description: founderByLang[lang].bios.micro,
     worksFor: { '@id': `${SITE_URL}/#organization` },
     image: `${SITE_URL}/images/erik-oliva-werner.jpg`,
     homeLocation: {

@@ -3,6 +3,7 @@ import type { Translations } from '@/lib/translations'
 import { workBase } from '@/lib/work'
 import { servicesFor } from '@/lib/services'
 import { business, mapsUrl } from '@/lib/business'
+import { plannedLink } from '@/lib/routes'
 import FooterMap from './FooterMap'
 
 interface FooterProps {
@@ -50,6 +51,10 @@ export default function Footer({ t, lang }: FooterProps) {
           <div className="footer-col">
             <span className="footer-col-title">{moreLabel}</span>
             <Link href={workBase[lang]}>{t.nav.work}</Link>
+            {(() => {
+              const about = plannedLink('founder', lang)
+              return about ? <Link href={about.href}>{lang === 'en' ? 'About Erik Oliva Werner' : 'Om Erik Oliva Werner'}</Link> : null
+            })()}
             {t.footer.links.map((link) => (
               <a key={link.label} href={link.href.startsWith('#') ? `${home}${link.href}` : link.href}>
                 {link.label}

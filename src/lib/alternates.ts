@@ -5,6 +5,7 @@
 import type { Lang } from './work'
 import { workBase, projects } from './work'
 import { serviceNav } from './services'
+import { plannedPages } from './routes'
 
 export const SITE_URL = 'https://greow.digital'
 
@@ -17,6 +18,9 @@ export function translationPairs(): Pair[] {
     ...serviceNav
       .filter((s) => !s.available || (s.available.includes('en') && s.available.includes('sv')))
       .map((s) => ({ en: s.url.en, sv: s.url.sv })),
+    ...Object.values(plannedPages)
+      .filter((p) => p.published)
+      .map((p) => ({ en: p.url.en, sv: p.url.sv })),
     ...projects.en
       .filter((p) => p.href)
       .map((p) => ({ en: `${workBase.en}${p.slug}/`, sv: `${workBase.sv}${p.slug}/` })),

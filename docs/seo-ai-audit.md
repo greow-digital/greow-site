@@ -519,3 +519,11 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | Validation | `npm run check:seo`: 34 pages, 0 errors, mutation-tested. Rich Results Test still requires the live URL. | ✅ offline / ⏳ live |
 | Measurement | `docs/measurement/`: README, 10 prompts × EN/SV, empty AI-visibility log, GSC monthly log with the real 2026-11-10 baseline, target queries, competitor list. | ✅ |
 | Mentimeter | Founder copy as an unpublished EN + SV draft in `docs/drafts/` with a publication checklist and a mapping to the case template. | ✅ Draft only |
+
+### 2026-11-10 — Founder bio page (F3)
+
+| Item | Change | Status |
+|---|---|---|
+| F3 founder page | `/erik-oliva-werner/` + `/sv/erik-oliva-werner/` (founder copy; name written in full, URL uses the full name). ProfilePage + BreadcrumbList; `Person.url` → bio page, `Person.description` → micro bio. In sitemap and translation registry (36 URLs). | ✅ |
+| Internal links | Linked from the homepage founder section, the footer on every page, and onward to cases (DNB, RiksTV, Refapp, Leadfeeder, Funnel, Happy Vegan, Bnbalyze, Sands) and all relevant services. | ✅ |
+| Claims | Mentimeter/Growthship carries the employment disclosure; LINK Mobility and Mentimeter are not linked (no case pages). "Connect on LinkedIn" is hidden until a verified URL is added. | ✅ |

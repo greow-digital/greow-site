@@ -17,7 +17,7 @@ Every finding is labelled:
 | **[Inferred]** | Strongly implied by verified facts plus known platform behaviour (e.g. how GitHub Pages or Google treats something), but not observed on the live site. |
 | **[Assumption]** | A hypothesis that needs data (Search Console, keyword tools, analytics, live crawl) before acting. |
 
-**What could not be verified:** The live site (`https://greow.digital`) was **not reachable** from the audit environment (outbound proxy refused the host). Live HTTP status codes, redirect behaviour (`www`, `http`, missing trailing slash), actual indexing status, Core Web Vitals field data and search demand are therefore **not verified**. Search Console data was not pulled. See §9 for the follow-up checks that close these gaps.
+**What could not be verified:** The live site (`https://greow.digital`) was **not reachable** from the audit environment (outbound proxy refused the host). Live HTTP status codes, redirect behaviour (`www`, `http`, missing trailing slash), Core Web Vitals field data and search demand are therefore **not verified**. Search Console data (performance + sampled URL inspection) was added on 2026-11-10 in **§10**. There is no GA4 property or analytics tag for the site, so traffic figures are unavailable. See §9 for remaining gaps.
 
 Priority scale: **P0** = fix first (broken/misleading signals), **P1** = high impact, **P2** = meaningful improvement, **P3** = nice to have.
 
@@ -294,6 +294,9 @@ AI answer engines (Google AI Overviews/AI Mode, ChatGPT search, Perplexity, Clau
 
 | Pri | ID | Action | Effort | Files (expected) |
 |---|---|---|---|---|
+| **P0** | G1 | Submit `sitemap.xml` in Search Console (see §10) | XS | — (GSC) |
+| **P0** | G4 | Install GA4 + booking key events; link to GSC (see §10) | S | layouts, `CalEmbed.tsx` |
+| **P0** | G2 + I2–I4 | Internal-linking fixes so `/work/`, case studies and all services get discovered (moved up from P1 by GSC data) | S | see I2–I4 rows below |
 | **P0** | W1 | Create correct 1200×630 OG image(s); fix declared dimensions | S | `public/images/`, all `metadata` blocks |
 | P1 | J2/J3 | Shared site graph (WebSite+Org+Person) on every page in both languages | S | new `src/lib/schema.ts`, layouts, page files |
 | P1 | F1/F3/J5 | Consistent founder name; About page with `ProfilePage`, `sameAs` | M | `translations.ts`, `Footer.tsx`, new route ×2, sitemap |
@@ -343,11 +346,65 @@ AI answer engines (Google AI Overviews/AI Mode, ChatGPT search, Perplexity, Clau
 ## 9. Open questions & verification still required
 
 1. **Live behaviour** — confirm redirects (`www`, `http`, no trailing slash), 404 status, and that the deployed HTML matches this build. *(Live site was unreachable from the audit environment.)*
-2. **Search Console** — current indexed pages, queries/impressions for "growth as a service", "fractional growth", "GTM", any canonical/hreflang issues. *(Not pulled.)*
-3. **Keyword demand** for EN/SV AI-growth and GTM terms (validates §5 priorities).
+2. **Search Console** — ✅ pulled 2026-11-10, see §10. Remaining: full Page Indexing report export from the GSC UI (the API only inspects one URL at a time).
+3. **Keyword demand** for EN/SV AI-growth and GTM terms (validates §5 priorities). GSC has too little data to answer this (§10).
 4. **Founder decisions** — canonical name form; LinkedIn and other profile URLs for `sameAs`; whether AI Growth/GTM should become the lead positioning or a service line.
 5. **Client permissions** — confirm case-study metrics and quotes are cleared for prominent use in summaries and schema.
 6. **AI-citation baseline** — run the prompt set in §4 before changes ship so impact can be measured.
+
+---
+
+## 10. Search Console & analytics data (pulled 2026-11-10)
+
+Source: Google Search Console property `sc-domain:greow.digital` (data through 2026-11-08), via the Cogny connector. All items below are **[Verified]** from GSC unless marked.
+
+### 10.1 Search performance
+
+| Window | Clicks | Impressions | CTR | Avg. position |
+|---|---|---|---|---|
+| Last 92 days (2026-08-10 → 11-09) | 6 | 137 | 4.4% | 7.4 |
+| Last 30 days (2026-10-11 → 11-09) | 1 | 42 | 2.4% | 5.3 |
+
+- **All 6 clicks went to `/sv/`**. No English page got a click.
+- **Sweden** accounts for 49 of the 137 impressions and all 6 clicks. The rest are 1–3 impressions each from scattered countries (likely noise).
+- **Visible queries:** only 5, totalling 22 impressions: `greow` (13 impr, pos 3.1), `happy vegan butik` (5, pos 10), `personlig mentor online` (2, pos 52), `fractional growth lead` (1, pos 9), `graow` (1, pos 61). The remaining ~115 impressions are anonymised.
+- **There is no measurable non-brand demand yet** for Growth as a Service, fractional growth, GTM or AI-growth terms. §5's keyword priorities therefore remain **[Assumption]** and must be validated with an external keyword tool, not GSC.
+- Pages with impressions: `/` (42), `/sv/` (25), `/growth-as-a-service/` (22), `/fractional-growth-lead/` (15), `/work/leadfeeder-dealfront/` (14), `/sv/growth-advisory/` (12), `/work/telia-norway/` (11), plus 14 others with 1–9 each.
+
+### 10.2 Indexing (URL Inspection, sampled)
+
+| URL | GSC status | Last crawl |
+|---|---|---|
+| `/` | Submitted and indexed | 2026-09-28 |
+| `/sv/` | Submitted and indexed | 2026-11-01 |
+| `/growth-as-a-service/` | Submitted and indexed | 2026-10-10 |
+| `/sv/growth-as-a-service/` | Submitted and indexed | 2026-08-29 |
+| `/work/telia-norway/` | **Crawled – currently not indexed** | 2026-09-02 |
+| `/work/` | **URL is unknown to Google** | — |
+| `/work/funnel/` | **URL is unknown to Google** | — |
+| `/growth-advisory/` | **URL is unknown to Google** | — |
+
+### 10.3 New and re-prioritised findings
+
+| # | Finding | Label | Priority |
+|---|---|---|---|
+| G1 | **No sitemap is currently submitted** in GSC. The site generates `/sitemap.xml`, but GSC lists zero sitemaps. Indexed pages say "Submitted and indexed", so one was probably submitted earlier and later removed. | Verified (absence) / Inferred (history) | **P0** |
+| G2 | **Key pages are unknown to Google**: `/work/`, `/work/funnel/` (the strongest PLG proof) and `/growth-advisory/`. This confirms the internal-linking gaps in §3.6 (I2–I4) and the missing sitemap matter in practice, not just in theory. | Verified | **P0** |
+| G3 | **Case studies get crawled but not indexed** (`/work/telia-norway/`). The likely causes, in order, are: (a) weak internal linking; (b) generic titles and over-long descriptions copied from the intro (T2/T3); (c) the site being new with low authority. The EN/SV pair is not the problem: Google picked the correct canonical. | Verified (status) / Inferred (cause) | P1 |
+| G4 | **No analytics on the site.** The only GA4 property connected through Cogny is "Offert Sands Entreprenad"; none exists for greow.digital. The codebase contains no GA4, GTM or other analytics tag. So **sessions for the past 30 days cannot be reported**, and no conversion baseline (booking clicks, Cal.com bookings) exists for the SEO work. | Verified | **P0** |
+| G5 | Swedish is the only market that converts right now (all 6 clicks went to `/sv/`). This supports giving Swedish-language AI Growth/GTM pages equal priority (§5 SV slugs, P5). | Verified (data) / Assumption (strategy) | P1 |
+
+**Recommendations**
+1. Submit `https://greow.digital/sitemap.xml` in GSC. This can be done via the Cogny connector once you confirm.
+2. Install GA4 (a GA4 tag added to the shared layouts, or GTM) with key events `book_call_click` and `cal_booking_completed` (Cal.com embed events). Link GA4 to GSC.
+3. Ship the internal-linking fixes (I2, I3, I4) before any new content. They are the most likely reason case pages are undiscovered or not indexed.
+4. After deploying, request indexing in the GSC UI for `/work/`, all case studies and all service pages (the API cannot request indexing).
+
+**Acceptance criteria**
+- [ ] GSC lists `sitemap.xml` as successfully processed with 30 discovered URLs.
+- [ ] URL Inspection shows "Indexed" for all 8 service pages, both work indexes and ≥14 of 18 case studies within 6 weeks of the linking fixes.
+- [ ] A GA4 property exists for greow.digital, receives sessions within 24 h of deploy, is linked to GSC, and records booking events.
+- [ ] A 30-day baseline (sessions, organic sessions, bookings) is recorded before the content/positioning changes in §5 ship.
 
 ---
 

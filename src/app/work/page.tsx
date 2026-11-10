@@ -8,7 +8,7 @@ import { workIndexCopy, workIndexJsonLd } from '@/lib/work'
 const t = translations.en
 const copy = workIndexCopy.en
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-en.jpg`
 
 export const metadata: Metadata = {
   title: copy.meta.title,
@@ -34,7 +34,7 @@ export default function WorkPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workIndexJsonLd('en')) }} />
       <Nav t={t.nav} lang="en" />
-      <main>
+      <main id="main">
         <WorkIndex t={t} lang="en" />
       </main>
       <ScrollReveal />

@@ -8,7 +8,7 @@ import { caseStudies, caseJsonLd } from '@/lib/work'
 const t = translations.sv
 const data = caseStudies.sv['sands-entreprenad']
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-sv.jpg`
 const URL_PATH = `${SITE_URL}/sv/case/sands-entreprenad/`
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ export default function SandsCaseSv() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Nav t={t.nav} lang="sv" />
-      <main>
+      <main id="main">
         <CaseStudyView t={t} lang="sv" data={data} />
       </main>
       <ScrollReveal />

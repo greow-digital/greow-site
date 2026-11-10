@@ -527,3 +527,16 @@ grep -rn "Erik Werner" src                    # name inconsistency
 | F3 founder page | `/erik-oliva-werner/` + `/sv/erik-oliva-werner/` (founder copy; name written in full, URL uses the full name). ProfilePage + BreadcrumbList; `Person.url` → bio page, `Person.description` → micro bio. In sitemap and translation registry (36 URLs). | ✅ |
 | Internal links | Linked from the homepage founder section, the footer on every page, and onward to cases (DNB, RiksTV, Refapp, Leadfeeder, Funnel, Happy Vegan, Bnbalyze, Sands) and all relevant services. | ✅ |
 | Claims | Mentimeter/Growthship carries the employment disclosure; LINK Mobility and Mentimeter are not linked (no case pages). "Connect on LinkedIn" is hidden until a verified URL is added. | ✅ |
+
+### 2026-11-10 — Remaining backlog: share images, performance, accessibility, cleanup
+
+| Item | Change | Status |
+|---|---|---|
+| Sands claims | "Internal backoffice" removed wherever it was attributed to Sands (AI pages, bio). Backoffice tools remain as a service capability. | ✅ |
+| W1 share image (P0) | Branded 1200×630 JPG per language (`og-greow-en.jpg` 41 KB, `og-greow-sv.jpg` 43 KB) on every page and in Organization/Service schema; Swedish pages use the Swedish image. Bio pages use the portrait. | ✅ |
+| W2/W4 images | Avatar 363 KB PNG → 3 KB WebP; home hero dashboard 881 KB PNG → 328 KB WebP (900 px); bio portrait shown as 25 KB WebP (original JPG kept for schema/sharing). | ✅ |
+| W3 fonts | 20 preloaded font files → 5 (Ubuntu 400/500/700, Source Sans 3 variable normal + italic, latin subset only). | ✅ |
+| A1/A3 accessibility | Skip-to-content link on every page (`#main`); Services dropdown has `aria-haspopup`/`aria-controls`. | ✅ |
+| A7 contrast | Grey tokens darkened (`--jet-muted` #777 → #6B6B6B, `--jet-dim` #AAA → #6B6B6B) and dimmed white text on dark bands raised to 85% opacity. **Open:** brand salmon/turquoise as text or button colour (e.g. white on salmon CTA, 2.34:1) fails WCAG AA — needs a brand decision. | ◑ |
+| Hygiene | Legacy root `index.html`, `assets/`, root `CNAME` removed (deploy uses `out/` and `public/CNAME`); README rewritten for the Next.js site. | ✅ |
+| I7 404 | Still Next's default 404 (multiple root layouts need a custom solution). | ⏳ |

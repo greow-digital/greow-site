@@ -184,7 +184,6 @@ export const aiGrowth = {
       list: [
         'Custom website and conversion-focused landing pages',
         'Custom CMS and content workflows',
-        'Internal backoffice capabilities',
         'Lead capture and management flows',
         'Marketing data and analytics integrations',
         'SEO, experimentation and ongoing conversion optimization',
@@ -509,7 +508,6 @@ const aiGrowthSv: typeof aiGrowth = {
       list: [
         'Skräddarsydd sajt och konverteringsfokuserade landningssidor',
         'Skräddarsytt CMS och innehållsflöden',
-        'Interna backoffice-funktioner',
         'Flöden för leadfångst och leadhantering',
         'Integrationer för marknadsdata och analys',
         'SEO, experiment och löpande konverteringsoptimering',

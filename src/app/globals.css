@@ -19,8 +19,8 @@
   /* Text */
   --jet: #1A1A1A;
   --jet-light: #444444;
-  --jet-muted: #777777;
-  --jet-dim: #AAAAAA;
+  --jet-muted: #6B6B6B; /* was #777 (4.47:1 on white) → 5.3:1 */
+  --jet-dim: #6B6B6B; /* was #AAA (2.3:1) → 4.7:1 on tinted backgrounds */
   --white: #FFFFFF;
   --black: #000000;
   --border: rgba(0,0,0,0.08);
@@ -418,7 +418,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   border-radius: var(--radius);
   min-height: 480px;
-  background-image: url('/images/erik-oliva-werner.jpg');
+  background-image: url('/images/erik-oliva-werner-1200.webp');
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -458,9 +458,9 @@ a { color: inherit; text-decoration: none; }
 }
 .step-card:nth-child(1) .step-num { background: rgba(255,135,115,0.2); color: var(--salmon); }
 .step-card:nth-child(2) .step-num { background: rgba(165,219,194,0.2); color: var(--turquoise); }
-.step-card:nth-child(3) .step-num { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+.step-card:nth-child(3) .step-num { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.85); }
 .step-card h3 { font-family: var(--font-heading), Arial, sans-serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 14px; color: var(--white); }
-.step-card p { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.75; }
+.step-card p { font-size: 1rem; color: rgba(255,255,255,0.82); line-height: 1.75; }
 
 /* Features (also uses .how class) */
 .how .features-header h2 { color: var(--white); letter-spacing: -0.02em; }
@@ -485,7 +485,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--salmon);
 }
 .feat-item h3 { font-family: var(--font-heading), Arial, sans-serif; font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
-.feat-item p { font-size: 0.95rem; color: rgba(255,255,255,0.6); line-height: 1.7; }
+.feat-item p { font-size: 0.95rem; color: rgba(255,255,255,0.82); line-height: 1.7; }
 
 /* ── FOR WHOM ── */
 .forwhom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
@@ -501,7 +501,7 @@ a { color: inherit; text-decoration: none; }
 .forwhom-card h3 {
   font-family: var(--font-heading), Arial, sans-serif; font-size: 0.78rem; font-weight: 700;
   text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 28px;
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.85);
 }
 .forwhom-card:nth-child(3) h3 { color: rgba(25,91,90,0.7); }
 .forwhom-card li {
@@ -542,7 +542,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.02em;
 }
 .sprint-box h3 em { font-style: normal; color: var(--salmon-light); font-weight: 500; }
-.sprint-desc { color: rgba(255,255,255,0.7); font-size: 1rem; line-height: 1.8; margin-bottom: 28px; }
+.sprint-desc { color: rgba(255,255,255,0.85); font-size: 1rem; line-height: 1.8; margin-bottom: 28px; }
 .sprint-outputs { display: flex; gap: 10px; flex-wrap: wrap; }
 .sprint-outputs span {
   font-family: var(--font-body), Arial, sans-serif; font-size: 0.82rem; font-weight: 500;
@@ -558,7 +558,7 @@ a { color: inherit; text-decoration: none; }
   border-radius: var(--radius); padding: 40px 28px;
 }
 .sprint-price .price { font-family: var(--font-heading), Arial, sans-serif; font-size: 1.8rem; font-weight: 700; color: var(--white); line-height: 1.3; }
-.sprint-price .price-sek { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-top: 6px; }
+.sprint-price .price-sek { font-size: 0.88rem; color: rgba(255,255,255,0.85); margin-top: 6px; }
 .sprint-price .price-note { font-size: 0.84rem; color: rgba(255,255,255,0.45); margin-top: 14px; line-height: 1.55; }
 .sprint-price .btn { margin-top: 24px; }
 
@@ -680,7 +680,7 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.02em;
 }
 .cta-section h2 em { font-style: normal; color: var(--salmon-light); font-weight: 500; }
-.cta-section p { color: rgba(255,255,255,0.65); font-size: 1.1rem; max-width: 460px; margin: 0 auto 36px; line-height: 1.75; }
+.cta-section p { color: rgba(255,255,255,0.85); font-size: 1.1rem; max-width: 460px; margin: 0 auto 36px; line-height: 1.75; }
 
 /* ── FOOTER ── */
 footer {
@@ -858,7 +858,7 @@ footer {
   line-height: 1.6;
   flex: 1;
 }
-.stat-card.teal .stat-label { color: rgba(255,255,255,0.7); }
+.stat-card.teal .stat-label { color: rgba(255,255,255,0.85); }
 .stat-card.wide .stat-label { color: var(--jet-light); }
 .stat-company {
   margin-top: 24px;
@@ -1144,7 +1144,7 @@ a.stat-card:focus-visible, .capability-case:focus-visible, .capability-link:focu
   font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700;
   color: var(--white); letter-spacing: -0.02em;
 }
-.work-cta p { color: rgba(255,255,255,0.7); margin-top: 10px; max-width: 480px; line-height: 1.7; }
+.work-cta p { color: rgba(255,255,255,0.85); margin-top: 10px; max-width: 480px; line-height: 1.7; }
 .work-cta .btn { position: relative; z-index: 1; flex-shrink: 0; }
 
 /* Work tabs (Case studies / Appearances) */
@@ -1225,7 +1225,7 @@ a.stat-card:focus-visible, .capability-case:focus-visible, .capability-link:focu
   display: inline-flex; align-items: center; gap: 6px;
   font-family: var(--font-heading), Arial, sans-serif;
   font-size: 0.84rem; font-weight: 600;
-  color: rgba(255,255,255,0.6); margin-bottom: 40px;
+  color: rgba(255,255,255,0.85); margin-bottom: 40px;
   transition: color 0.25s;
 }
 .case-back:hover { color: var(--turquoise); }
@@ -1235,7 +1235,7 @@ a.stat-card:focus-visible, .capability-case:focus-visible, .capability-link:focu
   font-size: 0.74rem; font-weight: 700; text-transform: uppercase;
   letter-spacing: 0.12em; color: var(--turquoise); margin-bottom: 22px;
 }
-.case-eyebrow-client { color: rgba(255,255,255,0.5); }
+.case-eyebrow-client { color: rgba(255,255,255,0.85); }
 .case-eyebrow-client::before { content: '·'; margin-right: 10px; color: rgba(255,255,255,0.4); }
 .case-hero h1 {
   font-family: var(--font-heading), Arial, sans-serif;
@@ -1382,7 +1382,7 @@ a.stat-card:focus-visible, .capability-case:focus-visible, .capability-link:focu
   font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 700;
   color: var(--white); letter-spacing: -0.02em; margin-top: 8px;
 }
-.case-results-header p { color: rgba(255,255,255,0.65); font-size: 1.15rem; margin-top: 12px; line-height: 1.6; }
+.case-results-header p { color: rgba(255,255,255,0.85); font-size: 1.15rem; margin-top: 12px; line-height: 1.6; }
 .case-results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 24px; }
 .case-result {
   background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
@@ -1395,7 +1395,7 @@ a.stat-card:focus-visible, .capability-case:focus-visible, .capability-link:focu
   line-height: 1; letter-spacing: -0.03em; margin-bottom: 20px;
 }
 .case-result h4 { font-family: var(--font-heading), Arial, sans-serif; font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 12px; }
-.case-result p { color: rgba(255,255,255,0.65); font-size: 0.98rem; line-height: 1.7; }
+.case-result p { color: rgba(255,255,255,0.85); font-size: 0.98rem; line-height: 1.7; }
 .case-compound {
   background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius); padding: 44px 48px;
@@ -1564,7 +1564,7 @@ a.stat-card:focus-visible, .capability-case:focus-visible, .capability-link:focu
   background: rgba(255,135,115,0.2); color: var(--salmon);
   font-family: var(--font-heading), Arial, sans-serif; font-weight: 700; margin-bottom: 18px;
 }
-.service-step-text { display: block; color: rgba(255,255,255,0.65); font-size: 1rem; line-height: 1.7; }
+.service-step-text { display: block; color: rgba(255,255,255,0.85); font-size: 1rem; line-height: 1.7; }
 .service-step-text strong { color: var(--white); font-weight: 700; font-family: var(--font-heading), Arial, sans-serif; }
 
 /* cards */
@@ -2473,3 +2473,12 @@ a.gtm-proof:focus-visible { outline: 3px solid var(--salmon); outline-offset: 3p
   .bio-principles { grid-template-columns: 1fr; }
   .bio-spaces li { font-size: 1rem; }
 }
+
+/* Skip link: hidden until focused with the keyboard */
+.skip-link {
+  position: absolute; left: 16px; top: -100px; z-index: 1000;
+  background: var(--jungle); color: var(--white); padding: 12px 20px; border-radius: 0 0 12px 12px;
+  font-family: var(--font-heading), Arial, sans-serif; font-weight: 700;
+}
+.skip-link:focus { top: 0; outline: 3px solid var(--salmon); outline-offset: 2px; }
+main:focus { outline: none; }

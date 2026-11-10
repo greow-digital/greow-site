@@ -10,7 +10,7 @@ const meta = aiGtmMetaByLang.sv
 const SITE_URL = 'https://greow.digital'
 const URL = `${SITE_URL}${meta.path}`
 const EN_URL = `${SITE_URL}${aiGtmMetaByLang.en.path}`
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-sv.jpg`
 
 export const metadata: Metadata = {
   title: meta.title,
@@ -33,7 +33,7 @@ export default function AiGtmSystemSv() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Nav t={t.nav} lang="sv" altHref={aiGtmMetaByLang.en.path} />
-      <main>
+      <main id="main">
         <AiGtmSystemsPage t={t} lang="sv" />
       </main>
       <ScrollReveal />

@@ -41,7 +41,7 @@ export default function BnbalyzeCaseSv() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Nav t={t.nav} lang="sv" />
-      <main>
+      <main id="main">
         <CaseStudyView t={t} lang="sv" data={data} />
       </main>
       <ScrollReveal />

@@ -6,7 +6,7 @@ import '../globals.css'
 
 const t = translations.sv
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-sv.jpg`
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -66,7 +66,10 @@ export default function SvLayout({ children }: { children: React.ReactNode }) {
           <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        <a href="#main" className="skip-link">Hoppa till innehållet</a>
+        {children}
+      </body>
     </html>
   )
 }

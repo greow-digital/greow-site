@@ -67,7 +67,7 @@ export default function AiGtmSystemsPage({ t, lang }: { t: Translations; lang: L
           </div>
           <div className="hero-founder">
             <img
-              src="/assets/erik-oliva-werner.png"
+              src="/assets/erik-oliva-werner-avatar.webp"
               alt="Erik Oliva Werner"
               className="hero-founder-img"
               width={44}

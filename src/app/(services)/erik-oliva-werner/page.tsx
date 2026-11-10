@@ -35,7 +35,7 @@ export default function FounderEn() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Nav t={t.nav} lang="en" />
-      <main>
+      <main id="main">
         <FounderPage t={t} lang="en" />
       </main>
       <ScrollReveal />

@@ -8,7 +8,7 @@ import { workIndexCopy, workIndexJsonLd } from '@/lib/work'
 const t = translations.sv
 const copy = workIndexCopy.sv
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-sv.jpg`
 
 export const metadata: Metadata = {
   title: copy.meta.title,
@@ -35,7 +35,7 @@ export default function SvCasePage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(workIndexJsonLd('sv')) }} />
       <Nav t={t.nav} lang="sv" />
-      <main>
+      <main id="main">
         <WorkIndex t={t} lang="sv" />
       </main>
       <ScrollReveal />

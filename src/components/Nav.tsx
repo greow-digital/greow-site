@@ -88,13 +88,13 @@ export default function Nav({ t, lang, altHref: altHrefProp }: NavProps) {
         {/* Desktop links */}
         <div className="nav-links">
           <div className="nav-dropdown">
-            <button type="button" className="nav-dropdown-trigger">
+            <button type="button" className="nav-dropdown-trigger" aria-haspopup="true" aria-controls="nav-services-menu">
               {t.services}
               <svg className="nav-caret" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M6 9l6 6 6-6" />
               </svg>
             </button>
-            <div className="nav-dropdown-menu">
+            <div className="nav-dropdown-menu" id="nav-services-menu">
               <div className="nav-dropdown-card">
                 {servicesFor(lang).map((s) => (
                   <Link key={s.key} href={s.url[lang]} className="nav-dropdown-item">

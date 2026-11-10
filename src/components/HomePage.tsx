@@ -96,7 +96,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
 
             <div className="hero-founder" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>
               <img
-                src="/assets/erik-oliva-werner.png"
+                src="/assets/erik-oliva-werner-avatar.webp"
                 alt={t.hero.founderName}
                 className="hero-founder-img"
                 width={56}
@@ -114,7 +114,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
           <div className="hero-visual">
             <div className="hero-scroll-track">
               <img
-                src="/images/HERO_CAROUSEL_2.png"
+                src="/images/hero-dashboard.webp"
                 alt="Growth dashboard"
                 className="hero-dashboard-img"
                 width={1200}

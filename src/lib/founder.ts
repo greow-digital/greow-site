@@ -183,7 +183,7 @@ const en = {
         title: 'AI-native growth at Sands',
         body: [
           'Through my work as a digital growth partner at Sands, I’m applying a similar builder mindset in a smaller business environment.',
-          'The work combines growth strategy with custom website development, CMS capabilities, internal backoffice tools, lead generation workflows, marketing integrations and AI-assisted development. The objective is a connected digital growth engine that can evolve quickly, support commercial operations and reduce unnecessary dependencies.',
+          'The work combines growth strategy with custom website development, CMS capabilities, lead generation workflows, marketing integrations and AI-assisted development. The objective is a connected digital growth engine that can evolve quickly, support commercial operations and reduce unnecessary dependencies.',
         ],
         list: [] as string[],
         outro: 'It’s a practical example of how modern development and AI can give businesses greater autonomy over their growth infrastructure.',
@@ -478,7 +478,7 @@ const sv: FounderContent = {
         title: 'AI-native tillväxt på Sands',
         body: [
           'Som digital tillväxtpartner till Sands använder jag samma byggarperspektiv i ett mindre företag.',
-          'Arbetet kombinerar tillväxtstrategi med skräddarsydd webbutveckling, CMS-funktioner, interna backoffice-verktyg, leadflöden, marknadsintegrationer och AI-assisterad utveckling. Målet är en sammankopplad digital tillväxtmotor som kan utvecklas snabbt, stötta den kommersiella verksamheten och minska onödiga beroenden.',
+          'Arbetet kombinerar tillväxtstrategi med skräddarsydd webbutveckling, CMS-funktioner, leadflöden, marknadsintegrationer och AI-assisterad utveckling. Målet är en sammankopplad digital tillväxtmotor som kan utvecklas snabbt, stötta den kommersiella verksamheten och minska onödiga beroenden.',
         ],
         list: [],
         outro: 'Det är ett praktiskt exempel på hur modern utveckling och AI kan ge företag större självständighet över sin tillväxtinfrastruktur.',

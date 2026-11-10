@@ -8,7 +8,7 @@ import { caseStudies, caseJsonLd } from '@/lib/work'
 const t = translations.en
 const data = caseStudies.en['funnel']
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-en.jpg`
 const URL_PATH = `${SITE_URL}/work/funnel/`
 
 export const metadata: Metadata = {
@@ -40,7 +40,7 @@ export default function FunnelCaseEn() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Nav t={t.nav} lang="en" />
-      <main>
+      <main id="main">
         <CaseStudyView t={t} lang="en" data={data} />
       </main>
       <ScrollReveal />

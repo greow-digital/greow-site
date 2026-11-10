@@ -38,7 +38,10 @@ export default function WorkLayout({ children }: { children: React.ReactNode }) 
           <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
         </noscript>
       </head>
-      <body>{children}</body>
+      <body>
+        <a href="#main" className="skip-link">Skip to content</a>
+        {children}
+      </body>
     </html>
   )
 }

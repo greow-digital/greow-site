@@ -5411,7 +5411,7 @@ export function caseJsonLd(lang: Lang, data: CaseStudy) {
     author: { '@id': `${SITE_URL}/#erik` },
     publisher: { '@id': `${SITE_URL}/#organization` },
     mainEntityOfPage: url,
-    image: data.heroImage ? `${SITE_URL}${data.heroImage.src}` : `${SITE_URL}/images/HERO_CAROUSEL_2.png`,
+    image: data.heroImage ? `${SITE_URL}${data.heroImage.src}` : `${SITE_URL}/images/og-greow-en.jpg`,
     isPartOf: { '@id': `${SITE_URL}/#website` },
   }
 

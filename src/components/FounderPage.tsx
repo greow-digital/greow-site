@@ -32,10 +32,10 @@ export default function FounderPage({ t, lang }: { t: Translations; lang: Lang }
           </div>
           <figure className="bio-photo">
             <img
-              src="/images/erik-oliva-werner.jpg"
+              src="/images/erik-oliva-werner-1200.webp"
               alt={c.hero.photoAlt}
-              width={2048}
-              height={1365}
+              width={1200}
+              height={800}
               loading="eager"
               fetchPriority="high"
               decoding="async"

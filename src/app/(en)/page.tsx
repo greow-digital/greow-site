@@ -9,7 +9,7 @@ export default function EnPage() {
   return (
     <>
       <Nav t={t.nav} lang="en" />
-      <main>
+      <main id="main">
         <HomePage t={t} lang="en" />
       </main>
       <ScrollReveal />

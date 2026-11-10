@@ -9,7 +9,7 @@ const t = translations.en
 const SITE_URL = 'https://greow.digital'
 const URL = `${SITE_URL}${aiGrowthMeta.path}`
 const SV_URL = `${SITE_URL}${aiGrowthMetaByLang.sv.path}`
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-en.jpg`
 
 export const metadata: Metadata = {
   title: aiGrowthMeta.title,
@@ -31,7 +31,7 @@ export default function AiGrowthConsultantEn() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <Nav t={t.nav} lang="en" altHref={aiGrowthMetaByLang.sv.path} />
-      <main>
+      <main id="main">
         <AiGrowthConsultantPage t={t} lang="en" />
       </main>
       <ScrollReveal />

@@ -8,7 +8,7 @@ import { postalAddressSchema, mapsUrl, profiles } from './business'
 import { founderByLang, founderMetaByLang } from './founder'
 
 const SITE_URL = 'https://greow.digital'
-const OG_IMAGE = `${SITE_URL}/images/HERO_CAROUSEL_2.png`
+const OG_IMAGE = `${SITE_URL}/images/og-greow-en.jpg`
 
 const copy = {
   en: {

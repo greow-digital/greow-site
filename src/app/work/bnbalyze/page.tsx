@@ -40,7 +40,7 @@ export default function BnbalyzeCaseEn() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Nav t={t.nav} lang="en" />
-      <main>
+      <main id="main">
         <CaseStudyView t={t} lang="en" data={data} />
       </main>
       <ScrollReveal />

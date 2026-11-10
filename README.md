@@ -1,43 +1,54 @@
-# Greow – Growth as a Service
+# greow.digital
 
-Website for Greow, Erik Oliva Werner's growth consulting brand.
+Website for **Greow (Greow Digital)**, the growth and GTM consultancy of Erik Oliva Werner, Stockholm. The site is in English and Swedish.
 
-## Quick start
+## Stack
+
+- Next.js 14 (App Router), React 18, TypeScript
+- Static export (`output: 'export'`, `trailingSlash: true`) to `out/`
+- Hosted on GitHub Pages: every push to `main` builds and deploys via `.github/workflows/deploy.yml`. The custom domain comes from `public/CNAME`.
+
+## Develop
 
 ```bash
-# Option 1: Python (built-in)
-python3 -m http.server 3000
-
-# Option 2: Node.js
-npx serve .
-
-# Option 3: VS Code
-# Install "Live Server" extension → right-click index.html → Open with Live Server
+npm ci
+npm run dev            # http://localhost:3000
 ```
 
-Then open [http://localhost:3000](http://localhost:3000)
+## Build and checks
 
-## Structure
+```bash
+npm run build          # static export to out/
+npm run check:links    # every internal link and asset in out/ resolves
+npm run check:seo      # metadata, canonical/hreflang, JSON-LD, sitemap, robots, internal linking
+```
 
-```
-├── index.html          # Single-page site
-├── assets/
-│   ├── logo-dnb.jpg
-│   ├── logo-dealfront.webp
-│   ├── logo-strim.png
-│   ├── logo-telia.png
-│   └── logo-rikstv.png
-└── README.md
-```
+Run all three before merging to `main`. Details: `docs/technical-seo.md`.
+
+## Where things live
+
+| What | Where |
+|---|---|
+| Homepage copy (EN/SV) | `src/lib/translations.ts` |
+| Classic service pages + services menu | `src/lib/services.ts` |
+| AI Growth Consultant / AI GTM Systems | `src/lib/aiGrowthConsultant.ts`, `src/lib/aiGtmSystems.ts` |
+| Founder bio | `src/lib/founder.ts` |
+| Case studies + work index | `src/lib/work.ts` |
+| Business name, address, map, profiles (`sameAs`) | `src/lib/business.ts` |
+| Site-wide schema.org graph | `src/lib/schema.ts` |
+| EN ↔ SV page pairs (sitemap + language switcher) | `src/lib/alternates.ts` |
+| Pages not yet published | `src/lib/routes.ts` |
+| Styles (Greow design tokens) | `src/app/globals.css` |
+
+## Docs
+
+- `docs/seo-ai-audit.md`: audit, backlog and implementation log
+- `docs/technical-seo.md`: identifiers, schema, checks, live-site verification list
+- `docs/measurement/`: monthly SEO and AI-visibility tracking (CSV templates)
+- `docs/drafts/`: unpublished drafts (not built)
 
 ## Brand
 
-- **Primary colors:** Salmon (#FF8773), Turquoise Green (#A5DBC2)
-- **Secondary colors:** Deep Jungle Green (#195B5A), Alabaster (#F7F4E8)
-- **Headings:** Ubuntu (Google Fonts)
-- **Body:** Source Sans 3 (Google Fonts)
-- **Text color:** Jet (#333333)
-
-## Deploy
-
-Works with any static host: Netlify, Vercel, GitHub Pages, Cloudflare Pages. Just point to the root directory.
+- Colours: Salmon `#FF8773`, Turquoise `#A5DBC2`, Jungle `#195B5A`, Jet `#1A1A1A`
+- Fonts: Ubuntu (headings), Source Sans 3 (body)
+- Founder name: always **Erik Oliva Werner** (`npm run check:seo` fails on the short form)

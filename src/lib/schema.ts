@@ -59,11 +59,10 @@ export function siteGraph(lang: Lang) {
     '@type': 'Person',
     '@id': `${SITE_URL}/#erik`,
     name: 'Erik Oliva Werner',
-    alternateName: 'Erik Werner',
     jobTitle: c.jobTitle,
     description: c.personDescription,
     worksFor: { '@id': `${SITE_URL}/#organization` },
-    image: `${SITE_URL}/images/erik.jpg`,
+    image: `${SITE_URL}/images/erik-oliva-werner.jpg`,
     homeLocation: {
       '@type': 'Place',
       name: 'Stockholm, Sweden',

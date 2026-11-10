@@ -48,7 +48,7 @@ export default function ServicePage({ t, lang, content }: ServicePageProps) {
           </div>
           <div className="hero-founder">
             <img
-              src="/assets/erik-werner.png"
+              src="/assets/erik-oliva-werner.png"
               alt="Erik Oliva Werner"
               className="hero-founder-img"
               width={44}

@@ -96,7 +96,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
 
             <div className="hero-founder" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>
               <img
-                src="/assets/erik-werner.png"
+                src="/assets/erik-oliva-werner.png"
                 alt={t.hero.founderName}
                 className="hero-founder-img"
                 width={56}

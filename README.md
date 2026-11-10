@@ -1,6 +1,6 @@
 # Greow – Growth as a Service
 
-Website for Greow, Erik Werner's growth consulting brand.
+Website for Greow, Erik Oliva Werner's growth consulting brand.
 
 ## Quick start
 

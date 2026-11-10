@@ -451,7 +451,7 @@ grep -rn "Erik Werner" src                    # name inconsistency
 |---|---|---|
 | T1 (title cannibalisation) | Homepage now targets "AI-Native Growth & GTM Partner"; `/growth-as-a-service/` keeps "Growth as a Service". | ✅ Resolved |
 | T3 (description length) | Home descriptions 138 (EN) / 137 (SV) chars. | ✅ Home only |
-| F1 (founder name) | Visible name standardised to **Erik Oliva Werner** everywhere (hero, about, footer, service pages, case-study quote attributions); schema `Person.alternateName: "Erik Werner"`. Footer text comes from translations. Planned founder page URL: `/erik-oliva-werner/`. | ✅ |
+| F1 (founder name) | Visible name standardised to **Erik Oliva Werner** everywhere (hero, about, footer, service pages, case-study quote attributions); no short form anywhere (schema alias removed; portraits renamed `erik-oliva-werner.png` / `.jpg`). Footer text comes from translations. Planned founder page URL: `/erik-oliva-werner/`. | ✅ |
 | J2/J3/J5 (schema) | Shared `src/lib/schema.ts` (WebSite + Organization + Person + ProfessionalService) used by the EN and SV root layouts. Adds `alternateName`, `description`, `knowsAbout`, `homeLocation` Stockholm, `OfferCatalog` of the three capabilities. EN service/case layouts still lack the graph. | ◑ Partial |
 | I3 (home → case links) | All homepage results cards and the new capability cards link to their case studies. | ✅ |
 | H3 (heading skips) | Homepage H4 → H3 (who-it's-for, feature cards). Case-study pages unchanged. | ◑ Home only |

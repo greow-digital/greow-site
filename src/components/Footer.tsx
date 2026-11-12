@@ -5,6 +5,7 @@ import { servicesFor } from '@/lib/services'
 import { business, mapsUrl } from '@/lib/business'
 import { plannedLink } from '@/lib/routes'
 import FooterMap from './FooterMap'
+import { LogoMark } from './Illustrations'
 
 interface FooterProps {
   t: Translations
@@ -22,9 +23,12 @@ export default function Footer({ t, lang }: FooterProps) {
   const mapsLabel = lang === 'en' ? 'Open in Google Maps' : 'Öppna i Google Maps'
 
   return (
-    <footer>
+    <footer className="site-footer">
       <div className="footer-inner">
         <div className="footer-left">
+          <Link href={home} className="footer-brand" aria-label="Greow">
+            <LogoMark /> Greow
+          </Link>
           <p>
             <span className="name">{footerName}</span> · {footerRest.join(' · ')}
           </p>
@@ -63,6 +67,11 @@ export default function Footer({ t, lang }: FooterProps) {
           </div>
         </nav>
       </div>
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} {business.legalName}</span>
+        <span className="live"><i aria-hidden="true" /> {t.hero.badge}</span>
+      </div>
+      <span className="footer-wordmark" aria-hidden="true">Greow</span>
     </footer>
   )
 }

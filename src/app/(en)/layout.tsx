@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ubuntu, sourceSans } from '@/lib/fonts'
+import { fontVars } from '@/lib/fonts'
 import { translations } from '@/lib/translations'
 import { siteGraph } from '@/lib/schema'
 import '../globals.css'
@@ -55,7 +55,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = siteGraph('en')
 
   return (
-    <html lang="en" className={`${ubuntu.variable} ${sourceSans.variable}`}>
+    <html lang="en" className={fontVars}>
       <head>
         <script
           type="application/ld+json"
@@ -63,7 +63,7 @@ export default function EnLayout({ children }: { children: React.ReactNode }) {
         />
         {/* Without JS, scroll-reveal content must still be visible. */}
         <noscript>
-          <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
+          <style>{'.reveal{opacity:1!important;transform:none!important;filter:none!important}'}</style>
         </noscript>
       </head>
       <body>

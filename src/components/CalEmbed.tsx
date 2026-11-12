@@ -31,15 +31,8 @@ export default function CalEmbed() {
   }, [])
 
   return (
-    <div
-      id="cal-inline-embed"
-      className="reveal cal-inline-embed"
-      style={{
-        minWidth: '320px',
-        marginTop: '32px',
-        borderRadius: 'var(--radius)',
-        overflow: 'hidden',
-      }}
-    />
+    <div className="cal-shell reveal">
+      <div id="cal-inline-embed" className="cal-inline-embed" style={{ minWidth: '300px', borderRadius: '20px', overflow: 'hidden' }} />
+    </div>
   )
 }

@@ -1,20 +1,37 @@
-import { Ubuntu, Source_Sans_3 } from 'next/font/google'
+import { Bricolage_Grotesque, Hanken_Grotesk, Instrument_Serif, JetBrains_Mono } from 'next/font/google'
 
-// Only what the CSS uses. Headings (Ubuntu): 400/500/700, no italics.
-// Body (Source Sans 3) is a variable font: one file per style covers every
-// weight. The 'latin' subset already includes å ä ö ø and the punctuation used
-// on the site, so 'latin-ext' isn't needed. 20 preloaded font files → 5.
-export const ubuntu = Ubuntu({
+// Four families, five files. The 'latin' subset already includes å ä ö ø and
+// the punctuation used on the site, so 'latin-ext' isn't needed.
+//   --font-heading  Bricolage Grotesque (variable)  headings, buttons, numbers
+//   --font-body     Hanken Grotesk (variable)       running text
+//   --font-accent   Instrument Serif italic         the emphasised phrase in a heading
+//   --font-mono     JetBrains Mono (variable)       kickers, labels, UI chrome
+const heading = Bricolage_Grotesque({
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
-  style: ['normal'],
   variable: '--font-heading',
   display: 'swap',
 })
 
-export const sourceSans = Source_Sans_3({
+const body = Hanken_Grotesk({
   subsets: ['latin'],
   style: ['normal', 'italic'],
   variable: '--font-body',
   display: 'swap',
 })
+
+const accent = Instrument_Serif({
+  subsets: ['latin'],
+  weight: '400',
+  style: ['italic'],
+  variable: '--font-accent',
+  display: 'swap',
+})
+
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  preload: false,
+})
+
+export const fontVars = `${heading.variable} ${body.variable} ${accent.variable} ${mono.variable}`

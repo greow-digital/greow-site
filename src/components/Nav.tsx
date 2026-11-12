@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { alternatePath } from '@/lib/alternates'
 import type { Translations } from '@/lib/translations'
@@ -76,9 +76,32 @@ export default function Nav({ t, lang, altHref: altHrefProp }: NavProps) {
   const altLabel = lang === 'en' ? 'SV' : 'EN'
   const AltFlag = lang === 'en' ? FlagSV : FlagEN
   const close = () => setOpen(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  // Compact the pill once the page has scrolled, and drive the progress bar.
+  useEffect(() => {
+    let raf = 0
+    const update = () => {
+      raf = 0
+      const y = window.scrollY
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      setScrolled(y > 24)
+      document.documentElement.style.setProperty('--scroll', max > 0 ? String(Math.min(1, y / max)) : '0')
+    }
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(update) }
+    update()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+      if (raf) cancelAnimationFrame(raf)
+    }
+  }, [])
 
   return (
-    <nav className="site-nav">
+    <nav className={`site-nav${scrolled ? ' scrolled' : ''}${open ? ' open' : ''}`}>
+      <div className="scroll-progress" aria-hidden="true" />
       <div className="nav-inner">
         <Link href={home} className="nav-logo" onClick={close}>
           <span className="logo-icon"><LogoIcon /></span>
@@ -136,23 +159,23 @@ export default function Nav({ t, lang, altHref: altHrefProp }: NavProps) {
             </svg>
           </button>
         </div>
-      </div>
 
-      {/* Mobile dropdown menu */}
-      {open && (
-        <div className="nav-mobile-menu">
-          <span className="nav-mobile-heading">{t.services}</span>
-          {servicesFor(lang).map((s) => (
-            <Link key={s.key} href={s.url[lang]} className="nav-mobile-sub" onClick={close}>
-              {s.label[lang]}
-            </Link>
-          ))}
-          <Link href={workBase[lang]} onClick={close}>{t.work}</Link>
-          <a href={`${home}#pricing`} onClick={close}>{t.pricing}</a>
-          <a href={`${home}#how`} onClick={close}>{t.how}</a>
-          <a href={`${home}#book`} className="nav-cta-mobile" onClick={close}>{t.cta}</a>
-        </div>
-      )}
+        {/* Mobile dropdown menu (inside the pill) */}
+        {open && (
+          <div className="nav-mobile-menu">
+            <span className="nav-mobile-heading">{t.services}</span>
+            {servicesFor(lang).map((s, i) => (
+              <Link key={s.key} href={s.url[lang]} className="nav-mobile-sub" onClick={close} style={{ '--n': i + 1 } as React.CSSProperties}>
+                {s.label[lang]}
+              </Link>
+            ))}
+            <Link href={workBase[lang]} onClick={close} style={{ '--n': 7 } as React.CSSProperties}>{t.work}</Link>
+            <a href={`${home}#pricing`} onClick={close} style={{ '--n': 8 } as React.CSSProperties}>{t.pricing}</a>
+            <a href={`${home}#how`} onClick={close} style={{ '--n': 9 } as React.CSSProperties}>{t.how}</a>
+            <a href={`${home}#book`} className="nav-cta-mobile" onClick={close} style={{ '--n': 10 } as React.CSSProperties}>{t.cta}</a>
+          </div>
+        )}
+      </div>
     </nav>
   )
 }

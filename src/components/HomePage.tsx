@@ -5,6 +5,10 @@ import { projects } from '@/lib/work'
 import { capabilityLinks, plannedLink } from '@/lib/routes'
 import CalEmbed from './CalEmbed'
 import Footer from './Footer'
+import {
+  HeroVisual, FocusIllustration, StrategyIllustration, SystemsIllustration, ExecutionIllustration,
+  Spark, SprintIllustration, stepGlyphs, type SparkKind,
+} from './Illustrations'
 
 // Feature icons — order matches features.items in translations
 const featureIcons = [
@@ -68,19 +72,40 @@ interface HomePageProps {
   lang: 'en' | 'sv'
 }
 
+// One illustration and one panel theme per capability (order = capabilities.items)
+const capArt = [
+  { Art: StrategyIllustration, theme: '' },
+  { Art: SystemsIllustration, theme: ' is-dark' },
+  { Art: ExecutionIllustration, theme: ' is-tint' },
+]
+
+// Decorative chart shape behind each proof stat (order = proof.stats)
+const statSparks: SparkKind[] = ['up', 'step', 'hockey', 'down', 'step', 'up']
+
+const css = (vars: Record<string, string | number>) => vars as React.CSSProperties
+
 export default function HomePage({ t, lang }: HomePageProps) {
   const projectBySlug = (slug: string) => projects[lang].find((p) => p.slug === slug)
   const founderLink = plannedLink('founder', lang)
+  const total = String(t.capabilities.items.length).padStart(2, '0')
 
   return (
     <>
       {/* HERO */}
       <section className="hero">
+        <div className="hero-bg" aria-hidden="true">
+          <i className="aurora aurora-1" />
+          <i className="aurora aurora-2" />
+          <i className="aurora aurora-3" />
+          <div className="hero-grid" />
+        </div>
+
         <div className="hero-inner">
           <div className="hero-content">
             <div className="hero-badge"><span className="dot"></span> {t.hero.badge}</div>
             <h1>
-              {t.hero.h1a} <em>{t.hero.h1b}</em>
+              <span className="hero-line">{t.hero.h1a}</span>{' '}
+              <span className="hero-line hero-line-2"><em>{t.hero.h1b}</em></span>
             </h1>
             <p className="hero-sub">{t.hero.sub}</p>
             <div className="hero-actions">
@@ -88,13 +113,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
               <a href="#capabilities" className="btn btn-secondary">{t.hero.cta2}</a>
             </div>
 
-            <div className="hero-tags">
-              {t.hero.tags.map((tag) => (
-                <span key={tag} className="hero-tag">{tag}</span>
-              ))}
-            </div>
-
-            <div className="hero-founder" style={{ animation: 'fadeUp 0.7s 0.4s ease both' }}>
+            <div className="hero-founder">
               <img
                 src="/assets/erik-oliva-werner-avatar.webp"
                 alt={t.hero.founderName}
@@ -112,46 +131,44 @@ export default function HomePage({ t, lang }: HomePageProps) {
           </div>
 
           <div className="hero-visual">
-            <div className="hero-scroll-track">
-              <img
-                src="/images/hero-dashboard.webp"
-                alt="Growth dashboard"
-                className="hero-dashboard-img"
-                width={1200}
-                height={800}
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-              />
+            <HeroVisual lang={lang} />
+          </div>
+        </div>
+
+        <ul className="hero-tags">
+          {t.hero.tags.map((tag) => (
+            <li key={tag} className="hero-tag">{tag}</li>
+          ))}
+        </ul>
+
+        {/* LOGO CAROUSEL */}
+        <div className="logo-carousel">
+          <p className="logo-carousel-label">{t.logos.label}</p>
+          <div className="logo-track-wrap">
+            <div className="logo-track" aria-label={t.logos.label}>
+              <LogoSet />
+              <LogoSet ariaHidden />
             </div>
           </div>
         </div>
       </section>
 
-      {/* LOGO CAROUSEL */}
-      <div className="logo-carousel">
-        <p className="logo-carousel-label">{t.logos.label}</p>
-        <div className="logo-track-wrap">
-          <div className="logo-track" aria-label={t.logos.label}>
-            <LogoSet />
-            <LogoSet ariaHidden />
-          </div>
-        </div>
-      </div>
-
       {/* INTRO */}
-      <section className="section" id="about">
+      <section className="section intro-section" id="about">
         <div className="container">
           <div className="intro-grid">
             <div className="intro">
               <h2 className="reveal">
                 {t.intro.h2a} <em>{t.intro.h2em}</em>
               </h2>
+              <div className="intro-art reveal">
+                <FocusIllustration />
+              </div>
             </div>
-            <div className="intro-text reveal">
-              <p dangerouslySetInnerHTML={{ __html: t.intro.p1 }} />
-              <p>{t.intro.p2}</p>
-              <p dangerouslySetInnerHTML={{ __html: t.intro.p3 }} />
+            <div className="intro-text">
+              <p className="reveal" dangerouslySetInnerHTML={{ __html: t.intro.p1 }} />
+              <p className="reveal">{t.intro.p2}</p>
+              <p className="reveal" dangerouslySetInnerHTML={{ __html: t.intro.p3 }} />
             </div>
           </div>
         </div>
@@ -165,8 +182,8 @@ export default function HomePage({ t, lang }: HomePageProps) {
             <h2 id="capabilities-heading">{t.capabilities.h2a} <em>{t.capabilities.h2em}</em></h2>
             <p>{t.capabilities.intro}</p>
           </div>
-          <div className="capability-grid">
-            {t.capabilities.items.map((item) => {
+          <div className="cap-stack">
+            {t.capabilities.items.map((item, i) => {
               const wiring = capabilityLinks[item.key]
               const cases = wiring.cases
                 .map(projectBySlug)
@@ -180,38 +197,48 @@ export default function HomePage({ t, lang }: HomePageProps) {
                   .map((key) => plannedLink(key, lang))
                   .filter((l): l is NonNullable<typeof l> => l !== null),
               ]
+              const { Art, theme } = capArt[i % capArt.length]
               return (
-                <article key={item.key} className="capability-card reveal">
-                  <div className="capability-num" aria-hidden="true">{item.num}</div>
-                  <h3>{item.title}</h3>
-                  <p className="capability-body">{item.body}</p>
-                  <ul className="capability-points">
-                    {item.points.map((point) => <li key={point}>{point}</li>)}
-                  </ul>
-                  {cases.length > 0 && (
-                    <div className="capability-proof">
-                      <p className="capability-sub">{t.capabilities.proofLabel}</p>
-                      {cases.map((p) => (
-                        <Link key={p.slug} href={p.href!} className="capability-case">
-                          <span className="capability-case-metric">{p.metric.value}</span>
-                          <span className="capability-case-text">
-                            <span className="capability-case-label">{p.metric.label}</span>
-                            <span className="capability-case-client">{p.client} <span aria-hidden="true">→</span></span>
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                  {links.length > 0 && (
-                    <div className="capability-links">
-                      <p className="capability-sub">{t.capabilities.linksLabel}</p>
-                      {links.map((l) => (
-                        <Link key={l.href} href={l.href} className="capability-link">
-                          {l.label} <span aria-hidden="true">→</span>
-                        </Link>
-                      ))}
-                    </div>
-                  )}
+                <article key={item.key} className={`cap-panel${theme}`} style={css({ '--n': i })}>
+                  <div className="cap-copy">
+                    <div className="cap-num" aria-hidden="true"><b>{item.num}</b> / {total}</div>
+                    <h3>{item.title}</h3>
+                    <p className="capability-body">{item.body}</p>
+                    <ul className="capability-points">
+                      {item.points.map((point) => <li key={point}>{point}</li>)}
+                    </ul>
+                    {links.length > 0 && (
+                      <div className="capability-links">
+                        <p className="capability-sub">{t.capabilities.linksLabel}</p>
+                        <div className="cap-link-row">
+                          {links.map((l) => (
+                            <Link key={l.href} href={l.href} className="capability-link">
+                              {l.label} <span aria-hidden="true">→</span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                  <div className="cap-side">
+                    <div className="cap-art"><Art /></div>
+                    {cases.length > 0 && (
+                      <div className="capability-proof">
+                        <p className="capability-sub">{t.capabilities.proofLabel}</p>
+                        <div className="cap-case-row">
+                          {cases.map((p) => (
+                            <Link key={p.slug} href={p.href!} className="capability-case">
+                              <span className="capability-case-metric">{p.metric.value}</span>
+                              <span className="capability-case-text">
+                                <span className="capability-case-label">{p.metric.label}</span>
+                                <span className="capability-case-client">{p.client} <span aria-hidden="true">→</span></span>
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </article>
               )
             })}
@@ -222,21 +249,33 @@ export default function HomePage({ t, lang }: HomePageProps) {
       {/* PERSONAL */}
       <section className="personal section" id="about-erik">
         <div className="container">
-          <div className="personal-header reveal">
-            <p className="section-label" style={{ justifyContent: 'center' }}>{t.personal.label}</p>
-            <h2>{t.personal.h2a} <em>{t.personal.h2em}</em></h2>
-          </div>
           <div className="personal-grid">
-            <div className="personal-text reveal">
-              <p className="personal-lead">
+            <div className="personal-media reveal">
+              <div
+                className="personal-image"
+                role="img"
+                aria-label={t.hero.founderName}
+              />
+              <svg className="personal-orbit" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+                <circle cx="100" cy="100" r="98" stroke="currentColor" strokeDasharray="2 8" />
+                <circle cx="100" cy="2" r="5" fill="#FF8773" />
+              </svg>
+              <div className="personal-chip personal-chip-1">
+                <span className="dot" /> {t.personal.highlight}
+              </div>
+              <div className="personal-chip personal-chip-2">{t.personal.role}</div>
+            </div>
+            <div className="personal-text">
+              <p className="section-label reveal">{t.personal.label}</p>
+              <h2 className="reveal">{t.personal.h2a} <em>{t.personal.h2em}</em></h2>
+              <p className="personal-lead reveal">
                 {t.personal.greeting} <span className="personal-name">{t.personal.name}</span>{t.personal.nameSuffix}
               </p>
-              <p className="personal-role">{t.personal.role}</p>
-              <p className="personal-body">
+              <p className="personal-body reveal">
                 <strong>{t.personal.highlight}</strong> {t.personal.body}
               </p>
-              <p className="personal-body">{t.personal.closing}</p>
-              <div className="personal-actions">
+              <p className="personal-body reveal">{t.personal.closing}</p>
+              <div className="personal-actions reveal">
                 <a href="#book" className="btn btn-primary">{t.hero.cta1}</a>
                 {founderLink ? (
                   <Link href={founderLink.href} className="btn btn-secondary">{founderLink.label}</Link>
@@ -245,11 +284,6 @@ export default function HomePage({ t, lang }: HomePageProps) {
                 )}
               </div>
             </div>
-            <div
-              className="personal-image reveal"
-              role="img"
-              aria-label={t.hero.founderName}
-            />
           </div>
         </div>
       </section>
@@ -258,9 +292,12 @@ export default function HomePage({ t, lang }: HomePageProps) {
       <section className="how section" id="how">
         <div className="container">
           <p className="section-label reveal">{t.how.label}</p>
-          <div className="how-steps">
-            {t.how.steps.map((step) => (
+          <div className="how-steps how-timeline">
+            <div className="how-rail" aria-hidden="true"><i /></div>
+            {t.how.steps.map((step, i) => (
               <div key={step.num} className="step-card reveal">
+                <div className="step-ghost" aria-hidden="true">{step.num}</div>
+                <div className="step-node" aria-hidden="true">{stepGlyphs[i]}</div>
                 <div className="step-num">{step.num}</div>
                 <h3>{step.title}</h3>
                 <p>{step.desc}</p>
@@ -271,7 +308,7 @@ export default function HomePage({ t, lang }: HomePageProps) {
       </section>
 
       {/* FOR WHOM */}
-      <section className="section">
+      <section className="section forwhom">
         <div className="container">
           <p className="section-label reveal">{t.forWhom.label}</p>
           <div className="forwhom-grid">
@@ -292,21 +329,28 @@ export default function HomePage({ t, lang }: HomePageProps) {
       {/* PROOF */}
       <section className="proof section" id="proof">
         <div className="container">
-          <p className="section-label reveal">{t.proof.label}</p>
-          <h2 className="reveal">{t.proof.h2a} <em>{t.proof.h2em}</em></h2>
-          <p className="proof-intro reveal">{t.proof.intro}</p>
+          <div className="proof-head">
+            <div>
+              <p className="section-label reveal">{t.proof.label}</p>
+              <h2 className="reveal">{t.proof.h2a} <em>{t.proof.h2em}</em></h2>
+            </div>
+            <p className="proof-intro reveal">{t.proof.intro}</p>
+          </div>
           <div className="proof-grid">
             {t.proof.stats.map((stat, i) => {
               const caseHref = projectBySlug(stat.slug)?.href
-              const className = `stat-card reveal${stat.wide ? ' wide' : ''}${'tall' in stat && stat.tall ? ' tall' : ''}`
+              const className = `stat-card spot reveal${stat.wide ? ' wide' : ''}${stat.teal ? ' teal' : ''}`
               const inner = (
                 <>
-                  <div className={`stat-value${stat.teal ? ' teal' : ''}`}>{stat.value}</div>
+                  <Spark kind={statSparks[i % statSparks.length]} />
+                  <div className="stat-value" data-count>{stat.value}</div>
                   <div className="stat-label">{stat.label}</div>
-                  <span className="stat-company stat-company-logo">
-                    <img src={stat.logo} alt={stat.company} loading="lazy" decoding="async" height={28} />
-                  </span>
-                  {caseHref && <span className="stat-more">{t.proof.readCase}</span>}
+                  <div className="stat-foot">
+                    <span className="stat-company stat-company-logo">
+                      <img src={stat.logo} alt={stat.company} loading="lazy" decoding="async" height={28} />
+                    </span>
+                    {caseHref && <span className="stat-more">{t.proof.readCase}</span>}
+                  </div>
                 </>
               )
               return caseHref ? (
@@ -324,7 +368,8 @@ export default function HomePage({ t, lang }: HomePageProps) {
         <div className="container">
           <p className="section-label reveal">{t.sprint.label}</p>
           <div className="sprint-box reveal">
-            <div>
+            <SprintIllustration />
+            <div className="sprint-copy">
               <div className="sprint-label">{t.sprint.tag}</div>
               <h3>{t.sprint.h3a} <em>{t.sprint.h3em}</em></h3>
               <p className="sprint-desc">{t.sprint.desc}</p>
@@ -345,16 +390,16 @@ export default function HomePage({ t, lang }: HomePageProps) {
       </section>
 
       {/* PRICING */}
-      <section className="section" id="pricing">
+      <section className="section pricing" id="pricing">
         <div className="container">
           <div className="pricing-header reveal">
-            <p className="section-label" style={{ justifyContent: 'center' }}>{t.pricing.label}</p>
+            <p className="section-label">{t.pricing.label}</p>
             <h2>{t.pricing.h2a} <em>{t.pricing.h2em}</em></h2>
             <p>{t.pricing.sub}</p>
           </div>
           <div className="pricing-grid">
             {t.pricing.plans.map((plan) => (
-              <div key={plan.tier} className={`price-card reveal${plan.featured ? ' featured' : ''}`}>
+              <div key={plan.tier} className={`price-card spot reveal${plan.featured ? ' featured t-dark' : ''}`}>
                 {plan.featured && <span className="popular-badge">{t.pricing.popular}</span>}
                 <div className="price-tier">{plan.tier}</div>
                 <div className="price-name">{plan.name}</div>
@@ -371,10 +416,10 @@ export default function HomePage({ t, lang }: HomePageProps) {
       </section>
 
       {/* FEATURES */}
-      <section className="how section">
+      <section className="features section">
         <div className="container">
           <div className="features-header reveal">
-            <p className="section-label" style={{ justifyContent: 'center' }}>{t.features.label}</p>
+            <p className="section-label">{t.features.label}</p>
             <h2>{t.features.h2a} <em>{t.features.h2em}</em></h2>
           </div>
           <div className="feat-grid">
@@ -394,14 +439,14 @@ export default function HomePage({ t, lang }: HomePageProps) {
         <div className="container">
           <p className="section-label reveal">{t.extras.label}</p>
           <div className="extras-grid">
-            <div className="extras-card reveal">
+            <div className="extras-card spot reveal">
               <h3>{t.extras.workshops.title}</h3>
               <p className="sub">{t.extras.workshops.sub}</p>
               <div className="extras-list">
                 {t.extras.workshops.items.map((item) => <span key={item}>{item}</span>)}
               </div>
             </div>
-            <div className="extras-card reveal">
+            <div className="extras-card spot reveal">
               <h3>{t.extras.coaching.title}</h3>
               <p className="sub">{t.extras.coaching.sub}</p>
               <div className="coaching-prices">
@@ -422,7 +467,9 @@ export default function HomePage({ t, lang }: HomePageProps) {
             <div className="home-services-links">
               {servicesFor(lang).map((s) => (
                 <Link key={s.key} href={s.url[lang]} className="home-service-link">
-                  {s.label[lang]} <span aria-hidden="true">→</span>
+                  <span className="home-service-name">{s.label[lang]}</span>
+                  <span className="home-service-tagline">{s.tagline[lang]}</span>
+                  <span className="home-service-arrow" aria-hidden="true">→</span>
                 </Link>
               ))}
             </div>

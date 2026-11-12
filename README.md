@@ -38,7 +38,13 @@ Run all three before merging to `main`. Details: `docs/technical-seo.md`.
 | Site-wide schema.org graph | `src/lib/schema.ts` |
 | EN ↔ SV page pairs (sitemap + language switcher) | `src/lib/alternates.ts` |
 | Pages not yet published | `src/lib/routes.ts` |
-| Styles (Greow design tokens) | `src/app/globals.css` |
+| Styles: entry point | `src/app/globals.css` (imports the four files below, in order) |
+| Design tokens, light/dark themes, nav, buttons, footer | `src/app/styles/base.css` |
+| Homepage sections + shared card/step patterns | `src/app/styles/home.css` |
+| Work, case studies, service pages, founder, 404 | `src/app/styles/pages.css` |
+| Cross-page refinements (sub-page heroes, section slabs) | `src/app/styles/polish.css` |
+| Coded illustrations (hero engine, capability scenes, sparklines) | `src/components/Illustrations.tsx` |
+| Motion layer (scroll reveal, count-up, cursor spotlight, magnetic buttons) | `src/components/ScrollReveal.tsx` |
 
 ## Docs
 
@@ -50,5 +56,7 @@ Run all three before merging to `main`. Details: `docs/technical-seo.md`.
 ## Brand
 
 - Colours: Salmon `#FF8773`, Turquoise `#A5DBC2`, Jungle `#195B5A`, Jet `#1A1A1A`
-- Fonts: Ubuntu (headings), Source Sans 3 (body)
+- Fonts: Bricolage Grotesque (headings), Hanken Grotesk (body), Instrument Serif italic (the emphasised phrase in a heading), JetBrains Mono (labels). Set in `src/lib/fonts.ts`.
+- Look: light "paper" pages with dark "ink" panels. Components read theme variables (`--fg`, `--surface`, `--line` …), so a card works on either; add a section to the dark list in `base.css` to flip it.
+- Motion is decorative and switches off under `prefers-reduced-motion`.
 - Founder name: always **Erik Oliva Werner** (`npm run check:seo` fails on the short form)

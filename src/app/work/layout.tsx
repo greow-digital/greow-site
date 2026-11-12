@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ubuntu, sourceSans } from '@/lib/fonts'
+import { fontVars } from '@/lib/fonts'
 import { siteGraph } from '@/lib/schema'
 import '../globals.css'
 
@@ -28,14 +28,14 @@ export const metadata: Metadata = {
 
 export default function WorkLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${ubuntu.variable} ${sourceSans.variable}`}>
+    <html lang="en" className={fontVars}>
       <head>
         {/* Organization + Person + WebSite, so page-level nodes that reference
             #organization / #erik resolve on this page. */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(siteGraph('en')) }} />
         {/* Without JS, scroll-reveal content must still be visible. */}
         <noscript>
-          <style>{'.reveal{opacity:1!important;transform:none!important}'}</style>
+          <style>{'.reveal{opacity:1!important;transform:none!important;filter:none!important}'}</style>
         </noscript>
       </head>
       <body>

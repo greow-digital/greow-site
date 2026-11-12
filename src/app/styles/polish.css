@@ -1,0 +1,131 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   CROSS-PAGE REFINEMENTS — layered over pages.css
+   Dark hero panels for sub-pages, tinted section slabs, card behaviour.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Sub-page heroes: one dark panel pattern ── */
+.service-hero, .work-hero, .case-hero, .case-hero.accent-jungle {
+  position: relative; isolation: isolate; overflow: hidden;
+  margin: var(--gutter); border-radius: var(--radius-panel);
+  padding: 176px 0 88px;
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(55% 90% at 100% 0%, rgba(30, 115, 114, 0.85) 0%, transparent 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(255, 135, 115, 0.2) 0%, transparent 70%),
+    radial-gradient(30% 40% at 55% 110%, rgba(165, 219, 194, 0.16) 0%, transparent 70%);
+}
+/* a slow orbit in the corner of every sub-page hero */
+.service-hero::after, .work-hero::after {
+  content: ''; position: absolute; z-index: -1; pointer-events: none;
+  right: -140px; top: -140px; width: 620px; height: 620px; border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 0, var(--salmon) 0 5px, transparent 6px),
+    radial-gradient(circle at 0 50%, var(--turquoise) 0 4px, transparent 5px),
+    repeating-radial-gradient(circle, transparent 0 68px, rgba(255, 255, 255, 0.09) 68px 69px);
+  animation: spin 80s linear infinite;
+}
+.service-hero h1, .work-hero h1, .case-hero h1 {
+  font-size: clamp(2.7rem, 5.8vw, 5.2rem); font-weight: 600; line-height: 0.98; letter-spacing: -0.05em;
+  animation: lineUp 1s var(--ease) 0.05s both;
+}
+.service-hero .section-label, .work-hero .section-label, .case-back, .case-eyebrow { animation: fadeUp 0.8s var(--ease) both; }
+.service-sub, .work-hero-sub, .case-intro, .ai-hero-body, .ai-hero-tagline { animation: fadeUp 0.9s var(--ease) 0.2s both; }
+.service-hero .hero-actions, .service-hero .hero-founder, .work-tabs, .case-meta { animation: fadeUp 0.9s var(--ease) 0.34s both; }
+.service-sub { font-size: 1.3rem; color: var(--fg-2); line-height: 1.5; }
+.work-hero-sub, .case-intro { color: var(--fg-2); }
+.case-hero.has-media { overflow: visible; padding-bottom: 0; }
+.case-back { padding: 8px 14px 8px 12px; border-radius: 100px; border: 1px solid var(--line); background: var(--surface); transition: background 0.3s, transform 0.4s var(--ease); }
+.case-back:hover { background: var(--surface-2); transform: translateX(-4px); }
+.case-hero-media { border-radius: 28px; }
+.bio-photo { border-radius: var(--radius-panel); }
+.bio-photo img { transition: transform 1.2s var(--ease); }
+.bio-photo:hover img { transform: scale(1.04); }
+
+.work-tabs { padding: 5px; border: 1px solid var(--line); box-shadow: none; }
+.work-tab { transition: color 0.3s, background 0.3s, transform 0.3s var(--ease); }
+.work-tab.active { background: var(--turquoise); color: var(--ink); }
+.work-tab:active { transform: scale(0.96); }
+
+/* ── Section slabs ── */
+.work-more, .case-details, .case-learnings, .case-approach, .case-ai, .service-sec.soft {
+  background: var(--paper-2);
+  margin: 0 var(--gutter); border-radius: var(--radius-panel);
+}
+.case-results, .service-sec.jungle {
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(50% 60% at 100% 0%, rgba(30, 115, 114, 0.55) 0%, transparent 70%),
+    radial-gradient(40% 50% at 0% 100%, rgba(255, 135, 115, 0.13) 0%, transparent 70%);
+}
+.work-cta {
+  border-radius: var(--radius-panel);
+  background:
+    radial-gradient(50% 120% at 100% 0%, rgba(30, 115, 114, 0.8) 0%, transparent 70%),
+    radial-gradient(40% 80% at 0% 100%, rgba(255, 135, 115, 0.18) 0%, transparent 70%),
+    var(--ink);
+}
+.work-case-metric.accent-jungle {
+  background:
+    radial-gradient(80% 80% at 100% 0%, rgba(30, 115, 114, 0.85) 0%, transparent 70%),
+    var(--ink);
+}
+
+/* ── Cards: shared hover language ── */
+.work-case, .work-more-card, .appearance-card, .case-block, .case-result, .case-learning,
+.service-step, .service-card, .service-related-card, .ai-related-link, .ai-env-card, .gtm-web-card, .gtm-mat, .case-ai-card {
+  transition: transform 0.6s var(--ease), box-shadow 0.6s, border-color 0.4s, background 0.4s;
+}
+.work-case { border-radius: 30px; }
+.work-case:not(.work-case-static):hover { transform: translateY(-6px); border-color: var(--line-2); }
+.work-case-link, .related-arrow, .appearance-watch, .service-related-all { display: inline-block; transition: transform 0.4s var(--ease); }
+.work-case:hover .work-case-link, .service-related-card:hover .related-arrow, .appearance-card:hover .appearance-watch, .service-related-all:hover { transform: translateX(6px); }
+.work-case-metric-value, .case-metric-value, .related-metric, .work-more-metric, .case-result-value { font-weight: 600; }
+.case-metric { border-radius: 28px; }
+.case-quote blockquote p { font-family: var(--font-accent-stack); font-style: italic; font-weight: 400; font-size: clamp(1.9rem, 3.8vw, 3.2rem); line-height: 1.2; letter-spacing: -0.02em; }
+.case-points li { transition: padding-left 0.5s var(--ease); }
+.case-points li::before { transition: width 0.5s var(--ease); }
+.case-points li:hover { padding-left: 52px; }
+.case-points li:hover::before { width: 34px; }
+.case-goal { border-left: 0; border-radius: var(--radius); background: var(--tint); position: relative; padding-left: 44px; }
+.case-goal::before { content: ''; position: absolute; left: 20px; top: 26px; bottom: 26px; width: 4px; border-radius: 4px; background: linear-gradient(var(--turquoise-dark), var(--salmon)); }
+.case-block-num, .case-approach-num, .gtm-web-num, .service-step-num { font-family: var(--font-mono-stack); font-weight: 500; font-size: 0.85rem; border-radius: 50%; }
+.case-ownership-tags span, .case-stack span, .work-case-tags span, .gtm-chores li { transition: transform 0.4s var(--ease-spring), background 0.3s, color 0.3s; }
+.case-ownership-tags span:hover, .case-stack span:hover { transform: translateY(-3px) rotate(-1.5deg); background: var(--ink); color: var(--turquoise); }
+
+/* FAQ: smooth marker */
+.ai-faq details { border-radius: var(--radius-sm); transition: border-color 0.3s, background 0.3s, box-shadow 0.4s; }
+.ai-faq details[open] { box-shadow: var(--shadow-md); }
+.ai-faq summary::after {
+  content: ''; width: 34px; height: 34px; border-radius: 50%;
+  border: 1px solid var(--line-2);
+  background:
+    linear-gradient(var(--fg), var(--fg)) center / 12px 1.5px no-repeat,
+    linear-gradient(var(--fg), var(--fg)) center / 1.5px 12px no-repeat;
+  transition: transform 0.5s var(--ease), background-color 0.3s;
+}
+.ai-faq details[open] summary::after { content: ''; transform: rotate(135deg); background-color: var(--tint); }
+.ai-questions li { border-radius: var(--radius-sm); transition: transform 0.4s var(--ease); }
+.ai-questions li:hover { transform: translateX(6px); }
+
+/* service prose links */
+.service-text a { border-bottom: 0; background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; transition: color 0.3s, background-size 0.4s var(--ease); }
+.service-text a:hover { background-size: 0 1px; background-position: 100% 100%; }
+
+/* 404 */
+.nf-hero { min-height: calc(100svh - var(--gutter) * 2); }
+
+@media (max-width: 900px) {
+  .service-hero, .work-hero, .case-hero, .case-hero.accent-jungle { padding: 128px 0 60px; }
+  .service-hero { text-align: left; }
+  .service-hero .hero-actions { justify-content: flex-start; }
+  .service-hero .hero-founder { margin-left: 0; margin-right: 0; }
+  .service-sub, .ai-hero-body { margin-left: 0; margin-right: 0; }
+  .service-hero::after, .work-hero::after { width: 380px; height: 380px; right: -150px; top: -130px; }
+  .case-hero.has-media { padding-bottom: 0; }
+}
+
+/* Slabs keep a hairline of paper between them when they sit back to back */
+.how, .proof, .case-results, .service-sec.jungle,
+.work-more, .case-details, .case-learnings, .case-approach, .case-ai, .service-sec.soft {
+  margin-top: var(--gutter); margin-bottom: var(--gutter);
+}
